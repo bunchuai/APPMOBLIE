@@ -17,9 +17,18 @@ namespace APPMOBLIE
             InitializeComponent();
         }
 
-        private void button_SignIn(object sender, EventArgs e)
+        private async void button_SignIn(object sender, EventArgs e)
         {
-
+            var Username = "admin";
+            var Password = "1234";
+            if (this.Email.Text == Username && this.Password.Text == Password) 
+            {
+                await Navigation.PushAsync(new MainPage());
+            }
+            else
+            {
+                await DisplayAlert("Warning","Username or password invalit.","OK");
+            }
         }
 
         private void Button_Reset(object sender, EventArgs e)

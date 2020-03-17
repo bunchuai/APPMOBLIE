@@ -20,7 +20,7 @@ namespace APPMOBLIE
         private async void ClickScan(object sender, EventArgs e)
         {
             var Scan = new ZXingScannerPage();
-            Navigation.PushAsync(Scan);
+            await Navigation.PushAsync(Scan);
             Scan.OnScanResult += (result) =>
             {
                 Device.BeginInvokeOnMainThread(async () =>
@@ -31,9 +31,9 @@ namespace APPMOBLIE
             };
         }
 
-        private async void Button_Save(object sender, EventArgs e)
+        void Button_Save(object sender, EventArgs e)
         {
-            var Models = new Dictionary<string, string>
+            var Model = new Dictionary<string, string>
             {
                 {"Mycode",this.Mycode.Text},
                 {"ProductName",this.ProductName.Text},

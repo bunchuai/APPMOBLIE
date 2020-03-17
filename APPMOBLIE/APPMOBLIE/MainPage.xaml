@@ -5,31 +5,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="APPMOBLIE.MainPage">
-
-
-    <StackLayout>
-        <Button Text="SCAN BAR CODE" Clicked="ClickScan"/>
-        <Label Text="SKU"/>
+    <StackLayout Margin="20,0,20,0" VerticalOptions="Center" >
+        <Button Text="scan barcode" Clicked="ClickScan"  BackgroundColor="Green" TextColor="White"/>
+        <Label Text="SKU nunber" />
         <Entry x:Name="Mycode" TextColor="Black"/>
-
         <Label Text="Product name"/>
         <Entry x:Name="ProductName" TextColor="Black"/>
-        
         <Label Text="Location"/>
         <Entry x:Name="Location" TextColor="Black"/>
-        
         <Label Text="Unit"/>
         <Picker x:Name="Gender" HorizontalOptions="FillAndExpand">
             <Picker.Items>
-                <x:String>unit1</x:String>
-                <x:String>unit12</x:String>
+                <x:String>ชิ้น</x:String>
+                <x:String>อัน</x:String>
             </Picker.Items>
         </Picker>
-        
         <Label Text="Volume"/>
         <Entry x:Name="Volume" TextColor="Black"/>
-        <Button Text="Save" Clicked="Button_Save"/>
+        <Label Text="Date"/>
+        <DatePicker x:Name="Datetime"  Format="dd-MM-yyyy"/> 
+        <Button Text="Save" Clicked="Button_Save" BackgroundColor="Orange"/>
+        
     </StackLayout>
-
 </ContentPage>
 
