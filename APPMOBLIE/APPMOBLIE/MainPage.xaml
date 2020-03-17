@@ -11,7 +11,7 @@
         <Button Text="SCAN BAR CODE" Clicked="ClickScan"/>
         <Label Text="SKU"/>
         <Entry x:Name="Mycode" TextColor="Black"/>
-        
+
         <Label Text="Product name"/>
         <Entry x:Name="ProductName" TextColor="Black"/>
         
