@@ -5,10 +5,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="APPMOBLIE.App">
+
     <Application.Resources>
         <ResourceDictionary>
             <Style x:Key="Normal" TargetType="Label">
-                <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="TextColor" Value="Red"/>
                 <Setter Property="FontSize" Value="20"/>
             </Style>
