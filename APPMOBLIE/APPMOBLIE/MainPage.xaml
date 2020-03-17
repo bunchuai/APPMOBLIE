@@ -11,7 +11,7 @@
         <Button Text="SCAN BAR CODE" Clicked="ClickScan"/>
         <Label Text="SKU"/>
         <Entry x:Name="Mycode" TextColor="Black"/>
-        
+
         <Label Text="Product name"/>
         <Entry x:Name="ProductName" TextColor="Black"/>
         
@@ -21,8 +21,8 @@
         <Label Text="Unit"/>
         <Picker x:Name="Gender" HorizontalOptions="FillAndExpand">
             <Picker.Items>
-                <x:String>อัน</x:String>
-                <x:String>ชิ้น</x:String>
+                <x:String>unit1</x:String>
+                <x:String>unit12</x:String>
             </Picker.Items>
         </Picker>
         
