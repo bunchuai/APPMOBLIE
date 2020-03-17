@@ -17,6 +17,7 @@
 
     <MasterDetailPage.Detail>
         <ContentPage>
+                       
             <ContentPage.Content>
                 <StackLayout Margin="20,0,20,0" VerticalOptions="Center">
                     <Image Source="kodelogo.jpg" WidthRequest="150"/>
