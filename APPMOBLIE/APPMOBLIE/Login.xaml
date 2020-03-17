@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="APPMOBLIE.Login">
+    <ContentPage.Content>
+        <StackLayout Margin="20,0,20,0" VerticalOptions="Center">
+            <Image Source="kodelogo.jpg" WidthRequest="150"/>
+            <Label Text="LOGIN" FontSize="30" HorizontalOptions="Center" TextColor="Orange" />
+            <Label Text="E-mail" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold"/>
+            <Entry x:Name="Email" Placeholder="Enter e-mail Address" FontSize="15"/>
+
+            <Label Text="Password" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold"/>
+            <Entry x:Name="Password" IsPassword="True" MaxLength="8" Placeholder="Enter password" FontSize="15"/>
+
+            <Button Text="SignIn"  Clicked="button_SignIn" BackgroundColor="Orange"/>
+            <Button Text="Reset"   Clicked="Button_Reset" BackgroundColor="Green"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
