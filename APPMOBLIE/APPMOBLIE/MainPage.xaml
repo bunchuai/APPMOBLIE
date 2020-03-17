@@ -21,8 +21,8 @@
         <Label Text="Unit"/>
         <Picker x:Name="Gender" HorizontalOptions="FillAndExpand">
             <Picker.Items>
-                <x:String>อัน</x:String>
-                <x:String>ชิ้น</x:String>
+                <x:String>unit1</x:String>
+                <x:String>unit12</x:String>
             </Picker.Items>
         </Picker>
         
