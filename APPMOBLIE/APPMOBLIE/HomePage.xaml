@@ -1,38 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="APPMOBLIE.HomePage">
-    <MasterDetailPage.Master>
-        <ContentPage Title="Master">
-            <ContentPage.Content>
-                <StackLayout>
-                    <Label Text="MasterPage" TextColor="Aqua" />
-                </StackLayout>
-            </ContentPage.Content>
-        </ContentPage>
-    </MasterDetailPage.Master>
-
-    <MasterDetailPage.Detail>
-        <ContentPage>
-            <ContentPage.Content>
-                <StackLayout Margin="20,0,20,0" VerticalOptions="Center">
-                    <Image Source="kodelogo.jpg" WidthRequest="150"/>
-                    <Label Text="LOGIN" FontSize="30" HorizontalOptions="Center" TextColor="Orange" />
-                    <Label  Style="{StaticResource Normal}" Text="E-mail" HorizontalOptions="Start"   FontAttributes="Bold"/>
-                    <Entry x:Name="Email" Placeholder="Enter e-mail Address" FontSize="15"/>
-
-                    <Label Style="{StaticResource Normal}" Text="Password" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold"/>
-                    <Entry x:Name="Password" IsPassword="True" MaxLength="8" Placeholder="Enter password" FontSize="15"/>
-
-                    <Button  Text="SignIn" Style="{StaticResource ButtonStyle}"  Clicked="button_SignIn"/>
-                    <Button Text="Reset"  Style="{StaticResource ButtonStyle}"   Clicked="Button_Reset"/>
-                </StackLayout>
-            </ContentPage.Content>
-        </ContentPage>
-    </MasterDetailPage.Detail>
+             x:Class="APPMOBLIE.HomePage"
+            BackgroundImageSource="background.png">
+    <StackLayout Margin="20,0,20,0" Orientation="Vertical">
+        <Button ImageSource="desktop" BackgroundColor="Transparent"/>
+        <Button ImageSource="desktop" BackgroundColor="Transparent" />
+    </StackLayout>
 
 
-</MasterDetailPage>
+
+</ContentPage>
