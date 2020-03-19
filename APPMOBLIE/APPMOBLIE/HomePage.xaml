@@ -6,8 +6,9 @@
              mc:Ignorable="d"
              x:Class="APPMOBLIE.HomePage"
             BackgroundImageSource="background.png">
-    <StackLayout>
-     
+    <StackLayout Margin="20,0,20,0" Orientation="Vertical">
+        <Button ImageSource="desktop" BackgroundColor="Transparent"/>
+        <Button ImageSource="desktop" BackgroundColor="Transparent" />
     </StackLayout>
 
 

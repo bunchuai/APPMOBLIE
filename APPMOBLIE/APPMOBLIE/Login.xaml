@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="APPMOBLIE.Login">
+             x:Class="APPMOBLIE.Login"
+             BackgroundImageSource="background.png">
 
     <ContentPage.Content>
         <StackLayout Margin="20,0,20,0" VerticalOptions="Center">
@@ -16,8 +17,19 @@
             <Label Style="{StaticResource Normal}" Text="Password" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold"/>
             <Entry x:Name="Password" IsPassword="True" MaxLength="8" Placeholder="Enter password" FontSize="15"/>
 
-            <Button  Text="SignIn" Style="{StaticResource ButtonStyle}"  Clicked="button_SignIn"/>
-            <Button Text="Reset"  Style="{StaticResource ButtonStyle}"   Clicked="Button_Reset"/>
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button  Text="SignIn" Style="{StaticResource ButtonStyle}"  Clicked="button_SignIn" Grid.Row="1" Grid.Column="0"/>
+                <Button Text="Reset"  Style="{StaticResource ButtonStyle}"   Clicked="Button_Reset" Grid.Row="1" Grid.Column="1"/>
+            </Grid>
+           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
