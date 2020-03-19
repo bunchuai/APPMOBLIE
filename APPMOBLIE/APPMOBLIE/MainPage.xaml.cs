@@ -12,9 +12,11 @@ namespace APPMOBLIE
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        public string currentuserID;
         public MainPage()
         {
             InitializeComponent();
+            currentuserID = (Application.Current.Properties["Username"].ToString());
         }
 
         private async void ClickScan(object sender, EventArgs e)
@@ -27,6 +29,7 @@ namespace APPMOBLIE
                 {
                     await Navigation.PopAsync();
                     Mycode.Text = result.Text;
+                    ProductName.Text = currentuserID;
                 });
             };
         }
@@ -36,7 +39,7 @@ namespace APPMOBLIE
             var Model = new Dictionary<string, string>
             {
                 {"Mycode",this.Mycode.Text},
-                {"ProductName",this.ProductName.Text},
+                {"ProductName", currentuserID},
                 {"Location",this.Location.Text},
                 {"Gender",this.Gender.SelectedItem.ToString()},
                 {"Volume",this.Volume.Text}
