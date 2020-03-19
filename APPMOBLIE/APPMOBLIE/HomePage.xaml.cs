@@ -9,7 +9,6 @@ using Xamarin.Forms.Xaml;
 
 namespace APPMOBLIE
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : MasterDetailPage
     {
         public HomePage()
