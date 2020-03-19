@@ -23,7 +23,6 @@ namespace APPMOBLIE
         {
             using (HttpClient client = new HttpClient())
             {
-                System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
                 string sContentType = "application/json";
                 JObject oJsonObject = new JObject();
                 oJsonObject.Add("UserName", this.Email.Text);

@@ -6,26 +6,23 @@
              mc:Ignorable="d"
              x:Class="APPMOBLIE.MainPage">
     <StackLayout Margin="20,0,20,0" VerticalOptions="Center" >
-        <Button Text="scan barcode" Clicked="ClickScan"  BackgroundColor="Green" TextColor="White"/>
+        <Button Text="scan barcode" Clicked="Button_Scan"  BackgroundColor="Green" TextColor="White"/>
         <Label Text="SKU nunber" />
         <Entry x:Name="Mycode" TextColor="Black"/>
+        
         <Label Text="Product name"/>
         <Entry x:Name="ProductName" TextColor="Black"/>
-        <Label Text="Location"/>
-        <Entry x:Name="Location" TextColor="Black"/>
-        <Label Text="Unit"/>
-        <Picker x:Name="Gender" HorizontalOptions="FillAndExpand">
-            <Picker.Items>
-                <x:String>ชิ้น</x:String>
-                <x:String>อัน</x:String>
-            </Picker.Items>
-        </Picker>
+
+        <Label Text="ProductBrand"/>
+        <Entry x:Name="ProductBrand" TextColor="Black"/>
+        
         <Label Text="Volume"/>
         <Entry x:Name="Volume" TextColor="Black"/>
-        <Label Text="Date"/>
-        <DatePicker x:Name="Datetime"  Format="dd-MM-yyyy"/> 
-        <Button Text="Save" Clicked="Button_Save" BackgroundColor="Orange"/>
-        
+
+        <Label Text="ProductExpireDate"/>
+        <Entry x:Name="ProductExpireDate" TextColor="Black"/>
+
+        <Button Text="scan barcode" Clicked="Button_Reset"  BackgroundColor="Orange" TextColor="White"/>
     </StackLayout>
 </ContentPage>
 
