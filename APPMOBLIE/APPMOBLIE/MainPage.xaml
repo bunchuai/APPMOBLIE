@@ -23,6 +23,8 @@
         <Entry x:Name="ProductExpireDate" TextColor="Black"/>
 
         <Button Text="scan barcode" Clicked="Button_Reset"  BackgroundColor="Orange" TextColor="White"/>
+
+        <Button Text="Add product" Clicked="Button_Add"  BackgroundColor="Orange" TextColor="White"/>
     </StackLayout>
 </ContentPage>
 

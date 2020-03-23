@@ -40,7 +40,7 @@ namespace APPMOBLIE
                         client.BaseAddress = new Uri(Url);
                         client.DefaultRequestHeaders.Clear();
                         client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "hU2zRiAtNuI_JRWyfTK2ZHy9zSw3uZRRQyStAm5_E-to0xQ1yh8dL-he4RsaXIglM3s0NWTeJG9xGQovrM7iwaDvspm8LDPCi6edMtWddb5ITHFy6uaHq0Ir7KiGNJYbvQqiiwTTj2o8QsHO_0rWtMkEnhRvKKjD5WWGWW0MwSzy96tizhW1BXy1AUSxEmMMX4NJxyA6EOICpq2I0QYbPOy979BU9yfA41QKSvTFbDDUNdiKpJKvC-DJ2fShIYD1_h8ZnG4WfWF_6i-NiHNBIlg1Pn5qRABOkhfHQwgxLUXTAqDuth5tUS9QYLDhxDn4i2p3LM_Vp_j6UTAjWkzIZqcZ0bxdzdOEwAST5ht5_9plSmrUTEcNTBy0sYc0cFBXHRG7Nd_eNLsRRD8M3KxXwU_JAqx4hYJuiErk3C9q--ogqCym7QhaXYVhEsGzAVPqrq8L5MZ2fTyruHKNA08FYS2YG52Slm083DtOTpK5VM4EYAMmlCkFUnaTdLG4Syrn");
+                        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "oLQKZ-tbA58nvbw7PuZhSsy3sr_H28YB3U3XGbpEc5pGIpMrB1nKNjpS_mRhDiFt2QOBZw3IntJ3dmrozZKsw6hd2VuLvoS8-0HxMCVsMUbZ6QZD782Ig1rfFFWPJ13qDq-cMoUgE2t-PdFEp_85aqa8crtVD6aRwntMPjDOgOriFBbzCYjeXyQ3JECl4pOZGd2KYhpCM7n4hXjfCA0t2YeQyvbuId1-e-qhltjEzCkRk7uffgtbwC2KAImsw7jrBYFfxeu1DCRRYdi2AsSZVyBHk0pAqcekzv5jlxLaK2Z-5hFVN0EzSA86Z2MkAq_vXPnJMq0ZrlGfZG6l-hJYb7NjGZCKD44euOf4l-dGQqi40wd8oIhacT1WIrr2RoSAxQn3t1TLDU2TNbgd_pW89JAHd9fmF9k-aZt9tCJuFQs-sW7eJQ1spYqQWHEbKYFbf2Aih5ZBDrIbLeh4hRRFOd_zYZgQKqIZ1tpZ_82UwYUG8FyPn9ZexVzr4t4At4cP");
                         HttpResponseMessage response = await client.GetAsync(Url);
                         if (response.IsSuccessStatusCode)
                         {
@@ -73,6 +73,11 @@ namespace APPMOBLIE
             ProductExpireDate.Text = string.Empty;
         }
 
+        private async void Button_Add(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddProduct());
+        }
+
         public class Product
         {
             public string SKUId { get; set; }
@@ -86,6 +91,6 @@ namespace APPMOBLIE
             public DateTime ProductExpireDate { get; set; }
         }
 
-
+        
     }
 }

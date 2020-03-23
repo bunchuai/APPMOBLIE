@@ -9,26 +9,48 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ZXing.Net.Mobile.Forms;
 
 namespace APPMOBLIE
 {
-    public partial class Login : ContentPage
+    public partial class AddProduct : ContentPage
     {
-        public Login()
+        public AddProduct()
         {
             InitializeComponent();
         }
 
-        private async void button_SignIn(object sender, EventArgs e)
+        private async void Button_Scan(object sender, EventArgs e)
+        {
+            var Scan = new ZXingScannerPage();
+            await Navigation.PushAsync(Scan);
+            Scan.OnScanResult += (result) =>
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await Navigation.PopAsync();
+                    Mycode.Text = result.Text;
+                });
+            };
+        }
+
+        private async void Button_Save(object sender, EventArgs e)
         {
             using (HttpClient client = new HttpClient())
             {
                 string sContentType = "application/json";
                 JObject oJsonObject = new JObject();
-                oJsonObject.Add("UserName", this.Email.Text);
-                oJsonObject.Add("Password", this.Password.Text);
+                oJsonObject.Add("SKUId", this.Mycode.Text);
+                oJsonObject.Add("ProductName", this.ProductName.Text);
+                oJsonObject.Add("ProductBrand", this.ProductBrand.Text);
+                oJsonObject.Add("ProductModel", this.ProductModel.Text);
+                oJsonObject.Add("ProductTypeId", this.ProductTypeId.Text);
+                oJsonObject.Add("ProductLocation", this.ProductLocation.Text);
+                oJsonObject.Add("ProductUnit", this.ProductUnit.Text);
+                oJsonObject.Add("ProductDescription", this.ProductDescription.Text);
+                oJsonObject.Add("ProductExpireDate", this.ProductExpireDate.Date);
 
-                string Url = "http://192.168.201.33:8080/api/Account/Login";
+                string Url = "http://192.168.201.33:8080/api/Products/PostProduct";
                 client.BaseAddress = new Uri(Url);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
@@ -40,10 +62,7 @@ namespace APPMOBLIE
                     var Result = JsonConvert.DeserializeObject<CheckLogin>(ResponseData);
                     if (Result.valid == true)
                     {
-                        Application.Current.Properties["Username"] = Result.Username;
-                        Application.Current.Properties["UserId"] = Result.UserId;
-                        await Application.Current.SavePropertiesAsync();
-
+                        await DisplayAlert("Success", "Insert product success", "OK");
                         await Navigation.PushAsync(new MainPage());
                     }
                     else
@@ -51,25 +70,7 @@ namespace APPMOBLIE
                         await DisplayAlert("Warning", "Username or password invalit.", "OK");
                     }
                 }
-                else
-                {
-                    await DisplayAlert("Warning", "Username or password invalit.", "OK");
-                }
             }
-        }
-
-        private void Button_Reset(object sender, EventArgs e)
-        {
-            Email.Text = string.Empty;
-            Password.Text = string.Empty;
-        }
-
-
-        private class UserInfo
-        {
-            public string Email { get; set; }
-            public string HasRegistered { get; set; }
-            public string LoginProvider { get; set; }
         }
 
         private class CheckLogin
