@@ -22,19 +22,6 @@ namespace APPMOBLIE
 
         private async void button_SignIn(object sender, EventArgs e)
         {
-            var Username = this.Email.Text;
-            var Password = this.Password.Text;
-            var Mailpattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
-            if (Regex.IsMatch(Username, Mailpattern) || Username == string.Empty)
-            {
-                ErrorLabalEmail.Text = "Email is valid.";
-            }
-
-            if (Password == string.Empty)
-            {
-                ErrorLabalPassword.Text = "Password is not empty.";
-            }
-
             using (HttpClient client = new HttpClient())
             {
                 string sContentType = "application/json";
@@ -42,7 +29,7 @@ namespace APPMOBLIE
                 oJsonObject.Add("UserName", this.Email.Text);
                 oJsonObject.Add("Password", this.Password.Text);
 
-                string Url = "http://192.168.201.33:8080/api/Account/Login";
+                string Url = "http://203.151.166.97/api/Account/Login";
                 client.BaseAddress = new Uri(Url);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
