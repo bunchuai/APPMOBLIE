@@ -5,19 +5,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="APPMOBLIE.Login"
-             BackgroundImageSource="background.png">
+             BackgroundImage="background.png">
 
     <ContentPage.Content>
         <StackLayout Margin="20,0,20,0" VerticalOptions="Center">
-            
-            <Image Source="logo.png" WidthRequest="150"/>
+            <Image Source="logo.png" WidthRequest="180"/>
             <!--<Label Text="WMS Smart" FontSize="30" HorizontalOptions="Center" TextColor="White" />-->
             <Label  Style="{StaticResource Normal}" Text="E-mail" HorizontalOptions="Start"   FontAttributes="Bold"/>
-            
             <Entry x:Name="Email" Placeholder="Enter e-mail Address" FontSize="15"/>
+            <Label x:Name="ErrorLabalEmail" TextColor="red"/>
 
             <Label Style="{StaticResource Normal}" Text="Password" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold"/>
-            <Entry x:Name="Password" IsPassword="True"/>
+            <Entry  x:Name="Password" IsPassword="True" MaxLength="8" Placeholder="Enter password" FontSize="15"/>
+            <Label x:Name="ErrorLabalPassword" TextColor="red"/>
             <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -30,7 +30,7 @@
                 <Button  Text="SignIn" Style="{StaticResource ButtonStyle}"  Clicked="button_SignIn" Grid.Row="1" Grid.Column="0"/>
                 <Button Text="Reset"  Style="{StaticResource ButtonStyle}"   Clicked="Button_Reset" Grid.Row="1" Grid.Column="1"/>
             </Grid>
-
+           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
