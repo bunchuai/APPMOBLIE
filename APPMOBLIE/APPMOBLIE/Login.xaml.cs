@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -21,6 +22,19 @@ namespace APPMOBLIE
 
         private async void button_SignIn(object sender, EventArgs e)
         {
+            var Username = this.Email.Text;
+            var Password = this.Password.Text;
+            var Mailpattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+            if (Regex.IsMatch(Username, Mailpattern) || Username == string.Empty)
+            {
+                ErrorLabalEmail.Text = "Email is valid.";
+            }
+
+            if (Password == string.Empty)
+            {
+                ErrorLabalPassword.Text = "Password is not empty.";
+            }
+
             using (HttpClient client = new HttpClient())
             {
                 string sContentType = "application/json";
