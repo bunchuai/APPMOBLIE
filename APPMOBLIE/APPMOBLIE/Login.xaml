@@ -5,11 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="APPMOBLIE.Login"
-             BackgroundImageSource="background.png">
+             BackgroundImage="background.png">
 
     <ContentPage.Content>
         <StackLayout Margin="20,0,20,0" VerticalOptions="Center">
-            <Image Source="logo.png" WidthRequest="150"/>
+            <Image Source="logo.png" WidthRequest="180"/>
             <!--<Label Text="WMS Smart" FontSize="30" HorizontalOptions="Center" TextColor="White" />-->
             <Label  Style="{StaticResource Normal}" Text="E-mail" HorizontalOptions="Start"   FontAttributes="Bold"/>
             <Entry x:Name="Email" Placeholder="Enter e-mail Address" FontSize="15"/>
