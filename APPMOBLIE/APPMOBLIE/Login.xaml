@@ -9,7 +9,7 @@
 
     <ContentPage.Content>
         <StackLayout Margin="20,0,20,0" VerticalOptions="Center">
-            <Image Source="Logo-01.png" WidthRequest="150"/>
+            <Image Source="logo.png" WidthRequest="150"/>
             <!--<Label Text="WMS Smart" FontSize="30" HorizontalOptions="Center" TextColor="White" />-->
             <Label  Style="{StaticResource Normal}" Text="E-mail" HorizontalOptions="Start"   FontAttributes="Bold"/>
             <Entry x:Name="Email" Placeholder="Enter e-mail Address" FontSize="15"/>
