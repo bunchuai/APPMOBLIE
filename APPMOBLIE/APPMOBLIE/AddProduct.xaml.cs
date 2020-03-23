@@ -50,7 +50,7 @@ namespace APPMOBLIE
                 oJsonObject.Add("ProductDescription", this.ProductDescription.Text);
                 oJsonObject.Add("ProductExpireDate", this.ProductExpireDate.Date);
 
-                string Url = "http://192.168.201.33:8080/api/Products/PostProduct";
+                string Url = "http://203.151.166.97/api/Products/PostProduct";
                 client.BaseAddress = new Uri(Url);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));

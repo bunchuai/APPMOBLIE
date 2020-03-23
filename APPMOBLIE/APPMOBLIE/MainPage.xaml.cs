@@ -36,7 +36,7 @@ namespace APPMOBLIE
 
                     using (HttpClient client = new HttpClient())
                     {
-                        string Url = "http://192.168.201.33:8080/api/Products/Product?Sku=" + result.Text;
+                        string Url = "http://203.151.166.97/api/Products/Product?Sku=" + result.Text;
                         client.BaseAddress = new Uri(Url);
                         client.DefaultRequestHeaders.Clear();
                         client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
