@@ -9,14 +9,15 @@
     <Application.Resources>
         <ResourceDictionary>
             <Style x:Key="Normal" TargetType="Label">
-                <Setter Property="TextColor" Value="Red"/>
+                <Setter Property="TextColor" Value="White"/>
                 <Setter Property="FontSize" Value="20"/>
             </Style>
             <Style x:Key="ButtonStyle" TargetType="Button">
                 <Setter Property="FontSize" Value="20"/>
-                <Setter Property="TextColor" Value="Orange"/>
+                <Setter Property="TextColor" Value="White"/>
                 <Setter Property="BackgroundColor" Value="Gray"/>
                 <Setter Property="CornerRadius" Value="20"/>
+                <!--<Setter Property="FontAttributes" Value="Bold"/>-->
             </Style>
         </ResourceDictionary>
     </Application.Resources>
