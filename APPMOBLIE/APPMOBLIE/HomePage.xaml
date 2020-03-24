@@ -4,9 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="APPMOBLIE.HomePage"
-            BackgroundImageSource="background.png">
-    <StackLayout Margin="20,0,20,0" Orientation="Vertical">
+             BackgroundImageSource="background.png"
+             x:Class="APPMOBLIE.HomePage">
+
+    <StackLayout Margin="20,0,20,0" VerticalOptions="Center" >
         <Button ImageSource="desktop" BackgroundColor="Transparent" Clicked="Button_Clicked" VerticalOptions="CenterAndExpand"/>
       
     </StackLayout>
