@@ -10,7 +10,7 @@ namespace APPMOBLIE
         {
             InitializeComponent();
 
-            MainPage = new APPMOBLIE.Login();
+            MainPage = new NavigationPage(new Login());
         }
 
         protected override void OnStart()
