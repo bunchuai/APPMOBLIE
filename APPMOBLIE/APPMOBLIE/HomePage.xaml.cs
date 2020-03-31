@@ -16,12 +16,16 @@ namespace APPMOBLIE
             InitializeComponent();
         }
 
+        protected override void OnAppearing()
+        {
+            Username.Text = Application.Current.Properties["Username"].ToString();
+            base.OnAppearing();
+        }
+
         protected override bool OnBackButtonPressed()
         {
             return false;
         }
-
-   
 
         private void Button_Inproduct(object sender, EventArgs e)
         {
@@ -38,9 +42,10 @@ namespace APPMOBLIE
 
         }
 
-        private void Button_Checkproduct(object sender, EventArgs e)
+        private async void Button_Checkproduct(object sender, EventArgs e)
         {
-
+            var Page = new Checkproduct();
+            await Navigation.PushAsync(Page);
         }
 
         private void Button_Addnewproduct(object sender, EventArgs e)
