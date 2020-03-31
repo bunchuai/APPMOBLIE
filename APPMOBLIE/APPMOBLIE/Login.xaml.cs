@@ -45,7 +45,7 @@ namespace APPMOBLIE
                         Application.Current.Properties["UserId"] = Result.UserId;
                         await Application.Current.SavePropertiesAsync();
 
-                        await Navigation.PushAsync(new MainPage());
+                        await Navigation.PushAsync(new HomePage());
                     }
                     else
                     {
