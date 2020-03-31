@@ -7,34 +7,57 @@
              x:Class="APPMOBLIE.Checkproduct">
     <ContentPage.Content>
         <AbsoluteLayout>
-            <Image Source="background1" Aspect="AspectFill"
-                   AbsoluteLayout.LayoutBounds="0,0,1,0.3"
-                   AbsoluteLayout.LayoutFlags="All"/>
-            <StackLayout 
-                AbsoluteLayout.LayoutBounds="0,0,1,0.3"
-                   AbsoluteLayout.LayoutFlags="All"
-                       VerticalOptions="Center"
-                         Padding="0,20,0,0">
-                <Image Source="logo" HeightRequest="100" WidthRequest="100" VerticalOptions="Center"/>
-                <Label Text="Thayart@hotmail.com" HorizontalOptions="Center" Style="{x:StaticResource Normal}"/>
+            <StackLayout BackgroundColor="#b3cde0"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1"
+                   AbsoluteLayout.LayoutFlags="All">
             </StackLayout>
-            <StackLayout BackgroundColor="#b3cde0" 
-                         AbsoluteLayout.LayoutBounds="0,0.6,1,0.5"
+            
+            <Image Source="background" Aspect="AspectFill"
+                   AbsoluteLayout.LayoutBounds="0,0,1,150"
+                   AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"/>
+            
+            <Image Source="logo" HeightRequest="50" WidthRequest="50" 
+                   AbsoluteLayout.LayoutBounds="0.5,0.2,100,100"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                   />
+                <Label Text="Thayart@hotmail.com" HorizontalOptions="Center"/>
+           
+            
+            <!--<StackLayout AbsoluteLayout.LayoutBounds="1,0.5,1,0.9"
                    AbsoluteLayout.LayoutFlags="All"
-                        VerticalOptions="Center"
-                         Padding="20">
-                <Button Text="scan barcode" Clicked="Button_Scan"  BackgroundColor="Green" TextColor="White"
-                        CornerRadius="15" HeightRequest="40"/>
-                <Grid>
+                       VerticalOptions="Center">
+                <Grid Padding="20" RowSpacing="10" BackgroundColor="AliceBlue">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
+
+                    <Label Text="SKU ID" Grid.ColumnSpan="2"  Grid.Row="0" />
+                    <Label Text="Product Name" Grid.ColumnSpan="2" Grid.Row="1" />
+                    <Label Text="Product Brand" Grid.ColumnSpan="2" Grid.Row="2" />
+                    <Label Text="Product Model" Grid.ColumnSpan="2"  Grid.Row="3" />
+                    <Label Text="InStock" Grid.Column="0" Grid.Row="4" />
+                    <Label Text="OutStock" Grid.Column="1" Grid.Row="4" />
+                    <Label Text="Total" Grid.ColumnSpan="2" Grid.Row="5" />
+                    <Button Text="scan barcode" Clicked=""  
+                    BackgroundColor="Green" 
+                    TextColor="White"
+                        CornerRadius="20" 
+                    HeightRequest="40" 
+                        Grid.ColumnSpan="2" Grid.Row="6"
+                    VerticalOptions="Center"
+                        HorizontalOptions="Center"/>
                 </Grid>
-                <Entry x:Name="Mycode" TextColor="Black" Placeholder="SKU"/>
-            </StackLayout>
-
-
-
+            </StackLayout>-->
+            
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
