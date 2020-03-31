@@ -51,14 +51,14 @@
                          BackgroundColor="black"
                          AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                          Opacity="0.6">
-                <Button Text="back" Clicked=""  
+                <Button Text="back" 
                     BackgroundColor="Transparent" 
                     TextColor="White"
                       HorizontalOptions="CenterAndExpand"
                         FontSize="15"
                         FontAttributes="Bold"
                         />
-                <Button Text="scan barcode" Clicked=""  
+                <Button Text="scan barcode" 
                          BackgroundColor="Transparent" 
                     TextColor="White"
                          FontSize="15"
