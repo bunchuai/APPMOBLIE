@@ -14,7 +14,11 @@ namespace APPMOBLIE
         public HomePage()
         {
             InitializeComponent();
+        }
 
+        protected override bool OnBackButtonPressed()
+        {
+            return false;
         }
 
         private void Button_Clicked(object sender, EventArgs e)

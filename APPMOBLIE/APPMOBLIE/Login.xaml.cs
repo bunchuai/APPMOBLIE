@@ -45,16 +45,20 @@ namespace APPMOBLIE
                         Application.Current.Properties["UserId"] = Result.UserId;
                         await Application.Current.SavePropertiesAsync();
 
-                        await Navigation.PushAsync(new HomePage());
+                        var Page = new HomePage();
+                        await Navigation.PushAsync(Page);
+                        NavigationPage.SetHasNavigationBar(Page, false);
                     }
                     else
                     {
-                        await DisplayAlert("Warning", "Username or password invalit.", "OK");
+                        displayError.Text = "Username or password invalit.";
+                        //await DisplayAlert("Warning", "Username or password invalit.", "OK");
                     }
                 }
                 else
                 {
-                    await DisplayAlert("Warning", "Username or password invalit.", "OK");
+                    displayError.Text = "Username or password invalit.";
+                    //await DisplayAlert("Warning", "Username or password invalit.", "OK");
                 }
             }
         }
