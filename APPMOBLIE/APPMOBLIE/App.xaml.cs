@@ -10,7 +10,9 @@ namespace APPMOBLIE
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Login());
+            var Page = new Login();
+            MainPage = new NavigationPage(Page);
+            NavigationPage.SetHasNavigationBar(Page, false);
         }
 
         protected override void OnStart()

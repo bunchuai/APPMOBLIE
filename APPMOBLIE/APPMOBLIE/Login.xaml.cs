@@ -43,6 +43,7 @@ namespace APPMOBLIE
                     {
                         Application.Current.Properties["Username"] = Result.Username;
                         Application.Current.Properties["UserId"] = Result.UserId;
+                        Application.Current.Properties["CompanyId"] = Result.CompanyId;
                         await Application.Current.SavePropertiesAsync();
 
                         var Page = new HomePage();
@@ -82,6 +83,7 @@ namespace APPMOBLIE
             public bool valid { get; set; }
             public string Username { get; set; }
             public string UserId { get; set; }
+            public int CompanyId { get; set; }
         }
     }
 }
