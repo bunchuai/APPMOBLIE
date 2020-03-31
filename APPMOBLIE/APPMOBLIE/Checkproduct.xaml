@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="APPMOBLIE.Checkproduct">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="background1" Aspect="AspectFill"
+                   AbsoluteLayout.LayoutBounds="0,0,1,0.3"
+                   AbsoluteLayout.LayoutFlags="All"/>
+            <StackLayout 
+                AbsoluteLayout.LayoutBounds="0,0,1,0.3"
+                   AbsoluteLayout.LayoutFlags="All"
+                       VerticalOptions="Center"
+                         Padding="0,20,0,0">
+                <Image Source="logo" HeightRequest="100" WidthRequest="100" VerticalOptions="Center"/>
+                <Label Text="Thayart@hotmail.com" HorizontalOptions="Center" Style="{x:StaticResource Normal}"/>
+            </StackLayout>
+            <StackLayout BackgroundColor="#b3cde0" 
+                         AbsoluteLayout.LayoutBounds="0,0.6,1,0.5"
+                   AbsoluteLayout.LayoutFlags="All"
+                        VerticalOptions="Center"
+                         Padding="20">
+                <Button Text="scan barcode" Clicked="Button_Scan"  BackgroundColor="Green" TextColor="White"
+                        CornerRadius="15" HeightRequest="40"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Entry x:Name="Mycode" TextColor="Black" Placeholder="SKU"/>
+            </StackLayout>
+
+
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
