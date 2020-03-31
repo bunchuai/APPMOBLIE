@@ -21,9 +21,36 @@ namespace APPMOBLIE
             return false;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+   
+
+        private void Button_Inproduct(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Login());
+
+        }
+
+        private void Button_Outproduct(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Transection(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Checkproduct(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Addnewproduct(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Setting(object sender, EventArgs e)
+        {
+
         }
     }
 }
