@@ -10,19 +10,16 @@
     <ContentPage.Content>
         <ScrollView>
             <RelativeLayout>
-              
-                <BoxView Color="White"    HeightRequest="100" AbsoluteLayout.LayoutBounds="0,0,1,0.2" AbsoluteLayout.LayoutFlags="PositionProportional"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+           
                 <Button BorderRadius="35" x:Name="imageCircleBack"
-            BackgroundColor="Maroon" HeightRequest="70" WidthRequest="70" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=.5, Constant = -35}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=0, Property=Y, Constant=70}" />
-                <Button BorderRadius="30" BackgroundColor="Red" HeightRequest="60"
-            WidthRequest="60" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=imageCircleBack, Property=X, Factor=1,Constant=5}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=0, Property=Y, Constant=75}" />
+            BackgroundColor="White" HeightRequest="70" WidthRequest="70" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=.5, Constant = -35}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=0, Property=Y, Constant=50}" />
+                
                 <Label Text="User Name" x:Name="Username" FontAttributes="Bold" FontSize="16"
             HorizontalTextAlignment="Center" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=140}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
                 <!--<Entry Text="Bio + Hashtags" TextColor="White" BackgroundColor="Maroon"
             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=180}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />-->
                 <RelativeLayout  BackgroundColor="White" RelativeLayout.YConstraint="
-            {ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=220}"  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" >
+            {ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=180}"  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" >
                     <Button Text="IN" BackgroundColor="Green" Clicked="Button_Inproduct" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
                     Property=Y, Factor=0, Constant=5}" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, 
                     Property=X, Factor=0, Constant=5}" />
@@ -44,7 +41,7 @@
                 </RelativeLayout>
                 <RelativeLayout Padding="5,0,0,0">
                     <Button FontSize="16" Text="All Transctions" BackgroundColor="Gray" TextColor="White" Clicked="Button_Transection"
-                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=280}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=280}"
             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2, Constant=0}"
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
@@ -60,7 +57,7 @@
                 </RelativeLayout>
                 <RelativeLayout  Padding="5,0,0,0">
                     <Button FontSize="16" Text="Add New Product" BackgroundColor="Gray" TextColor="White" Clicked="Button_Addnewproduct"
-            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=370}"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=400}"
             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2, Constant=0}"
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
@@ -68,7 +65,7 @@
 
                 <RelativeLayout  Padding="5,0,0,0">
                     <Button FontSize="16" Text="Setting" BackgroundColor="Gray" TextColor="White" Clicked="Button_Setting"
-            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=420}"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=450}"
             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2, Constant=0}"
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
