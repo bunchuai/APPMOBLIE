@@ -18,7 +18,15 @@ namespace APPMOBLIE
         public Checkproduct()
         {
             InitializeComponent();
-            
+            Skuinfo.Text = "Product SKU : "+ "34290534445";
+            Prodn.Text = "Pen";
+            Prodb.Text = "Quantum";
+            Prodm.Text = "Geloplus";
+            Proin.Text = "20";
+            Proout.Text = "10";
+            Total.Text = "10";
+
+
         }
 
         private async void Button_Scan(object sender, EventArgs e)
@@ -43,8 +51,8 @@ namespace APPMOBLIE
                         {
                             var ResponseData = await response.Content.ReadAsStringAsync();
                             var Result = JsonConvert.DeserializeObject<ProductDetail>(ResponseData);
-                        
-                            Skuinfo.Text = Result.Sku;
+
+                            Skuinfo.Text = "Product SKU : " + Result.Sku;
                             Prodn.Text = Result.Name;
                             Prodb.Text = Result.Brand;
                             Prodm.Text = Result.Model;
@@ -52,6 +60,7 @@ namespace APPMOBLIE
                             Proout.Text = Result.ProductOut.ToString();
                             Total.Text = Result.Amount.ToString();
                         }
+                       
                     }
                 });
             };
