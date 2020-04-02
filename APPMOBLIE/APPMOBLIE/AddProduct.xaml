@@ -4,9 +4,82 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="APPMOBLIE.AddProduct">
+             x:Class="APPMOBLIE.AddProduct"
+             BackgroundImageSource="background.png"
+
+             >
     
-    <StackLayout Margin="20,0,20,0" VerticalOptions="Center" >
+    <ContentPage.Content>
+        <ScrollView>
+            <RelativeLayout>
+                <Button BorderRadius="35" x:Name="imageCircleBack" 
+                 BackgroundColor="White" HeightRequest="70" WidthRequest="70" 
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                 Property=Width, Factor=.5, Constant = -35}" 
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
+                 Factor=0, Property=Y, Constant=60}" />
+
+                <RelativeLayout  BackgroundColor="#BED1E5" 
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=100}"  
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height, Factor=1}" 
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" >
+
+                    <Label Text="User Name" x:Name="Username"  FontSize="16"
+                 HorizontalTextAlignment="Center" 
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=30}" 
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+
+                    <Button Text="scan barcode" Clicked="Button_Scan"  BackgroundColor="Green" TextColor="White"/>
+                    <Button Text="Save product" Clicked="Button_Save" BackgroundColor="Green" TextColor="White"/>
+                    <Label Text="SKU nunber" />
+                    <Entry x:Name="Mycode" TextColor="Black"/>
+
+                    <Label Text="Product name"/>
+                    <Entry x:Name="ProductName" TextColor="Black"/>
+
+                    <Label Text="ProductBrand"/>
+                    <Entry x:Name="ProductBrand" TextColor="Black"/>
+
+                    <Label Text="ProductModel"/>
+                    <Entry x:Name="ProductModel" TextColor="Black"/>
+
+                    <Label Text="ProductTypeId"/>
+                    <Entry x:Name="ProductTypeId" TextColor="Black"/>
+
+                    <Label Text="ProductLocation"/>
+                    <Entry x:Name="ProductLocation" TextColor="Black"/>
+
+                    <Label Text="ProductUnit"/>
+                    <Entry x:Name="ProductUnit" TextColor="Black"/>
+
+                    <Label Text="ProductDescription"/>
+                    <Entry x:Name="ProductDescription" TextColor="Black"/>
+
+                    <Label Text="ProductExpireDate"/>
+                    <DatePicker x:Name="ProductExpireDate" TextColor="Black" Format="dd-MM-yyyy"/>
+
+
+
+
+                    <!--<Button ImageSource="In32.png"  HeightRequest="70" WidthRequest="100" CornerRadius="10" Text="IN" FontSize="18"
+                             BackgroundColor="#00B189"  
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=5}" 
+                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0.3, Constant=70}" />
+
+                    <Button ImageSource="Out32.png" HeightRequest="70" WidthRequest="100" CornerRadius="10" Text="OUT" FontSize="18" BackgroundColor="#FF4242"  
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=5}" 
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}"  />-->
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+
+
+    <!--<StackLayout Margin="20,0,20,0" VerticalOptions="Center" >
         <Button Text="scan barcode" Clicked="Button_Scan"  BackgroundColor="Green" TextColor="White"/>
         <Button Text="Save product" Clicked="Button_Save" BackgroundColor="Green" TextColor="White"/>
         <Label Text="SKU nunber" />
@@ -37,6 +110,6 @@
         <DatePicker x:Name="ProductExpireDate" TextColor="Black" Format="dd-MM-yyyy"/>
 
        
-    </StackLayout>
+    </StackLayout>-->
     
 </ContentPage>

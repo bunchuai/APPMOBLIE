@@ -5,14 +5,43 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="APPMOBLIE.AllTransection"
-             Title="Report" 
+             Title="Transection" 
+             BackgroundImageSource="background.png"
              IconImageSource="iconstrans">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="All Transection"
-                   FontSize="60"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <RelativeLayout>
+                <Button BorderRadius="35" x:Name="imageCircleBack" 
+                 BackgroundColor="White" HeightRequest="70" WidthRequest="70" 
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                 Property=Width, Factor=.5, Constant = -35}" 
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
+                 Factor=0, Property=Y, Constant=60}" />
+                
+                <RelativeLayout  BackgroundColor="#BED1E5" 
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=100}"  
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height, Factor=1}" 
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" >
+
+                 <Label Text="User Name" x:Name="Username"  FontSize="16"
+                 HorizontalTextAlignment="Center" 
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=30}" 
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+                    
+                    <!--<Button ImageSource="In32.png"  HeightRequest="70" WidthRequest="100" CornerRadius="10" Text="IN" FontSize="18"
+                             BackgroundColor="#00B189"  
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=5}" 
+                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0.3, Constant=70}" />
+
+                    <Button ImageSource="Out32.png" HeightRequest="70" WidthRequest="100" CornerRadius="10" Text="OUT" FontSize="18" BackgroundColor="#FF4242"  
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=5}" 
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}"  />-->
+                            
+                </RelativeLayout>
+
+                
+            </RelativeLayout>
+        </ScrollView>
     </ContentPage.Content>
+
 </ContentPage>

@@ -9,6 +9,7 @@
             Title="Search" 
              IconImageSource="iconsscan">
     <ContentPage.Content>
+        
         <AbsoluteLayout>
             <Image Source="background" Aspect="AspectFill"
                    AbsoluteLayout.LayoutBounds="0,0,1,0.3"
