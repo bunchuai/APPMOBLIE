@@ -44,11 +44,9 @@
                 
                 <RelativeLayout Padding="5,0,0,0">
 
-                    <Button FontSize="14"  WidthRequest="150
-" Text="All Transctions" BackgroundColor="#1D92C7" TextColor="White"  CornerRadius="10" 
-                          FontAttributes="Bold"
-                        Clicked="Button_Transection"
-                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=300}"
+                    <Button FontSize="14"  WidthRequest="150" Text="All Transctions" BackgroundColor="#1D92C7" TextColor="White"  CornerRadius="10" 
+                          FontAttributes="Bold" Clicked="Button_Transection"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=300}"
             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.17, Constant=0}"
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
