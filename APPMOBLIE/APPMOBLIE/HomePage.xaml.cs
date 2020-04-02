@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 
 namespace APPMOBLIE
 {
-    public partial class HomePage : ContentPage
+    public partial class HomePage : TabbedPage
     {
         public HomePage()
         {
@@ -18,7 +18,7 @@ namespace APPMOBLIE
 
         protected override void OnAppearing()
         {
-            Username.Text = Application.Current.Properties["Username"].ToString();
+            //Username.Text = Application.Current.Properties["Username"].ToString();
             base.OnAppearing();
         }
 

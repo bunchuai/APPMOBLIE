@@ -1,13 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-  
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:APPMOBLIE"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              BackgroundImageSource="background.png"
              x:Class="APPMOBLIE.HomePage">
-    <ContentPage.Content>
+    <local:AllTransection></local:AllTransection>
+    <local:MainPage></local:MainPage>
+    <local:Checkproduct></local:Checkproduct>
+    <local:SettingPage></local:SettingPage>
+   
+  
+</TabbedPage>
+
+
+<!--<ContentPage.Content>
         <ScrollView>
             <RelativeLayout>
 
@@ -41,7 +51,7 @@
                     RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}"  />
                             
                 </RelativeLayout>
-                
+
                 <RelativeLayout Padding="5,0,0,0">
 
                     <Button FontSize="14"  WidthRequest="150" Text="All Transctions" BackgroundColor="#1D92C7" TextColor="White"  CornerRadius="10" 
@@ -73,20 +83,6 @@
             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
 
                 </RelativeLayout>
-                <!--<RelativeLayout  Padding="5,0,0,0">
-                </RelativeLayout>
-                <RelativeLayout  Padding="5,0,0,0">
-                </RelativeLayout>
-
-                <RelativeLayout  Padding="5,0,0,0">
-                </RelativeLayout>-->
             </RelativeLayout>
         </ScrollView>
-    </ContentPage.Content>
-
-    <!--<StackLayout Margin="20,0,20,0" VerticalOptions="Center" >
-        <Button ImageSource="desktop" BackgroundColor="Transparent" Clicked="Button_Clicked" VerticalOptions="CenterAndExpand"/>
-      
-    </StackLayout>-->
-
-</ContentPage>
+    </ContentPage.Content>-->

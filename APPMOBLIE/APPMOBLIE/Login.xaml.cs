@@ -46,7 +46,9 @@ namespace APPMOBLIE
                         Application.Current.Properties["CompanyId"] = Result.ComId;
                         await Application.Current.SavePropertiesAsync();
 
+
                         var Page = new HomePage();
+                       
                         await Navigation.PushAsync(Page);
                         NavigationPage.SetHasNavigationBar(Page, false);
                     }

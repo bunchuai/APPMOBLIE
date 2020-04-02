@@ -5,7 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="APPMOBLIE.Checkproduct"
-             BackgroundColor="#b3cde0">
+             BackgroundColor="#b3cde0"
+            Title="Search" 
+             IconImageSource="iconsscan">
     <ContentPage.Content>
         <AbsoluteLayout>
             <Image Source="background" Aspect="AspectFill"

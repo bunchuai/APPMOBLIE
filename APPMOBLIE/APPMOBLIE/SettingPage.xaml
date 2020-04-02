@@ -4,12 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="APPMOBLIE.AllTransection"
-             Title="Report" 
-             IconImageSource="iconstrans">
+             x:Class="APPMOBLIE.SettingPage"
+             BackgroundImageSource="background"
+             Title="Setting" 
+             IconImageSource="iconssett">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="All Transection"
+            <Label Text="Setting Page"
                    FontSize="60"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

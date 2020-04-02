@@ -4,7 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="APPMOBLIE.MainPage">
+             x:Class="APPMOBLIE.MainPage"
+             Title="Add New" 
+             IconImageSource="iconsadd">
     <StackLayout Margin="20,0,20,0" VerticalOptions="Center" >
         <Button Text="scan barcode" Clicked="Button_Scan"  BackgroundColor="Green" TextColor="White"/>
         <Label Text="SKU nunber" />
