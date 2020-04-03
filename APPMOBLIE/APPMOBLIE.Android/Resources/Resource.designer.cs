@@ -8417,6 +8417,9 @@ namespace APPMOBLIE.Droid
 			// aapt resource value: 0x7F070087
 			public const int tooltip_frame_light = 2131165319;
 			
+			// aapt resource value: 0x7F070088
+			public const int userpic = 2131165320;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

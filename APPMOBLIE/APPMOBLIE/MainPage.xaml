@@ -8,42 +8,126 @@
              Title="Add New" 
              IconImageSource="iconsadd"
                   BackgroundImageSource="background.png"
-             >
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
 
     <ContentPage.Content>
         <ScrollView>
             <RelativeLayout>
-                <Button BorderRadius="35" x:Name="imageCircleBack" 
+                <!--<Button BorderRadius="35" x:Name="imageCircleBack" 
                  BackgroundColor="White" HeightRequest="70" WidthRequest="70" 
                  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
                  Property=Width, Factor=.5, Constant = -35}" 
                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
-                 Factor=0, Property=Y, Constant=60}" />
+                 Factor=0, Property=Y, Constant=60}" />-->
+
 
                 <RelativeLayout  BackgroundColor="#BED1E5" 
-                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=100}"  
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=90}"  
                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height, Factor=1}" 
                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" >
 
+                    <ic:CircleImage Source="userpic.png" HeightRequest="80" WidthRequest="80" Aspect="AspectFill"  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                 Property=Width, Factor=.5, Constant = -38}" 
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
+                 Factor=0, Property=Y, Constant=-45}" />
+
+
                     <Label Text="User Name" x:Name="Username"  FontSize="16"
                  HorizontalTextAlignment="Center" 
-                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=30}" 
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=35}" 
                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
-
 
                     <!--<Button ImageSource="In32.png"  HeightRequest="70" WidthRequest="100" CornerRadius="10" Text="IN" FontSize="18"
                              BackgroundColor="#00B189"  
                              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=5}" 
-                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0.3, Constant=70}" />
+                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0.3, Constant=70}" />-->
 
-                    <Button ImageSource="Out32.png" HeightRequest="70" WidthRequest="100" CornerRadius="10" Text="OUT" FontSize="18" BackgroundColor="#FF4242"  
-                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=5}" 
-                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}"  />-->
+                    <Button  HeightRequest="50" WidthRequest="250" CornerRadius="10" Text="Scan bar code" 
+                             TextColor="White" FontSize="18" BackgroundColor="#0095b6" Clicked="Button_Scan"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=1}" 
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}"  />
+
+                </RelativeLayout>
+                
+                <RelativeLayout Margin="20,0,30,0">
+
+                    <!--<Button Text="scan barcode" Clicked="Button_Scan"  BackgroundColor="Green" TextColor="White"/>-->
+                    <Label Text="SKU nunber" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=280}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.25,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
+                    <Entry x:Name="Mycode" TextColor="Black"  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=255}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3, Constant=0}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.7,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}"  />
+                </RelativeLayout>
+
+                <RelativeLayout Margin="20,0,30,0">
+                    <Label Text="Product name" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=350}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.25,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
+                    <Entry x:Name="ProductName" TextColor="Black" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=325}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3, Constant=0}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.7,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}"  />
+                </RelativeLayout>
+
+                <RelativeLayout Margin="20,0,30,0">
+
+                    <Label Text="ProductBrand" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=420}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.25,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
+                    <Entry x:Name="ProductBrand" TextColor="Black" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=395}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3, Constant=0}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.7,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}"  />
 
                 </RelativeLayout>
 
+                <RelativeLayout Margin="20,0,30,0">
 
+                    <Label Text="Quality" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=490}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.25,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
+                    <Entry x:Name="Volume" TextColor="Black" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=465}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3, Constant=0}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.7,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}"  />
+                </RelativeLayout>
+
+                <RelativeLayout Margin="20,0,30,0">
+
+                    <Label Text="ExpireDate" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=560}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.25,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
+                    <Entry x:Name="ProductExpireDate" TextColor="Black" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=535}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3, Constant=0}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.7,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}"  />
+                </RelativeLayout>
+
+                <RelativeLayout Margin="20,0,30,0">
+
+                    <Button Text="Reset" Clicked="Button_Reset"  BackgroundColor="#948D9B" TextColor="White" 
+                            HeightRequest="40" WidthRequest="120" CornerRadius="10" 
+                             
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=650}" 
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.1}" 
+                             />
+
+                    <Button Text="Add product" Clicked="Button_Add"  BackgroundColor="#2B976C" TextColor="White" 
+                            HeightRequest="40" WidthRequest="120" CornerRadius="10" 
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=650}" 
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.63}"   />
+                </RelativeLayout>
             </RelativeLayout>
+
+
+           
         </ScrollView>
     </ContentPage.Content>
 
@@ -51,26 +135,10 @@
 
 
 
-    <StackLayout Margin="20,0,20,0" VerticalOptions="Center" >
-        <Button Text="scan barcode" Clicked="Button_Scan"  BackgroundColor="Green" TextColor="White"/>
-        <Label Text="SKU nunber" />
-        <Entry x:Name="Mycode" TextColor="Black"/>
+    <!--<StackLayout Margin="20,0,20,0" VerticalOptions="Center" >
+       
         
-        <Label Text="Product name"/>
-        <Entry x:Name="ProductName" TextColor="Black"/>
-
-        <Label Text="ProductBrand"/>
-        <Entry x:Name="ProductBrand" TextColor="Black"/>
-        
-        <Label Text="Volume"/>
-        <Entry x:Name="Volume" TextColor="Black"/>
-
-        <Label Text="ProductExpireDate"/>
-        <Entry x:Name="ProductExpireDate" TextColor="Black"/>
-
-        <Button Text="scan barcode" Clicked="Button_Reset"  BackgroundColor="Orange" TextColor="White"/>
-
-        <Button Text="Add product" Clicked="Button_Add"  BackgroundColor="Orange" TextColor="White"/>
-    </StackLayout>
+       
+    </StackLayout>-->
 </ContentPage>
 

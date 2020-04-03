@@ -9,13 +9,13 @@
              BackgroundImageSource="background.png"
              x:Class="APPMOBLIE.HomePage"
             BarTextColor="Black"
-            BarBackgroundColor="#f7f7f7">
+            BarBackgroundColor="#f7f7f7"
+            >
     <local:AllTransection></local:AllTransection>
     <local:MainPage></local:MainPage>
     <local:Checkproduct></local:Checkproduct>
     <local:SettingPage></local:SettingPage>
-   
-  
+
 </TabbedPage>
 
     

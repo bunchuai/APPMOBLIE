@@ -7,25 +7,33 @@
              x:Class="APPMOBLIE.AllTransection"
              Title="Transection" 
              BackgroundImageSource="background.png"
-             IconImageSource="iconstrans">
+             IconImageSource="iconstrans"
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
     <ContentPage.Content>
         <ScrollView>
             <RelativeLayout>
-                <Button BorderRadius="35" x:Name="imageCircleBack" 
+                <!--<Button BorderRadius="35" x:Name="imageCircleBack" 
                  BackgroundColor="White" HeightRequest="70" WidthRequest="70" 
                  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
                  Property=Width, Factor=.5, Constant = -35}" 
                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
-                 Factor=0, Property=Y, Constant=60}" />
+                 Factor=0, Property=Y, Constant=60}" />-->
                 
+
                 <RelativeLayout  BackgroundColor="#BED1E5" 
-                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=100}"  
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=90}"  
                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height, Factor=1}" 
                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" >
 
+                    <ic:CircleImage Source="userpic.png" HeightRequest="80" WidthRequest="80" Aspect="AspectFill"  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                 Property=Width, Factor=.5, Constant = -38}" 
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
+                 Factor=0, Property=Y, Constant=-45}" />
+                    
+                    
                  <Label Text="User Name" x:Name="Username"  FontSize="16"
                  HorizontalTextAlignment="Center" 
-                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=30}" 
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=35}" 
                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
                     
                     <!--<Button ImageSource="In32.png"  HeightRequest="70" WidthRequest="100" CornerRadius="10" Text="IN" FontSize="18"
