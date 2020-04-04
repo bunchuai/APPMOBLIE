@@ -7,10 +7,103 @@
              x:Class="APPMOBLIE.Checkproduct"
              BackgroundColor="#b3cde0"
             Title="Search" 
-             IconImageSource="iconsscan">
+             IconImageSource="iconsscan"
+             BackgroundImageSource="background.png"
+            
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+    
     <ContentPage.Content>
+        <ScrollView>
+            <RelativeLayout>
+
+                <RelativeLayout  BackgroundColor="#BED1E5" 
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=90}"  
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height, Factor=1}" 
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" >
+
+                    <ic:CircleImage Source="userpic.png" HeightRequest="80" WidthRequest="80" Aspect="AspectFill"  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                 Property=Width, Factor=.5, Constant = -38}" 
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
+                 Factor=0, Property=Y, Constant=-45}" />
+
+
+                    <Label Text="User Name" x:Name="Username"  FontSize="16"
+                 HorizontalTextAlignment="Center" 
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=35}" 
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+
+                    <!--<Button ImageSource="In32.png"  HeightRequest="70" WidthRequest="100" CornerRadius="10" Text="IN" FontSize="18"
+                             BackgroundColor="#00B189"  
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=5}" 
+                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0.3, Constant=70}" />
+
+                    <Button ImageSource="Out32.png" HeightRequest="70" WidthRequest="100" CornerRadius="10" Text="OUT" FontSize="18" BackgroundColor="#FF4242"  
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=5}" 
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}"  />-->
+
+                    <Button Text="scan barcode"  Clicked="Button_Scan"
+                        HeightRequest="50" WidthRequest="250" CornerRadius="10" 
+                             TextColor="White" FontSize="18" BackgroundColor="#0095b6"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=1}" 
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}"  />
+
+                </RelativeLayout>
+                <RelativeLayout  Margin="20,0,30,0">
+                    <Label x:Name="Skuinfo" Text="{Binding StringFormat='Sku Id : {0}'}"  
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=280}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
+                    <Label x:Name="Prodn" Text="{Binding StringFormat='Product Name : {0}'}" 
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=320}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
+                    <Label x:Name="Prodb" Text="{Binding StringFormat='Brand : {0}'}"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=360}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
+                    <Label x:Name="Prodm" Text="{Binding StringFormat='Model : {0}'}"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=400}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
+                    <Label x:Name="Proin" Text="{Binding StringFormat='In Stock : {0}'}"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=460}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
+                    <Label x:Name="Proout" Text="{Binding StringFormat='Out Stock : {0}'}"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=500}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
+                    <Label x:Name="Total" Text="{Binding StringFormat='Available : {0}'}"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=540}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
+
+
+
+                </RelativeLayout>
+                <!--<RelativeLayout>
+                    --><!--<Label x:Name="Skuinfo" Text="{Binding StringFormat='Sku Id : {0}'}" 
+                           Grid.ColumnSpan="2"  Grid.Row="1" />-->
+                    <!--<Label x:Name="Prodn" Text="{Binding StringFormat='Product Name : {0}'}"  Grid.ColumnSpan="2" Grid.Row="2" />--><!--
+                    <Label x:Name="Prodb" Text="{Binding StringFormat='Brand : {0}'}"  Grid.ColumnSpan="2" Grid.Row="3" />
+                    <Label x:Name="Prodm" Text="{Binding StringFormat='Model : {0}'}"  Grid.ColumnSpan="2"  Grid.Row="4" />
+                    <Label x:Name="Proin" Text="{Binding StringFormat='In Stock : {0}'}" Grid.Column="0" Grid.Row="5" />
+                    <Label x:Name="Proout" Text="{Binding StringFormat='Out Stock : {0}'}" Grid.Column="1" Grid.Row="5" />
+                    <Label x:Name="Total" Text="{Binding StringFormat='Available : {0}'}" Grid.ColumnSpan="2" Grid.Row="6" />
+                </RelativeLayout>-->
+
+
+            </RelativeLayout>
+        </ScrollView>
         
-        <AbsoluteLayout>
+        <!--<AbsoluteLayout>
             <Image Source="background" Aspect="AspectFill"
                    AbsoluteLayout.LayoutBounds="0,0,1,0.3"
                    AbsoluteLayout.LayoutFlags="All"
@@ -59,6 +152,6 @@
                     <Label x:Name="Total" Text="{Binding StringFormat='Available : {0}'}" Grid.ColumnSpan="2" Grid.Row="6" />
                 </Grid>
             </StackLayout>
-        </AbsoluteLayout>
+        </AbsoluteLayout>-->
     </ContentPage.Content>
 </ContentPage>
