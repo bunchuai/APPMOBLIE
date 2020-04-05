@@ -24,6 +24,12 @@ namespace APPMOBLIE
             currentuserID = (Application.Current.Properties["Username"].ToString());
         }
 
+        protected override void OnAppearing()
+        {
+            Username.Text = Application.Current.Properties["Username"].ToString();
+            base.OnAppearing();
+        }
+
         private async void Button_Scan(object sender, EventArgs e)
         {
             var Scan = new ZXingScannerPage();

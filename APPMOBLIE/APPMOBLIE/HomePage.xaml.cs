@@ -18,7 +18,7 @@ namespace APPMOBLIE
 
         protected override void OnAppearing()
         {
-            //Username.Text = Application.Current.Properties["Username"].ToString();
+         //   Username.Text = Application.Current.Properties["Username"].ToString();
             base.OnAppearing();
         }
 

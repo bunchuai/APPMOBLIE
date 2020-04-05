@@ -10,10 +10,25 @@
              IconImageSource="iconssett">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Setting Page"
+            <!--<Label Text="Setting Page"
                    FontSize="60"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" /> -->
+            <Image
+                  x:Name="image"
+                  Grid.Row="1"
+                  BackgroundColor="#F0F0F0"/>   
+           <!-- <Button
+                  Text="Take Photo"
+                  BackgroundColor="Lime"
+                  Grid.Row="2"
+                  Clicked="TakePhoto_Clicked"/>    -->
+
+            <Button
+                  Text="Signout"
+                  BackgroundColor="Lime"
+                  Grid.Row="2"
+                  Clicked="Button_Signout"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

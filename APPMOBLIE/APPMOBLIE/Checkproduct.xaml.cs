@@ -12,7 +12,6 @@ using ZXing.Net.Mobile.Forms;
 
 namespace APPMOBLIE
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Checkproduct : ContentPage
     {
         public Checkproduct()
@@ -27,6 +26,12 @@ namespace APPMOBLIE
             //Total.Text = "10";
 
 
+        }
+
+        protected override void OnAppearing()
+        {
+            Username.Text = Application.Current.Properties["Username"].ToString();
+            base.OnAppearing();
         }
 
         private async void Button_Scan(object sender, EventArgs e)
@@ -65,7 +70,6 @@ namespace APPMOBLIE
                 });
             };
         }
-
 
         private class ProductDetail
         {

@@ -9,16 +9,17 @@ using Xamarin.Forms.Xaml;
 
 namespace APPMOBLIE
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AllTransection : ContentPage
     {
         public AllTransection()
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            Username.Text = Application.Current.Properties["Username"].ToString();
+            base.OnAppearing();
+        }
     }
-
-
-
-
 }
