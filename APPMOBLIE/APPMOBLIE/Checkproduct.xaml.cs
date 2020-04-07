@@ -36,13 +36,21 @@ namespace APPMOBLIE
 
         private async void Button_Scan(object sender, EventArgs e)
         {
+            Skuinfo.Text = string.Empty;
+            Prodn.Text = string.Empty;
+            Prodb.Text = string.Empty;
+            Prodm.Text = string.Empty;
+            Proin.Text = string.Empty;
+            Proout.Text = string.Empty;
+            Total.Text = string.Empty;
+
             var Scan = new ZXingScannerPage();
             await Navigation.PushAsync(Scan);
             Scan.OnScanResult += (result) =>
             {
                 Device.BeginInvokeOnMainThread(async () =>
                 {
-                    //await Navigation.PopAsync();
+                    await Navigation.PopAsync();
                     using (HttpClient client = new HttpClient())
                     {
                         var CompanyId = Application.Current.Properties["CompanyId"];
@@ -58,14 +66,17 @@ namespace APPMOBLIE
                             var Result = JsonConvert.DeserializeObject<ProductDetail>(ResponseData);
 
                             Skuinfo.Text = "Product SKU : " + Result.Sku;
-                            Prodn.Text = Result.Name;
-                            Prodb.Text = Result.Brand;
-                            Prodm.Text = Result.Model;
-                            Proin.Text = Result.ProductIn.ToString();
-                            Proout.Text = Result.ProductOut.ToString();
-                            Total.Text = Result.Amount.ToString();
+                            Prodn.Text = "Product Name : " + Result.Name;
+                            Prodb.Text = "Brand : "+ Result.Brand;
+                            Prodm.Text = "Model  :"+ Result.Model;
+                            Proin.Text = "In Stock : " + Result.ProductIn.ToString();
+                            Proout.Text = "Out Stock : "+ Result.ProductOut.ToString();
+                            Total.Text = "Available : " + Result.Amount.ToString();
                         }
-                       
+                        else
+                        {
+                            Alert.Text = "--- No Data ---";
+                        }
                     }
                 });
             };
