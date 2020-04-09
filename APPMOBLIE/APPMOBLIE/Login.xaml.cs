@@ -48,22 +48,18 @@ namespace APPMOBLIE
                         Application.Current.Properties["CompanyId"] = Result.ComId;
                         await Application.Current.SavePropertiesAsync();
 
-
                         var Page = new HomePage();
-
                         await Navigation.PushAsync(Page);
                         NavigationPage.SetHasNavigationBar(Page, false);
                     }
                     else
                     {
                         displayError.Text = "Username or password invalit.";
-                        //await DisplayAlert("Warning", "Username or password invalit.", "OK");
                     }
                 }
                 else
                 {
                     displayError.Text = "Username or password invalit.";
-                    //await DisplayAlert("Warning", "Username or password invalit.", "OK");
                 }
             }
         }
@@ -73,7 +69,6 @@ namespace APPMOBLIE
             Email.Text = string.Empty;
             Password.Text = string.Empty;
         }
-
 
         private class UserInfo
         {
@@ -89,7 +84,6 @@ namespace APPMOBLIE
             public string UserId { get; set; }
             public int ComId { get; set; }
         }
-
 
     }
 }
