@@ -17,15 +17,6 @@ namespace APPMOBLIE
         public Checkproduct()
         {
             InitializeComponent();
-            //Skuinfo.Text = "Product SKU : "+ "34290534445";
-            //Prodn.Text = "Pen";
-            //Prodb.Text = "Quantum";
-            //Prodm.Text = "Geloplus";
-            //Proin.Text = "20";
-            //Proout.Text = "10";
-            //Total.Text = "10";
-
-
         }
 
         protected override void OnAppearing()
@@ -72,6 +63,8 @@ namespace APPMOBLIE
                             Proin.Text = "In Stock : " + Result.ProductIn.ToString();
                             Proout.Text = "Out Stock : "+ Result.ProductOut.ToString();
                             Total.Text = "Available : " + Result.Amount.ToString();
+
+                            Alert.Text = string.Empty;
                         }
                         else
                         {
