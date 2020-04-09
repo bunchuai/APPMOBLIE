@@ -51,9 +51,7 @@ namespace APPMOBLIE
                         Items.Add(Item);
                     }
 
-                    var _Picker = new Picker();
-                    _Picker.Title = "Selecyt Product Unit";
-                    _Picker.ItemsSource = Items;
+                    ProductUnit.ItemsSource = Items;
                 }
             }
         }
@@ -81,10 +79,11 @@ namespace APPMOBLIE
                             var ResponseData = await response.Content.ReadAsStringAsync();
                             var Result = JsonConvert.DeserializeObject<ProductDetail>(ResponseData);
 
-                            Mycode.Text = Result.Sku;
+                            Mycode.Text = result.Text;
                             ProductName.Text = Result.Name;
                             ProductBrand.Text = Result.Brand;
                             ProductModel.Text = Result.Model;
+                            Productmin.Text = Result.Productmin.ToString();
 
                         }
                     }
@@ -98,18 +97,18 @@ namespace APPMOBLIE
             {
                 string sContentType = "application/json";
                 JObject oJsonObject = new JObject();
-                oJsonObject.Add("SKUId", this.Mycode.Text);
-                oJsonObject.Add("ProductName", this.ProductName.Text);
-                oJsonObject.Add("ProductBrand", this.ProductBrand.Text);
-                oJsonObject.Add("ProductModel", this.ProductModel.Text);
-                oJsonObject.Add("ProductTypeId", this.ProductTypeId.Text);
-                oJsonObject.Add("ProductLocation", this.ProductLocation.Text);
-                oJsonObject.Add("ProductUnit", this.ProductUnit.Text);
-                oJsonObject.Add("ProductDescription", this.ProductDescription.Text);
-                oJsonObject.Add("ProductExpireDate", this.ProductExpireDate.Date);
+                oJsonObject.Add("SkuId", this.Mycode.Text);
+                oJsonObject.Add("Name", this.ProductName.Text);
+                oJsonObject.Add("Brand", this.ProductBrand.Text);
+                oJsonObject.Add("Model", this.ProductModel.Text);
+                oJsonObject.Add("LocationCode", this.ProductLocation.Text);
+                oJsonObject.Add("UnitCode", this.ProductUnit.SelectedIndex);
+                oJsonObject.Add("ExpireDate", this.ProductExpireDate.Date);
                 oJsonObject.Add("UserId", Application.Current.Properties["Username"].ToString());
                 oJsonObject.Add("CompanyId", Application.Current.Properties["CompanyId"].ToString());
                 oJsonObject.Add("Description", this.ProductDescription.Text);
+                oJsonObject.Add("Quantity", this.Quantity.Text);
+                oJsonObject.Add("ReferentNunber", this.ReferentNunber.Text);
 
                 string Url = "http://203.151.166.97/api/Products/AddProduct";
                 client.BaseAddress = new Uri(Url);
@@ -143,13 +142,18 @@ namespace APPMOBLIE
 
         private class ProductDetail
         {
-            public int ProductIn { get; set; }
-            public int ProductOut { get; set; }
+            public int CompanyId { get; set; }
+            public string SkuId { get; set; }
             public string Name { get; set; }
-            public string Brand { get; set; }
             public string Model { get; set; }
-            public int Amount { get; set; }
-            public string Sku { get; set; }
+            public string Brand { get; set; }
+            public string UnitCode { get; set; }
+            public string LocationCode { get; set; }
+            public string Description { get; set; }
+            public int Productmin { get; set; }
+            public int Quantity { get; set; }
+            public string ReferentNunber { get; set; }
+            public string TransectionType { get; set; }
         }
 
         private class PickerProductUnit
