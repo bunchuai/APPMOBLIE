@@ -10,10 +10,25 @@
     <ContentPage.Content>
         <StackLayout Margin="20,0,20,0" VerticalOptions="Center">
             <Image Source="logo.png" WidthRequest="180"/>
-            <Label  Style="{StaticResource Normal}" Text="E-mail" HorizontalOptions="Start"   FontAttributes="Bold"/>
-            <Entry x:Name="Email" Placeholder="Enter e-mail Address" FontSize="15"/>
-            <Label Style="{StaticResource Normal}" Text="Password" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold"/>
-            <Entry  x:Name="Password" IsPassword="True" MaxLength="8" Placeholder="Enter password" FontSize="15"/>
+            <Label  Style="{StaticResource Normal}" 
+                    Text="E-mail" 
+                    HorizontalOptions="Start"   
+                    FontAttributes="Bold"/>
+            <Entry x:Name="Email" 
+                   Placeholder="Enter e-mail Address" 
+                   FontSize="15"/>
+
+            <Label Style="{StaticResource Normal}" 
+                   Text="Password" 
+                   HorizontalOptions="Start" 
+                   FontSize="20" 
+                   FontAttributes="Bold"/>
+            <Entry  x:Name="Password" 
+                    IsPassword="True" 
+                    MaxLength="8"
+                    Placeholder="Enter password" 
+                    FontSize="15"/>
+
             <Label x:Name="displayError" Text="" TextColor="Red"/>
             <Grid>
                 <Grid.RowDefinitions>

@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -48,7 +50,7 @@ namespace APPMOBLIE
 
 
                         var Page = new HomePage();
-                       
+
                         await Navigation.PushAsync(Page);
                         NavigationPage.SetHasNavigationBar(Page, false);
                     }
@@ -87,5 +89,7 @@ namespace APPMOBLIE
             public string UserId { get; set; }
             public int ComId { get; set; }
         }
+
+
     }
 }
