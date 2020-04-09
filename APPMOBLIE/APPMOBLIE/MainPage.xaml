@@ -42,13 +42,16 @@
                              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=5}" 
                              RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0.3, Constant=70}" />-->
 
-                    <Button  HeightRequest="50" WidthRequest="250" CornerRadius="10" Text="Scan bar code" 
-                             TextColor="White" FontSize="18" BackgroundColor="#0095b6" Clicked="Button_Scan"
-                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=1}" 
-                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}"  />
+                    
 
                 </RelativeLayout>
-                
+
+                <Button  HeightRequest="50" WidthRequest="250" CornerRadius="10" Text="Scan bar code" 
+                             TextColor="White" FontSize="18" BackgroundColor="#0095b6" Clicked="Button_Scan"
+                        
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=200}" 
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}"  />
+
                 <RelativeLayout Margin="20,0,30,0">
 
                     <!--<Button Text="scan barcode" Clicked="Button_Scan"  BackgroundColor="Green" TextColor="White"/>-->
@@ -56,6 +59,8 @@
             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.25,Constant=0}"
             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
+                                        
+                    
                     <Entry x:Name="Mycode" TextColor="Black"  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=255}"
             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3, Constant=0}"
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.7,Constant=0}"
