@@ -9,7 +9,7 @@
 
     <ContentPage.Content>
 
-        <StackLayout BackgroundColor="#e6e6e6">
+        <StackLayout BackgroundColor="LightBlue">
             <Grid>
                 <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
                     <Frame HeightRequest="200" BackgroundColor="HotPink" Padding="0" Margin="0">
@@ -18,14 +18,7 @@
                 </StackLayout>
                 <StackLayout Padding="0" Margin="10,150,10,0" HorizontalOptions="FillAndExpand">
                     <Frame  BackgroundColor="White" HeightRequest="400" HasShadow="True" Padding="0" Margin="0" CornerRadius="20">
-
-                   
-
-
                         <StackLayout>
-
-
-
                             <StackLayout Margin="10">
                                 <Label Text="SIGN IN" TextColor="DarkGray" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
                             </StackLayout>

@@ -12,7 +12,7 @@
             BarBackgroundColor="#f7f7f7"
             >
     <local:AllTransection></local:AllTransection>
-    <local:MainPage></local:MainPage>
+    <local:AddProduct></local:AddProduct>
     <local:Checkproduct></local:Checkproduct>
     <local:SettingPage></local:SettingPage>
 

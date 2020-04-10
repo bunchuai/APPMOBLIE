@@ -35,7 +35,7 @@ namespace APPMOBLIE
             Prodm.Text = string.Empty;
             Proin.Text = string.Empty;
             Proout.Text = string.Empty;
-            Total.Text = string.Empty;
+            Available.Text = string.Empty;
 
             var Scan = new ZXingScannerPage();
             await Navigation.PushAsync(Scan);
@@ -82,9 +82,9 @@ namespace APPMOBLIE
                             Proout.FontAttributes = FontAttributes.Bold;
                             Proout.TextColor = Color.Red;
 
-                            Total.Text = "Available : " + Result.Amount.ToString();
-                            Total.FontAttributes = FontAttributes.Bold;
-                            Total.TextColor = (Result.Amount <= Convert.ToInt32(Min) ? Color.Red : Color.Green);
+                            Available.Text = "Available : " + Result.Amount.ToString();
+                            Available.FontAttributes = FontAttributes.Bold;
+                            Available.TextColor = (Result.Amount <= Convert.ToInt32(Min) ? Color.Red : Color.Green);
 
                             Alert.Text = string.Empty;
                         }
