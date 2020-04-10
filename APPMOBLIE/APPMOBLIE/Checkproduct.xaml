@@ -88,27 +88,23 @@
                 </RelativeLayout>
             </RelativeLayout>
         </ScrollView>-->
-        
+
         <AbsoluteLayout>
-         
-                <Image Source="background" Aspect="AspectFill"
+            <Image Source="background" Aspect="AspectFill"
                   AbsoluteLayout.LayoutBounds="0,0,1,0.2"
                    AbsoluteLayout.LayoutFlags="All" />
-                <ic:CircleImage Source="userpic.png" 
+            <ic:CircleImage Source="userpic.png" 
                            Aspect="AspectFill"
                                 HeightRequest="80" WidthRequest="80"
                            AbsoluteLayout.LayoutBounds="0.5,0.15"
                            AbsoluteLayout.LayoutFlags="PositionProportional"/>
-       
             <StackLayout
                    AbsoluteLayout.LayoutBounds="0,0.2,1,0.5"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
                    VerticalOptions="Center"
                 Spacing="10">
-               
-                <Label x:Name="Username" HorizontalOptions="Center"
-                   />
-                    <Button Text="Find Product"  Clicked="Button_Scan"
+                <Label x:Name="Username" HorizontalOptions="Center"/>
+                <Button Text="Find Product"  Clicked="Button_Scan"
                          BackgroundColor="#0095b6" 
                     TextColor="White"
                          FontSize="15"
@@ -116,7 +112,7 @@
                          HorizontalOptions="Center"
                         HeightRequest="40"
                         CornerRadius="10"/>
-                </StackLayout >
+            </StackLayout >
             <ScrollView
                  AbsoluteLayout.LayoutBounds="0,0.8,1,0.50"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
@@ -160,8 +156,6 @@
                     </Grid>
                 </StackLayout>
             </ScrollView>
-               
-            </AbsoluteLayout>
-
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
