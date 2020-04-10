@@ -99,20 +99,36 @@ namespace APPMOBLIE
         {
             using (HttpClient client = new HttpClient())
             {
+                string UnitSelected = ProductUnit.Items[ProductUnit.SelectedIndex];
+
                 string sContentType = "application/json";
+                //var Model = new InsertProduct();
+                //Model.SkuId = this.Mycode.Text;
+                //Model.Name = this.ProductName.Text;
+                //Model.Brand = this.ProductBrand.Text;
+                //Model.Model = this.ProductModel.Text;
+                //Model.LocationCode = this.ProductLocation.Text;
+                //Model.UnitCode = UnitSelected;
+                //Model.ExpireDate = this.ProductExpireDate.Date;
+                //Model.UserId = Application.Current.Properties["UserId"].ToString();
+                //Model.CompanyId = Convert.ToInt32(CompanyId);
+                //Model.Description = this.ProductDescription.Text;
+                //Model.Quantity = Convert.ToInt32(this.Quantity.Text);
+                //Model.ReferentNunber = this.ReferentNumber.Text;
+                //Model.Productmin = Convert.ToInt32(this.Productmin.Text);
                 JObject oJsonObject = new JObject();
                 oJsonObject.Add("SkuId", this.Mycode.Text);
                 oJsonObject.Add("Name", this.ProductName.Text);
                 oJsonObject.Add("Brand", this.ProductBrand.Text);
                 oJsonObject.Add("Model", this.ProductModel.Text);
                 oJsonObject.Add("LocationCode", this.ProductLocation.Text);
-                oJsonObject.Add("UnitCode", this.ProductUnit.ItemsSource[Convert.ToInt32(ProductUnit.SelectedItem)] as string);
+                oJsonObject.Add("UnitCode", UnitSelected);
                 oJsonObject.Add("ExpireDate", this.ProductExpireDate.Date);
                 oJsonObject.Add("UserId", Application.Current.Properties["UserId"].ToString());
                 oJsonObject.Add("CompanyId", Application.Current.Properties["CompanyId"].ToString());
                 oJsonObject.Add("Description", this.ProductDescription.Text);
                 oJsonObject.Add("Quantity", this.Quantity.Text);
-                oJsonObject.Add("ReferentNunber", this.ReferentNunber.Text);
+                oJsonObject.Add("ReferentNunber", this.ReferentNumber.Text);
                 oJsonObject.Add("Productmin", this.Productmin.Text);
 
                 string Url = "http://203.151.166.97/api/Products/AddProduct";
@@ -165,6 +181,23 @@ namespace APPMOBLIE
         {
             public string Code { get; set; }
             public string Name { get; set; }
+        }
+
+        private class InsertProduct
+        {
+            public int CompanyId { get; set; }
+            public string SkuId { get; set; }
+            public string Name { get; set; }
+            public string Model { get; set; }
+            public string Brand { get; set; }
+            public string UnitCode { get; set; }
+            public string LocationCode { get; set; }
+            public string Description { get; set; }
+            public int Productmin { get; set; }
+            public int Quantity { get; set; }
+            public string ReferentNunber { get; set; }
+            public DateTime ExpireDate { get; set; }
+            public string UserId { get; set; }
         }
     }
 }
