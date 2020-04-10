@@ -64,7 +64,6 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="100"/>
                             <ColumnDefinition Width="*"/>
-                           
                         </Grid.ColumnDefinitions>
                         <Label Text="SKU Number"  Grid.Column="0"  Grid.Row="0" VerticalOptions="Center"/>
                         <Entry x:Name="Mycode" Grid.Column="1"  Grid.Row="0"  />
@@ -83,24 +82,33 @@
                         <Entry x:Name="ProductModel"  Grid.Column="1"  Grid.Row="3" />
 
                         <Label Text="Location"  Grid.Column="0"  Grid.Row="4" VerticalOptions="Center" />
-                        <Entry x:Name="ProductLocation"  Grid.Column="1"  Grid.Row="4" />
+                        <Picker x:Name="ProductLocation"
+                                Title="select product unit"
+                                ItemsSource="{Binding ProductLocation}"
+                                ItemDisplayBinding="{Binding Name}"
+                                SelectedItem="{Binding Code}"  
+                                Grid.Column="1"  
+                                Grid.Row="4" />
+                        <!--<Entry x:Name="ProductLocation"  Grid.Column="1"  Grid.Row="4" />-->
 
                         <Label Text="Product Unit"  Grid.Column="0"  Grid.Row="5" VerticalOptions="Center" />
                         <Picker x:Name="ProductUnit"
-                        Title="select product unit"
-                        ItemsSource="{Binding ProductUnit}"
-                        ItemDisplayBinding="{Binding Name}"
-                        SelectedItem="{Binding Code}"  Grid.Column="1"  Grid.Row="5" />
+                                Title="select product unit"
+                                ItemsSource="{Binding ProductUnit}"
+                                ItemDisplayBinding="{Binding Name}"
+                                SelectedItem="{Binding Code}"  
+                                Grid.Column="1"  
+                                Grid.Row="5" />
 
                         <Label Text="Description"  Grid.Column="0"  Grid.Row="6" VerticalOptions="Center"/>
                         <Entry x:Name="ProductDescription"  Grid.Column="1"  Grid.Row="6" />
 
 
                         <Label Text="Product Min"  Grid.Column="0"  Grid.Row="7" VerticalOptions="Center"/>
-                        <Entry x:Name="Productmin"  Grid.Column="1"  Grid.Row="7" />
+                        <Entry x:Name="Productmin"  Grid.Column="1"  Grid.Row="7"  Keyboard="Numeric"/>
 
                         <Label Text="Quantity"  Grid.Column="0"  Grid.Row="8" VerticalOptions="Center"/>
-                        <Entry x:Name="Quantity"  Grid.Column="1"  Grid.Row="8" />
+                        <Entry x:Name="Quantity"  Grid.Column="1"  Grid.Row="8" Keyboard="Numeric"/>
 
                         <Label Text="Refer Number"  Grid.Column="0"  Grid.Row="9" VerticalOptions="Center"/>
                         <Entry x:Name="ReferentNunber"  Grid.Column="1"  Grid.Row="9" />

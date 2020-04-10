@@ -100,12 +100,17 @@ namespace APPMOBLIE
         private class ProductDetail
         {
             public int ProductIn { get; set; }
+            public string LastDateIn { get; set; }
+            public string RefIn { get; set; }
             public int ProductOut { get; set; }
+            public string LastDateOut { get; set; }
+            public string RefOut { get; set; }
             public string Name { get; set; }
             public string Brand { get; set; }
             public string Model { get; set; }
             public int Amount { get; set; }
             public string Sku { get; set; }
+            public string Location { get; set; }
         }
     }
 }
