@@ -68,7 +68,7 @@ namespace APPMOBLIE
                     using (HttpClient client = new HttpClient())
                     {
                         var CompanyId = Application.Current.Properties["CompanyId"];
-                        string Url = "http://203.151.166.97/api/Products/CheclProduct?Sku=" + result.Text + "&CompanyId=" + CompanyId;
+                        string Url = "http://203.151.166.97/api/Products/CheckProductInsert?Sku=" + result.Text + "&CompanyId=" + CompanyId;
                         client.BaseAddress = new Uri(Url);
                         client.DefaultRequestHeaders.Clear();
                         client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
@@ -84,7 +84,11 @@ namespace APPMOBLIE
                             ProductBrand.Text = Result.Brand;
                             ProductModel.Text = Result.Model;
                             Productmin.Text = Result.Productmin.ToString();
-
+                            ProductUnit.SelectedItem = Result.UnitCode;
+                        }
+                        else
+                        {
+                            Mycode.Text = result.Text;
                         }
                     }
                 });
@@ -102,13 +106,14 @@ namespace APPMOBLIE
                 oJsonObject.Add("Brand", this.ProductBrand.Text);
                 oJsonObject.Add("Model", this.ProductModel.Text);
                 oJsonObject.Add("LocationCode", this.ProductLocation.Text);
-                oJsonObject.Add("UnitCode", this.ProductUnit.SelectedIndex);
+                oJsonObject.Add("UnitCode", this.ProductUnit.ItemsSource[Convert.ToInt32(ProductUnit.SelectedItem)] as string);
                 oJsonObject.Add("ExpireDate", this.ProductExpireDate.Date);
-                oJsonObject.Add("UserId", Application.Current.Properties["Username"].ToString());
+                oJsonObject.Add("UserId", Application.Current.Properties["UserId"].ToString());
                 oJsonObject.Add("CompanyId", Application.Current.Properties["CompanyId"].ToString());
                 oJsonObject.Add("Description", this.ProductDescription.Text);
                 oJsonObject.Add("Quantity", this.Quantity.Text);
                 oJsonObject.Add("ReferentNunber", this.ReferentNunber.Text);
+                oJsonObject.Add("Productmin", this.Productmin.Text);
 
                 string Url = "http://203.151.166.97/api/Products/AddProduct";
                 client.BaseAddress = new Uri(Url);
@@ -123,11 +128,11 @@ namespace APPMOBLIE
                     if (Result.valid == true)
                     {
                         await DisplayAlert("Success", "Insert product success", "OK");
-                        await Navigation.PushAsync(new MainPage());
+                        await Navigation.PushAsync(new AllTransection());
                     }
                     else
                     {
-                        await DisplayAlert("Warning", "Username or password invalit.", "OK");
+                        await DisplayAlert("Warning", "Insert product fail", "OK");
                     }
                 }
             }
