@@ -149,14 +149,14 @@
                         <Label x:Name="Proout"  Grid.Column="1" Grid.Row="5" />
                         <Label x:Name="Available"  Grid.ColumnSpan="2" Grid.Row="6" />
                         <Label x:Name="Alert"  Grid.ColumnSpan="2" Grid.Row="1" />
-                        <Label x:Name="Skuinfo"  Grid.ColumnSpan="2"  Grid.Row="7" />
-                        <Label x:Name="Prodn"   Grid.ColumnSpan="2" Grid.Row="8" />
-                        <Label x:Name="Prodb"   Grid.ColumnSpan="2" Grid.Row="9" />
-                        <Label x:Name="Prodm"   Grid.ColumnSpan="2"  Grid.Row="10" />
-                        <Label x:Name="Proin"  Grid.Column="0" Grid.Row="11" />
-                        <Label x:Name="Proout"  Grid.Column="1" Grid.Row="11" />
-                        <Label x:Name="Available"  Grid.ColumnSpan="2" Grid.Row="12" />
-                        <Label x:Name="Alert"  Grid.ColumnSpan="2" Grid.Row="7" />
+                        <Label Text="FOKVKRKFGL:G:GRG" Grid.ColumnSpan="2"  Grid.Row="7" />
+                        <Label Text="FOKVKRKFGL:G:GRG"   Grid.ColumnSpan="2" Grid.Row="8" />
+                        <Label Text="FOKVKRKFGL:G:GRG"   Grid.ColumnSpan="2" Grid.Row="9" />
+                        <Label Text="FOKVKRKFGL:G:GRG"   Grid.ColumnSpan="2"  Grid.Row="10" />
+                        <Label Text="FOKVKRKFGL:G:GRG"  Grid.Column="0" Grid.Row="11" />
+                        <Label Text="FOKVKRKFGL:G:GRG"  Grid.Column="1" Grid.Row="11" />
+                        <Label Text="FOKVKRKFGL:G:GRG"  Grid.ColumnSpan="2" Grid.Row="12" />
+                        <Label Text="FOKVKRKFGL:G:GRG"  Grid.ColumnSpan="2" Grid.Row="7" />
                     </Grid>
                 </StackLayout>
             </ScrollView>
