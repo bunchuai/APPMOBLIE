@@ -29,12 +29,14 @@
                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
 
                 </RelativeLayout>
+                
                 <Button Text="scan barcode"  
                             Clicked="Button_Scan"
                             HeightRequest="50" WidthRequest="220" CornerRadius="10" 
                             TextColor="White" FontSize="18" BackgroundColor="#0095b6"
-                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3, Constant=1}" 
-                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}"  />
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=200}" 
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}"  />
+                
                 <RelativeLayout  Margin="20,0,30,0">
                     <Label x:Name="Skuinfo" 
              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=280}"

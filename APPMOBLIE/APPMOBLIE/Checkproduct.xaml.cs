@@ -14,9 +14,11 @@ namespace APPMOBLIE
 {
     public partial class Checkproduct : ContentPage
     {
+        public string CompanyId;
         public Checkproduct()
         {
             InitializeComponent();
+            CompanyId = Application.Current.Properties["CompanyId"].ToString();
         }
 
         protected override void OnAppearing()
@@ -56,13 +58,33 @@ namespace APPMOBLIE
                             var ResponseData = await response.Content.ReadAsStringAsync();
                             var Result = JsonConvert.DeserializeObject<ProductDetail>(ResponseData);
 
+                            // minimum product
+                            HttpResponseMessage ProductMin = await client.GetAsync("http://203.151.166.97/api/Products/CheckProductMin?CompanyId=" + CompanyId + "&Sku=" + Result.Sku);
+                            var Min = await ProductMin.Content.ReadAsStringAsync();
+
                             Skuinfo.Text = "Product SKU : " + Result.Sku;
+                            Skuinfo.FontAttributes = FontAttributes.Bold;
+
                             Prodn.Text = "Product Name : " + Result.Name;
-                            Prodb.Text = "Brand : "+ Result.Brand;
-                            Prodm.Text = "Model  :"+ Result.Model;
+                            Prodn.FontAttributes = FontAttributes.Bold;
+
+                            Prodb.Text = "Brand : " + Result.Brand;
+                            Prodb.FontAttributes = FontAttributes.Bold;
+
+                            Prodm.Text = "Model  : " + Result.Model;
+                            Prodm.FontAttributes = FontAttributes.Bold;
+
                             Proin.Text = "In Stock : " + Result.ProductIn.ToString();
-                            Proout.Text = "Out Stock : "+ Result.ProductOut.ToString();
+                            Proin.FontAttributes = FontAttributes.Bold;
+                            Proin.TextColor = Color.Green;
+
+                            Proout.Text = "Out Stock : " + Result.ProductOut.ToString();
+                            Proout.FontAttributes = FontAttributes.Bold;
+                            Proout.TextColor = Color.Red;
+
                             Total.Text = "Available : " + Result.Amount.ToString();
+                            Total.FontAttributes = FontAttributes.Bold;
+                            Total.TextColor = (Result.Amount <= Convert.ToInt32(Min) ? Color.Red : Color.Green);
 
                             Alert.Text = string.Empty;
                         }
