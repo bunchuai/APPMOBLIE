@@ -100,8 +100,8 @@
                            AbsoluteLayout.LayoutBounds="0.5,0.15"
                            AbsoluteLayout.LayoutFlags="PositionProportional"/>
        
-            <StackLayout
-                   AbsoluteLayout.LayoutBounds="0,0.2,1,0.5"
+            <StackLayout 
+                   AbsoluteLayout.LayoutBounds="0,0.12,1,0.5"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
                    VerticalOptions="Center"
                 Spacing="10">
@@ -117,12 +117,12 @@
                         HeightRequest="40"
                         CornerRadius="10"/>
                 </StackLayout >
-            <ScrollView
-                 AbsoluteLayout.LayoutBounds="0,0.8,1,0.50"
+            <ScrollView 
+                 AbsoluteLayout.LayoutBounds="0,1,1,0.60"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
                 <StackLayout
                              HorizontalOptions="Start" >
-                    <Grid RowSpacing="25" Padding="20,20,20,0">
+                    <Grid RowSpacing="25" Padding="50,0,20,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -149,14 +149,7 @@
                         <Label x:Name="Proout"  Grid.Column="1" Grid.Row="5" />
                         <Label x:Name="Available"  Grid.ColumnSpan="2" Grid.Row="6" />
                         <Label x:Name="Alert"  Grid.ColumnSpan="2" Grid.Row="1" />
-                        <Label Text="FOKVKRKFGL:G:GRG" Grid.ColumnSpan="2"  Grid.Row="7" />
-                        <Label Text="FOKVKRKFGL:G:GRG"   Grid.ColumnSpan="2" Grid.Row="8" />
-                        <Label Text="FOKVKRKFGL:G:GRG"   Grid.ColumnSpan="2" Grid.Row="9" />
-                        <Label Text="FOKVKRKFGL:G:GRG"   Grid.ColumnSpan="2"  Grid.Row="10" />
-                        <Label Text="FOKVKRKFGL:G:GRG"  Grid.Column="0" Grid.Row="11" />
-                        <Label Text="FOKVKRKFGL:G:GRG"  Grid.Column="1" Grid.Row="11" />
-                        <Label Text="FOKVKRKFGL:G:GRG"  Grid.ColumnSpan="2" Grid.Row="12" />
-                        <Label Text="FOKVKRKFGL:G:GRG"  Grid.ColumnSpan="2" Grid.Row="7" />
+                        
                     </Grid>
                 </StackLayout>
             </ScrollView>
