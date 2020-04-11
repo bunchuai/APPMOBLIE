@@ -50,8 +50,23 @@ namespace APPMOBLIE
                         Item.Code = Data.ProductUnitCode;
                         Items.Add(Item);
                     }
-
                     ProductUnit.ItemsSource = Items;
+                }
+
+                HttpResponseMessage responseLocation = await client.GetAsync("http://203.151.166.97/api/Location/GetLocationAll?CompanyId=" + CompanyId);
+                if (responseLocation.IsSuccessStatusCode)
+                {
+                    var LocationData = await responseLocation.Content.ReadAsStringAsync();
+                    var LocationResults = JsonConvert.DeserializeObject<List<MasterLocation>>(LocationData);
+                    var LocationItems = new List<PickerLocation>();
+                    foreach (var LocationResult in LocationResults)
+                    {
+                        var LocationItem = new PickerLocation();
+                        LocationItem.Name = LocationResult.LocationName;
+                        LocationItem.Code = LocationResult.LocationCode;
+                        LocationItems.Add(LocationItem);
+                    }
+                    ProductLocation.ItemsSource = LocationItems;
                 }
             }
         }
@@ -100,35 +115,21 @@ namespace APPMOBLIE
             using (HttpClient client = new HttpClient())
             {
                 string UnitSelected = ProductUnit.Items[ProductUnit.SelectedIndex];
+                string LocationSelected = ProductLocation.Items[ProductUnit.SelectedIndex];
 
-                string sContentType = "application/json";
-                //var Model = new InsertProduct();
-                //Model.SkuId = this.Mycode.Text;
-                //Model.Name = this.ProductName.Text;
-                //Model.Brand = this.ProductBrand.Text;
-                //Model.Model = this.ProductModel.Text;
-                //Model.LocationCode = this.ProductLocation.Text;
-                //Model.UnitCode = UnitSelected;
-                //Model.ExpireDate = this.ProductExpireDate.Date;
-                //Model.UserId = Application.Current.Properties["UserId"].ToString();
-                //Model.CompanyId = Convert.ToInt32(CompanyId);
-                //Model.Description = this.ProductDescription.Text;
-                //Model.Quantity = Convert.ToInt32(this.Quantity.Text);
-                //Model.ReferentNunber = this.ReferentNumber.Text;
-                //Model.Productmin = Convert.ToInt32(this.Productmin.Text);
                 JObject oJsonObject = new JObject();
                 oJsonObject.Add("SkuId", this.Mycode.Text);
                 oJsonObject.Add("Name", this.ProductName.Text);
                 oJsonObject.Add("Brand", this.ProductBrand.Text);
                 oJsonObject.Add("Model", this.ProductModel.Text);
-                oJsonObject.Add("LocationCode", this.ProductLocation.Text);
+                oJsonObject.Add("LocationCode", LocationSelected);
                 oJsonObject.Add("UnitCode", UnitSelected);
                 oJsonObject.Add("ExpireDate", this.ProductExpireDate.Date);
                 oJsonObject.Add("UserId", Application.Current.Properties["UserId"].ToString());
                 oJsonObject.Add("CompanyId", Application.Current.Properties["CompanyId"].ToString());
                 oJsonObject.Add("Description", this.ProductDescription.Text);
                 oJsonObject.Add("Quantity", this.Quantity.Text);
-                oJsonObject.Add("ReferentNunber", this.ReferentNumber.Text);
+                oJsonObject.Add("ReferentNunber", this.ReferentNunber.Text);
                 oJsonObject.Add("Productmin", this.Productmin.Text);
 
                 string Url = "http://203.151.166.97/api/Products/AddProduct";
@@ -136,7 +137,7 @@ namespace APPMOBLIE
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "oLQKZ-tbA58nvbw7PuZhSsy3sr_H28YB3U3XGbpEc5pGIpMrB1nKNjpS_mRhDiFt2QOBZw3IntJ3dmrozZKsw6hd2VuLvoS8-0HxMCVsMUbZ6QZD782Ig1rfFFWPJ13qDq-cMoUgE2t-PdFEp_85aqa8crtVD6aRwntMPjDOgOriFBbzCYjeXyQ3JECl4pOZGd2KYhpCM7n4hXjfCA0t2YeQyvbuId1-e-qhltjEzCkRk7uffgtbwC2KAImsw7jrBYFfxeu1DCRRYdi2AsSZVyBHk0pAqcekzv5jlxLaK2Z-5hFVN0EzSA86Z2MkAq_vXPnJMq0ZrlGfZG6l-hJYb7NjGZCKD44euOf4l-dGQqi40wd8oIhacT1WIrr2RoSAxQn3t1TLDU2TNbgd_pW89JAHd9fmF9k-aZt9tCJuFQs-sW7eJQ1spYqQWHEbKYFbf2Aih5ZBDrIbLeh4hRRFOd_zYZgQKqIZ1tpZ_82UwYUG8FyPn9ZexVzr4t4At4cP");
-                HttpResponseMessage response = await client.PostAsync(Url, new StringContent(oJsonObject.ToString(), Encoding.UTF8, sContentType));
+                HttpResponseMessage response = await client.PostAsync(Url, new StringContent(oJsonObject.ToString(), Encoding.UTF8, "application/json"));
                 if (response.IsSuccessStatusCode)
                 {
                     var ResponseData = await response.Content.ReadAsStringAsync();
@@ -144,7 +145,7 @@ namespace APPMOBLIE
                     if (Result.valid == true)
                     {
                         await DisplayAlert("Success", "Insert product success", "OK");
-                        await Navigation.PushAsync(new AllTransection());
+                        await Navigation.PushAsync(new HomePage());
                     }
                     else
                     {
@@ -178,6 +179,12 @@ namespace APPMOBLIE
         }
 
         private class PickerProductUnit
+        {
+            public string Code { get; set; }
+            public string Name { get; set; }
+        }
+
+        private class PickerLocation
         {
             public string Code { get; set; }
             public string Name { get; set; }

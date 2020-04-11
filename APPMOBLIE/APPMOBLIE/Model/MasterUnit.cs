@@ -11,4 +11,12 @@ namespace APPMOBLIE.Model
         public string ProductUnitCode { get; set; }
         public string Name { get; set; }
     }
+
+    class MasterLocation
+    {
+        public int LocationId { get; set; }
+        public int CompanyId { get; set; }
+        public string LocationCode { get; set; }
+        public string LocationName { get; set; }
+    }
 }
