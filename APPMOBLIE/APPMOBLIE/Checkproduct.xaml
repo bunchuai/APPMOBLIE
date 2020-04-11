@@ -11,79 +11,7 @@
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
 
     <ContentPage.Content>
-      
-        <AbsoluteLayout>
-            <Image Source="background" Aspect="AspectFill"
-                  AbsoluteLayout.LayoutBounds="0,0,1,0.2"
-                   AbsoluteLayout.LayoutFlags="All" />
-            <ic:CircleImage Source="userpic.png" 
-                           Aspect="AspectFill"
-                                HeightRequest="80" WidthRequest="80"
-                           AbsoluteLayout.LayoutBounds="0.5,0.15"
-                           AbsoluteLayout.LayoutFlags="PositionProportional"/>
-            <StackLayout
-                   AbsoluteLayout.LayoutBounds="0,0.2,1,0.5"
-                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
-                   VerticalOptions="Center"
-                Spacing="10">
-                <Label x:Name="Username" HorizontalOptions="Center"/>
-                <Button Text="Find Product"  Clicked="Button_Scan"
-                         BackgroundColor="#0095b6" 
-                    TextColor="White"
-                         FontSize="15"
-                        FontAttributes="Bold"
-                         HorizontalOptions="Center"
-                        HeightRequest="40"
-                        CornerRadius="10"/>
-            </StackLayout >
-            <ScrollView
-                 AbsoluteLayout.LayoutBounds="0,0.8,1,0.50"
-                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
-                <StackLayout
-                             HorizontalOptions="Start" >
-                    <Grid RowSpacing="25" Padding="20,20,20,0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Label x:Name="Skuinfo"  Grid.ColumnSpan="2"  Grid.Row="1" />
-                        <Label x:Name="Prodn"   Grid.ColumnSpan="2" Grid.Row="2" />
-                        <Label x:Name="Prodb"   Grid.ColumnSpan="2" Grid.Row="3" />
-                        <Label x:Name="Prodm"   Grid.ColumnSpan="2"  Grid.Row="4" />
-                        <Label x:Name="Proin"  Grid.Column="0" Grid.Row="5" />
-                        <Label x:Name="Proout"  Grid.Column="1" Grid.Row="5" />
-                        <Label x:Name="Available"  Grid.ColumnSpan="2" Grid.Row="6" />
-                        <Label x:Name="Alert"  Grid.ColumnSpan="2" Grid.Row="1" />
-                        <Label Text="FOKVKRKFGL:G:GRG" Grid.ColumnSpan="2"  Grid.Row="7" />
-                        <Label Text="FOKVKRKFGL:G:GRG"   Grid.ColumnSpan="2" Grid.Row="8" />
-                        <Label Text="FOKVKRKFGL:G:GRG"   Grid.ColumnSpan="2" Grid.Row="9" />
-                        <Label Text="FOKVKRKFGL:G:GRG"   Grid.ColumnSpan="2"  Grid.Row="10" />
-                        <Label Text="FOKVKRKFGL:G:GRG"  Grid.Column="0" Grid.Row="11" />
-                        <Label Text="FOKVKRKFGL:G:GRG"  Grid.Column="1" Grid.Row="11" />
-                        <Label Text="FOKVKRKFGL:G:GRG"  Grid.ColumnSpan="2" Grid.Row="12" />
-                        <Label Text="FOKVKRKFGL:G:GRG"  Grid.ColumnSpan="2" Grid.Row="7" />
-                    </Grid>
-                </StackLayout>
-            </ScrollView>
-        </AbsoluteLayout>
-    </ContentPage.Content>
-</ContentPage>
-
-<!--<ScrollView>
+        <!--<ScrollView>
             <RelativeLayout>
                 <RelativeLayout  BackgroundColor="#BED1E5" 
                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=90}"  
@@ -160,3 +88,73 @@
                 </RelativeLayout>
             </RelativeLayout>
         </ScrollView>-->
+        
+        <AbsoluteLayout>
+         
+                <Image Source="background" Aspect="AspectFill"
+                  AbsoluteLayout.LayoutBounds="0,0,1,0.2"
+                   AbsoluteLayout.LayoutFlags="All" />
+                <ic:CircleImage Source="userpic.png" 
+                           Aspect="AspectFill"
+                                HeightRequest="80" WidthRequest="80"
+                           AbsoluteLayout.LayoutBounds="0.5,0.15"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"/>
+       
+            <StackLayout 
+                   AbsoluteLayout.LayoutBounds="0,0.12,1,0.5"
+                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
+                   VerticalOptions="Center"
+                Spacing="10">
+               
+                <Label x:Name="Username" HorizontalOptions="Center"
+                   />
+                    <Button Text="Find Product"  Clicked="Button_Scan"
+                         BackgroundColor="#0095b6" 
+                    TextColor="White"
+                         FontSize="15"
+                        FontAttributes="Bold"
+                         HorizontalOptions="Center"
+                        HeightRequest="40"
+                        CornerRadius="10"/>
+                </StackLayout >
+            <ScrollView 
+                 AbsoluteLayout.LayoutBounds="0,1,1,0.60"
+                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
+                <StackLayout
+                             HorizontalOptions="Start" >
+                    <Grid RowSpacing="25" Padding="50,0,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="Skuinfo"  Grid.ColumnSpan="2"  Grid.Row="1" />
+                        <Label x:Name="Prodn"   Grid.ColumnSpan="2" Grid.Row="2" />
+                        <Label x:Name="Prodb"   Grid.ColumnSpan="2" Grid.Row="3" />
+                        <Label x:Name="Prodm"   Grid.ColumnSpan="2"  Grid.Row="4" />
+                        <Label x:Name="Proin"  Grid.Column="0" Grid.Row="5" />
+                        <Label x:Name="Proout"  Grid.Column="1" Grid.Row="5" />
+                        <Label x:Name="Available"  Grid.ColumnSpan="2" Grid.Row="6" />
+                        <Label x:Name="Alert"  Grid.ColumnSpan="2" Grid.Row="1" />
+                        
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+               
+            </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>
