@@ -103,7 +103,7 @@
                         <Entry x:Name="Quantity"  Grid.Column="1"  Grid.Row="8" />
 
                         <Label Text="Refer Number"  Grid.Column="0"  Grid.Row="9" VerticalOptions="Center"/>
-                        <Entry x:Name="ReferentNunber"  Grid.Column="1"  Grid.Row="9" />
+                        <Entry x:Name="ReferentNumber"  Grid.Column="1"  Grid.Row="9" />
 
                         <Label Text="Expire Date"  Grid.Column="0"  Grid.Row="10" VerticalOptions="Center"/>
                         <DatePicker x:Name="ProductExpireDate"  Grid.Column="1"  Grid.Row="10" />
