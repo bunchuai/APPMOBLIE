@@ -19,6 +19,8 @@ namespace APPMOBLIE
         {
             InitializeComponent();
             CompanyId = Application.Current.Properties["CompanyId"].ToString();
+            
+
         }
 
         protected override void OnAppearing()
@@ -36,6 +38,7 @@ namespace APPMOBLIE
             Proin.Text = string.Empty;
             Proout.Text = string.Empty;
             Available.Text = string.Empty;
+            
 
             var Scan = new ZXingScannerPage();
             await Navigation.PushAsync(Scan);
@@ -62,35 +65,43 @@ namespace APPMOBLIE
                             HttpResponseMessage ProductMin = await client.GetAsync("http://203.151.166.97/api/Products/CheckProductMin?CompanyId=" + CompanyId + "&Sku=" + Result.Sku);
                             var Min = await ProductMin.Content.ReadAsStringAsync();
 
-                            Skuinfo.Text = "Product SKU : " + Result.Sku;
-                            Skuinfo.FontAttributes = FontAttributes.Bold;
+                            // Transaction
+                            HttpResponseMessage Translimit = await client.GetAsync("http://203.151.166.97/api/Products/AllTramsectionsTakeLimit?CompanyId=" + CompanyId + "&Take=" + 5);
+                            var TransData = await Translimit.Content.ReadAsStringAsync();
+
+                            Skuinfo.Text = "SKU Id : " + Result.Sku;
+                            Skuinfo.FontSize = 16;
 
                             Prodn.Text = "Product Name : " + Result.Name;
-                            Prodn.FontAttributes = FontAttributes.Bold;
+                            Prodn.FontSize = 20;
 
                             Prodb.Text = "Brand : " + Result.Brand;
-                            Prodb.FontAttributes = FontAttributes.Bold;
+                            Prodb.FontSize = 16;
 
                             Prodm.Text = "Model  : " + Result.Model;
-                            Prodm.FontAttributes = FontAttributes.Bold;
+                            Prodm.FontSize = 16;
 
-                            Proin.Text = "In Stock : " + Result.ProductIn.ToString();
-                            Proin.FontAttributes = FontAttributes.Bold;
+                            Proin.Text = "In Stock : " + Result.ProductIn.ToString() + " Unit";
                             Proin.TextColor = Color.Green;
+                            Proin.FontSize = 16;
 
-                            Proout.Text = "Out Stock : " + Result.ProductOut.ToString();
-                            Proout.FontAttributes = FontAttributes.Bold;
+                            Proout.Text = "Out Stock : " + Result.ProductOut.ToString() + " Unit";
                             Proout.TextColor = Color.Red;
+                            Proout.FontSize = 16;
 
-                            Available.Text = "Available : " + Result.Amount.ToString();
-                            Available.FontAttributes = FontAttributes.Bold;
+                            Available.Text = "Available : " + Result.Amount.ToString() + " Unit";
                             Available.TextColor = (Result.Amount <= Convert.ToInt32(Min) ? Color.Red : Color.Green);
+                            Available.FontSize = 16;
 
                             Alert.Text = string.Empty;
+                           
                         }
                         else
                         {
                             Alert.Text = "--- No Data ---";
+                            Alert.FontSize = 16;
+
+
                         }
                     }
                 });
@@ -111,6 +122,19 @@ namespace APPMOBLIE
             public int Amount { get; set; }
             public string Sku { get; set; }
             public string Location { get; set; }
+
         }
+
+        private class Transaction
+        {
+            public string Datein { get; set; }
+            public string RefIn { get; set; }
+            public string Dateout { get; set; }
+            public string RefOut { get; set; }
+            public string CreateBy { get; set; }
+            public int Quantity { get; set; }
+
+        }
+
     }
 }
