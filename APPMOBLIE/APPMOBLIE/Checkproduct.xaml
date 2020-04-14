@@ -63,13 +63,13 @@
                 <StackLayout 
                              HorizontalOptions="Start" 
                              VerticalOptions="Center">
-                    <!--<ListView BackgroundColor="" x:Name="listview" >
+                    <ListView  x:Name="listview" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <TextCell Text="{Binding LastDateIn}" Detail="{Binding RefIn}"/>
+                                <TextCell Text="{Binding TransectionDate}" Detail="{Binding ReferentNumber}"/>
                             </DataTemplate>
                         </ListView.ItemTemplate>
-                    </ListView>-->
+                    </ListView>
                     <Grid RowSpacing="25" Padding="20,20,20,0"
                           BackgroundColor="Red"
                           Opacity="60">
