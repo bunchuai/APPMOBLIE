@@ -45,7 +45,7 @@
                         BackgroundColor="Transparent" 
                         ImageSource="barcode.png"
                             HeightRequest="30" WidthRequest="30"
-                         HorizontalOptions="Start"
+                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"/>
                     <Button Text="Search" 
                             HeightRequest="35"
