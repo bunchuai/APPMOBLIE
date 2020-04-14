@@ -129,7 +129,7 @@ namespace APPMOBLIE
                 oJsonObject.Add("CompanyId", Application.Current.Properties["CompanyId"].ToString());
                 oJsonObject.Add("Description", this.ProductDescription.Text);
                 oJsonObject.Add("Quantity", this.Quantity.Text);
-                oJsonObject.Add("ReferentNunber", this.ReferentNunber.Text);
+                oJsonObject.Add("ReferentNunber", this.ReferentNumber.Text);
                 oJsonObject.Add("Productmin", this.Productmin.Text);
 
                 string Url = "http://203.151.166.97/api/Products/AddProduct";
