@@ -4,7 +4,7 @@ using System.Text;
 
 namespace APPMOBLIE.Model
 {
-    class Transaction
+    class TransactionModels
     {
         public int TransectionId { get; set; }
         public int CompanyId { get; set; }
@@ -17,6 +17,5 @@ namespace APPMOBLIE.Model
         public string Description { get; set; }
         public string CreateBy { get; set; }
         public DateTime CreateDate { get; set; }
-
     }
 }

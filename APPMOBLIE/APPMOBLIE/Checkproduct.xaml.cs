@@ -1,6 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using APPMOBLIE.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -28,7 +30,6 @@ namespace APPMOBLIE
 
             using (HttpClient client = new HttpClient())
             {
-
                 var CompanyId = Application.Current.Properties["CompanyId"];
                 string Url = "http://203.151.166.97/api/Products/AllTramsectionsTakeLimit?CompanyId=" + CompanyId + "&Take=" + 5;
                 client.BaseAddress = new Uri(Url);
@@ -39,21 +40,10 @@ namespace APPMOBLIE
                 if (response.IsSuccessStatusCode)
                 {
                     var ResponseData = await response.Content.ReadAsStringAsync();
-                    var Result = JsonConvert.DeserializeObject<List<Transaction>>(ResponseData);
-
-                    listview.ItemsSource = Result;
-
-
-                }
-                else
-                {
-                   
-
+                    var TrnsactionResult = JsonConvert.DeserializeObject<List<TransactionModels>>(ResponseData);
+                    listview.ItemsSource = TrnsactionResult;
                 }
             }
-
-
-
         }
 
         private async void Button_Scan(object sender, EventArgs e)
@@ -65,7 +55,7 @@ namespace APPMOBLIE
             Proin.Text = string.Empty;
             Proout.Text = string.Empty;
             Available.Text = string.Empty;
-            
+
 
             var Scan = new ZXingScannerPage();
             await Navigation.PushAsync(Scan);
@@ -121,7 +111,7 @@ namespace APPMOBLIE
                             Available.FontSize = 16;
 
                             Alert.Text = string.Empty;
-                           
+
                         }
                         else
                         {
@@ -151,8 +141,5 @@ namespace APPMOBLIE
             public string Location { get; set; }
 
         }
-
-        
-
     }
 }
