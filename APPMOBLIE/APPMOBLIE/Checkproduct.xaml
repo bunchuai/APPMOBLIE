@@ -71,7 +71,7 @@
                         </ListView.ItemTemplate>
                     </ListView>-->
                     <Grid RowSpacing="25" Padding="20,20,20,0"
-                          BackgroundColor=""
+                          BackgroundColor="Red"
                           Opacity="60">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
