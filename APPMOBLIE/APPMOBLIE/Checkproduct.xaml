@@ -11,12 +11,12 @@
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
 
     <ContentPage.Content>
-        
+
         <AbsoluteLayout>
             <Image Source="background" Aspect="AspectFill"
                   AbsoluteLayout.LayoutBounds="0,0,1,0.15"
                    AbsoluteLayout.LayoutFlags="All" />
-                <ic:CircleImage Source="kodelogo.jpg" 
+            <ic:CircleImage Source="kodelogo.jpg" 
                            Aspect="AspectFill"
                                 HeightRequest="80" WidthRequest="80"
                            AbsoluteLayout.LayoutBounds="0.05,0.02"
@@ -33,61 +33,33 @@
                   AbsoluteLayout.LayoutBounds="0,0.12,1,0.3"
                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
                   VerticalOptions="Center"
+                HorizontalOptions="Center"
                   Orientation="Horizontal"
-                Spacing="10"
-                         Padding="20,0,20,0">
-                    <Entry Placeholder="Input SKU Id / Name"
+                Spacing="10">
+                <Entry Placeholder="    Input SKU Id    "
                            x:Name="findtext"
-                       HorizontalOptions="Center" 
+                       Keyboard="Numeric"
                        FontFamily="{x:StaticResource Kanit}"
+                       Completed="findtext_Completed"
+                       HorizontalTextAlignment="Center"
                            />
-                    <Button Clicked="Button_Scan"
+                <Label Text="OR" VerticalOptions="Center" Style="{x:StaticResource Normalkanit}"/>
+                <Button Clicked="Button_Scan"
                         BackgroundColor="Transparent" 
                         ImageSource="barcode.png"
                             HeightRequest="30" WidthRequest="30"
                          HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"/>
-                    <Button Text="Search" 
-                            HeightRequest="35"
-                            FontAttributes="Bold"
-                        BackgroundColor="Transparent" 
-                         HorizontalOptions="End"
-                            CornerRadius="28"
-                            BorderColor="#00a6e0"
-                            BorderWidth="3"
-                            Style="{x:StaticResource Normalkanit}"/>
+              
             </StackLayout >
-            <ScrollView 
+            <ScrollView x:Name="Topview"
                  AbsoluteLayout.LayoutBounds="0,1,1,0.70"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
                 <StackLayout 
                              HorizontalOptions="Start" 
                              VerticalOptions="Center">
-                    <ListView  x:Name="listview" HasUnevenRows="True">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <StackLayout Orientation="Vertical" Padding="20,0">
-                                        <Label Text="{Binding ReferentNumber}"/>
-                                        <Label Text="{Binding Quantity}"/>
-                                        <Label Text="{Binding TransectionDate ,StringFormat='{0:dd MMMM yyyy}'}"/>
-                                    </StackLayout>
-                                </ViewCell>
-                                <!--<TextCell Text="{Binding TransectionDate}" Detail="{Binding ReferentNumber}"/>-->
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                    <Grid RowSpacing="25" Padding="20,20,20,0"
-                          BackgroundColor="Red"
-                          Opacity="60">
+                    <Grid RowSpacing="22" Padding="20,20,20,0">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -100,26 +72,55 @@
                         </Grid.ColumnDefinitions>
                         <Label x:Name="Prodn" Grid.ColumnSpan="2"
                                Grid.Row="0" Style="{x:StaticResource Normalkanit}" FontSize="18"/>
-                        <Label x:Name="Skuinfo" Grid.Column="0"
+                        <Label x:Name="Skuinfo" Grid.Column="0" 
                                Grid.Row="1" Style="{x:StaticResource Normalkanit}"/>
-                        <Label x:Name="Prodm"  Grid.Column="1"  
-                               Grid.Row="1" />
-                        <Label x:Name="Prodb" Grid.Column="0" Grid.Row="2" 
+                        <Label x:Name="Prodb" Grid.Column="0" Grid.Row="2"
                              Style="{x:StaticResource Normalkanit}"/>
+                        <Label x:Name="Prodm"  Grid.Column="1" Grid.Row="2" 
+                               Style="{x:StaticResource Normalkanit}"/>
                         <Label x:Name="Proin" Grid.Column="0" Grid.Row="3" 
                                Style="{x:StaticResource Normalkanit}"/>
-                        <Label x:Name="Proout" Grid.Column="1" Grid.Row="5" 
+                        <Label x:Name="Proout" Grid.Column="1" Grid.Row="3" 
                                Style="{x:StaticResource Normalkanit}"/>
-                        <Label x:Name="Available" Grid.ColumnSpan="2" Grid.Row="6" 
+                        <Label x:Name="Available" Grid.ColumnSpan="2" Grid.Row="4" 
                                 Style="{x:StaticResource Normalkanit}"/>
-                        <Label x:Name="Alert" Grid.ColumnSpan="2" Grid.Row="1" 
+                        <Label x:Name="Alert" Grid.ColumnSpan="2" Grid.Row="1" HorizontalOptions="Center"
                                 Style="{x:StaticResource Normalkanit}"/>
+
                     </Grid>
-                   
+                    <Label Text="{Binding titletrans}" Style="{x:StaticResource Normalkanit}" x:Name="titletrans"
+                           FontSize="20" HorizontalOptions="Center"/>
+                    <ListView  x:Name="listview" HasUnevenRows="True"
+                               HeightRequest="420">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell IsEnabled="False">
+                                    <StackLayout Orientation="Vertical"  Padding="20,0">
+                                        <Label Text="{Binding RefNum}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding TransacDate}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding Type}" Style="{x:StaticResource Normalkanit}"
+                                                       x:Name="TypeTrans"
+                                                  HorizontalOptions="EndAndExpand" />
+                                                <Label Text="{Binding Quantity}"  Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="End"/>
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                        <Label Text="{Binding CreateBy}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackLayout>
             </ScrollView>
-               
-            </AbsoluteLayout>
+        </AbsoluteLayout>
 
     </ContentPage.Content>
 </ContentPage>
