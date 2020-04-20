@@ -63,10 +63,17 @@
                 <StackLayout 
                              HorizontalOptions="Start" 
                              VerticalOptions="Center">
-                    <ListView  x:Name="listview" >
+                    <ListView  x:Name="listview" HasUnevenRows="True">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <TextCell Text="{Binding TransectionDate}" Detail="{Binding ReferentNumber}"/>
+                                <ViewCell>
+                                    <StackLayout Orientation="Vertical" Padding="20,0">
+                                        <Label Text="{Binding ReferentNumber}"/>
+                                        <Label Text="{Binding Quantity}"/>
+                                        <Label Text="{Binding TransectionDate ,StringFormat='{0:dd MMMM yyyy}'}"/>
+                                    </StackLayout>
+                                </ViewCell>
+                                <!--<TextCell Text="{Binding TransectionDate}" Detail="{Binding ReferentNumber}"/>-->
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
