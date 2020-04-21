@@ -28,6 +28,7 @@ namespace APPMOBLIE
         {
             Username.Text = Application.Current.Properties["Username"].ToString();
             base.OnAppearing();
+           
 
             //using (HttpClient client = new HttpClient())
             //{
@@ -98,21 +99,10 @@ namespace APPMOBLIE
                             HttpResponseMessage ProductMin = await client.GetAsync("http://203.151.166.97/api/Products/CheckProductMin?CompanyId=" + CompanyId + "&Sku=" + Result.Sku);
                             var Min = await ProductMin.Content.ReadAsStringAsync();
                             //Transaction
-                            HttpResponseMessage TransactionFive = await client.GetAsync("http://203.151.166.97/api/Products/AllTramsectionsTakeLimit?CompanyId=" + CompanyId + "&Take=" + 5);
+                            HttpResponseMessage TransactionFive = await client.GetAsync("http://203.151.166.97/api/Products/TransactionBySku?CompanyId=" + CompanyId+ "&Take="+ 5 +"&Sku=" + result.Text);
                             var Five = await TransactionFive.Content.ReadAsStringAsync();
                             var TrnsactionResult = JsonConvert.DeserializeObject<List<TransactionModels>>(Five);
-                            var Listdetail = new List<TransactionDetail>();
-                            foreach (var datalist in TrnsactionResult)
-                            {
-                                var Items = new TransactionDetail();
-                                Items.RefNum = "Ref.No : " + datalist.ReferentNumber;
-                                Items.TransacDate = "Date : " + datalist.TransectionDate.Day + "-" + datalist.TransectionDate.Month + "-" + datalist.TransectionDate.Year;
-                                Items.Quantity = datalist.Quantity.ToString();
-                                Items.Type = datalist.TransectionType;
-                                Items.CreateBy = "Recorder : " + datalist.CreateBy;
-                                Listdetail.Add(Items);
-                            }
-                            listview.ItemsSource = Listdetail;
+                            listview.ItemsSource = TrnsactionResult;
 
                             titletrans.Text = "Transaction";
 
@@ -199,21 +189,11 @@ namespace APPMOBLIE
                     HttpResponseMessage ProductMin = await client.GetAsync("http://203.151.166.97/api/Products/CheckProductMin?CompanyId=" + CompanyId + "&Sku=" + Result.Sku);
                     var Min = await ProductMin.Content.ReadAsStringAsync();
                     //Transaction
-                    HttpResponseMessage TransactionFive = await client.GetAsync("http://203.151.166.97/api/Products/AllTramsectionsTakeLimit?CompanyId=" + CompanyId + "&Take=" + 5);
+                    HttpResponseMessage TransactionFive = await client.GetAsync("http://203.151.166.97/api/Products/TransactionBySku?CompanyId=" + CompanyId + "&Take=" + 5 + "&Sku=" + find);
                     var Five = await TransactionFive.Content.ReadAsStringAsync();
                     var TrnsactionResult = JsonConvert.DeserializeObject<List<TransactionModels>>(Five);
-                    var Listdetail = new List<TransactionDetail>();
-                    foreach (var datalist in TrnsactionResult)
-                    {
-                        var Items = new TransactionDetail();    
-                        Items.RefNum = "Ref.No : " + datalist.ReferentNumber;
-                        Items.TransacDate = "Date : " + datalist.TransectionDate.ToString("dd MMMM yyyy HH:mm");
-                        Items.Quantity = datalist.Quantity.ToString();
-                        Items.Type = datalist.TransectionType;
-                        Items.CreateBy = "Recorder : " + datalist.CreateBy;
-                        Listdetail.Add(Items);
-                    }
-                    listview.ItemsSource = Listdetail;
+                   
+                    listview.ItemsSource = TrnsactionResult;
                     titletrans.Text = "Transaction";
 
                     Skuinfo.Text = "SKU Id : " + Result.Sku;
@@ -270,16 +250,7 @@ namespace APPMOBLIE
 
         }
 
-        private class TransactionDetail
-        {
-            public string RefNum { get; set; }
-            public string Type { get; set; }
-            public string TransacDate { get; set; }
-            public string Quantity { get; set; }
-            public string CreateBy { get; set; }
-    
-
-        }
+      
 
      
     }

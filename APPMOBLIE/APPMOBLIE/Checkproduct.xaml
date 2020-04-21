@@ -11,7 +11,6 @@
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
 
     <ContentPage.Content>
-
         <AbsoluteLayout>
             <Image Source="background" Aspect="AspectFill"
                   AbsoluteLayout.LayoutBounds="0,0,1,0.15"
@@ -24,7 +23,7 @@
             <Label x:Name="Username" HorizontalOptions="Center" 
                       FontFamily="{StaticResource Kanit}"
                        FontSize="16"
-                        AbsoluteLayout.LayoutBounds="0.6,0.05"
+                        AbsoluteLayout.LayoutBounds="0.5,0.05"
                    AbsoluteLayout.LayoutFlags="PositionProportional"
                    FontAttributes="Bold"
                    />
@@ -50,9 +49,8 @@
                             HeightRequest="30" WidthRequest="30"
                          HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"/>
-              
             </StackLayout >
-            <ScrollView x:Name="Topview"
+            <ScrollView
                  AbsoluteLayout.LayoutBounds="0,1,1,0.70"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
                 <StackLayout 
@@ -91,19 +89,20 @@
                     <Label Text="{Binding titletrans}" Style="{x:StaticResource Normalkanit}" x:Name="titletrans"
                            FontSize="20" HorizontalOptions="Center"/>
                     <ListView  x:Name="listview" HasUnevenRows="True"
-                               HeightRequest="420">
+                               >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
                                     <StackLayout Orientation="Vertical"  Padding="20,0">
-                                        <Label Text="{Binding RefNum}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding reference}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding TransacDate}" Style="{x:StaticResource Normalkanit}"
+                                            <Label Text="{Binding TransacDate, StringFormat='{0:dd MM yyy HH mm}'}" 
+                                                   Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
 
                                             <StackLayout Orientation="Horizontal">
-                                                <Label Text="{Binding Type}" Style="{x:StaticResource Normalkanit}"
+                                                <Label Text="{Binding TransactionType}" Style="{x:StaticResource Normalkanit}"
                                                        x:Name="TypeTrans"
                                                   HorizontalOptions="EndAndExpand" />
                                                 <Label Text="{Binding Quantity}"  Style="{x:StaticResource Normalkanit}"
@@ -111,7 +110,11 @@
                                             </StackLayout>
                                         </StackLayout>
 
-                                        <Label Text="{Binding CreateBy}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding Username}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding Unit}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding Location}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                     </StackLayout>
                                 </ViewCell>
@@ -121,6 +124,5 @@
                 </StackLayout>
             </ScrollView>
         </AbsoluteLayout>
-
     </ContentPage.Content>
 </ContentPage>
