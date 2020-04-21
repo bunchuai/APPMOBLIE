@@ -66,7 +66,25 @@ namespace APPMOBLIE
                         LocationItem.Code = LocationResult.LocationCode;
                         LocationItems.Add(LocationItem);
                     }
+
                     ProductLocation.ItemsSource = LocationItems;
+                }
+
+                HttpResponseMessage responseProductType = await client.GetAsync("http://203.151.166.97/api/ProductsType/GetProductType");
+                if (responseProductType.IsSuccessStatusCode)
+                {
+                    var ProductTypeData = await responseProductType.Content.ReadAsStringAsync();
+                    var ProductTypeResults = JsonConvert.DeserializeObject<List<ProductTypes>>(ProductTypeData);
+                    var ProductTypeItems = new List<PickerProductType>();
+                    foreach (var ProductTypeResult in ProductTypeResults)
+                    {
+                        var ProductTypeItem = new PickerProductType();
+                        ProductTypeItem.Name = ProductTypeResult.TypeName;
+                        ProductTypeItem.Code = ProductTypeResult.TypeCode;
+                        ProductTypeItems.Add(ProductTypeItem);
+                    }
+
+                    ProductType.ItemsSource = ProductTypeItems;
                 }
             }
         }
@@ -116,6 +134,7 @@ namespace APPMOBLIE
             {
                 string UnitSelected = ProductUnit.Items[ProductUnit.SelectedIndex];
                 string LocationSelected = ProductLocation.Items[ProductUnit.SelectedIndex];
+                string ProductTypeSelected = ProductType.Items[ProductType.SelectedIndex];
 
                 JObject oJsonObject = new JObject();
                 oJsonObject.Add("SkuId", this.Mycode.Text);
@@ -131,6 +150,7 @@ namespace APPMOBLIE
                 oJsonObject.Add("Quantity", this.Quantity.Text);
                 oJsonObject.Add("ReferentNunber", this.ReferentNumber.Text);
                 oJsonObject.Add("Productmin", this.Productmin.Text);
+                oJsonObject.Add("TypeCode", ProductTypeSelected);
 
                 string Url = "http://203.151.166.97/api/Products/AddProduct";
                 client.BaseAddress = new Uri(Url);
@@ -185,6 +205,12 @@ namespace APPMOBLIE
         }
 
         private class PickerLocation
+        {
+            public string Code { get; set; }
+            public string Name { get; set; }
+        }
+
+        private class PickerProductType
         {
             public string Code { get; set; }
             public string Name { get; set; }

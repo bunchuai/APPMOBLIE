@@ -58,7 +58,7 @@ namespace APPMOBLIE
             Proin.Text = string.Empty;
             Proout.Text = string.Empty;
             Available.Text = string.Empty;
-            titletrans.Text = string.Empty;
+            Titletrans.Text = string.Empty;
             listview.ItemsSource = null;
 
 
@@ -92,7 +92,7 @@ namespace APPMOBLIE
                             var TrnsactionResult = JsonConvert.DeserializeObject<List<TransactionModels>>(Five);
                             listview.ItemsSource = TrnsactionResult;
 
-                            titletrans.Text = "Transaction";
+                            Titletrans.Text = "Transaction";
 
                             Skuinfo.Text = "SKU Id : " + Result.Sku;
                             Skuinfo.FontSize = 16;
@@ -143,7 +143,7 @@ namespace APPMOBLIE
                 Available.Text = string.Empty;
                 Alert.Text = string.Empty;
                 listview.ItemsSource = null;
-                titletrans.Text = string.Empty;
+                Titletrans.Text = string.Empty;
             }
             else
             {
@@ -156,7 +156,7 @@ namespace APPMOBLIE
                 Available.Text = string.Empty;
                 Alert.Text = string.Empty;
                 listview.ItemsSource = null;
-                titletrans.Text = string.Empty;
+                Titletrans.Text = string.Empty;
             }
             
             using (HttpClient client = new HttpClient())
@@ -182,7 +182,7 @@ namespace APPMOBLIE
                     var TrnsactionResult = JsonConvert.DeserializeObject<List<TransactionModels>>(Five);
                    
                     listview.ItemsSource = TrnsactionResult;
-                    titletrans.Text = "Transaction";
+                    Titletrans.Text = "Transaction";
 
                     Skuinfo.Text = "SKU Id : " + Result.Sku;
                     Skuinfo.FontSize = 16;
