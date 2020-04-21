@@ -4,7 +4,7 @@ using System.Text;
 
 namespace APPMOBLIE.Model
 {
-    class MasterUnit
+    public class MasterUnit
     {
         public int ProductUnitId { get; set; }
         public int CompanyId { get; set; }
@@ -12,7 +12,7 @@ namespace APPMOBLIE.Model
         public string Name { get; set; }
     }
 
-    class MasterLocation
+    public class MasterLocation
     {
         public int LocationId { get; set; }
         public int CompanyId { get; set; }

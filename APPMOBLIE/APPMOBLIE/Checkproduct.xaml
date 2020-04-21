@@ -86,7 +86,7 @@
                                 Style="{x:StaticResource Normalkanit}"/>
 
                     </Grid>
-                    <Label Text="{Binding titletrans}" Style="{x:StaticResource Normalkanit}" x:Name="titletrans"
+                    <Label Text="{Binding titletrans}" Style="{x:StaticResource Normalkanit}" x:Name="Titletrans"
                            FontSize="20" HorizontalOptions="Center"/>
                     <ListView  x:Name="listview" HasUnevenRows="True"
                                >
