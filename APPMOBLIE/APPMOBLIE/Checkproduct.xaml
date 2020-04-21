@@ -94,10 +94,10 @@
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
                                     <StackLayout Orientation="Vertical"  Padding="20,0">
-                                        <Label Text="{Binding reference}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding reference, StringFormat='Ref.No : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding TransacDate, StringFormat='{0:dd MM yyy HH mm}'}" 
+                                            <Label Text="{Binding TransacDate, StringFormat='Date : {0}'}" 
                                                    Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
 
@@ -107,15 +107,16 @@
                                                   HorizontalOptions="EndAndExpand" />
                                                 <Label Text="{Binding Quantity}"  Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="End"/>
+                                                <Label Text="{Binding Unit}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
                                             </StackLayout>
                                         </StackLayout>
-
-                                        <Label Text="{Binding Username}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding Location, StringFormat='Location on Store : {0} '}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
-                                        <Label Text="{Binding Unit}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding Username , StringFormat='Record By : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
-                                        <Label Text="{Binding Location}" Style="{x:StaticResource Normalkanit}"
-                                               HorizontalOptions="StartAndExpand"/>
+                                        
+                                       
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>

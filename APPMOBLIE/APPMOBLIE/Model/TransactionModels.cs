@@ -8,7 +8,7 @@ namespace APPMOBLIE.Model
     {
         public string reference { get; set; }
         public string TransactionType { get; set; }
-        public DateTime TransactionDate { get; set; }
+        public string TransactionDate { get; set; }
         public int Quantity { get; set; }
         public string Username { get; set; }
         public string Unit { get; set; }

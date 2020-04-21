@@ -32,6 +32,7 @@
                 HorizontalOptions="Center"
                   Orientation="Horizontal"
                 Spacing="10">
+           
         </StackLayout >
         <ScrollView
                  AbsoluteLayout.LayoutBounds="0,1,1,0.70"
