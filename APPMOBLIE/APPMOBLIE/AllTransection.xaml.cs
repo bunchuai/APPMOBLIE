@@ -14,6 +14,7 @@ namespace APPMOBLIE
         public AllTransection()
         {
             InitializeComponent();
+           
         }
 
         protected override void OnAppearing()

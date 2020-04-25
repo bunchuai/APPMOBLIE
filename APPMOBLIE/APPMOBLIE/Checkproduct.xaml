@@ -6,131 +6,58 @@
              mc:Ignorable="d"
              x:Class="APPMOBLIE.Checkproduct"
              BackgroundColor="#BED1E5"
-            Title="Search" 
+             Title="Search"
              IconImageSource="iconsscan"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
 
     <ContentPage.Content>
-        <!--<ScrollView>
-            <RelativeLayout>
-                <RelativeLayout  BackgroundColor="#BED1E5" 
-                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=90}"  
-                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height, Factor=1}" 
-                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" >
-
-                    <ic:CircleImage Source="userpic.png" HeightRequest="80" WidthRequest="80" Aspect="AspectFill"  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
-                 Property=Width, Factor=.5, Constant = -38}" 
-                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
-                 Factor=0, Property=Y, Constant=-45}" />
-
-                    <Label Text="User Name" x:Name="Username"  FontSize="16"
-                 HorizontalTextAlignment="Center" 
-                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=35}" 
-                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
-
-                </RelativeLayout>
-                
-                <Button Text="scan barcode"  
-                            Clicked="Button_Scan"
-                            HeightRequest="50" WidthRequest="220" CornerRadius="10" 
-                            TextColor="White" FontSize="18" BackgroundColor="#0095b6"
-                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=200}" 
-                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}"  />
-                
-                <RelativeLayout  Margin="20,0,30,0">
-                    <Label x:Name="Skuinfo" 
-             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=280}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-
-                    <Label x:Name="Prodn"  
-             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=320}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-
-                    <Label x:Name="Prodb" 
-             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=360}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-
-                    <Label x:Name="Prodm"  
-             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=400}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-
-                    <Label x:Name="Proin"  
-             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=460}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-
-                    <Label x:Name="Proout" 
-             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=500}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-
-                    <Label x:Name="Total" 
-             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=540}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-
-                    <Label x:Name="Alert"  HorizontalTextAlignment="Center" TextColor="Red"
-             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=280}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=10}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.95,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-                </RelativeLayout>
-            </RelativeLayout>
-        </ScrollView>-->
-        
         <AbsoluteLayout>
-         
-                <Image Source="background" Aspect="AspectFill"
-                  AbsoluteLayout.LayoutBounds="0,0,1,0.2"
+            <Image Source="background" Aspect="AspectFill"
+                  AbsoluteLayout.LayoutBounds="0,0,1,0.15"
                    AbsoluteLayout.LayoutFlags="All" />
-                <ic:CircleImage Source="userpic.png" 
+            <ic:CircleImage Source="kodelogo.jpg" 
                            Aspect="AspectFill"
                                 HeightRequest="80" WidthRequest="80"
-                           AbsoluteLayout.LayoutBounds="0.5,0.15"
+                           AbsoluteLayout.LayoutBounds="0.05,0.02"
                            AbsoluteLayout.LayoutFlags="PositionProportional"/>
-       
-            <StackLayout 
-                   AbsoluteLayout.LayoutBounds="0,0.12,1,0.5"
-                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
-                   VerticalOptions="Center"
-                Spacing="10">
-               
-                <Label x:Name="Username" HorizontalOptions="Center"
+            <Label x:Name="Username" HorizontalOptions="Center" 
+                      FontFamily="{StaticResource Kanit}"
+                       FontSize="16"
+                        AbsoluteLayout.LayoutBounds="0.5,0.05"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                   FontAttributes="Bold"
                    />
-                    <Button Text="Find Product"  Clicked="Button_Scan"
-                         BackgroundColor="#0095b6" 
-                    TextColor="White"
-                         FontSize="15"
-                        FontAttributes="Bold"
-                         HorizontalOptions="Center"
-                        HeightRequest="40"
-                        CornerRadius="10"/>
-                </StackLayout >
-            <ScrollView 
-                 AbsoluteLayout.LayoutBounds="0,1,1,0.60"
+
+            <StackLayout
+                  AbsoluteLayout.LayoutBounds="0,0.12,1,0.3"
+                  AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
+                  VerticalOptions="Center"
+                HorizontalOptions="Center"
+                  Orientation="Horizontal"
+                Spacing="10">
+                <Entry Placeholder="    Input SKU Id    "
+                           x:Name="findtext"
+                       Keyboard="Numeric"
+                       FontFamily="{x:StaticResource Kanit}"
+                       Completed="findtext_Completed"
+                       HorizontalTextAlignment="Center"
+                           />
+                <Label Text="OR" VerticalOptions="Center" Style="{x:StaticResource Normalkanit}"/>
+                <Button Clicked="Button_Scan"
+                        BackgroundColor="Transparent" 
+                        ImageSource="barcode.png"
+                            HeightRequest="30" WidthRequest="30"
+                         HorizontalOptions="StartAndExpand"
+                        VerticalOptions="Center"/>
+            </StackLayout >
+            <ScrollView
+                 AbsoluteLayout.LayoutBounds="0,1,1,0.70"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
-                <StackLayout
-                             HorizontalOptions="Start" >
-                    <Grid RowSpacing="25" Padding="50,0,20,0">
+                <StackLayout 
+                             HorizontalOptions="Start" 
+                             VerticalOptions="Center">
+                    <Grid RowSpacing="22" Padding="20,20,20,0">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -141,20 +68,62 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label x:Name="Skuinfo"  Grid.ColumnSpan="2"  Grid.Row="1" />
-                        <Label x:Name="Prodn"   Grid.ColumnSpan="2" Grid.Row="2" />
-                        <Label x:Name="Prodb"   Grid.ColumnSpan="2" Grid.Row="3" />
-                        <Label x:Name="Prodm"   Grid.ColumnSpan="2"  Grid.Row="4" />
-                        <Label x:Name="Proin"  Grid.Column="0" Grid.Row="5" />
-                        <Label x:Name="Proout"  Grid.Column="1" Grid.Row="5" />
-                        <Label x:Name="Available"  Grid.ColumnSpan="2" Grid.Row="6" />
-                        <Label x:Name="Alert"  Grid.ColumnSpan="2" Grid.Row="1" />
-                        
+                        <Label x:Name="Prodn" Grid.ColumnSpan="2"
+                               Grid.Row="0" Style="{x:StaticResource Normalkanit}" FontSize="18"/>
+                        <Label x:Name="Skuinfo" Grid.Column="0" 
+                               Grid.Row="1" Style="{x:StaticResource Normalkanit}"/>
+                        <Label x:Name="Prodb" Grid.Column="0" Grid.Row="2"
+                             Style="{x:StaticResource Normalkanit}"/>
+                        <Label x:Name="Prodm"  Grid.Column="1" Grid.Row="2" 
+                               Style="{x:StaticResource Normalkanit}"/>
+                        <Label x:Name="Proin" Grid.Column="0" Grid.Row="3" 
+                               Style="{x:StaticResource Normalkanit}"/>
+                        <Label x:Name="Proout" Grid.Column="1" Grid.Row="3" 
+                               Style="{x:StaticResource Normalkanit}"/>
+                        <Label x:Name="Available" Grid.ColumnSpan="2" Grid.Row="4" 
+                                Style="{x:StaticResource Normalkanit}"/>
+                        <Label x:Name="Alert" Grid.ColumnSpan="2" Grid.Row="1" HorizontalOptions="Center"
+                                Style="{x:StaticResource Normalkanit}"/>
+
                     </Grid>
+                    <Label Text="{Binding titletrans}" Style="{x:StaticResource Normalkanit}" x:Name="Titletrans"
+                           FontSize="20" HorizontalOptions="Center"/>
+                    <ListView  x:Name="listview" HasUnevenRows="True"
+                               >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell IsEnabled="False">
+                                    <StackLayout Orientation="Vertical"  Padding="20,0">
+                                        <Label Text="{Binding reference, StringFormat='Ref.No : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding TransacDate, StringFormat='Date : {0}'}" 
+                                                   Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding TransactionType}" Style="{x:StaticResource Normalkanit}"
+                                                       x:Name="TypeTrans"
+                                                  HorizontalOptions="EndAndExpand" />
+                                                <Label Text="{Binding Quantity}"  Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="End"/>
+                                                <Label Text="{Binding Unit}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <Label Text="{Binding Location, StringFormat='Location on Store : {0} '}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding Username , StringFormat='Record By : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                        
+                                       
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackLayout>
             </ScrollView>
-               
-            </AbsoluteLayout>
-
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

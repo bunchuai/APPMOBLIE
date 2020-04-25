@@ -4,10 +4,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="APPMOBLIE.App">
+             x:Class="APPMOBLIE.App"
+             >  
 
     <Application.Resources>
         <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="Kanit">
+                <On Platform="Android" Value="Kanit.ttf#Kanit"/>
+            </OnPlatform>
+            <Style x:Key="Normalkanit" TargetType="Label">
+                <Setter Property="FontFamily" Value="{x:StaticResource Kanit}"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
             <Style x:Key="Normal" TargetType="Label">
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="FontSize" Value="20"/>
