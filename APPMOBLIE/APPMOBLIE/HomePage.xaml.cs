@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 
 namespace APPMOBLIE
 {
+
     public partial class HomePage : TabbedPage
     {
         public HomePage()
