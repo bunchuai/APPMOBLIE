@@ -93,7 +93,7 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
-                                    <StackLayout Orientation="Vertical"  Padding="20,0">
+                                    <StackLayout Orientation="Vertical"  Padding="20,10,20,10">
                                         <Label Text="{Binding reference, StringFormat='Ref.No : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         <StackLayout Orientation="Horizontal">
@@ -101,18 +101,22 @@
                                                    Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
 
-                                            <StackLayout Orientation="Horizontal">
+                                            <StackLayout Orientation="Horizontal" >
                                                 <Label Text="{Binding TransactionType}" Style="{x:StaticResource Normalkanit}"
-                                                       x:Name="TypeTrans"
-                                                  HorizontalOptions="EndAndExpand" />
+                                                        x:Name="TypeTrans"
+                                                        HorizontalOptions="EndAndExpand"
+                                                        TextColor="{Binding Color}"/>
                                                 <Label Text="{Binding Quantity}"  Style="{x:StaticResource Normalkanit}"
-                                               HorizontalOptions="End"/>
+                                                        HorizontalOptions="End"
+                                                        TextColor="{Binding Color}"/>
                                                 <Label Text="{Binding Unit}" Style="{x:StaticResource Normalkanit}"
-                                               HorizontalOptions="StartAndExpand"/>
+                                                        HorizontalOptions="StartAndExpand"
+                                                        TextColor="{Binding Color}"/>
                                             </StackLayout>
                                         </StackLayout>
                                         <Label Text="{Binding Location, StringFormat='Location on Store : {0} '}" Style="{x:StaticResource Normalkanit}"
-                                               HorizontalOptions="StartAndExpand"/>
+                                               HorizontalOptions="StartAndExpand"
+                                               />
                                         <Label Text="{Binding Username , StringFormat='Record By : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         

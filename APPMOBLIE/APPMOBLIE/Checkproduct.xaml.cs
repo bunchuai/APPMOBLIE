@@ -180,6 +180,7 @@ namespace APPMOBLIE
                     HttpResponseMessage TransactionFive = await client.GetAsync("http://203.151.166.97/api/Products/TransactionBySku?CompanyId=" + CompanyId + "&Take=" + 5 + "&Sku=" + find);
                     var Five = await TransactionFive.Content.ReadAsStringAsync();
                     var TrnsactionResult = JsonConvert.DeserializeObject<List<TransactionModels>>(Five);
+
                    
                     listview.ItemsSource = TrnsactionResult;
                     Titletrans.Text = "Transaction";
