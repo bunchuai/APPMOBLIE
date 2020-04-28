@@ -13,5 +13,6 @@ namespace APPMOBLIE.Model
         public string Username { get; set; }
         public string Unit { get; set; }
         public string Location { get; set; }
+        public string Color { get; set; }
     }
 }

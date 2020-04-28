@@ -133,7 +133,7 @@ namespace APPMOBLIE
             using (HttpClient client = new HttpClient())
             {
                 string UnitSelected = ProductUnit.Items[ProductUnit.SelectedIndex];
-                string LocationSelected = ProductLocation.Items[ProductUnit.SelectedIndex];
+                string LocationSelected = ProductLocation.Items[ProductLocation.SelectedIndex];
                 string ProductTypeSelected = ProductType.Items[ProductType.SelectedIndex];
 
                 JObject oJsonObject = new JObject();
