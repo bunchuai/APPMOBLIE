@@ -27,34 +27,38 @@
                    AbsoluteLayout.LayoutFlags="PositionProportional"
                    FontAttributes="Bold"
                    />
-
             <StackLayout
-                  AbsoluteLayout.LayoutBounds="0,0.12,1,0.3"
+                  AbsoluteLayout.LayoutBounds="0,0.20,1,0.3"
                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
                   VerticalOptions="Center"
                 HorizontalOptions="Center"
-                  Orientation="Horizontal"
+                  Orientation="Vertical"
                 Spacing="10">
-                <Entry Placeholder="    Input SKU Id    "
+                <Entry Placeholder="    กรอกหมายเลข SKU    "
                            x:Name="findtext"
                        Keyboard="Numeric"
                        FontFamily="{x:StaticResource Kanit}"
                        Completed="findtext_Completed"
                        HorizontalTextAlignment="Center"
                            />
-                <Label Text="OR" VerticalOptions="Center" Style="{x:StaticResource Normalkanit}"/>
-                <Button Clicked="Button_Scan"
+                <Label Text="หรือ " VerticalOptions="Center" Style="{x:StaticResource Normalkanit}" HorizontalOptions="Center"/>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center">
+                    <Button Clicked="Button_Scan"
                         BackgroundColor="Transparent" 
                         ImageSource="barcode.png"
                             HeightRequest="30" WidthRequest="30"
-                         HorizontalOptions="StartAndExpand"
+                         HorizontalOptions="Start"
                         VerticalOptions="Center"/>
+                    <Label Text="(แสกนบาร์โค้ด) " VerticalOptions="Center" HorizontalOptions="Start" Style="{x:StaticResource Normalkanit}"/>
+                </StackLayout>
+               
             </StackLayout >
             <ScrollView
-                 AbsoluteLayout.LayoutBounds="0,1,1,0.70"
+                 AbsoluteLayout.LayoutBounds="0,1,1,0.60"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
                 <StackLayout 
-                             HorizontalOptions="Start" 
+                             HorizontalOptions="StartAndExpand" 
                              VerticalOptions="Center">
                     <Grid RowSpacing="22" Padding="20,20,20,0">
                         <Grid.RowDefinitions>
@@ -94,7 +98,7 @@
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
                                     <StackLayout Orientation="Vertical"  Padding="20,10,20,10">
-                                        <Label Text="{Binding reference, StringFormat='Ref.No : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding reference, StringFormat='รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="{Binding TransactionDate, StringFormat='Date : {0}'}" 

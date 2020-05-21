@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              x:Class="APPMOBLIE.AllTransection"
              Title="Transection" 
+             BackgroundColor="#BED1E5"
              IconImageSource="iconstrans"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              xmlns:local="clr-namespace:APPMOBLIE">
@@ -29,10 +30,9 @@
         <ScrollView
                  AbsoluteLayout.LayoutBounds="0,1,1,0.85"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
-            <StackLayout Padding="13" Spacing="13" BackgroundColor="#c7e9e9">
+            <StackLayout Padding="13" Spacing="13">
                 <StackLayout Orientation="Vertical"
-                             VerticalOptions="CenterAndExpand"
-                             BackgroundColor="#c7e9e9">
+                             VerticalOptions="CenterAndExpand">
                     <Button Text="คลังสินค้าเข้า" BackgroundColor="White" BorderWidth="6" BorderColor="#c6e2ff" 
                                     CornerRadius="15"
                                     Clicked="Button_ClickedIn"
