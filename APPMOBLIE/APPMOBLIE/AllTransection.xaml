@@ -29,33 +29,32 @@
         <ScrollView
                  AbsoluteLayout.LayoutBounds="0,1,1,0.85"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
-            <StackLayout Padding="13" Spacing="13" BackgroundColor="#eeeeee">
-                <Label Text="DateTime Today"  Style="{StaticResource Normalkanit}"/>
+            <StackLayout Padding="13" Spacing="13" BackgroundColor="#c7e9e9">
                 <StackLayout Orientation="Vertical"
-                             VerticalOptions="StartAndExpand"
-                             BackgroundColor="#eeeeee">
-                    <Button Text="stock in" BackgroundColor="White" BorderWidth="6" BorderColor="#c6e2ff" 
+                             VerticalOptions="CenterAndExpand"
+                             BackgroundColor="#c7e9e9">
+                    <Button Text="คลังสินค้าเข้า" BackgroundColor="White" BorderWidth="6" BorderColor="#c6e2ff" 
                                     CornerRadius="15"
-                                    Clicked="Button_Clicked"
-                            TextColor="#4ca3dd"
+                                    Clicked="Button_ClickedIn"
+                            TextColor="#455e5e"
                             Style="{StaticResource Normalkanit}"
                             HeightRequest="80"
                               FontSize="25"
                             ></Button>
-                    <ListView x:Name="Dashboardin" HasUnevenRows="True" IsVisible="{Binding Enabledashboard}" BackgroundColor="White" HeightRequest="450">
+                    <ListView x:Name="Dashboardin" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
                                     <StackLayout Orientation="Vertical"  Padding="20">
-                                        <Label Text="{Binding reference, StringFormat='Ref.No : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding reference, StringFormat='รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding TransactionDate, StringFormat='Date : {0}'}" 
+                                            <Label Text="{Binding TransactionDate, StringFormat='วันที่รับเข้า : {0}'}" 
                                                    Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
 
                                             <StackLayout Orientation="Horizontal">
-                                                <Label Text="{Binding TransactionType}" Style="{x:StaticResource Normalkanit}"
+                                                <Label Text="จำนวน :" Style="{x:StaticResource Normalkanit}"
                                                        x:Name="TypeTrans"
                                                   HorizontalOptions="EndAndExpand" />
                                                 <Label Text="{Binding Quantity}"  Style="{x:StaticResource Normalkanit}"
@@ -64,9 +63,11 @@
                                                HorizontalOptions="StartAndExpand"/>
                                             </StackLayout>
                                         </StackLayout>
-                                        <Label Text="{Binding Location, StringFormat='Location on Store : {0} '}" Style="{x:StaticResource Normalkanit}"
+                                        
+                                        
+                                        <Label Text="{Binding Location, StringFormat='สถานที่/ตำแหน่งจัดเก็บ : {0} '}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
-                                        <Label Text="{Binding Username , StringFormat='Record By : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding Username , StringFormat='ผู้บันทึกรับสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                     </StackLayout>
                                 </ViewCell>
@@ -74,15 +75,56 @@
                         </ListView.ItemTemplate>
                     </ListView>
                     <StackLayout  VerticalOptions="CenterAndExpand">
-                        <Button Text="stock out" BackgroundColor="White" BorderWidth="6" BorderColor="#c6e2ff" 
+                        <Button Text="คลังสินค้าออก" BackgroundColor="White" BorderWidth="6" BorderColor="#c6e2ff" 
                                     CornerRadius="15"
-                                    Clicked="Button_Clicked2"
-                            TextColor="#4ca3dd"
+                                    Clicked="Button_ClickedOut"
+                            TextColor="#455e5e"
                                 FontSize="25"
                             Style="{StaticResource Normalkanit}"
                                 HeightRequest="80"
                             ></Button>
-                        <ListView x:Name="Dashboardout" HasUnevenRows="True" IsVisible="{Binding Enabledashboard}" BackgroundColor="White" HeightRequest="450">
+                        <ListView x:Name="Dashboardout" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell IsEnabled="False" >
+                                        <StackLayout Orientation="Vertical"  Padding="20">
+                                            <Label Text="{Binding reference, StringFormat='รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding TransactionDate, StringFormat='วันที่ส่งออก : {0}'}" 
+                                                   Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="จำนวน" Style="{x:StaticResource Normalkanit}"
+                                                       x:Name="TypeTrans"
+                                                  HorizontalOptions="EndAndExpand" />
+                                                    <Label Text="{Binding Quantity}"  Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="End"/>
+                                                    <Label Text="{Binding Unit}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <Label Text="{Binding Location, StringFormat='สถานที่/ตำแหน่งจัดเก็บ : {0} '}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                            <Label Text="{Binding Username , StringFormat='ผู้บันทึกส่งออก : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                    <StackLayout  VerticalOptions="CenterAndExpand">
+                        <Button Text="คลังสินค้าสั่งซื้อซ้ำ" BackgroundColor="White" BorderWidth="6" BorderColor="#c6e2ff" 
+                                    CornerRadius="15"
+                                    Clicked="Button_ClickedReorder"
+                            TextColor="#455e5e"
+                                FontSize="25"
+                            Style="{StaticResource Normalkanit}"
+                                HeightRequest="80"
+                            ></Button>
+                        <ListView x:Name="Dashboardreorder" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell IsEnabled="False" >

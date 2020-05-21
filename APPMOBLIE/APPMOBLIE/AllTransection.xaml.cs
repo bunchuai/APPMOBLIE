@@ -14,19 +14,25 @@ namespace APPMOBLIE
 {
     public partial class AllTransection : ContentPage
     {
-        public bool Enabledashboard { get; set; }
+        public bool dashboardIn { get; set; }
+        public bool dashboardOut { get; set; }
+        public bool dashboardRe { get; set; }
         public AllTransection()
         {
             InitializeComponent();
-            Enabledashboard = false;
-            Dashboardin.IsVisible = Enabledashboard;
-            Dashboardout.IsVisible = Enabledashboard;
+            dashboardIn = false;
+            dashboardOut = false;
+            dashboardRe = false;
+            Dashboardin.IsVisible = dashboardIn;
+            Dashboardout.IsVisible = dashboardOut;
+            Dashboardreorder.IsVisible = dashboardRe;
         }
 
         protected override async void OnAppearing()
         {
             Username.Text = Application.Current.Properties["Username"].ToString();
             base.OnAppearing();
+
 
 
             using (HttpClient client = new HttpClient())
@@ -45,41 +51,54 @@ namespace APPMOBLIE
                     var TrnsactionResult = JsonConvert.DeserializeObject<List<TransactionModels>>(ResponseData);
                     Dashboardin.ItemsSource = TrnsactionResult;
                     Dashboardout.ItemsSource = TrnsactionResult;
+                    Dashboardreorder.ItemsSource = TrnsactionResult;
                 }
             }
         }
 
-        public void Button_Clicked(object sender, EventArgs e)
+        public void Button_ClickedIn(object sender, EventArgs e)
         {
 
-            if (Enabledashboard == false)
+            if (dashboardIn == false)
             {
-                Enabledashboard = true;
-                Dashboardin.IsVisible = Enabledashboard;
-                Dashboardout.IsVisible = false;
+                dashboardIn = true;
+                Dashboardin.IsVisible = dashboardIn;
             }
             else
             {
-                Enabledashboard = false;
-                Dashboardin.IsVisible = Enabledashboard;
-                Dashboardout.IsVisible = Enabledashboard;
+                dashboardIn = false;
+                Dashboardin.IsVisible = dashboardIn;
             }
 
         }
-        public void Button_Clicked2(object sender, EventArgs e)
+        public void Button_ClickedOut(object sender, EventArgs e)
         {
 
-            if (Enabledashboard == false)
+            if (dashboardOut == false)
             {
-                Enabledashboard = true;
-                Dashboardout.IsVisible = Enabledashboard;
-                Dashboardin.IsVisible = false;
+                dashboardOut = true;
+                Dashboardout.IsVisible = dashboardOut;
             }
             else
             {
-                Enabledashboard = false;
-                Dashboardout.IsVisible = Enabledashboard;
-                Dashboardin.IsVisible = Enabledashboard;
+                dashboardOut = false;
+                Dashboardout.IsVisible = dashboardOut;
+            }
+
+        }
+
+        public void Button_ClickedReorder(object sender, EventArgs e)
+        {
+
+            if (dashboardRe == false)
+            {
+                dashboardRe = true;
+                Dashboardreorder.IsVisible = dashboardRe;
+            }
+            else
+            {
+                dashboardRe = false;
+                Dashboardreorder.IsVisible = dashboardRe;
             }
 
         }
