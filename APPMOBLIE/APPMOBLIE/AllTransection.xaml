@@ -46,6 +46,7 @@
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
                                     <StackLayout Orientation="Vertical"  Padding="20">
+                                        <Image Source="iconlist" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
                                         <Label Text="{Binding reference, StringFormat='รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         <StackLayout Orientation="Horizontal">
@@ -88,6 +89,8 @@
                                 <DataTemplate>
                                     <ViewCell IsEnabled="False" >
                                         <StackLayout Orientation="Vertical"  Padding="20">
+                                            <Image Source="iconlist" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
+
                                             <Label Text="{Binding reference, StringFormat='รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                             <StackLayout Orientation="Horizontal">
@@ -129,6 +132,8 @@
                                 <DataTemplate>
                                     <ViewCell IsEnabled="False" >
                                         <StackLayout Orientation="Vertical"  Padding="20">
+                                            <Image Source="iconlist" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
+
                                             <Label Text="{Binding reference, StringFormat='Ref.No : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                             <StackLayout Orientation="Horizontal">
