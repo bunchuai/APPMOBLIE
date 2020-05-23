@@ -9049,28 +9049,31 @@ namespace APPMOBLIE.Droid
 			public const int transition_transform = 2131230919;
 			
 			// aapt resource value: 0x7F0800C8
-			public const int uniform = 2131230920;
+			public const int txtView = 2131230920;
 			
 			// aapt resource value: 0x7F0800C9
-			public const int unlabeled = 2131230921;
+			public const int uniform = 2131230921;
 			
 			// aapt resource value: 0x7F0800CA
-			public const int up = 2131230922;
+			public const int unlabeled = 2131230922;
 			
 			// aapt resource value: 0x7F0800CB
-			public const int useLogo = 2131230923;
+			public const int up = 2131230923;
 			
 			// aapt resource value: 0x7F0800CC
-			public const int view_offset_helper = 2131230924;
+			public const int useLogo = 2131230924;
 			
 			// aapt resource value: 0x7F0800CD
-			public const int visible = 2131230925;
+			public const int view_offset_helper = 2131230925;
 			
 			// aapt resource value: 0x7F0800CE
-			public const int withText = 2131230926;
+			public const int visible = 2131230926;
 			
 			// aapt resource value: 0x7F0800CF
-			public const int wrap_content = 2131230927;
+			public const int withText = 2131230927;
+			
+			// aapt resource value: 0x7F0800D0
+			public const int wrap_content = 2131230928;
 			
 			static Id()
 			{
@@ -9376,19 +9379,22 @@ namespace APPMOBLIE.Droid
 			public const int ShellContent = 2131427396;
 			
 			// aapt resource value: 0x7F0B0045
-			public const int support_simple_spinner_dropdown_item = 2131427397;
+			public const int Splash = 2131427397;
 			
 			// aapt resource value: 0x7F0B0046
-			public const int Tabbar = 2131427398;
+			public const int support_simple_spinner_dropdown_item = 2131427398;
 			
 			// aapt resource value: 0x7F0B0047
-			public const int Toolbar = 2131427399;
+			public const int Tabbar = 2131427399;
 			
 			// aapt resource value: 0x7F0B0048
-			public const int zxingscanneractivitylayout = 2131427400;
+			public const int Toolbar = 2131427400;
 			
 			// aapt resource value: 0x7F0B0049
-			public const int zxingscannerfragmentlayout = 2131427401;
+			public const int zxingscanneractivitylayout = 2131427401;
+			
+			// aapt resource value: 0x7F0B004A
+			public const int zxingscannerfragmentlayout = 2131427402;
 			
 			static Layout()
 			{
