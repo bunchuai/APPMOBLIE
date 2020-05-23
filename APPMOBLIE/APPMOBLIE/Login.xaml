@@ -8,75 +8,83 @@
              BackgroundImage="background.png">
 
     <ContentPage.Content>
+        
 
-        <StackLayout BackgroundColor="LightBlue">
-            <Grid>
-                <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
-                    <Frame HeightRequest="200" BackgroundColor="HotPink" Padding="0" Margin="0">
-                        <Image Source="background.png" Aspect="AspectFill" Margin="0"/>
-                    </Frame>
-                </StackLayout>
-                <StackLayout Padding="0" Margin="10,150,10,0" HorizontalOptions="FillAndExpand">
-                    <Frame  BackgroundColor="White" HeightRequest="400" HasShadow="True" Padding="0" Margin="0" CornerRadius="20">
-                        <StackLayout>
-                            <StackLayout Margin="10">
-                                <Label Text="SIGN IN" TextColor="DarkGray" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
-                            </StackLayout>
+        <StackLayout >
+                <Grid>
+                    <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                
+                  
+                       
 
-                            <StackLayout Padding="0" Margin="35,10">
 
-                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
-                                    <StackLayout Orientation="Horizontal">
-                                        <Frame BackgroundColor="SkyBlue" HeightRequest="35" WidthRequest="35" CornerRadius="30" Padding="0" Margin="5">
-                                            <Image Source="https://www.findool.com/images/avatars/avatar.png" Aspect="AspectFill" Margin="0"/>
-                                        </Frame>
 
-                                        <Entry x:Name="Email" 
-                   Placeholder="Enter e-mail Address"   TextColor="DarkGray" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
-                                    </StackLayout>
-                                </Frame>
+                  
+                    </StackLayout>
+                    <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
+                        <Frame  BackgroundColor="White" HeightRequest="400" HasShadow="True" Padding="0" Margin="0" CornerRadius="20">
+                            <StackLayout>
+                            <StackLayout Margin="0,30,0,10">
+                                <Label Text="ระบบคลังสินค้า" FontSize="22" Style="{x:StaticResource Normalkanit}"  TextColor="Gray" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                                <!--<Label Text="เข้าสู่ระบบ" FontSize="18" Style="{x:StaticResource Normalkanit}"  TextColor="DarkGray" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>-->
+                                </StackLayout>
 
-                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
-                                    <StackLayout Orientation="Horizontal">
-                                        <Frame BackgroundColor="SkyBlue" HeightRequest="35" WidthRequest="35" CornerRadius="30" Padding="0" Margin="5">
-                                            <Image Source="https://images.all-free-download.com/images/graphicthumb/lock_icon_6813906.jpg" Aspect="AspectFill" Margin="0"/>
-                                        </Frame>
+                                <StackLayout Padding="0" Margin="35,10">
 
-                                        <Entry  x:Name="Password" IsPassword="True" MaxLength="8" Placeholder="Enter password"  
+                                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Frame BackgroundColor="SkyBlue" HeightRequest="35" WidthRequest="35" CornerRadius="30" Padding="0" Margin="5">
+                                                <Image Source="https://www.findool.com/images/avatars/avatar.png" Aspect="AspectFill" Margin="0"/>
+                                            </Frame>
+
+                                            <Entry x:Name="Email" 
+                   Placeholder="อีเมล" Style="{x:StaticResource Normalkanit}"   TextColor="DarkGray" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                        </StackLayout>
+                                    </Frame>
+
+                                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Frame BackgroundColor="SkyBlue" HeightRequest="35" WidthRequest="35" CornerRadius="30" Padding="0" Margin="5">
+                                                <Image Source="https://images.all-free-download.com/images/graphicthumb/lock_icon_6813906.jpg" Aspect="AspectFill" Margin="0"/>
+                                            </Frame>
+
+                                            <Entry  x:Name="Password" IsPassword="True" MaxLength="8" Placeholder="รหัสผ่าน" Style="{x:StaticResource Normalkanit}"  
                                                 TextColor="DarkGray" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
-                                    </StackLayout>
-                                </Frame>
-                                <Label x:Name="displayError" Text="" TextColor="Red"/>
+                                        </StackLayout>
+                                    </Frame>
+                                    <Label x:Name="displayError" Text="" TextColor="Red"/>
 
-                                <StackLayout  Orientation="Horizontal">
+                                    <!--<StackLayout  Orientation="Horizontal">
                                     <CheckBox IsChecked="False" Color="Gray"  />
                                     <Label Text="Remember me" TextColor="DarkGray" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
 
 
 
+                                </StackLayout>-->
+                                    <StackLayout Margin="40,10">
+                                        <Button  Text="เข้าสู่ระบบ" Style="{x:StaticResource Normalkanit}"  Clicked="button_SignIn" BackgroundColor="#0095b6" TextColor="White" CornerRadius="30" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                        <Label Text="ลืมรหัสผ่าน" Style="{x:StaticResource Normalkanit}" TextColor="Gray" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                                    </StackLayout>
+
+
+
+
                                 </StackLayout>
-
-                                <Button  Text="SignIn"   Clicked="button_SignIn" BackgroundColor="#0095b6" TextColor="White" CornerRadius="30" />
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                    <Label Text="Forgot Password" TextColor="Gray" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
-
-                                </StackLayout>
-
-                                
 
 
                             </StackLayout>
 
-
-                        </StackLayout>
-
-                    </Frame>
-                </StackLayout>
-            </Grid>
-        </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
 
 
 
+      
 
 
 
