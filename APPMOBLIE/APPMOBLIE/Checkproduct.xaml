@@ -15,7 +15,7 @@
             <Image Source="background" Aspect="AspectFill"
                   AbsoluteLayout.LayoutBounds="0,0,1,0.15"
                    AbsoluteLayout.LayoutFlags="All" />
-            <ic:CircleImage Source="kodelogo.jpg" 
+            <ic:CircleImage Source="userpic.png" 
                            Aspect="AspectFill"
                                 HeightRequest="80" WidthRequest="80"
                            AbsoluteLayout.LayoutBounds="0.05,0.02"

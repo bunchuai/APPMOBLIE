@@ -13,33 +13,21 @@
     <ContentPage.Content>
 
         <AbsoluteLayout>
-
             <Image Source="background" Aspect="AspectFill"
-                  AbsoluteLayout.LayoutBounds="0,0,1,0.2"
+                  AbsoluteLayout.LayoutBounds="0,0,1,0.15"
                    AbsoluteLayout.LayoutFlags="All" />
             <ic:CircleImage Source="userpic.png" 
                            Aspect="AspectFill"
                                 HeightRequest="80" WidthRequest="80"
-                           AbsoluteLayout.LayoutBounds="0.5,0.15"
+                           AbsoluteLayout.LayoutBounds="0.05,0.02"
                            AbsoluteLayout.LayoutFlags="PositionProportional"/>
-
-            <StackLayout 
-                   AbsoluteLayout.LayoutBounds="0,0.12,1,0.38"
-                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
-                   VerticalOptions="Center"
-                Spacing="20">
-
-                <Label x:Name="Username" HorizontalOptions="Center"
+            <Label x:Name="Username" HorizontalOptions="Center" 
+                      FontFamily="{StaticResource Kanit}"
+                       FontSize="16"
+                        AbsoluteLayout.LayoutBounds="0.6,0.05"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                   FontAttributes="Bold"
                    />
-                <!--<Button Text="Find Product"  Clicked="Button_Scan"
-                         BackgroundColor="#0095b6" 
-                    TextColor="White"
-                         FontSize="15"
-                        FontAttributes="Bold"
-                         HorizontalOptions="Center"
-                        HeightRequest="40"
-                        CornerRadius="10"/>-->
-            </StackLayout >
 
             <ScrollView 
                  AbsoluteLayout.LayoutBounds="0,1,1,0.70"
