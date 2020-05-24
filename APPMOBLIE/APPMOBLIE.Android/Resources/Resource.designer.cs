@@ -15,7 +15,7 @@ namespace APPMOBLIE.Droid
 {
 	
 	
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
 	public partial class Resource
 	{
 		
@@ -8319,16 +8319,40 @@ namespace APPMOBLIE.Droid
 			public const int design_snackbar_background = 2131165286;
 			
 			// aapt resource value: 0x7F07006A
-			public const int iconsadd = 2131165290;
+			public const int iconbox = 2131165290;
 			
 			// aapt resource value: 0x7F07006B
-			public const int iconsscan = 2131165291;
+			public const int iconin = 2131165291;
 			
 			// aapt resource value: 0x7F07006C
-			public const int iconssett = 2131165292;
+			public const int iconinsky = 2131165292;
 			
 			// aapt resource value: 0x7F07006D
-			public const int iconstrans = 2131165293;
+			public const int iconlist = 2131165293;
+			
+			// aapt resource value: 0x7F07006E
+			public const int iconout = 2131165294;
+			
+			// aapt resource value: 0x7F07006F
+			public const int iconoutsky = 2131165295;
+			
+			// aapt resource value: 0x7F070070
+			public const int iconsadd = 2131165296;
+			
+			// aapt resource value: 0x7F070071
+			public const int iconscanbar = 2131165297;
+			
+			// aapt resource value: 0x7F070072
+			public const int iconsearch = 2131165298;
+			
+			// aapt resource value: 0x7F070073
+			public const int iconsscan = 2131165299;
+			
+			// aapt resource value: 0x7F070074
+			public const int iconssett = 2131165300;
+			
+			// aapt resource value: 0x7F070075
+			public const int iconstrans = 2131165301;
 			
 			// aapt resource value: 0x7F070067
 			public const int ic_mtrl_chip_checked_black = 2131165287;
@@ -8339,89 +8363,89 @@ namespace APPMOBLIE.Droid
 			// aapt resource value: 0x7F070069
 			public const int ic_mtrl_chip_close_circle = 2131165289;
 			
-			// aapt resource value: 0x7F07006E
-			public const int In32 = 2131165294;
-			
-			// aapt resource value: 0x7F07006F
-			public const int In512 = 2131165295;
-			
-			// aapt resource value: 0x7F070070
-			public const int kodelogo = 2131165296;
-			
-			// aapt resource value: 0x7F070072
-			public const int logo = 2131165298;
-			
-			// aapt resource value: 0x7F070073
-			public const int logo__ = 2131165299;
-			
-			// aapt resource value: 0x7F070071
-			public const int log__ = 2131165297;
-			
-			// aapt resource value: 0x7F070074
-			public const int mtrl_snackbar_background = 2131165300;
-			
-			// aapt resource value: 0x7F070075
-			public const int mtrl_tabs_default_indicator = 2131165301;
-			
 			// aapt resource value: 0x7F070076
-			public const int navigation_empty_icon = 2131165302;
+			public const int In32 = 2131165302;
 			
 			// aapt resource value: 0x7F070077
-			public const int notification_action_background = 2131165303;
+			public const int In512 = 2131165303;
 			
 			// aapt resource value: 0x7F070078
-			public const int notification_bg = 2131165304;
-			
-			// aapt resource value: 0x7F070079
-			public const int notification_bg_low = 2131165305;
+			public const int kodelogo = 2131165304;
 			
 			// aapt resource value: 0x7F07007A
-			public const int notification_bg_low_normal = 2131165306;
+			public const int logo = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
-			public const int notification_bg_low_pressed = 2131165307;
+			public const int logo__ = 2131165307;
+			
+			// aapt resource value: 0x7F070079
+			public const int log__ = 2131165305;
 			
 			// aapt resource value: 0x7F07007C
-			public const int notification_bg_normal = 2131165308;
+			public const int mtrl_snackbar_background = 2131165308;
 			
 			// aapt resource value: 0x7F07007D
-			public const int notification_bg_normal_pressed = 2131165309;
+			public const int mtrl_tabs_default_indicator = 2131165309;
 			
 			// aapt resource value: 0x7F07007E
-			public const int notification_icon_background = 2131165310;
+			public const int navigation_empty_icon = 2131165310;
 			
 			// aapt resource value: 0x7F07007F
-			public const int notification_template_icon_bg = 2131165311;
+			public const int notification_action_background = 2131165311;
 			
 			// aapt resource value: 0x7F070080
-			public const int notification_template_icon_low_bg = 2131165312;
+			public const int notification_bg = 2131165312;
 			
 			// aapt resource value: 0x7F070081
-			public const int notification_tile_bg = 2131165313;
+			public const int notification_bg_low = 2131165313;
 			
 			// aapt resource value: 0x7F070082
-			public const int notify_panel_notification_icon_bg = 2131165314;
+			public const int notification_bg_low_normal = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int Out32 = 2131165315;
+			public const int notification_bg_low_pressed = 2131165315;
 			
 			// aapt resource value: 0x7F070084
-			public const int Out512 = 2131165316;
+			public const int notification_bg_normal = 2131165316;
 			
 			// aapt resource value: 0x7F070085
-			public const int Out64 = 2131165317;
+			public const int notification_bg_normal_pressed = 2131165317;
 			
 			// aapt resource value: 0x7F070086
-			public const int TanasanSystems = 2131165318;
+			public const int notification_icon_background = 2131165318;
 			
 			// aapt resource value: 0x7F070087
-			public const int tooltip_frame_dark = 2131165319;
+			public const int notification_template_icon_bg = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int tooltip_frame_light = 2131165320;
+			public const int notification_template_icon_low_bg = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int userpic = 2131165321;
+			public const int notification_tile_bg = 2131165321;
+			
+			// aapt resource value: 0x7F07008A
+			public const int notify_panel_notification_icon_bg = 2131165322;
+			
+			// aapt resource value: 0x7F07008B
+			public const int Out32 = 2131165323;
+			
+			// aapt resource value: 0x7F07008C
+			public const int Out512 = 2131165324;
+			
+			// aapt resource value: 0x7F07008D
+			public const int Out64 = 2131165325;
+			
+			// aapt resource value: 0x7F07008E
+			public const int TanasanSystems = 2131165326;
+			
+			// aapt resource value: 0x7F07008F
+			public const int tooltip_frame_dark = 2131165327;
+			
+			// aapt resource value: 0x7F070090
+			public const int tooltip_frame_light = 2131165328;
+			
+			// aapt resource value: 0x7F070091
+			public const int userpic = 2131165329;
 			
 			static Drawable()
 			{
@@ -9037,28 +9061,31 @@ namespace APPMOBLIE.Droid
 			public const int transition_transform = 2131230919;
 			
 			// aapt resource value: 0x7F0800C8
-			public const int uniform = 2131230920;
+			public const int txtView = 2131230920;
 			
 			// aapt resource value: 0x7F0800C9
-			public const int unlabeled = 2131230921;
+			public const int uniform = 2131230921;
 			
 			// aapt resource value: 0x7F0800CA
-			public const int up = 2131230922;
+			public const int unlabeled = 2131230922;
 			
 			// aapt resource value: 0x7F0800CB
-			public const int useLogo = 2131230923;
+			public const int up = 2131230923;
 			
 			// aapt resource value: 0x7F0800CC
-			public const int view_offset_helper = 2131230924;
+			public const int useLogo = 2131230924;
 			
 			// aapt resource value: 0x7F0800CD
-			public const int visible = 2131230925;
+			public const int view_offset_helper = 2131230925;
 			
 			// aapt resource value: 0x7F0800CE
-			public const int withText = 2131230926;
+			public const int visible = 2131230926;
 			
 			// aapt resource value: 0x7F0800CF
-			public const int wrap_content = 2131230927;
+			public const int withText = 2131230927;
+			
+			// aapt resource value: 0x7F0800D0
+			public const int wrap_content = 2131230928;
 			
 			static Id()
 			{
@@ -9364,19 +9391,22 @@ namespace APPMOBLIE.Droid
 			public const int ShellContent = 2131427396;
 			
 			// aapt resource value: 0x7F0B0045
-			public const int support_simple_spinner_dropdown_item = 2131427397;
+			public const int Splash = 2131427397;
 			
 			// aapt resource value: 0x7F0B0046
-			public const int Tabbar = 2131427398;
+			public const int support_simple_spinner_dropdown_item = 2131427398;
 			
 			// aapt resource value: 0x7F0B0047
-			public const int Toolbar = 2131427399;
+			public const int Tabbar = 2131427399;
 			
 			// aapt resource value: 0x7F0B0048
-			public const int zxingscanneractivitylayout = 2131427400;
+			public const int Toolbar = 2131427400;
 			
 			// aapt resource value: 0x7F0B0049
-			public const int zxingscannerfragmentlayout = 2131427401;
+			public const int zxingscanneractivitylayout = 2131427401;
+			
+			// aapt resource value: 0x7F0B004A
+			public const int zxingscannerfragmentlayout = 2131427402;
 			
 			static Layout()
 			{

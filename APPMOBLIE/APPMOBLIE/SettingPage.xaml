@@ -5,30 +5,64 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="APPMOBLIE.SettingPage"
-             BackgroundImageSource="background"
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              Title="Setting" 
              IconImageSource="iconssett">
     <ContentPage.Content>
-        <StackLayout>
-            <!--<Label Text="Setting Page"
+        <AbsoluteLayout>
+        <Image Source="background" Aspect="AspectFill"
+                  AbsoluteLayout.LayoutBounds="0,0,1,0.12"
+                   AbsoluteLayout.LayoutFlags="All" />
+        <ic:CircleImage Source="userpic.png" 
+                           Aspect="AspectFill"
+                                HeightRequest="80" WidthRequest="80"
+                           AbsoluteLayout.LayoutBounds="0.05,0.01"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+            <StackLayout Padding="300,20,20,20"  >
+
+                <Button  Text="ออกจากระบบ" FontSize="14"   Style="{x:StaticResource Normalkanit}"  Clicked="Button_Signout" BackgroundColor="#0095b6" TextColor="White" CornerRadius="30" />
+
+            </StackLayout>
+            
+            <Label x:Name="Username" HorizontalOptions="Center" 
+                      FontFamily="{StaticResource Kanit}"
+                       FontSize="16"
+                        AbsoluteLayout.LayoutBounds="0.6,0.05"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                   FontAttributes="Bold"
+                   />
+
+
+            <ScrollView 
+                 AbsoluteLayout.LayoutBounds="0,0.65,1,0.8"
+                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
+                <StackLayout 
+                    
+                             HorizontalOptions="Start" >
+                  
+
+                        <StackLayout>
+                            <!--<Label Text="Setting Page"
                    FontSize="60"
                    VerticalOptions="CenterAndExpand" 
                    HorizontalOptions="CenterAndExpand" /> -->
-            <Image
+                            <Image
                   x:Name="image"
                   Grid.Row="1"
-                  BackgroundColor="#F0F0F0"/>   
-           <!-- <Button
+                  BackgroundColor="#F0F0F0"/>
+                            <!-- <Button
                   Text="Take Photo"
                   BackgroundColor="Lime"
                   Grid.Row="2"
                   Clicked="TakePhoto_Clicked"/>    -->
+                            
 
-            <Button
-                  Text="Signout"
-                  BackgroundColor="Lime"
-                  Grid.Row="2"
-                  Clicked="Button_Signout"/>
-        </StackLayout>
+                           
+                        </StackLayout>
+               
+                </StackLayout>
+            </ScrollView>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
