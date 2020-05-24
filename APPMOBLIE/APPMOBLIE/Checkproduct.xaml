@@ -118,10 +118,10 @@
                                                         TextColor="{Binding Color}"/>
                                             </StackLayout>
                                         </StackLayout>
-                                        <Label Text="{Binding Location, StringFormat='Location on Store : {0} '}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding Location, StringFormat='สถานที่/ตำแหน่งที่จัดเก็บ : {0} '}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"
                                                />
-                                        <Label Text="{Binding Username , StringFormat='Record By : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding Username , StringFormat='ผู้บันทึกรายการสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         
                                        
