@@ -60,7 +60,7 @@
                 <StackLayout 
                              HorizontalOptions="StartAndExpand" 
                              VerticalOptions="Center">
-                    <Frame x:Name="Fram1" IsVisible="{Binding Frame1}">
+                    <Frame x:Name="Fram1" IsVisible="{Binding Frame1}" IsClippedToBounds="False">
                     <Grid RowSpacing="22" Padding="20,20,20,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
