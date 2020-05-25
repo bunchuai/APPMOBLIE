@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              x:Class="APPMOBLIE.AllTransection"
              Title="Stock" 
+             
              BackgroundColor="White"
              
              IconImageSource="iconbox"
@@ -20,7 +21,7 @@
                                 HeightRequest="80" WidthRequest="80"
                            AbsoluteLayout.LayoutBounds="0.05,0.01"
                            AbsoluteLayout.LayoutFlags="PositionProportional"/>
-        <Label x:Name="Username" HorizontalOptions="Center" 
+        <Label x:Name="Username" HorizontalOptions="Center"  
                       FontFamily="{StaticResource Kanit}"
                        FontSize="16"
                         AbsoluteLayout.LayoutBounds="0.6,0.05"
