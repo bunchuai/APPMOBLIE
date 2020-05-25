@@ -45,8 +45,8 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Button ImageSource="iconinsky"  Text="รับสินค้าเข้า" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="0"  FontAttributes="Bold" TextColor="Gray" BackgroundColor="White" BorderColor="LightGray" BorderWidth="2"  CornerRadius="30"  />
-                            <Button ImageSource="iconoutsky" Text="เบิกสินค้า" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="Gray" BackgroundColor="White" BorderColor="LightGray" BorderWidth="2"  CornerRadius="30"  />
+                            <Button ImageSource="iconinsky" Clicked="BtnStockin"  Text="รับสินค้าเข้า" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="0"  FontAttributes="Bold" TextColor="Gray" BackgroundColor="White" BorderColor="LightGray" BorderWidth="2"  CornerRadius="30"  />
+                            <Button ImageSource="iconoutsky" Clicked="BtnStockOut" Text="เบิกสินค้า" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="Gray" BackgroundColor="White" BorderColor="LightGray" BorderWidth="2"  CornerRadius="30"  />
 
                         </Grid>
                        

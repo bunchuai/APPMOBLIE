@@ -1,5 +1,6 @@
 ﻿using APPMOBLIE.Model;
 using Newtonsoft.Json;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -101,6 +102,16 @@ namespace APPMOBLIE
                 Dashboardreorder.IsVisible = dashboardRe;
             }
 
+        }
+
+        private void BtnStockin(object sender, EventArgs e)
+        {
+            PopupNavigation.Instance.PushAsync(new StockIn());
+        }
+
+        private void BtnStockOut(object sender, EventArgs e)
+        {
+            PopupNavigation.Instance.PushAsync(new StockOut());
         }
     }
 

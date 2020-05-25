@@ -19,10 +19,12 @@
                            AbsoluteLayout.LayoutBounds="0.05,0.01"
                            AbsoluteLayout.LayoutFlags="PositionProportional"/>
 
-            <StackLayout Padding="300,20,20,20"  >
-
-                <Button  Text="ออกจากระบบ" FontSize="14"   Style="{x:StaticResource Normalkanit}"  Clicked="Button_Signout" BackgroundColor="#0095b6" TextColor="White" CornerRadius="30" />
-
+            <StackLayout Padding="20,20,20,20" Margin="90,10,10,0" >
+                <Grid>
+                    
+                    <Button  Text="ออกจากระบบ" FontSize="14"   Style="{x:StaticResource Normalkanit}"  Clicked="Button_Signout" BackgroundColor="#0095b6" TextColor="White" CornerRadius="20" />
+                </Grid>
+                
             </StackLayout>
             
             <Label x:Name="Username" HorizontalOptions="Center" 

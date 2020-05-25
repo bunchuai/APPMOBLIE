@@ -60,6 +60,7 @@ namespace APPMOBLIE
             Available.Text = string.Empty;
             Titletrans.Text = string.Empty;
             listview.ItemsSource = null;
+            Fram1.IsVisible = false;
 
 
             var Scan = new ZXingScannerPage();

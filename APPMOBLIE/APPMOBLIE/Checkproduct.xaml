@@ -60,6 +60,7 @@
                 <StackLayout 
                              HorizontalOptions="StartAndExpand" 
                              VerticalOptions="Center">
+                    <Frame x:Name="Fram1" IsVisible="{Binding Frame1}">
                     <Grid RowSpacing="22" Padding="20,20,20,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -72,6 +73,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
+                        
                         <Label x:Name="Prodn" Grid.ColumnSpan="2"
                                Grid.Row="0" Style="{x:StaticResource Normalkanit}" FontSize="18"/>
                         <Label x:Name="Skuinfo" Grid.Column="0" 
@@ -90,6 +92,7 @@
                                 Style="{x:StaticResource Normalkanit}"/>
 
                     </Grid>
+                    </Frame>
                     <Label Text="{Binding titletrans}" Style="{x:StaticResource Normalkanit}" x:Name="Titletrans"
                            FontSize="20" HorizontalOptions="Center"/>
                     <ListView  x:Name="listview" HasUnevenRows="True"
