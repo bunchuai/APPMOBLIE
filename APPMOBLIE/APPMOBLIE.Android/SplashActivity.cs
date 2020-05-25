@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace APPMOBLIE.Droid
 {
-    [Activity(Label = "Welcome !",Theme ="@style/Theme.Splash",
+    [Activity(Label = "Smart WMS",Theme ="@style/Theme.Splash",
         MainLauncher = true,
         NoHistory = true)]
     public class SplashActivity : Activity
