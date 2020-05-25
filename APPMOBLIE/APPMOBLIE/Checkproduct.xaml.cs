@@ -92,6 +92,7 @@ namespace APPMOBLIE
                             var Five = await TransactionFive.Content.ReadAsStringAsync();
                             var TrnsactionResult = JsonConvert.DeserializeObject<List<TransactionModels>>(Five);
                             listview.ItemsSource = TrnsactionResult;
+                            Fram1.IsVisible = true;
 
                             Titletrans.Text = "Transaction";
 
@@ -144,7 +145,7 @@ namespace APPMOBLIE
                 Available.Text = string.Empty;
                 Alert.Text = string.Empty;
                 listview.ItemsSource = null;
-                Titletrans.Text = string.Empty;
+                Titletrans.Text = string.Empty;               
             }
             else
             {
@@ -157,7 +158,7 @@ namespace APPMOBLIE
                 Available.Text = string.Empty;
                 Alert.Text = string.Empty;
                 listview.ItemsSource = null;
-                Titletrans.Text = string.Empty;
+                Titletrans.Text = string.Empty;            
             }
             
             using (HttpClient client = new HttpClient())
@@ -184,6 +185,7 @@ namespace APPMOBLIE
 
                    
                     listview.ItemsSource = TrnsactionResult;
+                    Fram1.IsVisible = true;
                     Titletrans.Text = "Transaction";
 
                     Skuinfo.Text = "SKU Id : " + Result.Sku;
