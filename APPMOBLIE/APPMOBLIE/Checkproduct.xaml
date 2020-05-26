@@ -28,7 +28,7 @@
                    FontAttributes="Bold"
                    />
             <StackLayout
-                  AbsoluteLayout.LayoutBounds="0,0.20,1,0.3"
+                  AbsoluteLayout.LayoutBounds="0,0.10,1,0.3"
                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
                   VerticalOptions="Center"
                 HorizontalOptions="Center"

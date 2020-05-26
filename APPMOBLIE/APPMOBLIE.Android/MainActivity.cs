@@ -6,8 +6,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Plugin.Permissions;
-
-
+using Rg.Plugins.Popup.Services;
 
 namespace APPMOBLIE.Droid
 {
@@ -34,11 +33,11 @@ namespace APPMOBLIE.Droid
         {
            if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))
             {
-
+                PopupNavigation.Instance.PopAsync();
             }
            else
             {
-
+       
             }
         }
 

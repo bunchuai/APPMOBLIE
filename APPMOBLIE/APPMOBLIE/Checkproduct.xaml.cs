@@ -186,7 +186,7 @@ namespace APPMOBLIE
                    
                     listview.ItemsSource = TrnsactionResult;
                     Fram1.IsVisible = true;
-                    Titletrans.Text = "Transaction";
+                    Titletrans.Text = "รายการสินค้า เข้า - ออก";
 
                     Skuinfo.Text = "SKU Id : " + Result.Sku;
                     Skuinfo.FontSize = 16;
