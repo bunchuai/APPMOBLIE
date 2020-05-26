@@ -42,13 +42,13 @@
                        Completed="findtext_Completed"
                        HorizontalTextAlignment="Center"
                            />
-                <Label Text="หรือ " VerticalOptions="Center" Style="{x:StaticResource Normalkanit}" HorizontalOptions="Center"/>
+                <!--<Label Text="หรือ " VerticalOptions="Center" Style="{x:StaticResource Normalkanit}" HorizontalOptions="Center"/>-->
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="Center">
                     <Button Clicked="Button_Scan"
                         BackgroundColor="Transparent" 
                         ImageSource="barcode.png"
-                            HeightRequest="30" WidthRequest="30"
+                            HeightRequest="50" WidthRequest="50"
                          HorizontalOptions="Start"
                         VerticalOptions="Center"/>
                     <Label Text="(แสกนบาร์โค้ด) " VerticalOptions="Center" HorizontalOptions="Start" Style="{x:StaticResource Normalkanit}"/>
@@ -57,8 +57,8 @@
                
             </StackLayout >
             <StackLayout Orientation="Vertical">
-                <Frame x:Name="Fram1" BackgroundColor="White"   Padding="10" Margin="15,230,10,5" CornerRadius="5" IsVisible="False">
-                    <Grid RowSpacing="5" >
+                <Frame x:Name="Fram1" BackgroundColor="White"   Padding="10" Margin="15,210,10,5" CornerRadius="5" IsVisible="False">
+                    <Grid RowSpacing="2" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
