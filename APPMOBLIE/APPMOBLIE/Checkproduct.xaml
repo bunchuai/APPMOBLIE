@@ -60,8 +60,8 @@
                 <StackLayout 
                              HorizontalOptions="StartAndExpand" 
                              VerticalOptions="Center">
-                    <Frame x:Name="Fram1" BackgroundColor="White"   Padding="15" Margin="15,5,15,5" CornerRadius="10" IsVisible="False">
-                    <Grid RowSpacing="22" Padding="20,20,20,0">
+                    <Frame x:Name="Fram1" BackgroundColor="White"   Padding="15" Margin="15,5,10,5" CornerRadius="10" IsVisible="False">
+                    <Grid RowSpacing="5" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -75,13 +75,17 @@
                         </Grid.ColumnDefinitions>
                         
                         <Label x:Name="Prodn" Grid.ColumnSpan="2"
-                               Grid.Row="0" Style="{x:StaticResource Normalkanit}" FontSize="18"/>
-                        <Label x:Name="Skuinfo" Grid.Column="0" 
+                               Grid.Row="0" Style="{x:StaticResource Normalkanit}" FontSize="16"/>
+
+                            <Label x:Name="Skuinfo" Grid.Column="0" Grid.ColumnSpan="2"
                                Grid.Row="1" Style="{x:StaticResource Normalkanit}"/>
+                        
                         <Label x:Name="Prodb" Grid.Column="0" Grid.Row="2"
                              Style="{x:StaticResource Normalkanit}"/>
+                        
                         <Label x:Name="Prodm"  Grid.Column="1" Grid.Row="2" 
                                Style="{x:StaticResource Normalkanit}"/>
+                        
                         <Label x:Name="Proin" Grid.Column="0" Grid.Row="3" 
                                Style="{x:StaticResource Normalkanit}"/>
                         <Label x:Name="Proout" Grid.Column="1" Grid.Row="3" 

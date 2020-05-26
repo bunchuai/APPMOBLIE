@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Pages:PopupPage  xmlns:Pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage  xmlns:Pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -51,11 +51,6 @@
                             <Label Text="รายละเอียด  เพิ่มเติม" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="4" VerticalOptions="Center"/>
                             <Entry x:Name="ProductDescription" Style="{x:StaticResource Normalkanit}"   Grid.Column="1"   Grid.Row="4" />
 
-
-
-
-
-
                         </Grid>
 
 
@@ -82,7 +77,7 @@
         </StackLayout>
     </StackLayout>
 
-</Pages:PopupPage>
+</ContentPage>
 
 
 <!--<Pages:PopupPage.Animation>

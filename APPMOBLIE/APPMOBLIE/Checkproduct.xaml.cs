@@ -188,27 +188,27 @@ namespace APPMOBLIE
                     Fram1.IsVisible = true;
                     Titletrans.Text = "รายการสินค้า เข้า - ออก";
 
-                    Skuinfo.Text = "SKU Id : " + Result.Sku;
+                    Skuinfo.Text = "หมายเลข SKU : " + Result.Sku;
                     Skuinfo.FontSize = 16;
 
-                    Prodn.Text = "Product Name : " + Result.Name;
-                    Prodn.FontSize = 20;
+                    Prodn.Text = "ชื่อสินค้า : " + Result.Name;
+                    Prodn.FontSize = 16;
 
-                    Prodb.Text = "Brand : " + Result.Brand;
+                    Prodb.Text = "ยี่ห้อ : " + Result.Brand;
                     Prodb.FontSize = 16;
 
-                    Prodm.Text = "Model  : " + Result.Model;
+                    Prodm.Text = "โมเดล  : " + Result.Model;
                     Prodm.FontSize = 16;
 
-                    Proin.Text = "In Stock : " + Result.ProductIn.ToString() + TrnsactionResult.Select(s=>s.Unit).FirstOrDefault();
+                    Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + TrnsactionResult.Select(s=>s.Unit).FirstOrDefault();
                     Proin.TextColor = Color.Green;
                     Proin.FontSize = 16;
 
-                    Proout.Text = "Out Stock : " + Result.ProductOut.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                    Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                     Proout.TextColor = Color.Red;
                     Proout.FontSize = 16;
 
-                    Available.Text = "Available : " + Result.Amount.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                    Available.Text = "รวมทั้งหมด : " + Result.Amount.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                     Available.TextColor = (Result.Amount <= Convert.ToInt32(Min) ? Color.Red : Color.Green);
                     Available.FontSize = 16;
 

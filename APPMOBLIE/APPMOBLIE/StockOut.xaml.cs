@@ -12,7 +12,7 @@ using Xamarin.Forms.Xaml;
 namespace APPMOBLIE
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StockOut : PopupPage
+    public partial class StockOut : ContentPage
     {
         public StockOut()
         {

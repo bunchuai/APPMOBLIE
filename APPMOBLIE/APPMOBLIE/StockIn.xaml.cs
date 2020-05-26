@@ -15,7 +15,7 @@ using ZXing.Net.Mobile.Forms;
 namespace APPMOBLIE
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StockIn : PopupPage
+    public partial class StockIn : ContentPage
     {
         public StockIn()
         {
