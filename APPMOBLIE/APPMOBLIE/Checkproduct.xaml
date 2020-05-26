@@ -56,15 +56,11 @@
                 
                
             </StackLayout >
-            <ScrollView
-                 AbsoluteLayout.LayoutBounds="0,0.8,1,0.60"
-                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
-                <StackLayout 
-                             HorizontalOptions="StartAndExpand" 
-                             VerticalOptions="Center">
-                    <Frame x:Name="Fram1" BackgroundColor="White"   Padding="10" Margin="15,5,10,5" CornerRadius="10" IsVisible="False">
+            <StackLayout Orientation="Vertical">
+                <Frame x:Name="Fram1" BackgroundColor="White"   Padding="10" Margin="15,230,10,5" CornerRadius="5" IsVisible="False">
                     <Grid RowSpacing="5" >
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -75,44 +71,56 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        
-                        <Label x:Name="Prodn" Grid.ColumnSpan="2"
-                               Grid.Row="0" Style="{x:StaticResource Normalkanit}" FontSize="16"/>
 
-                            <Label x:Name="Skuinfo" Grid.Column="0" Grid.ColumnSpan="2"
-                               Grid.Row="1" Style="{x:StaticResource Normalkanit}"/>
-                        
+                        <Label x:Name="Prodn" Grid.ColumnSpan="2"
+                               Grid.Row="1" Style="{x:StaticResource Normalkanit}" FontSize="16"/>
+
+                        <Label x:Name="Skuinfo" BackgroundColor="DeepSkyBlue"  Grid.Column="0" Grid.ColumnSpan="2"
+                               Grid.Row="0" Style="{x:StaticResource Normalkanit}" />
+
                         <Label x:Name="Prodb" Grid.Column="0" Grid.Row="2"
                              Style="{x:StaticResource Normalkanit}"/>
-                        
-                        <Label x:Name="Prodm"  Grid.Column="1" Grid.Row="2" 
+
+                        <Label x:Name="Prodm"  Grid.Column="0" Grid.Row="3" 
                                Style="{x:StaticResource Normalkanit}"/>
-                        
-                        <Label x:Name="Proin" Grid.Column="0" Grid.Row="3" 
+
+                        <Label x:Name="Proin" Grid.Column="0" Grid.Row="4" 
                                Style="{x:StaticResource Normalkanit}"/>
-                        <Label x:Name="Proout" Grid.Column="1" Grid.Row="3" 
+                        <Label x:Name="Proout" Grid.Column="1" Grid.Row="4" 
                                Style="{x:StaticResource Normalkanit}"/>
-                        <Label x:Name="Available" Grid.ColumnSpan="2" Grid.Row="4" 
+                        <Label x:Name="Available"   Grid.ColumnSpan="2" Grid.Row="5" 
                                 Style="{x:StaticResource Normalkanit}"/>
                         <Label x:Name="Alert" Grid.ColumnSpan="2" Grid.Row="1" HorizontalOptions="Center"
                                 Style="{x:StaticResource Normalkanit}"/>
 
                     </Grid>
-                    </Frame>
-                    
-                    
+                </Frame>
+
+            </StackLayout>
+            <ScrollView
+                 AbsoluteLayout.LayoutBounds="0,1.5,1,0.60"
+                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
+                <StackLayout 
+                             HorizontalOptions="StartAndExpand" 
+                             VerticalOptions="Center">
+
+
+                    <Frame  x:Name="frame2"   IsVisible="False">
                     <Label Text="{Binding titletrans}" Style="{x:StaticResource Normalkanit}" x:Name="Titletrans"
-                           FontSize="20" HorizontalOptions="Center"/>
+                           FontSize="18" HorizontalOptions="Center" />
+                    </Frame>
                     <ListView  x:Name="listview" HasUnevenRows="True"
                                >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
                                     <StackLayout Orientation="Vertical"  Padding="20,10,20,10">
-                                        <Label Text="{Binding reference, StringFormat='รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                        <Image Source="iconlist" HorizontalOptions="Start" WidthRequest="22" HeightRequest="22"/>
+
+                                        <Label Text="{Binding reference, StringFormat='  รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding TransactionDate, StringFormat='Date : {0}'}" 
+                                            <Label Text="{Binding TransactionDate, StringFormat='  วันที่ : {0}'}" 
                                                    Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
 
@@ -129,10 +137,10 @@
                                                         TextColor="{Binding Color}"/>
                                             </StackLayout>
                                         </StackLayout>
-                                        <Label Text="{Binding Location, StringFormat='สถานที่/ตำแหน่งที่จัดเก็บ : {0} '}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding Location, StringFormat='  สถานที่/ตำแหน่งที่จัดเก็บ : {0} '}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"
                                                />
-                                        <Label Text="{Binding Username , StringFormat='ผู้บันทึกรายการสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding Username , StringFormat='  ผู้บันทึกรายการสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         
                                        
