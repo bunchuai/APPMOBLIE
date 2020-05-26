@@ -21,32 +21,13 @@ namespace APPMOBLIE
         {
             InitializeComponent();
             CompanyId = Application.Current.Properties["CompanyId"].ToString();
-            Alert.Text = "--- No Data ---";
+            Alert.Text = "---ไม่พบข้อมูล ---";
         }
 
         protected override  void OnAppearing()
         {
             Username.Text = Application.Current.Properties["Username"].ToString();
             base.OnAppearing();
-
-
-            //using (HttpClient client = new HttpClient())
-            //{
-            //    var CompanyId = Application.Current.Properties["CompanyId"];
-
-            //    string Url = "http://203.151.166.97/api/Products/TransactionBySku?CompanyId=" + CompanyId + "&Take=" + 5 + "&Sku=" + 8857098203187;
-            //    client.BaseAddress = new Uri(Url);
-            //    client.DefaultRequestHeaders.Clear();
-            //    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-            //    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "oLQKZ-tbA58nvbw7PuZhSsy3sr_H28YB3U3XGbpEc5pGIpMrB1nKNjpS_mRhDiFt2QOBZw3IntJ3dmrozZKsw6hd2VuLvoS8-0HxMCVsMUbZ6QZD782Ig1rfFFWPJ13qDq-cMoUgE2t-PdFEp_85aqa8crtVD6aRwntMPjDOgOriFBbzCYjeXyQ3JECl4pOZGd2KYhpCM7n4hXjfCA0t2YeQyvbuId1-e-qhltjEzCkRk7uffgtbwC2KAImsw7jrBYFfxeu1DCRRYdi2AsSZVyBHk0pAqcekzv5jlxLaK2Z-5hFVN0EzSA86Z2MkAq_vXPnJMq0ZrlGfZG6l-hJYb7NjGZCKD44euOf4l-dGQqi40wd8oIhacT1WIrr2RoSAxQn3t1TLDU2TNbgd_pW89JAHd9fmF9k-aZt9tCJuFQs-sW7eJQ1spYqQWHEbKYFbf2Aih5ZBDrIbLeh4hRRFOd_zYZgQKqIZ1tpZ_82UwYUG8FyPn9ZexVzr4t4At4cP");
-            //    HttpResponseMessage response = await client.GetAsync(Url);
-            //    if (response.IsSuccessStatusCode)
-            //    {
-            //        var ResponseData = await response.Content.ReadAsStringAsync();
-            //        var TrnsactionResult = JsonConvert.DeserializeObject<List<TransactionModels>>(ResponseData);
-            //        listview.ItemsSource = TrnsactionResult;
-            //    }
-            //}
         }
 
         private async void Button_Scan(object sender, EventArgs e)
@@ -93,46 +74,25 @@ namespace APPMOBLIE
                             var TrnsactionResult = JsonConvert.DeserializeObject<List<TransactionModels>>(Five);
                             listview.ItemsSource = TrnsactionResult;
                             Fram1.IsVisible = true;
-                            frame2.IsVisible = true;
+                            Titletrans.Text = "รายการสินค้า เข้า - ออก";
 
-                            Titletrans.Text = "รายการเข้า-ออก";
-                            Titletrans.FontSize = 16;
-
-                            Skuinfo.Text = "SKU : " + Result.Sku;
-                            Skuinfo.HorizontalTextAlignment = TextAlignment.Center;
-                            Skuinfo.TextColor = Color.White;                         
-                            Skuinfo.FontSize = 18;
-                           
-
-                            Prodn.Text = "  ชื่อสินค้า : " + Result.Name;
-                            Prodn.FontSize = 16;
-
-                            Prodb.Text = "  ยี่ห้อ : " + Result.Brand;
-                            Prodb.FontSize = 16;
-
-                            Prodm.Text = "  โมเดล : " + Result.Model;
-                            Prodm.FontSize = 16;
-
-                            Proin.Text = "  จำนวนในคลัง : " + Result.ProductIn.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                            Skuinfo.Text = "หมายเลข SKU : " + Result.Sku;
+                            Prodn.Text = "ชื่อสินค้า : " + Result.Name;
+                            Prodb.Text = "ยี่ห้อ : " + Result.Brand;
+                            Prodm.Text = "โมเดล  : " + Result.Model;
+                            Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                             Proin.TextColor = Color.Green;
-                            Proin.FontSize = 16;
-
-                            Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() +" "+ TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                            Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                             Proout.TextColor = Color.Red;
-                            Proout.FontSize = 16;
-
-                            Available.Text = "รวมทั้งหมด : " + Result.Amount.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                            Available.Text = "รวมทั้งหมด : " + Result.Amount.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                             Available.TextColor = (Result.Amount <= Convert.ToInt32(Min) ? Color.Red : Color.Green);
-                            Available.HorizontalTextAlignment = TextAlignment.Center;
-                            Available.FontAttributes = FontAttributes.Bold;
-                            Available.FontSize = 16;
 
                             Alert.Text = string.Empty;
 
                         }
                         else
                         {
-                            Alert.Text = "--- No Data ---";
+                            Alert.Text = "--- ไม่พบข้อมูล ---";
                         }
                     }
                 });
@@ -190,48 +150,26 @@ namespace APPMOBLIE
                     var Five = await TransactionFive.Content.ReadAsStringAsync();
                     var TrnsactionResult = JsonConvert.DeserializeObject<List<TransactionModels>>(Five);
 
-                   
                     listview.ItemsSource = TrnsactionResult;
                     Fram1.IsVisible = true;
-                    frame2.IsVisible = true;
-                    Titletrans.Text = "รายการเข้า - ออก";
-                    Titletrans.FontSize = 16;
+                    Titletrans.Text = "รายการสินค้า เข้า - ออก";
 
-
-                    Skuinfo.Text = "SKU : " + Result.Sku;
-                    Skuinfo.TextColor = Color.White;
-                    Skuinfo.HorizontalTextAlignment = TextAlignment.Center;
-                    Skuinfo.FontSize = 18;
-
-                    Prodn.Text = "  ชื่อสินค้า : " + Result.Name;
-                    Prodn.FontSize = 16;
-
-                    Prodb.Text = "  ยี่ห้อ : " + Result.Brand;
-                    Prodb.FontSize = 16;
-
-                    Prodm.Text = "  โมเดล  : " + Result.Model;
-                    Prodm.FontSize = 16;
-
-                    Proin.Text = "  จำนวนในคลัง : " + Result.ProductIn.ToString() + " " + TrnsactionResult.Select(s=>s.Unit).FirstOrDefault();
+                    Skuinfo.Text = "หมายเลข SKU : " + Result.Sku;
+                    Prodn.Text = "ชื่อสินค้า : " + Result.Name;
+                    Prodb.Text = "ยี่ห้อ : " + Result.Brand;
+                    Prodm.Text = "โมเดล  : " + Result.Model;
+                    Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + TrnsactionResult.Select(s=>s.Unit).FirstOrDefault();
                     Proin.TextColor = Color.Green;
-                    Proin.FontSize = 16;
-
-                    Proout.Text = "  จำนวนการเบิก : " + Result.ProductOut.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                    Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                     Proout.TextColor = Color.Red;
-                    Proout.FontSize = 16;
-
-                    Available.Text = "รวมทั้งหมด : " + Result.Amount.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                    Available.Text = "รวมทั้งหมด : " + Result.Amount.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                     Available.TextColor = (Result.Amount <= Convert.ToInt32(Min) ? Color.Red : Color.Green);
-                    Available.HorizontalTextAlignment = TextAlignment.Center;
-                    Available.FontAttributes = FontAttributes.Bold;
-                    Available.FontSize = 16;
-
                     Alert.Text = string.Empty;
 
                 }
                 else
                 {
-                    Alert.Text = "--- No Data ---";
+                    Alert.Text = "--- ไม่พบข้อมูล ---";
                     Alert.FontSize = 16;
 
 

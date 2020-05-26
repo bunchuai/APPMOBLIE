@@ -68,10 +68,10 @@
                                 <ViewCell IsEnabled="False">
                                     <StackLayout Orientation="Vertical"  Padding="20">
                                         <Image Source="iconlist" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
-                                        <Label Text="{Binding reference, StringFormat='รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding Ref, StringFormat='รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding TransactionDate, StringFormat='วันที่รับเข้า : {0}'}" 
+                                            <Label Text="{Binding CreateDate, StringFormat='วันที่รับเข้า : {0}'}" 
                                                    Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
 
@@ -79,15 +79,11 @@
                                                 <Label Text="จำนวน :" Style="{x:StaticResource Normalkanit}"
                                                        x:Name="TypeTrans"
                                                   HorizontalOptions="EndAndExpand" />
-                                                <Label Text="{Binding Quantity}"  Style="{x:StaticResource Normalkanit}"
+                                                <Label Text="{Binding Amount}"  Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="End"/>
-                                                <Label Text="{Binding Unit}" Style="{x:StaticResource Normalkanit}"
-                                               HorizontalOptions="StartAndExpand"/>
                                             </StackLayout>
                                         </StackLayout>
-                                        
-                                        
-                                        <Label Text="{Binding Location, StringFormat='สถานที่/ตำแหน่งจัดเก็บ : {0} '}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding Locations, StringFormat='สถานที่/ตำแหน่งจัดเก็บ : {0} '}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         <Label Text="{Binding Username , StringFormat='ผู้บันทึกรับสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
@@ -111,27 +107,24 @@
                                     <ViewCell IsEnabled="False" >
                                         <StackLayout Orientation="Vertical"  Padding="20">
                                             <Image Source="iconlist" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
-
-                                            <Label Text="{Binding reference, StringFormat='รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                            <Label Text="{Binding Ref, StringFormat='รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                             <StackLayout Orientation="Horizontal">
-                                                <Label Text="{Binding TransactionDate, StringFormat='วันที่ส่งออก : {0}'}" 
+                                                <Label Text="{Binding CreateDate, StringFormat='วันที่รับเข้า : {0}'}" 
                                                    Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
 
                                                 <StackLayout Orientation="Horizontal">
-                                                    <Label Text="จำนวน" Style="{x:StaticResource Normalkanit}"
+                                                    <Label Text="จำนวน :" Style="{x:StaticResource Normalkanit}"
                                                        x:Name="TypeTrans"
                                                   HorizontalOptions="EndAndExpand" />
-                                                    <Label Text="{Binding Quantity}"  Style="{x:StaticResource Normalkanit}"
+                                                    <Label Text="{Binding Amount}"  Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="End"/>
-                                                    <Label Text="{Binding Unit}" Style="{x:StaticResource Normalkanit}"
-                                               HorizontalOptions="StartAndExpand"/>
                                                 </StackLayout>
                                             </StackLayout>
-                                            <Label Text="{Binding Location, StringFormat='สถานที่/ตำแหน่งจัดเก็บ : {0} '}" Style="{x:StaticResource Normalkanit}"
+                                            <Label Text="{Binding Locations, StringFormat='สถานที่/ตำแหน่งจัดเก็บ : {0} '}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
-                                            <Label Text="{Binding Username , StringFormat='ผู้บันทึกส่งออก : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                            <Label Text="{Binding Username , StringFormat='ผู้บันทึกรับสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         </StackLayout>
                                     </ViewCell>
@@ -155,26 +148,18 @@
                                         <StackLayout Orientation="Vertical"  Padding="20">
                                             <Image Source="iconlist" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
 
-                                            <Label Text="{Binding reference, StringFormat='Ref.No : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                            <Label Text="{Binding SkuId, StringFormat='หมายเลข SKU : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
-                                            <StackLayout Orientation="Horizontal">
-                                                <Label Text="{Binding TransactionDate, StringFormat='Date : {0}'}" 
+                                        
+                                                <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" 
+                                                   Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                <Label Text="{Binding Status, StringFormat='สถานะสินค้า : {0}'}" 
                                                    Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
 
-                                                <StackLayout Orientation="Horizontal">
-                                                    <Label Text="{Binding TransactionType}" Style="{x:StaticResource Normalkanit}"
-                                                       x:Name="TypeTrans"
-                                                  HorizontalOptions="EndAndExpand" />
-                                                    <Label Text="{Binding Quantity}"  Style="{x:StaticResource Normalkanit}"
-                                               HorizontalOptions="End"/>
-                                                    <Label Text="{Binding Unit}" Style="{x:StaticResource Normalkanit}"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                </StackLayout>
-                                            </StackLayout>
-                                            <Label Text="{Binding Location, StringFormat='Location on Store : {0} '}" Style="{x:StaticResource Normalkanit}"
-                                               HorizontalOptions="StartAndExpand"/>
-                                            <Label Text="{Binding Username , StringFormat='Record By : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                            <Label Text="{Binding Total, StringFormat='จำนวนคงเหลือ : {0}'}" 
+                                                   Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         </StackLayout>
                                     </ViewCell>
