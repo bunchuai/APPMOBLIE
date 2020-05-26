@@ -60,9 +60,7 @@ namespace APPMOBLIE
                         }
                         else
                         {
-                            var Page = new AddProduct();
-                            await Navigation.PushAsync(Page);
-                            NavigationPage.SetHasNavigationBar(Page, true);
+                            // 
                         }
                     }
                 });
@@ -90,9 +88,7 @@ namespace APPMOBLIE
                 }
                 else
                 {
-                    var Page = new AddProduct();
-                    await Navigation.PushAsync(Page);
-                    NavigationPage.SetHasNavigationBar(Page, true);
+                  //
                 }
             }
         }
