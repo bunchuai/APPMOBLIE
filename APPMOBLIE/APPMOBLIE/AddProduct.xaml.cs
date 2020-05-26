@@ -17,18 +17,20 @@ namespace APPMOBLIE
     public partial class AddProduct : ContentPage
     {
         public string CompanyId;
-        public AddProduct()
+        public string SkuNumber;
+        public AddProduct(string Sku)
         {
             InitializeComponent();
+            SkuNumber = Sku;
             CompanyId = Application.Current.Properties["CompanyId"].ToString();
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
+            // set value
+            Mycode.Text = SkuNumber;
             Username.Text = Application.Current.Properties["Username"].ToString();
-
             using (HttpClient client = new HttpClient())
             {
                 var CompanyId = Application.Current.Properties["CompanyId"];
