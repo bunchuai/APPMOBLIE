@@ -14,7 +14,7 @@
 
         <AbsoluteLayout>
             <Image Source="background" Aspect="AspectFill"
-                  AbsoluteLayout.LayoutBounds="0,0,1,0.12"
+                  AbsoluteLayout.LayoutBounds="0,0,2,0.12"
                    AbsoluteLayout.LayoutFlags="All" />
             <ic:CircleImage Source="userpic.png" 
                            Aspect="AspectFill"

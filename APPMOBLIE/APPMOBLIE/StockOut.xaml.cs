@@ -12,16 +12,16 @@ using Xamarin.Forms.Xaml;
 namespace APPMOBLIE
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StockOut : PopupPage
+    public partial class StockOut : ContentPage
     {
         public StockOut()
         {
             InitializeComponent();
         }
 
-        void BtnBtnStockOut(object sender, System.EventArgs e)
-        {
-            PopupNavigation.Instance.PopAsync(true);
-        }
+        //void BtnBtnStockOut(object sender, System.EventArgs e)
+        //{
+        //    PopupNavigation.Instance.PopAsync(true);
+        //}
     }
 }
