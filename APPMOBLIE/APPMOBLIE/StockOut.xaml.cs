@@ -19,9 +19,9 @@ namespace APPMOBLIE
             InitializeComponent();
         }
 
-        void BtnBtnStockOut(object sender, System.EventArgs e)
-        {
-            PopupNavigation.Instance.PopAsync(true);
-        }
+        //void BtnBtnStockOut(object sender, System.EventArgs e)
+        //{
+        //    PopupNavigation.Instance.PopAsync(true);
+        //}
     }
 }

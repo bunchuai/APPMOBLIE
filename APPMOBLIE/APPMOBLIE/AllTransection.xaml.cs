@@ -106,12 +106,12 @@ namespace APPMOBLIE
 
         private void BtnStockin(object sender, EventArgs e)
         {
-            PopupNavigation.Instance.PushAsync(new StockIn());
+            this.Navigation.PushAsync(new StockIn());
         }
 
         private void BtnStockOut(object sender, EventArgs e)
         {
-            PopupNavigation.Instance.PushAsync(new StockOut());
+            this.Navigation.PushAsync(new StockOut());
         }
     }
 

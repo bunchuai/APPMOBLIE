@@ -22,14 +22,14 @@ namespace APPMOBLIE
             InitializeComponent();
         }
 
-        public void BtnBtnStockin(object sender, System.EventArgs e)
-        {
-            PopupNavigation.Instance.PopAsync(true);
-        }
+        //public void BtnBtnStockin(object sender, System.EventArgs e)
+        //{
+        //    PopupNavigation.Instance.PopAsync(true);
+        //}
 
         public void Cancel_Click(object sender, System.EventArgs e)
         {
-            PopupNavigation.Instance.PopAsync(false);
+            //PopupNavigation.Instance.PopAsync(false);
         }
 
         public async void ScanBarCode(object sender, System.EventArgs e) 
