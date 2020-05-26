@@ -27,13 +27,14 @@
                    AbsoluteLayout.LayoutFlags="PositionProportional"
                    FontAttributes="Bold"
                    />
+      
             <StackLayout
                   AbsoluteLayout.LayoutBounds="0,0.10,1,0.3"
                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
                   VerticalOptions="Center"
                 HorizontalOptions="Center"
                   Orientation="Vertical"
-                Spacing="10">
+                Spacing="5">
                 <Entry Placeholder="    กรอกหมายเลข SKU    "
                            x:Name="findtext"
                        Keyboard="Numeric"
@@ -52,15 +53,16 @@
                         VerticalOptions="Center"/>
                     <Label Text="(แสกนบาร์โค้ด) " VerticalOptions="Center" HorizontalOptions="Start" Style="{x:StaticResource Normalkanit}"/>
                 </StackLayout>
+                
                
             </StackLayout >
             <ScrollView
-                 AbsoluteLayout.LayoutBounds="0,1,1,0.60"
+                 AbsoluteLayout.LayoutBounds="0,0.8,1,0.60"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
                 <StackLayout 
                              HorizontalOptions="StartAndExpand" 
                              VerticalOptions="Center">
-                    <Frame x:Name="Fram1" BackgroundColor="White"   Padding="15" Margin="15,5,10,5" CornerRadius="10" IsVisible="False">
+                    <Frame x:Name="Fram1" BackgroundColor="White"   Padding="10" Margin="15,5,10,5" CornerRadius="10" IsVisible="False">
                     <Grid RowSpacing="5" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -97,6 +99,8 @@
 
                     </Grid>
                     </Frame>
+                    
+                    
                     <Label Text="{Binding titletrans}" Style="{x:StaticResource Normalkanit}" x:Name="Titletrans"
                            FontSize="20" HorizontalOptions="Center"/>
                     <ListView  x:Name="listview" HasUnevenRows="True"
