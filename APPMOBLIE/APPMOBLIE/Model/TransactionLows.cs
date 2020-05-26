@@ -16,6 +16,7 @@ namespace APPMOBLIE.Model
     {
         public string Ref { get; set; }
         public string CreateDate { get; set; }
+        public string ProductName { get; set; }
         public string Amount { get; set; }
         public string Locations { get; set; }
         public string Username { get; set; }
