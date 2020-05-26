@@ -59,7 +59,7 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Text="บันทึก" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="0"  BackgroundColor="#2B976C" TextColor="White" CornerRadius="20" IsEnabled="False" Clicked="Save_Click"/>
+                            <Button Text="บันทึก" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="0"  BackgroundColor="#2B976C" TextColor="White" CornerRadius="20" Clicked="Save_Click"/>
                             <Button Text="ยกเลิก" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="1"  BackgroundColor="Gray" TextColor="White" CornerRadius="20" Clicked="Cancel_Click"/>
                         </Grid>
                     </StackLayout>
