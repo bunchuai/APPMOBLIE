@@ -8,10 +8,7 @@
              x:Class="APPMOBLIE.StockIn">
 
     <StackLayout >
-
-        <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
-
-        </StackLayout>
+        <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand"></StackLayout>
         <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
             <Frame  BackgroundColor="White" HeightRequest="500"  HasShadow="True" Padding="0" Margin="0" CornerRadius="5">
                 <StackLayout>
@@ -35,7 +32,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Label Text="หมายเลข SKU" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="0" VerticalOptions="Center"/>
-                            <Entry x:Name="Mycode" Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="0"/>
+                            <Entry x:Name="Mycode" Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="0" Completed="Mycode_Completed"/>
                             <Button BackgroundColor="Transparent" ImageSource="barcode.png" WidthRequest="20" HeightRequest="20" Grid.Column="1" Grid.Row="0" HorizontalOptions="End" Clicked="ScanBarCode"/>
 
                             <Label Text="ชื่อสินค้า" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="1" VerticalOptions="Center"/>
@@ -46,39 +43,25 @@
 
                             <Label Text="เลขอ้างอิง" Style="{x:StaticResource Normalkanit}"   Grid.Column="0"  Grid.Row="3" VerticalOptions="Center"/>
                             <Entry x:Name="ReferentNumber" Style="{x:StaticResource Normalkanit}"   Grid.Column="1"   Grid.Row="3" />
-
-
-
-
-
-
-
                         </Grid>
-
-
                     </StackLayout>
-
                     <StackLayout Padding="10,20,10,10" Margin="60,10">
                         <Grid ColumnSpacing="3">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
-                             </Grid.RowDefinitions>
+                            </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Text="บันทึก" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="0"  BackgroundColor="#2B976C" TextColor="White" CornerRadius="20"/>
+                            <Button Text="บันทึก" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="0"  BackgroundColor="#2B976C" TextColor="White" CornerRadius="20"  Clicked="Save_Click"/>
                             <Button Text="ยกเลิก" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="1"  BackgroundColor="Gray" TextColor="White" CornerRadius="20" Clicked="Cancel_Click"/>
-
                         </Grid>
-
-
                     </StackLayout>
-               </StackLayout>
+                </StackLayout>
             </Frame>
         </StackLayout>
     </StackLayout>
-
 </ContentPage>
 
 

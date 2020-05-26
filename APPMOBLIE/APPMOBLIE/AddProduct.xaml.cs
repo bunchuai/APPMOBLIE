@@ -17,11 +17,9 @@ namespace APPMOBLIE
     public partial class AddProduct : ContentPage
     {
         public string CompanyId;
-        public string SkuNumber;
-        public AddProduct(string Sku)
+        public AddProduct()
         {
             InitializeComponent();
-            SkuNumber = Sku;
             CompanyId = Application.Current.Properties["CompanyId"].ToString();
         }
 
@@ -29,7 +27,6 @@ namespace APPMOBLIE
         {
             base.OnAppearing();
             // set value
-            Mycode.Text = SkuNumber;
             Username.Text = Application.Current.Properties["Username"].ToString();
             using (HttpClient client = new HttpClient())
             {
