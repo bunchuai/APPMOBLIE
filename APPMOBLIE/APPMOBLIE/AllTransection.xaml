@@ -70,11 +70,12 @@
                                         <Image Source="iconlist" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
                                         <Label Text="{Binding Ref, StringFormat='รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="{Binding CreateDate, StringFormat='วันที่รับเข้า : {0}'}" 
                                                    Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
-
                                             <StackLayout Orientation="Horizontal">
                                                 <Label Text="จำนวน :" Style="{x:StaticResource Normalkanit}"
                                                        x:Name="TypeTrans"
@@ -109,11 +110,12 @@
                                             <Image Source="iconlist" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
                                             <Label Text="{Binding Ref, StringFormat='รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
+                                            <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
                                             <StackLayout Orientation="Horizontal">
                                                 <Label Text="{Binding CreateDate, StringFormat='วันที่รับเข้า : {0}'}" 
                                                    Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
-
                                                 <StackLayout Orientation="Horizontal">
                                                     <Label Text="จำนวน :" Style="{x:StaticResource Normalkanit}"
                                                        x:Name="TypeTrans"
