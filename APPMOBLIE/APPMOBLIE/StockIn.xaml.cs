@@ -22,7 +22,7 @@ namespace APPMOBLIE
             InitializeComponent();
         }
 
-        void BtnBtnStockin(object sender, System.EventArgs e)
+        public void BtnBtnStockin(object sender, System.EventArgs e)
         {
             PopupNavigation.Instance.PopAsync(true);
         }
@@ -60,7 +60,9 @@ namespace APPMOBLIE
                         }
                         else
                         {
-                            Mycode.Text = result.Text;
+                            var Page = new AddProduct();
+                            await Navigation.PushAsync(Page);
+                            NavigationPage.SetHasNavigationBar(Page, true);
                         }
                     }
                 });
