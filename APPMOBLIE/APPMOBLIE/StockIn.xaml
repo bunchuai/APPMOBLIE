@@ -36,13 +36,13 @@
                             </Grid.ColumnDefinitions>
                             <Label Text="หมายเลข SKU" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="0" VerticalOptions="Center"/>
                             <Entry x:Name="Mycode" Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="0"/>
-                            <Button   BackgroundColor="Transparent" ImageSource="barcode.png" WidthRequest="20" HeightRequest="20" Grid.Column="1" Grid.Row="0" HorizontalOptions="End"/>
+                            <Button BackgroundColor="Transparent" ImageSource="barcode.png" WidthRequest="20" HeightRequest="20" Grid.Column="1" Grid.Row="0" HorizontalOptions="End" Clicked="ScanBarCode"/>
 
                             <Label Text="ชื่อสินค้า" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="1" VerticalOptions="Center"/>
                             <Entry  x:Name="ProductName" Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="1"/>
 
                             <Label Text="จำนวน" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="2" VerticalOptions="Center" />
-                            <Entry x:Name="Quantity"   Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="2"/>
+                            <Entry x:Name="Quantity"  Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="2" Keyboard="Numeric"/>
 
                             <Label Text="เลขอ้างอิง" Style="{x:StaticResource Normalkanit}"   Grid.Column="0"  Grid.Row="3" VerticalOptions="Center"/>
                             <Entry x:Name="ReferentNumber" Style="{x:StaticResource Normalkanit}"   Grid.Column="1"   Grid.Row="3" />
@@ -68,7 +68,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Button Text="บันทึก" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="0"  BackgroundColor="#2B976C" TextColor="White" CornerRadius="20"/>
-                            <Button Text="ยกเลิก" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="1"  BackgroundColor="Gray" TextColor="White" CornerRadius="20"/>
+                            <Button Text="ยกเลิก" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="1"  BackgroundColor="Gray" TextColor="White" CornerRadius="20" Clicked="Cancel_Click"/>
 
                         </Grid>
 
