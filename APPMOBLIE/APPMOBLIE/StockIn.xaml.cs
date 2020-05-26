@@ -23,14 +23,12 @@ namespace APPMOBLIE
             InitializeComponent();
         }
 
-        //public void BtnBtnStockin(object sender, System.EventArgs e)
-        //{
-        //    PopupNavigation.Instance.PopAsync(true);
-        //}
-
         public void Cancel_Click(object sender, System.EventArgs e)
         {
-            //PopupNavigation.Instance.PopAsync(false);
+            Mycode.Text = string.Empty;
+            ProductName.Text = string.Empty;
+            Quantity.Text = string.Empty;
+            ReferentNumber.Text = string.Empty;
         }
 
         public async void ScanBarCode(object sender, System.EventArgs e) 
@@ -108,6 +106,8 @@ namespace APPMOBLIE
                 oJsonObject.Add("UserId", Application.Current.Properties["UserId"].ToString());
                 oJsonObject.Add("Quantitys", this.Quantity.Text);
                 oJsonObject.Add("ReferentNumber", this.ReferentNumber.Text);
+                oJsonObject.Add("TransectionType", "IN");
+                oJsonObject.Add("ProductDescription", "");
 
                 string Url = "http://203.151.166.97/api/Products/AddProductTransaction";
                 client.BaseAddress = new Uri(Url);
@@ -117,12 +117,12 @@ namespace APPMOBLIE
                 HttpResponseMessage response = await client.PostAsync(Url, new StringContent(oJsonObject.ToString(), Encoding.UTF8, "application/json"));
                 if (response.IsSuccessStatusCode)
                 {
-                    await DisplayAlert("Success", "Insert product success", "OK");
+                    await DisplayAlert("Success", "ดำเนินการเสร็จสิ้น", "OK");
                     await Navigation.PushAsync(new HomePage());
                 }
                 else
                 {
-                    await DisplayAlert("Warning", "Insert product fail", "OK");
+                    await DisplayAlert("Warning", "กรุณาตรวจสอบความถูกต้อง", "OK");
                 }
             }
         }

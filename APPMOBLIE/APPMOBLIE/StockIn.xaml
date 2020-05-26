@@ -43,6 +43,7 @@
 
                             <Label Text="เลขอ้างอิง" Style="{x:StaticResource Normalkanit}"   Grid.Column="0"  Grid.Row="3" VerticalOptions="Center"/>
                             <Entry x:Name="ReferentNumber" Style="{x:StaticResource Normalkanit}"   Grid.Column="1"   Grid.Row="3" />
+                            
                         </Grid>
                     </StackLayout>
                     <StackLayout Padding="10,20,10,10" Margin="60,10">
@@ -62,28 +63,4 @@
             </Frame>
         </StackLayout>
     </StackLayout>
-</ContentPage>
-
-
-<!--<Pages:PopupPage.Animation>
-
-        <animation:ScaleAnimation
-            PositionIn="Center"
-            PositionOut="Center"
-            ScaleIn="1.2"
-            ScaleOut="0.8"
-            DurationIn="400"
-            DurationOut="300"
-            EasingIn="SinInOut"
-            EasingOut="SinIn"
-            HasBackgroundAnimation="True"/>
-
-    </Pages:PopupPage.Animation>
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="In"/>
-        </StackLayout>
-    </ContentPage.Content>-->
- 
-    
-    
+</ContentPage>   
