@@ -13,13 +13,7 @@
         <StackLayout >
                 <Grid>
                     <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
-                
-                  
-                       
-
-
-
-                  
+               
                     </StackLayout>
                     <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
                         <Frame  BackgroundColor="White" HeightRequest="400" HasShadow="True" Padding="0" Margin="0" CornerRadius="20">
