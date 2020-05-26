@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="APPMOBLIE.Checkproduct"
-             BackgroundColor="#BED1E5"
+            
              Title="Search"
              IconImageSource="iconsscan"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
@@ -60,7 +60,7 @@
                 <StackLayout 
                              HorizontalOptions="StartAndExpand" 
                              VerticalOptions="Center">
-                    <Frame x:Name="Fram1" IsVisible="False">
+                    <Frame x:Name="Fram1" BackgroundColor="White"   Padding="15" Margin="15,5,15,5" CornerRadius="10" IsVisible="False">
                     <Grid RowSpacing="22" Padding="20,20,20,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>

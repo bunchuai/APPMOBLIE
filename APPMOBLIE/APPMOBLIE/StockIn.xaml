@@ -44,11 +44,9 @@
                             <Label Text="จำนวน" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="2" VerticalOptions="Center" />
                             <Entry x:Name="Quantity"   Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="2"/>
 
-                            <Label Text="วันที่" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="3" VerticalOptions="Center"/>
-                            <DatePicker x:Name="ProductExpireDate" Style="{x:StaticResource Normalkanit}"   Grid.Column="1" Grid.Row="3" />
+                            <Label Text="เลขอ้างอิง" Style="{x:StaticResource Normalkanit}"   Grid.Column="0"  Grid.Row="3" VerticalOptions="Center"/>
+                            <Entry x:Name="ReferentNumber" Style="{x:StaticResource Normalkanit}"   Grid.Column="1"   Grid.Row="3" />
 
-                            <Label Text="รายละเอียด  เพิ่มเติม" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="4" VerticalOptions="Center"/>
-                            <Entry x:Name="ProductDescription" Style="{x:StaticResource Normalkanit}"   Grid.Column="1"   Grid.Row="4" />
 
 
 
@@ -67,10 +65,10 @@
                              </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Button Text="บันทึก" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="0"  BackgroundColor="#2B976C" TextColor="White" CornerRadius="20"/>
-                            <Button Text="ปิด" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="1"  BackgroundColor="Gray" TextColor="White" CornerRadius="20"/>
+                            <Button Text="ยกเลิก" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="1"  BackgroundColor="Gray" TextColor="White" CornerRadius="20"/>
 
                         </Grid>
 
