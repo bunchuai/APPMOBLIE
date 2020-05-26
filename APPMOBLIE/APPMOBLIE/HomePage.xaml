@@ -8,9 +8,7 @@
              mc:Ignorable="d"
              BackgroundImageSource="background.png"
              x:Class="APPMOBLIE.HomePage"
-            
             BarTextColor="Black"
-            
             BarBackgroundColor="#f7f7f7"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration;assembly=Xamarin.Forms.Core"
             >
@@ -21,7 +19,7 @@
 
 </TabbedPage>
 
-    
+
 
 <!--<ContentPage.Content>
         <ScrollView>

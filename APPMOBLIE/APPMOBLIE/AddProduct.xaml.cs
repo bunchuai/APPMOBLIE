@@ -26,9 +26,8 @@ namespace APPMOBLIE
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
+            // set value
             Username.Text = Application.Current.Properties["Username"].ToString();
-
             using (HttpClient client = new HttpClient())
             {
                 var CompanyId = Application.Current.Properties["CompanyId"];
