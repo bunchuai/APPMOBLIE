@@ -53,11 +53,11 @@
                         VerticalOptions="Center"/>
                     <Label Text="(แสกนบาร์โค้ด) " VerticalOptions="Center" HorizontalOptions="Start" Style="{x:StaticResource Normalkanit}"/>
                 </StackLayout>
-                
-               
             </StackLayout >
+            
+            
             <StackLayout >
-                <Frame x:Name="Fram1" BackgroundColor="White"   Padding="10" Margin="15,210,10,5" CornerRadius="5" IsVisible="False">
+                <Frame x:Name="Fram1" BackgroundColor="White"   Padding="0" Margin="15,210,10,5" CornerRadius="5" IsVisible="False">
                     <Grid RowSpacing="2" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -86,10 +86,13 @@
 
                         <Label x:Name="Proin" Grid.Column="0" Grid.Row="4" 
                                Style="{x:StaticResource Normalkanit}"/>
+                        
                         <Label x:Name="Proout" Grid.Column="1" Grid.Row="4" 
                                Style="{x:StaticResource Normalkanit}"/>
+                        
                         <Label x:Name="Available"   Grid.ColumnSpan="2" Grid.Row="5" 
                                 Style="{x:StaticResource Normalkanit}"/>
+                        
                         <Label x:Name="Alert" Grid.ColumnSpan="2" Grid.Row="1" HorizontalOptions="Center"
                                 Style="{x:StaticResource Normalkanit}"/>
 
