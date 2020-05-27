@@ -30,7 +30,7 @@ namespace APPMOBLIE
             base.OnAppearing();
         }
 
-        private async void Button_Scan(object sender, EventArgs e)
+        async private  void Button_Scan(object sender, EventArgs e)
         {
             Skuinfo.Text = string.Empty;
             Prodn.Text = string.Empty;
@@ -75,16 +75,16 @@ namespace APPMOBLIE
                             listview.ItemsSource = TrnsactionResult;
                             Fram1.IsVisible = true;
                             Titletrans.Text = "รายการสินค้า เข้า - ออก";
-
+                            frame2.IsVisible = true;
                             Skuinfo.Text = "หมายเลข SKU : " + Result.Sku;
                             Prodn.Text = "ชื่อสินค้า : " + Result.Name;
                             Prodb.Text = "ยี่ห้อ : " + Result.Brand;
                             Prodm.Text = "โมเดล  : " + Result.Model;
-                            Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                            Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                             Proin.TextColor = Color.Green;
-                            Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                            Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                             Proout.TextColor = Color.Red;
-                            Available.Text = "รวมทั้งหมด : " + Result.Amount.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                            Available.Text = "รวมทั้งหมด : " + Result.Amount.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                             Available.TextColor = (Result.Amount <= Convert.ToInt32(Min) ? Color.Red : Color.Green);
 
                             Alert.Text = string.Empty;
@@ -98,7 +98,7 @@ namespace APPMOBLIE
                 });
             };
         }
-        private async void findtext_Completed(object sender, EventArgs e)
+        async private void findtext_Completed(object sender, EventArgs e)
         {
             var find = findtext.Text;
             if (find == "" || find == null)
@@ -153,26 +153,22 @@ namespace APPMOBLIE
                     listview.ItemsSource = TrnsactionResult;
                     Fram1.IsVisible = true;
                     Titletrans.Text = "รายการสินค้า เข้า - ออก";
-
+                    frame2.IsVisible = true;
                     Skuinfo.Text = "หมายเลข SKU : " + Result.Sku;
                     Prodn.Text = "ชื่อสินค้า : " + Result.Name;
                     Prodb.Text = "ยี่ห้อ : " + Result.Brand;
-                    Prodm.Text = "โมเดล  : " + Result.Model;
-                    Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + " " + TrnsactionResult.Select(s=>s.Unit).FirstOrDefault();
+                    Prodm.Text = "รุ่น  : " + Result.Model;
+                    Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + TrnsactionResult.Select(s=>s.Unit).FirstOrDefault();
                     Proin.TextColor = Color.Green;
-                    Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() +" "+ TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                    Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                     Proout.TextColor = Color.Red;
-                    Available.Text = "รวมทั้งหมด : " + Result.Amount.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                    Available.Text = "รวมทั้งหมด : " + Result.Amount.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                     Available.TextColor = (Result.Amount <= Convert.ToInt32(Min) ? Color.Red : Color.Green);
                     Alert.Text = string.Empty;
-
                 }
                 else
                 {
                     Alert.Text = "--- ไม่พบข้อมูล ---";
-                    Alert.FontSize = 16;
-
-
                 }
             }
         }
