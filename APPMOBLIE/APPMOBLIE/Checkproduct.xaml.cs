@@ -72,10 +72,12 @@ namespace APPMOBLIE
                             HttpResponseMessage TransactionFive = await client.GetAsync("http://203.151.166.97/api/Products/TransactionBySku?CompanyId=" + CompanyId+ "&Take="+ 5 +"&Sku=" + result.Text);
                             var Five = await TransactionFive.Content.ReadAsStringAsync();
                             var TrnsactionResult = JsonConvert.DeserializeObject<List<TransactionModels>>(Five);
+
+
                             listview.ItemsSource = TrnsactionResult;
-                            Fram1.IsVisible = true;
+                           Fram1.IsVisible = true;
                             Titletrans.Text = "รายการสินค้า เข้า - ออก";
-                            frame2.IsVisible = true;
+                           
                             Skuinfo.Text = "หมายเลข SKU : " + Result.Sku;
                             Prodn.Text = "ชื่อสินค้า : " + Result.Name;
                             Prodb.Text = "ยี่ห้อ : " + Result.Brand;
@@ -111,8 +113,8 @@ namespace APPMOBLIE
                 Proout.Text = string.Empty;
                 Available.Text = string.Empty;
                 Alert.Text = string.Empty;
-                listview.ItemsSource = null;
-                Titletrans.Text = string.Empty;               
+                //listview.ItemsSource = null;
+                Titletrans.Text = string.Empty;
             }
             else
             {
@@ -124,10 +126,10 @@ namespace APPMOBLIE
                 Proout.Text = string.Empty;
                 Available.Text = string.Empty;
                 Alert.Text = string.Empty;
-                listview.ItemsSource = null;
-                Titletrans.Text = string.Empty;            
+                //listview.ItemsSource = null;
+                Titletrans.Text = string.Empty;
             }
-            
+
             using (HttpClient client = new HttpClient())
             {
                 var CompanyId = Application.Current.Properties["CompanyId"];
@@ -153,12 +155,12 @@ namespace APPMOBLIE
                     listview.ItemsSource = TrnsactionResult;
                     Fram1.IsVisible = true;
                     Titletrans.Text = "รายการสินค้า เข้า - ออก";
-                    frame2.IsVisible = true;
+                   
                     Skuinfo.Text = "หมายเลข SKU : " + Result.Sku;
                     Prodn.Text = "ชื่อสินค้า : " + Result.Name;
                     Prodb.Text = "ยี่ห้อ : " + Result.Brand;
                     Prodm.Text = "รุ่น  : " + Result.Model;
-                    Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + TrnsactionResult.Select(s=>s.Unit).FirstOrDefault();
+                    Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                     Proin.TextColor = Color.Green;
                     Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                     Proout.TextColor = Color.Red;

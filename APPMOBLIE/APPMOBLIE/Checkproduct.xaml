@@ -53,11 +53,12 @@
                         VerticalOptions="Center"/>
                     <Label Text="(แสกนบาร์โค้ด) " VerticalOptions="Center" HorizontalOptions="Start" Style="{x:StaticResource Normalkanit}"/>
                 </StackLayout>
-                
-               
             </StackLayout >
-            <StackLayout >
-                <Frame x:Name="Fram1" BackgroundColor="White"   Padding="10" Margin="15,210,10,5" CornerRadius="5" IsVisible="False">
+            <StackLayout 
+                          AbsoluteLayout.LayoutBounds="0,0.4,1,0.3"
+                  AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
+                         >
+                <Frame x:Name="Fram1" BackgroundColor="White"   Padding="10" Margin="15,0,10,5" CornerRadius="5" IsVisible="False">
                     <Grid RowSpacing="2" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -95,20 +96,16 @@
 
                     </Grid>
                 </Frame>
-
             </StackLayout>
+            
             <ScrollView
-                 AbsoluteLayout.LayoutBounds="0,1.5,1,0.60"
-                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
-                <StackLayout 
-                             HorizontalOptions="StartAndExpand" 
-                             VerticalOptions="Center">
-
-
-                    <Frame  x:Name="frame2"   IsVisible="False">
+                 AbsoluteLayout.LayoutBounds="0,1.4,1,0.60"
+                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
+                >
+                <StackLayout  Padding="10" 
+                            >
                     <Label Text="{Binding titletrans}" Style="{x:StaticResource Normalkanit}" x:Name="Titletrans"
                            FontSize="18" HorizontalOptions="Center" />
-                    </Frame>
                     <ListView  x:Name="listview" HasUnevenRows="True"
                                >
                         <ListView.ItemTemplate>
