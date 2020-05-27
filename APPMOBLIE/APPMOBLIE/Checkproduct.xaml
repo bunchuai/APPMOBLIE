@@ -41,10 +41,11 @@
                        FontFamily="{x:StaticResource Kanit}"
                        Completed="findtext_Completed"
                        HorizontalTextAlignment="Center"
-                           />
+                        />
                 <!--<Label Text="หรือ " VerticalOptions="Center" Style="{x:StaticResource Normalkanit}" HorizontalOptions="Center"/>-->
                 <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="Center">
+                             HorizontalOptions="Center"
+                            >
                     <Button Clicked="Button_Scan"
                         BackgroundColor="Transparent" 
                         ImageSource="barcode.png"
@@ -57,7 +58,7 @@
                
             </StackLayout >
             <StackLayout Orientation="Vertical">
-                <Frame x:Name="Fram1" BackgroundColor="White"   Padding="10" Margin="15,210,10,5" CornerRadius="5" IsVisible="False">
+                <Frame x:Name="Fram1" BackgroundColor="Green" Padding="10" Margin="15,210,10,5" CornerRadius="5" IsVisible="False">
                     <Grid RowSpacing="2" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -103,10 +104,8 @@
                 <StackLayout 
                              HorizontalOptions="StartAndExpand" 
                              VerticalOptions="Center">
-
-
                     <Frame  x:Name="frame2"   IsVisible="False">
-                    <Label Text="{Binding titletrans}" Style="{x:StaticResource Normalkanit}" x:Name="Titletrans"
+                    <Label  Style="{x:StaticResource Normalkanit}" x:Name="Titletrans"
                            FontSize="18" HorizontalOptions="Center" />
                     </Frame>
                     <ListView  x:Name="listview" HasUnevenRows="True"
