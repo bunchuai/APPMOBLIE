@@ -63,6 +63,10 @@
 
                                     </StackLayout>
 
+                                <StackLayout>
+                                    <Label Text="Smart WMS 1.0.0" FontSize="8" HorizontalOptions="CenterAndExpand" TextColor="Gray" Style="{x:StaticResource Normalkanit}"/>
+                                </StackLayout>
+
 
 
 
