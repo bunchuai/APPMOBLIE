@@ -26,6 +26,7 @@ namespace APPMOBLIE.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Microcharts.Droid.Resource.String.library_name = global::APPMOBLIE.Droid.Resource.String.library_name;
 			global::Rg.Plugins.Popup.Resource.Animation.abc_fade_in = global::APPMOBLIE.Droid.Resource.Animation.abc_fade_in;
 			global::Rg.Plugins.Popup.Resource.Animation.abc_fade_out = global::APPMOBLIE.Droid.Resource.Animation.abc_fade_out;
 			global::Rg.Plugins.Popup.Resource.Animation.abc_grow_fade_in_from_bottom = global::APPMOBLIE.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;

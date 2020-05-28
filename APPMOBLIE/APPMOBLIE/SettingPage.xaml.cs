@@ -56,7 +56,6 @@ namespace APPMOBLIE
         private async void Button_Signout(object sender, EventArgs e)
         {
             Application.Current.Properties.Clear();
-
             var LoginPage = new Login();
             await Navigation.PushAsync(LoginPage);
             NavigationPage.SetHasNavigationBar(LoginPage, false);
