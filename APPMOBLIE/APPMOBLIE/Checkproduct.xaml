@@ -98,8 +98,8 @@
                 </Frame>
             </StackLayout>
             
-            <StackLayout 
-                 AbsoluteLayout.LayoutBounds="0,0.80,1,0.35"
+            <ScrollView 
+                 AbsoluteLayout.LayoutBounds="0,0.85,1,0.38"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
                 >
                 <StackLayout  Padding="5" 
@@ -111,7 +111,7 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
-                                    <StackLayout Orientation="Vertical"  Padding="20,10,20,10">
+                                    <StackLayout Orientation="Vertical"  Padding="20,10,20,5">
                                         <Image Source="iconlist" HorizontalOptions="Start" WidthRequest="22" HeightRequest="22"/>
 
                                         <Label Text="{Binding reference, StringFormat='  รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
@@ -147,7 +147,7 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackLayout>
-            </StackLayout>
+            </ScrollView>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
