@@ -163,12 +163,12 @@ namespace APPMOBLIE
                     var Result = JsonConvert.DeserializeObject<CheckLogin>(ResponseData);
                     if (Result.valid == true)
                     {
-                        await DisplayAlert("Success", "Insert product success", "OK");
+                        await DisplayAlert("สำเร็จ", "ดำเนินการเสร็จสิ้น", "ตกลง");
                         await Navigation.PushAsync(new HomePage());
                     }
                     else
                     {
-                        await DisplayAlert("Warning", "Insert product fail", "OK");
+                        await DisplayAlert("แจ้งเตือน", "ดำเนินการเสร็จสิ้น", "ตกลง");
                     }
                 }
             }
