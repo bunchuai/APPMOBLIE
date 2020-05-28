@@ -1,15 +1,17 @@
 ﻿using APPMOBLIE.Model;
+using Microcharts;
 using Newtonsoft.Json;
 using Rg.Plugins.Popup.Services;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Entry = Microcharts.Entry;
 
 namespace APPMOBLIE
 {
@@ -18,6 +20,29 @@ namespace APPMOBLIE
         public bool dashboardIn { get; set; }
         public bool dashboardOut { get; set; }
         public bool dashboardRe { get; set; }
+
+        //List<Entry> entries = new List<Entry>
+        //{
+        //    new Entry(100)
+        //    {
+        //        Color=SKColor.Parse("#FF1943"),
+        //        Label ="PRODUCT A",
+        //        ValueLabel = "100"
+        //    },
+        //    new Entry(200)
+        //    {
+        //        Color = SKColor.Parse("00BFFF"),
+        //        Label = "PRODUCT B",
+        //        ValueLabel = "200"
+        //    },
+        //    new Entry(150)
+        //    {
+        //        Color =  SKColor.Parse("#00CED1"),
+        //        Label = "PRODUCT C",
+        //        ValueLabel = "150"
+        //    },
+        // };
+
         public AllTransection()
         {
             InitializeComponent();
@@ -28,16 +53,12 @@ namespace APPMOBLIE
             Dashboardout.IsVisible = dashboardOut;
             Dashboardreorder.IsVisible = dashboardRe;
 
-            //CameraButton.Clicked += CameraButton_Clicked;
+            //Chart1.Chart = new LineChart() 
+            //{ 
+            //    Entries = entries
+            //};
         }
 
-        //private async void CameraButton_Clicked(object sender, EventArgs e)
-        //{
-        //    var photo = await Plugin.Media.CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions() { });
-
-        //    if (photo != null)
-        //        PhotoImage.Source = ImageSource.FromStream(() => { return photo.GetStream(); });
-        //}
 
         protected override async void OnAppearing()
         {
@@ -137,4 +158,3 @@ namespace APPMOBLIE
 
 
 }
-    
