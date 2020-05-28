@@ -82,11 +82,11 @@ namespace APPMOBLIE
                             Prodn.Text = "ชื่อสินค้า : " + Result.Name;
                             Prodb.Text = "ยี่ห้อ : " + Result.Brand;
                             Prodm.Text = "โมเดล  : " + Result.Model;
-                            Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                            Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                             Proin.TextColor = Color.Green;
-                            Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                            Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                             Proout.TextColor = Color.Red;
-                            Available.Text = "รวมทั้งหมด : " + Result.Amount.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                            Available.Text = "จำนวนคงเหลือ : " + Result.Amount.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                             Available.TextColor = (Result.Amount <= Convert.ToInt32(Min) ? Color.Red : Color.Green);
 
                             Alert.Text = string.Empty;
@@ -160,11 +160,11 @@ namespace APPMOBLIE
                     Prodn.Text = "ชื่อสินค้า : " + Result.Name;
                     Prodb.Text = "ยี่ห้อ : " + Result.Brand;
                     Prodm.Text = "รุ่น  : " + Result.Model;
-                    Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                    Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                     Proin.TextColor = Color.Green;
-                    Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                    Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() +" "+ TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                     Proout.TextColor = Color.Red;
-                    Available.Text = "รวมทั้งหมด : " + Result.Amount.ToString() + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                    Available.Text = "จำนวนคงเหลือ : " + Result.Amount.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                     Available.TextColor = (Result.Amount <= Convert.ToInt32(Min) ? Color.Red : Color.Green);
                     Alert.Text = string.Empty;
                 }

@@ -76,8 +76,8 @@
                         <Label x:Name="Prodn" Grid.ColumnSpan="2"
                                Grid.Row="1" Style="{x:StaticResource Normalkanit}" FontSize="16"/>
 
-                        <Label x:Name="Skuinfo" BackgroundColor="DeepSkyBlue"  Grid.Column="0" Grid.ColumnSpan="2"
-                               Grid.Row="0" Style="{x:StaticResource Normalkanit}" />
+                        <Label x:Name="Skuinfo"   Grid.Column="0" Grid.ColumnSpan="2"
+                               Grid.Row="0" Style="{x:StaticResource fontstyle}" />
 
                         <Label x:Name="Prodb" Grid.Column="0" Grid.Row="2"
                              Style="{x:StaticResource Normalkanit}"/>
@@ -98,11 +98,11 @@
                 </Frame>
             </StackLayout>
             
-            <ScrollView
-                 AbsoluteLayout.LayoutBounds="0,1.4,1,0.60"
+            <StackLayout 
+                 AbsoluteLayout.LayoutBounds="0,0.80,1,0.35"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
                 >
-                <StackLayout  Padding="10" 
+                <StackLayout  Padding="5" 
                             >
                     <Label Text="{Binding titletrans}" Style="{x:StaticResource Normalkanit}" x:Name="Titletrans"
                            FontSize="18" HorizontalOptions="Center" />
@@ -147,7 +147,7 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackLayout>
-            </ScrollView>
+            </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
