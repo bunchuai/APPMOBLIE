@@ -117,12 +117,12 @@ namespace APPMOBLIE
                 HttpResponseMessage response = await client.PostAsync(Url, new StringContent(oJsonObject.ToString(), Encoding.UTF8, "application/json"));
                 if (response.IsSuccessStatusCode)
                 {
-                    await DisplayAlert("Success", "ดำเนินการเสร็จสิ้น", "OK");
+                    await DisplayAlert("สำเร็จ", "ดำเนินการเสร็จสิ้น", "ตกลง");
                     await Navigation.PushAsync(new HomePage());
                 }
                 else
                 {
-                    await DisplayAlert("Warning", "กรุณาตรวจสอบความถูกต้อง", "OK");
+                    await DisplayAlert("แจ้งเตือน", "กรุณาตรวจสอบความถูกต้อง", "ตกลง");
                 }
             }
         }

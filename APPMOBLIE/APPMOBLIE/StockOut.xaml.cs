@@ -60,7 +60,7 @@ namespace APPMOBLIE
                         }
                         else
                         {
-                            // 
+                            await DisplayAlert("แจ้งเตือน!","กรุณาตรวจสอบการทำรายการอีกครั้ง","ตกลง");
                         }
                     }
                 });
@@ -88,7 +88,7 @@ namespace APPMOBLIE
                 }
                 else
                 {
-                  //
+                    await DisplayAlert("แจ้งเตือน!", "กรุณาตรวจสอบการทำรายการอีกครั้ง", "ตกลง");
                 }
             }
         }
@@ -114,12 +114,21 @@ namespace APPMOBLIE
                 HttpResponseMessage response = await client.PostAsync(Url, new StringContent(oJsonObject.ToString(), Encoding.UTF8, "application/json"));
                 if (response.IsSuccessStatusCode)
                 {
-                    await DisplayAlert("Success", "ดำเนินการเสร็จสิ้น", "OK");
-                    await Navigation.PushAsync(new HomePage());
+                    var ResponseData = await response.Content.ReadAsStringAsync();
+                    var Result = JsonConvert.DeserializeObject<RespondeData>(ResponseData);
+                    if (Result.valid == true)
+                    {
+                        await DisplayAlert("สำเร็จ", "ดำเนินการเสร็จสิ้น", "ตกลง");
+                        await Navigation.PushAsync(new HomePage());
+                    }
+                    else
+                    {
+                        await DisplayAlert("แจ้งเตือน", Result.message, "ตกลง");
+                    }
                 }
                 else
                 {
-                    await DisplayAlert("Warning", "กรุณาตรวจสอบความถูกต้อง", "OK");
+                    await DisplayAlert("แจ้งเตือน", "กรุณาตรวจสอบความถูกต้อง", "ตกลง");
                 }
             }
         }
@@ -145,6 +154,12 @@ namespace APPMOBLIE
             public bool valid { get; set; }
             public string Username { get; set; }
             public string UserId { get; set; }
+        }
+
+        private class RespondeData
+        {
+            public bool valid { get; set; }
+            public string message { get; set; }
         }
     }
 }
