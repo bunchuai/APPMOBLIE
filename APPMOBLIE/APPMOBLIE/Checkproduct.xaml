@@ -42,7 +42,7 @@
                        Completed="findtext_Completed"
                        HorizontalTextAlignment="Center"
                            />
-                <!--<Label Text="หรือ " VerticalOptions="Center" Style="{x:StaticResource Normalkanit}" HorizontalOptions="Center"/>-->
+               
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="Center">
                     <Button Clicked="Button_Scan"
@@ -91,8 +91,7 @@
                                Style="{x:StaticResource Normalkanit}"/>
                         <Label x:Name="Available"   Grid.ColumnSpan="2" Grid.Row="5" 
                                 Style="{x:StaticResource Normalkanit}"/>
-                        <Label x:Name="Alert" Grid.ColumnSpan="2" Grid.Row="1" HorizontalOptions="Center"
-                                Style="{x:StaticResource Normalkanit}"/>
+                       
 
                     </Grid>
                 </Frame>
@@ -106,6 +105,7 @@
                             >
                     <Label Text="{Binding titletrans}" Style="{x:StaticResource Normalkanit}" x:Name="Titletrans"
                            FontSize="18" HorizontalOptions="Center" />
+                    <Label x:Name="Alert"  Style="{x:StaticResource Normalkanit}" HorizontalOptions="Center"/>
                     <ListView  x:Name="listview" HasUnevenRows="True"
                                >
                         <ListView.ItemTemplate>

@@ -73,24 +73,28 @@ namespace APPMOBLIE
                             var Five = await TransactionFive.Content.ReadAsStringAsync();
                             var TrnsactionResult = JsonConvert.DeserializeObject<List<TransactionModels>>(Five);
 
+                            if (TrnsactionResult.Count > 0)
+                            {
+                                listview.ItemsSource = TrnsactionResult;
+                                Fram1.IsVisible = true;
+                                Titletrans.Text = "รายการสินค้า เข้า - ออก";
 
-                            listview.ItemsSource = TrnsactionResult;
-                           Fram1.IsVisible = true;
-                            Titletrans.Text = "รายการสินค้า เข้า - ออก";
-                           
-                            Skuinfo.Text = "หมายเลข SKU : " + Result.Sku;
-                            Prodn.Text = "ชื่อสินค้า : " + Result.Name;
-                            Prodb.Text = "ยี่ห้อ : " + Result.Brand;
-                            Prodm.Text = "โมเดล  : " + Result.Model;
-                            Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
-                            Proin.TextColor = Color.Green;
-                            Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
-                            Proout.TextColor = Color.Red;
-                            Available.Text = "จำนวนคงเหลือ : " + Result.Amount.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
-                            Available.TextColor = (Result.Amount <= Convert.ToInt32(Min) ? Color.Red : Color.Green);
-
-                            Alert.Text = string.Empty;
-
+                                Skuinfo.Text = "หมายเลข SKU : " + Result.Sku;
+                                Prodn.Text = "ชื่อสินค้า : " + Result.Name;
+                                Prodb.Text = "ยี่ห้อ : " + Result.Brand;
+                                Prodm.Text = "โมเดล  : " + Result.Model;
+                                Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                                Proin.TextColor = Color.Green;
+                                Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                                Proout.TextColor = Color.Red;
+                                Available.Text = "จำนวนคงเหลือ : " + Result.Amount.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                                Available.TextColor = (Result.Amount <= Convert.ToInt32(Min) ? Color.Red : Color.Green);
+                                Alert.Text = string.Empty;
+                            }
+                            else
+                            {
+                                Alert.Text = "--- ไม่พบรายการสินค้า เช้า - ออก ---";
+                            }
                         }
                         else
                         {
@@ -113,8 +117,9 @@ namespace APPMOBLIE
                 Proout.Text = string.Empty;
                 Available.Text = string.Empty;
                 Alert.Text = string.Empty;
-                //listview.ItemsSource = null;
+                listview.ItemsSource = null;
                 Titletrans.Text = string.Empty;
+                Fram1.IsVisible = false;
             }
             else
             {
@@ -126,8 +131,9 @@ namespace APPMOBLIE
                 Proout.Text = string.Empty;
                 Available.Text = string.Empty;
                 Alert.Text = string.Empty;
-                //listview.ItemsSource = null;
+                listview.ItemsSource = null;
                 Titletrans.Text = string.Empty;
+                Fram1.IsVisible = false;
             }
 
             using (HttpClient client = new HttpClient())
@@ -152,21 +158,30 @@ namespace APPMOBLIE
                     var Five = await TransactionFive.Content.ReadAsStringAsync();
                     var TrnsactionResult = JsonConvert.DeserializeObject<List<TransactionModels>>(Five);
 
-                    listview.ItemsSource = TrnsactionResult;
-                    Fram1.IsVisible = true;
-                    Titletrans.Text = "รายการสินค้า เข้า - ออก";
-                   
-                    Skuinfo.Text = "หมายเลข SKU : " + Result.Sku;
-                    Prodn.Text = "ชื่อสินค้า : " + Result.Name;
-                    Prodb.Text = "ยี่ห้อ : " + Result.Brand;
-                    Prodm.Text = "รุ่น  : " + Result.Model;
-                    Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
-                    Proin.TextColor = Color.Green;
-                    Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() +" "+ TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
-                    Proout.TextColor = Color.Red;
-                    Available.Text = "จำนวนคงเหลือ : " + Result.Amount.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
-                    Available.TextColor = (Result.Amount <= Convert.ToInt32(Min) ? Color.Red : Color.Green);
-                    Alert.Text = string.Empty;
+
+                    if (TrnsactionResult.Count > 0)
+                    {
+                        listview.ItemsSource = TrnsactionResult;
+                        Fram1.IsVisible = true;
+                        Titletrans.Text = "รายการสินค้า เข้า - ออก";
+
+                        Skuinfo.Text = "หมายเลข SKU : " + Result.Sku;
+                        Prodn.Text = "ชื่อสินค้า : " + Result.Name;
+                        Prodb.Text = "ยี่ห้อ : " + Result.Brand;
+                        Prodm.Text = "รุ่น  : " + Result.Model;
+                        Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                        Proin.TextColor = Color.Green;
+                        Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                        Proout.TextColor = Color.Red;
+                        Available.Text = "จำนวนคงเหลือ : " + Result.Amount.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
+                        Available.TextColor = (Result.Amount <= Convert.ToInt32(Min) ? Color.Red : Color.Green);
+                        Alert.Text = string.Empty;
+                    }
+                    else
+                    {
+                        Alert.Text = "--- ไม่พบรายการสินค้า เช้า - ออก ---";
+                    }
+                  
                 }
                 else
                 {
