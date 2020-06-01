@@ -54,12 +54,12 @@ namespace APPMOBLIE
                     }
                     else
                     {
-                        displayError.Text = "Username or password invalit.";
+                        displayError.Text = "ชื่อผู้ใช่ หรือรหัสผ่านไม่ถูกต้อง";
                     }
                 }
                 else
                 {
-                    displayError.Text = "Username or password invalit.";
+                    displayError.Text = "ชื่อผู้ใช่ หรือรหัสผ่านไม่ถูกต้อง";
                 }
             }
         }
