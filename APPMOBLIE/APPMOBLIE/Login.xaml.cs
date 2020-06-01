@@ -85,5 +85,9 @@ namespace APPMOBLIE
             public int ComId { get; set; }
         }
 
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            this.Navigation.PushAsync(new Forgotpassword());
+        }
     }
 }
