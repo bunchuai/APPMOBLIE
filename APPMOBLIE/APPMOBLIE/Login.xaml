@@ -9,7 +9,6 @@
 
     <ContentPage.Content>
         
-
         <StackLayout >
                 <Grid>
                     <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
@@ -59,9 +58,13 @@
                                         <Button  Text="เข้าสู่ระบบ" Style="{x:StaticResource Normalkanit}"  Clicked="button_SignIn" BackgroundColor="#0095b6" TextColor="White" CornerRadius="30" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                        <Label Text="ลืมรหัสผ่าน" Style="{x:StaticResource Normalkanit}" TextColor="Gray" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                    <Label Text="ลืมรหัสผ่าน" Style="{x:StaticResource Normalkanit}"   TextColor="Gray" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" >
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
 
-                                    </StackLayout>
+                                </StackLayout>
 
 
 
