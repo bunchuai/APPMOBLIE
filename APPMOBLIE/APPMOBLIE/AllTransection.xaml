@@ -26,12 +26,9 @@
                    AbsoluteLayout.LayoutFlags="PositionProportional"
                    FontAttributes="Bold"
                    />
-
         <ScrollView
                  AbsoluteLayout.LayoutBounds="0,1,1,0.85"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
-        
-            
             <StackLayout Padding="13" Spacing="13">
                 <StackLayout>
                     <Frame BackgroundColor="Transparent"   Padding="15" Margin="15,5,15,5" CornerRadius="20">
