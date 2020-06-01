@@ -104,6 +104,7 @@ namespace APPMOBLIE
                 });
             };
         }
+
         async private void findtext_Completed(object sender, EventArgs e)
         {
             var find = findtext.Text;
@@ -207,8 +208,5 @@ namespace APPMOBLIE
 
         }
 
-      
-
-     
     }
 }
