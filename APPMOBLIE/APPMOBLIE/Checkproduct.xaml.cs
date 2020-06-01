@@ -98,6 +98,7 @@ namespace APPMOBLIE
                 });
             };
         }
+
         private async void findtext_Completed(object sender, EventArgs e)
         {
             var find = findtext.Text;
@@ -127,7 +128,7 @@ namespace APPMOBLIE
                 listview.ItemsSource = null;
                 Titletrans.Text = string.Empty;            
             }
-            
+
             using (HttpClient client = new HttpClient())
             {
                 var CompanyId = Application.Current.Properties["CompanyId"];
@@ -194,8 +195,5 @@ namespace APPMOBLIE
 
         }
 
-      
-
-     
     }
 }
