@@ -5,6 +5,7 @@ using System.Text;
 using Xamarin.Forms;
 using System.Text.RegularExpressions;
 using Entry = Xamarin.Forms.Entry;
+using Xamarin.Essentials;
 
 namespace APPMOBLIE.Validations
 {
@@ -63,12 +64,10 @@ namespace APPMOBLIE.Validations
             if (IsNull == true)
             {
                 ((Entry)sender).TextColor = Color.Default;
-                ((Entry)sender).BackgroundColor = Color.Default;
             }
             else
             {
                 ((Entry)sender).TextColor = Color.Red;
-                ((Entry)sender).BackgroundColor = Color.Red;
             }
 
             bool Isvalid = false;
@@ -76,12 +75,10 @@ namespace APPMOBLIE.Validations
             if (Isvalid == true)
             {
                 ((Entry)sender).TextColor = Color.Default;
-                ((Entry)sender).BackgroundColor = Color.Default;
             }
             else
             {
                 ((Entry)sender).TextColor = Color.Red;
-                ((Entry)sender).BackgroundColor = Color.Red;
             }
         }
     }
