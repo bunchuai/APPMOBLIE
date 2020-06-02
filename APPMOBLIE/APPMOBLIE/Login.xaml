@@ -59,7 +59,7 @@
                                     </StackLayout>
                                 </Frame>
                                 <Label x:Name="displayError" Text="" TextColor="Red" HorizontalOptions="Center"/>
-                                <StackLayout Margin="40,10">s
+                                <StackLayout Margin="40,10">
                                     <Button  Text="เข้าสู่ระบบ" Style="{x:StaticResource Normalkanit}"  Clicked="button_SignIn" BackgroundColor="#0095b6" TextColor="White" CornerRadius="30" x:Name="SignIn"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
