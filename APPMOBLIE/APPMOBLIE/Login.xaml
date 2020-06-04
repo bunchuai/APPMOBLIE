@@ -34,6 +34,7 @@
                                                HorizontalOptions="FillAndExpand" 
                                                Margin="0,0,20,0">
                                             <Entry.Behaviors>
+                                                <local:EmptyValidation/>
                                                 <local:EmailValidation/>
                                             </Entry.Behaviors>
                                         </Entry>
@@ -45,7 +46,6 @@
                                         <Frame BackgroundColor="SkyBlue" HeightRequest="35" WidthRequest="35" CornerRadius="30" Padding="0" Margin="5">
                                             <Image Source="https://images.all-free-download.com/images/graphicthumb/lock_icon_6813906.jpg" Aspect="AspectFill" Margin="0"/>
                                         </Frame>
-
                                         <Entry  x:Name="Password" IsPassword="True" 
                                                 MaxLength="8" Placeholder="รหัสผ่าน" 
                                                 Style="{x:StaticResource Normalkanit}"  
@@ -54,12 +54,13 @@
                                                 HorizontalOptions="FillAndExpand"
                                                 Margin="0,0,20,0">
                                             <Entry.Behaviors>
+                                                <local:EmptyValidation/>
                                                 <local:PasswordValidation/>
                                             </Entry.Behaviors>
                                         </Entry>
                                     </StackLayout>
                                 </Frame>
-                                <Label x:Name="displayError" Text="" TextColor="Red"/>
+                                <Label x:Name="displayError" Text="" TextColor="Red" HorizontalOptions="Center"/>
                                 <StackLayout Margin="40,10">
                                     <Button  Text="เข้าสู่ระบบ" Style="{x:StaticResource Normalkanit}"  Clicked="button_SignIn" BackgroundColor="#0095b6" TextColor="White" CornerRadius="30" x:Name="SignIn"/>
                                 </StackLayout>

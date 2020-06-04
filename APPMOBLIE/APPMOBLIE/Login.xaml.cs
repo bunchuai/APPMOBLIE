@@ -21,6 +21,10 @@ namespace APPMOBLIE
         {
             InitializeComponent();
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+        }
 
         private async void button_SignIn(object sender, EventArgs e)
         {
