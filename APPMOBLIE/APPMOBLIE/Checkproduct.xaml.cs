@@ -93,7 +93,7 @@ namespace APPMOBLIE
                             }
                             else
                             {
-                                Alert.Text = "--- ไม่พบรายการสินค้า เช้า - ออก ---";
+                                Alert.Text = "--- ไม่พบรายการสินค้า เข้า - ออก ---";
                             }
                         }
                         else
@@ -180,7 +180,7 @@ namespace APPMOBLIE
                     }
                     else
                     {
-                        Alert.Text = "--- ไม่พบรายการสินค้า เช้า - ออก ---";
+                        Alert.Text = "--- ไม่พบรายการสินค้า เข้า - ออก ---";
                     }
                   
                 }
