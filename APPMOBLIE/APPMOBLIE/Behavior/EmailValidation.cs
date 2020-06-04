@@ -14,7 +14,19 @@ namespace APPMOBLIE.Validations
         const string emailRegex = @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
                                   @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
 
-        
+        //public static readonly BindablePropertyKey IsValidPropertyKey = BindablePropertyKey.CreateReadOnly("Isvalid", typeof(bool), typeof(EmailValidation), false);
+
+        //public static readonly BindableProperty IsValidProperty = IsValidPropertyKey.BindableProperty;
+
+        //public bool IsValid
+        //{
+        //    get {
+        //        return (bool)this.GetValue(IsValidProperty);
+        //    }
+        //    set {
+        //        this.SetValue(IsValidPropertyKey, value);
+        //    }
+        //}
 
         protected override void OnAttachedTo(Entry bindable)
         {
@@ -30,8 +42,7 @@ namespace APPMOBLIE.Validations
 
         void HandleTextChanged(object sender, TextChangedEventArgs e)
         {
-            bool IsValid = false;
-            IsValid = (Regex.IsMatch(e.NewTextValue, emailRegex));
+            var IsValid = (Regex.IsMatch(e.NewTextValue, emailRegex));
             if (IsValid == true)
             {
                 ((Entry)sender).TextColor = Color.Default;
