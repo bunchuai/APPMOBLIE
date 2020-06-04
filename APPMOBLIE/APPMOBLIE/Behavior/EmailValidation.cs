@@ -72,4 +72,26 @@ namespace APPMOBLIE.Validations
 
         }
     }
+
+    class EmptyValidation  : Behavior<Entry>
+    {
+
+        protected override void OnAttachedTo(Entry bindable)
+        {
+            base.OnAttachedTo(bindable);
+            bindable.TextChanged += HandlerTextChanged;
+        }
+
+        void HandlerTextChanged(Object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(e.NewTextValue))
+            {
+                ((Entry)sender).TextColor = Color.Default;
+            }
+            else
+            {
+                ((Entry)sender).TextColor = Color.Red;
+            }
+        }
+    }
 }
