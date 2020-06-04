@@ -9,6 +9,7 @@
              BackgroundImageSource="background.png"
              x:Class="APPMOBLIE.HomePage"
             BarTextColor="Black"
+            UnselectedTabColor="#cdc6b8"
             BarBackgroundColor="#f7f7f7"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration;assembly=Xamarin.Forms.Core"
             >
