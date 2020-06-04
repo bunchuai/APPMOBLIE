@@ -4,9 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              x:Class="APPMOBLIE.AllTransection"
-             Title="Stock" 
              BackgroundColor="White"
-             IconImageSource="iconbox"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              xmlns:local="clr-namespace:APPMOBLIE">
@@ -26,12 +24,9 @@
                    AbsoluteLayout.LayoutFlags="PositionProportional"
                    FontAttributes="Bold"
                    />
-
         <ScrollView
                  AbsoluteLayout.LayoutBounds="0,1,1,0.85"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
-        
-            
             <StackLayout Padding="13" Spacing="13">
                 <StackLayout>
                     <Frame BackgroundColor="Transparent"   Padding="15" Margin="15,5,15,5" CornerRadius="20">
@@ -44,7 +39,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Button ImageSource="iconinsky" Clicked="BtnStockin"  Text="รับสินค้า" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="0"  FontAttributes="Bold" TextColor="Gray" BackgroundColor="White" BorderColor="LightGray" BorderWidth="2"  CornerRadius="30"  />
-                            <Button ImageSource="iconoutsky" Clicked="BtnStockOut" Text="เบิกสินค้า" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="Gray" BackgroundColor="White" BorderColor="LightGray" BorderWidth="2"  CornerRadius="30"  />
+                            <Button ImageSource="iconoutsky" Clicked="BtnStockOut" Text="จ่ายสินค้า" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="Gray" BackgroundColor="White" BorderColor="LightGray" BorderWidth="2"  CornerRadius="30"  />
 
                         </Grid>
                        
@@ -54,21 +49,22 @@
                     <forms:ChartView  x:Name="Chart1"   HeightRequest="150"/>
                 </StackLayout>-->
                 <StackLayout Orientation="Vertical">
-                    <Button Text="รายการคลังสินค้าเข้า" BackgroundColor="White" BorderWidth="5" BorderColor="#c6e2ff" 
+                    <Button Text="รายการสินค้าเข้าล่าสุด" BackgroundColor="White" BorderWidth="5" BorderColor="#c6e2ff" 
                                     CornerRadius="15"
                                     Clicked="Button_ClickedIn"
                             TextColor="#455e5e"
                             Style="{StaticResource Normalkanit}"
                             HeightRequest="80"
                               FontSize="22"
-                            ></Button>
+                            CommandParameter="instock"
+                            />
                     <ListView x:Name="Dashboardin" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
                                     <StackLayout Orientation="Vertical"  Padding="20">
                                         <Image Source="iconlist" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
-                                        <Label Text="{Binding Ref, StringFormat='รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding Ref, StringFormat='Ref.No : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
@@ -94,21 +90,21 @@
                         </ListView.ItemTemplate>
                     </ListView>
                     <StackLayout  VerticalOptions="CenterAndExpand">
-                        <Button Text="รายการคลังสินค้าออก" BackgroundColor="White" BorderWidth="5" BorderColor="#c6e2ff" 
+                        <Button Text="รายการสินค้าออกล่าสุด" BackgroundColor="White" BorderWidth="5" BorderColor="#c6e2ff" 
                                     CornerRadius="15"
                                     Clicked="Button_ClickedOut"
                             TextColor="#455e5e"
                                 FontSize="22"
                             Style="{StaticResource Normalkanit}"
                                 HeightRequest="80"
-                            ></Button>
+                            />
                         <ListView x:Name="Dashboardout" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell IsEnabled="False" >
                                         <StackLayout Orientation="Vertical"  Padding="20">
                                             <Image Source="iconlist" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
-                                            <Label Text="{Binding Ref, StringFormat='รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                            <Label Text="{Binding Ref, StringFormat='Ref.No : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                             <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
@@ -135,7 +131,7 @@
                         </ListView>
                     </StackLayout>
                     <StackLayout  VerticalOptions="CenterAndExpand">
-                        <Button Text="รายการคลังสินค้าสั่งซื้อซ้ำ" BackgroundColor="White" BorderWidth="5" BorderColor="#c6e2ff" 
+                        <Button Text="รายการสินค้าถึงกำหนดสั่งซื้อ" BackgroundColor="White" BorderWidth="5" BorderColor="#c6e2ff" 
                                     CornerRadius="15"
                                     Clicked="Button_ClickedReorder"
                             TextColor="#455e5e"

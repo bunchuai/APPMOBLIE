@@ -10,80 +10,13 @@
              x:Class="APPMOBLIE.HomePage"
             BarTextColor="Black"
             BarBackgroundColor="#f7f7f7"
-            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration;assembly=Xamarin.Forms.Core"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
             >
-    <local:AllTransection ></local:AllTransection>
-    <local:AddProduct></local:AddProduct>
-    <local:Checkproduct></local:Checkproduct>
-    <local:SettingPage></local:SettingPage>
+
+    <local:AllTransection IconImageSource="iconbox.png" Title="Home"></local:AllTransection>
+    <local:AddProduct IconImageSource="iconsadd.png"  Title="Add"></local:AddProduct>
+    <local:Checkproduct IconImageSource="iconsscan.png"  Title="Find"></local:Checkproduct>
+    <local:SettingPage IconImageSource="iconssett"  Title="Setting"></local:SettingPage>
 
 </TabbedPage>
-
-
-
-<!--<ContentPage.Content>
-        <ScrollView>
-            <RelativeLayout>
-
-                <Button BorderRadius="35" x:Name="imageCircleBack" 
-                 BackgroundColor="White" HeightRequest="70" WidthRequest="70" 
-                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
-                    Property=Width, Factor=.5, Constant = -35}" 
-                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
-                    Factor=0, Property=Y, Constant=60}" />
-                
-                <RelativeLayout  BackgroundColor="#BED1E5" 
-                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=100}"  
-                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height, Factor=1}" 
-                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" >
-
-                    <Label Text="User Name" x:Name="Username"  FontSize="16"
-                 HorizontalTextAlignment="Center" 
-                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=30}" 
-                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
-                    
-                    <Button ImageSource="In32.png"  HeightRequest="70" WidthRequest="100" CornerRadius="10" Text="IN" FontSize="18"
-                             BackgroundColor="#00B189" Clicked="Button_Inproduct" 
-                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=5}" 
-                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0.3, Constant=70}" />
-
-                    <Button ImageSource="Out32.png" HeightRequest="70" WidthRequest="100" CornerRadius="10" Text="OUT" FontSize="18" BackgroundColor="#FF4242"  Clicked="Button_Outproduct" 
-                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=5}" 
-                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}"  />
-                            
-                </RelativeLayout>
-
-                <RelativeLayout Padding="5,0,0,0">
-
-                    <Button FontSize="14"  WidthRequest="150" Text="All Transctions" BackgroundColor="#1D92C7" TextColor="White"  CornerRadius="10" 
-                          FontAttributes="Bold" Clicked="Button_Transection"
-            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=300}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.17, Constant=0}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-
-                    <Button FontSize="14" Text="Check Product" BackgroundColor="#1D92C7" TextColor="White"   CornerRadius="10" 
-                            FontAttributes="Bold" Clicked="Button_Checkproduct"
-            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=370}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.17, Constant=0}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-
-                    <Button FontSize="14" Text="Add New Product" BackgroundColor="#1D92C7" TextColor="White"  CornerRadius="10" 
-                            FontAttributes="Bold" Clicked="Button_Addnewproduct"
-            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=440}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.17, Constant=0}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-
-                    <Button FontSize="14" Text="Setting" BackgroundColor="#1D92C7" TextColor="White"  CornerRadius="10" 
-                            FontAttributes="Bold" Clicked="Button_Setting"
-            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=510}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.17, Constant=0}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-
-                </RelativeLayout>
-            </RelativeLayout>
-        </ScrollView>
-    </ContentPage.Content>-->

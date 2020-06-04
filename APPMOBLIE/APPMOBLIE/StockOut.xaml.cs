@@ -95,40 +95,47 @@ namespace APPMOBLIE
 
         public async void Save_Click(object sender, System.EventArgs e)
         {
-            using (HttpClient client = new HttpClient())
+            if (string.IsNullOrEmpty(this.Mycode.Text) || string.IsNullOrEmpty(this.Quantity.Text) || string.IsNullOrEmpty(this.ReferentNumber.Text) || string.IsNullOrEmpty(this.Quantity.Text))
             {
-                JObject oJsonObject = new JObject();
-                oJsonObject.Add("SkuId", this.Mycode.Text);
-                oJsonObject.Add("CompanyId", Application.Current.Properties["CompanyId"].ToString());
-                oJsonObject.Add("UserId", Application.Current.Properties["UserId"].ToString());
-                oJsonObject.Add("Quantitys", this.Quantity.Text);
-                oJsonObject.Add("ReferentNumber", this.ReferentNumber.Text);
-                oJsonObject.Add("TransectionType", "OUT");
-                oJsonObject.Add("ProductDescription", this.ProductDescription.Text);
-
-                string Url = "http://203.151.166.97/api/Products/AddProductTransaction";
-                client.BaseAddress = new Uri(Url);
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "oLQKZ-tbA58nvbw7PuZhSsy3sr_H28YB3U3XGbpEc5pGIpMrB1nKNjpS_mRhDiFt2QOBZw3IntJ3dmrozZKsw6hd2VuLvoS8-0HxMCVsMUbZ6QZD782Ig1rfFFWPJ13qDq-cMoUgE2t-PdFEp_85aqa8crtVD6aRwntMPjDOgOriFBbzCYjeXyQ3JECl4pOZGd2KYhpCM7n4hXjfCA0t2YeQyvbuId1-e-qhltjEzCkRk7uffgtbwC2KAImsw7jrBYFfxeu1DCRRYdi2AsSZVyBHk0pAqcekzv5jlxLaK2Z-5hFVN0EzSA86Z2MkAq_vXPnJMq0ZrlGfZG6l-hJYb7NjGZCKD44euOf4l-dGQqi40wd8oIhacT1WIrr2RoSAxQn3t1TLDU2TNbgd_pW89JAHd9fmF9k-aZt9tCJuFQs-sW7eJQ1spYqQWHEbKYFbf2Aih5ZBDrIbLeh4hRRFOd_zYZgQKqIZ1tpZ_82UwYUG8FyPn9ZexVzr4t4At4cP");
-                HttpResponseMessage response = await client.PostAsync(Url, new StringContent(oJsonObject.ToString(), Encoding.UTF8, "application/json"));
-                if (response.IsSuccessStatusCode)
+                await DisplayAlert("แจ้งเตือน", "กรุณากรอกข้อมูลให้ครบถ้วน", "ตกลง");
+            }
+            else
+            {
+                using (HttpClient client = new HttpClient())
                 {
-                    var ResponseData = await response.Content.ReadAsStringAsync();
-                    var Result = JsonConvert.DeserializeObject<RespondeData>(ResponseData);
-                    if (Result.valid == true)
+                    JObject oJsonObject = new JObject();
+                    oJsonObject.Add("SkuId", this.Mycode.Text);
+                    oJsonObject.Add("CompanyId", Application.Current.Properties["CompanyId"].ToString());
+                    oJsonObject.Add("UserId", Application.Current.Properties["UserId"].ToString());
+                    oJsonObject.Add("Quantitys", this.Quantity.Text);
+                    oJsonObject.Add("ReferentNumber", this.ReferentNumber.Text);
+                    oJsonObject.Add("TransectionType", "OUT");
+                    oJsonObject.Add("ProductDescription", this.ProductDescription.Text);
+
+                    string Url = "http://203.151.166.97/api/Products/AddProductTransaction";
+                    client.BaseAddress = new Uri(Url);
+                    client.DefaultRequestHeaders.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "oLQKZ-tbA58nvbw7PuZhSsy3sr_H28YB3U3XGbpEc5pGIpMrB1nKNjpS_mRhDiFt2QOBZw3IntJ3dmrozZKsw6hd2VuLvoS8-0HxMCVsMUbZ6QZD782Ig1rfFFWPJ13qDq-cMoUgE2t-PdFEp_85aqa8crtVD6aRwntMPjDOgOriFBbzCYjeXyQ3JECl4pOZGd2KYhpCM7n4hXjfCA0t2YeQyvbuId1-e-qhltjEzCkRk7uffgtbwC2KAImsw7jrBYFfxeu1DCRRYdi2AsSZVyBHk0pAqcekzv5jlxLaK2Z-5hFVN0EzSA86Z2MkAq_vXPnJMq0ZrlGfZG6l-hJYb7NjGZCKD44euOf4l-dGQqi40wd8oIhacT1WIrr2RoSAxQn3t1TLDU2TNbgd_pW89JAHd9fmF9k-aZt9tCJuFQs-sW7eJQ1spYqQWHEbKYFbf2Aih5ZBDrIbLeh4hRRFOd_zYZgQKqIZ1tpZ_82UwYUG8FyPn9ZexVzr4t4At4cP");
+                    HttpResponseMessage response = await client.PostAsync(Url, new StringContent(oJsonObject.ToString(), Encoding.UTF8, "application/json"));
+                    if (response.IsSuccessStatusCode)
                     {
-                        await DisplayAlert("สำเร็จ", "ดำเนินการเสร็จสิ้น", "ตกลง");
-                        await Navigation.PushAsync(new HomePage());
+                        var ResponseData = await response.Content.ReadAsStringAsync();
+                        var Result = JsonConvert.DeserializeObject<RespondeData>(ResponseData);
+                        if (Result.valid == true)
+                        {
+                            await DisplayAlert("สำเร็จ", "ดำเนินการเสร็จสิ้น", "ตกลง");
+                            await Navigation.PushAsync(new HomePage());
+                        }
+                        else
+                        {
+                            await DisplayAlert("แจ้งเตือน", Result.message, "ตกลง");
+                        }
                     }
                     else
                     {
-                        await DisplayAlert("แจ้งเตือน", Result.message, "ตกลง");
+                        await DisplayAlert("แจ้งเตือน", "กรุณาตรวจสอบความถูกต้อง", "ตกลง");
                     }
-                }
-                else
-                {
-                    await DisplayAlert("แจ้งเตือน", "กรุณาตรวจสอบความถูกต้อง", "ตกลง");
                 }
             }
         }

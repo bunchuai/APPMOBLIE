@@ -4,9 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:animation="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:local="clr-namespace:APPMOBLIE.Validations"
              mc:Ignorable="d"
              x:Class="APPMOBLIE.StockIn">
-
     <StackLayout >
         <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand"></StackLayout>
         <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
@@ -32,18 +32,29 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Label Text="หมายเลข SKU" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="0" VerticalOptions="Center"/>
-                            <Entry x:Name="Mycode" Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="0" Completed="Mycode_Completed"/>
+                            <Entry x:Name="Mycode" Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="0" Completed="Mycode_Completed">
+                                <Entry.Behaviors>
+                                    <local:EmptyValidation/>
+                                </Entry.Behaviors>
+                            </Entry>
                             <Button BackgroundColor="Transparent" ImageSource="barcode.png" WidthRequest="20" HeightRequest="20" Grid.Column="1" Grid.Row="0" HorizontalOptions="End" Clicked="ScanBarCode"/>
 
                             <Label Text="ชื่อสินค้า" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="1" VerticalOptions="Center"/>
                             <Entry  x:Name="ProductName" Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="1"/>
 
                             <Label Text="จำนวน" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="2" VerticalOptions="Center" />
-                            <Entry x:Name="Quantity"  Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="2" Keyboard="Numeric"/>
+                            <Entry x:Name="Quantity"  Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="2" Keyboard="Numeric">
+                                <Entry.Behaviors>
+                                    <local:EmptyValidation/>
+                                </Entry.Behaviors>
+                            </Entry>
 
                             <Label Text="เลขอ้างอิง" Style="{x:StaticResource Normalkanit}"   Grid.Column="0"  Grid.Row="3" VerticalOptions="Center"/>
-                            <Entry x:Name="ReferentNumber" Style="{x:StaticResource Normalkanit}"   Grid.Column="1"   Grid.Row="3" />
-                            
+                            <Entry x:Name="ReferentNumber" Style="{x:StaticResource Normalkanit}"   Grid.Column="1"   Grid.Row="3">
+                                <Entry.Behaviors>
+                                    <local:EmptyValidation/>
+                                </Entry.Behaviors>
+                            </Entry>
                         </Grid>
                     </StackLayout>
                     <StackLayout Padding="10,20,10,10" Margin="60,10">

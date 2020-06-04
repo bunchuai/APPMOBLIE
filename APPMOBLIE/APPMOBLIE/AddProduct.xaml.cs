@@ -150,6 +150,7 @@ namespace APPMOBLIE
                 oJsonObject.Add("ReferentNunber", this.ReferentNumber.Text);
                 oJsonObject.Add("Productmin", this.Productmin.Text);
                 oJsonObject.Add("TypeCode", ProductTypeSelected);
+                oJsonObject.Add("ProductCode", "TT01");
 
                 string Url = "http://203.151.166.97/api/Products/AddProduct";
                 client.BaseAddress = new Uri(Url);
