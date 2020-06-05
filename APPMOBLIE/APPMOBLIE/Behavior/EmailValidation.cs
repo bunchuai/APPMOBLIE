@@ -14,7 +14,25 @@ namespace APPMOBLIE.Validations
         const string emailRegex = @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
                                   @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
 
-        
+        public static readonly BindablePropertyKey IsValidPropertyKey = BindableProperty.CreateReadOnly(
+            "IsValid",
+            typeof(bool),
+            typeof(EmailValidation),
+            false);
+
+        public static readonly BindableProperty IsValidProperty = IsValidPropertyKey.BindableProperty;
+
+        public bool IsValid
+        {
+            get
+            {
+                return (bool)this.GetValue(IsValidProperty);
+            }
+            set 
+            {
+                this.SetValue(IsValidPropertyKey, value);    
+            }
+        }
 
         protected override void OnAttachedTo(Entry bindable)
         {
@@ -30,16 +48,10 @@ namespace APPMOBLIE.Validations
 
         void HandleTextChanged(object sender, TextChangedEventArgs e)
         {
-            bool IsValid = false;
-            IsValid = (Regex.IsMatch(e.NewTextValue, emailRegex));
-            if (IsValid == true)
-            {
-                ((Entry)sender).TextColor = Color.Default;
-            }
-            else
-            {
-                ((Entry)sender).TextColor = Color.Red;
-            }
+            Entry entry;
+            entry = (Entry)sender;
+            this.IsValid = (Regex.IsMatch(e.NewTextValue, emailRegex));
+            entry.TextColor = this.IsValid ? Color.Default : Color.Red;
         }
     }
 
@@ -47,6 +59,25 @@ namespace APPMOBLIE.Validations
     {
         const string PasswordRegex = @"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$";
 
+        public static readonly BindablePropertyKey IsValidPropertyKey = BindableProperty.CreateReadOnly(
+            "IsValid",
+            typeof(bool), 
+            typeof(PasswordValidation),
+            false);
+
+        public static readonly BindableProperty IsValidProperty = IsValidPropertyKey.BindableProperty;
+
+        public bool IsValid
+        {
+            get
+            {
+                return (bool)this.GetValue(IsValidProperty);
+            }
+            set
+            {
+                this.SetValue(IsValidPropertyKey, value);
+            }
+        }
         protected override void OnAttachedTo(Entry bindable)
         {
             base.OnAttachedTo(bindable);
@@ -61,7 +92,25 @@ namespace APPMOBLIE.Validations
 
         void HandlerTextChanged(object sender, TextChangedEventArgs e)
         {
-            if ((Regex.IsMatch(e.NewTextValue, PasswordRegex)) == true)
+            Entry entry;
+            entry = (Entry)sender;
+            this.IsValid = (Regex.IsMatch(e.NewTextValue, PasswordRegex));
+            entry.TextColor = this.IsValid ? Color.Default : Color.Red;
+        }
+    }
+
+    class EmptyValidation : Behavior<Entry>
+    {
+
+        protected override void OnAttachedTo(Entry bindable)
+        {
+            base.OnAttachedTo(bindable);
+            bindable.TextChanged += HandlerTextChanged;
+        }
+
+        void HandlerTextChanged(Object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(e.NewTextValue))
             {
                 ((Entry)sender).TextColor = Color.Default;
             }
@@ -69,7 +118,6 @@ namespace APPMOBLIE.Validations
             {
                 ((Entry)sender).TextColor = Color.Red;
             }
-
         }
     }
 }

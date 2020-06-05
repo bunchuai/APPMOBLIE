@@ -21,26 +21,12 @@ namespace APPMOBLIE
         {
          //   Username.Text = Application.Current.Properties["Username"].ToString();
             base.OnAppearing();
+
         }
 
         protected override bool OnBackButtonPressed()
         {
             return false;
-        }
-
-        private void Button_Inproduct(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button_Outproduct(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button_Transection(object sender, EventArgs e)
-        {
-
         }
 
         private async void Button_Checkproduct(object sender, EventArgs e)
@@ -49,14 +35,5 @@ namespace APPMOBLIE
             await Navigation.PushAsync(Page);
         }
 
-        private void Button_Addnewproduct(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button_Setting(object sender, EventArgs e)
-        {
-
-        }
     }
 }
