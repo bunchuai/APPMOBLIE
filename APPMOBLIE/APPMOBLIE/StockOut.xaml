@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:animation="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
              mc:Ignorable="d"
+             xmlns:local="clr-namespace:APPMOBLIE.Validations"
              x:Class="APPMOBLIE.StockOut">
 
     <StackLayout >
@@ -40,10 +41,18 @@
                             <Entry  x:Name="ProductName" Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="1"/>
 
                             <Label Text="จำนวน" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="2" VerticalOptions="Center" />
-                            <Entry x:Name="Quantity"   Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="2" Keyboard="Numeric"/>
+                            <Entry x:Name="Quantity"   Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="2" Keyboard="Numeric">
+                                <Entry.Behaviors>
+                                    <local:NumberOnlyValidation x:Name="NumberOnlyValidation"/>
+                                </Entry.Behaviors>
+                            </Entry>
 
                             <Label Text="เลขอ้างอิง" Style="{x:StaticResource Normalkanit}"   Grid.Column="0"  Grid.Row="3" VerticalOptions="Center"/>
-                            <Entry x:Name="ReferentNumber" Style="{x:StaticResource Normalkanit}"   Grid.Column="1"  Grid.Row="3" />
+                            <Entry x:Name="ReferentNumber" Style="{x:StaticResource Normalkanit}"   Grid.Column="1"  Grid.Row="3">
+                                <Entry.Behaviors>
+                                    <local:EmptyValidation x:Name="EmptyValidation"/>
+                                </Entry.Behaviors>
+                            </Entry>
 
                             <Label Text="รายละเอียด" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="4" VerticalOptions="Center"/>
                             <Entry x:Name="ProductDescription" Style="{x:StaticResource Normalkanit}"   Grid.Column="1"   Grid.Row="4" />
@@ -59,7 +68,7 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Text="บันทึก" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="0"  BackgroundColor="#2B976C" TextColor="White" CornerRadius="20" Clicked="Save_Click"/>
+                            <Button Text="บันทึก" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="0"  BackgroundColor="#2B976C" TextColor="White" CornerRadius="20" Clicked="Save_Click" IsEnabled="{Binding Source={x:Reference NumberOnlyValidation,EmptyValidation},Path=IsValid}"/>
                             <Button Text="ยกเลิก" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="1"  BackgroundColor="Gray" TextColor="White" CornerRadius="20" Clicked="Cancel_Click"/>
                         </Grid>
                     </StackLayout>
