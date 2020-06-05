@@ -59,25 +59,31 @@
                             <Entry x:Name="Mycode" Style="{x:StaticResource Normalkanit}"  Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="0"/>
                             <Button  Clicked="Button_Scan" BackgroundColor="Transparent" ImageSource="barcode.png" WidthRequest="20" HeightRequest="20" Grid.Column="3" Grid.Row="0" HorizontalOptions="End"/>
 
-                            <Label Text="ชื่อสินค้า"  Style="{x:StaticResource Normalkanit}"   Grid.Column="0" Grid.Row="1" VerticalOptions="Center" />
-                            <Entry x:Name="ProductName" Style="{x:StaticResource Normalkanit}"  Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1"/>
+                            <Label Text="รหัสสินค้า"  Style="{x:StaticResource Normalkanit}"   Grid.Column="0" Grid.Row="1" VerticalOptions="Center" />
+                            <Entry x:Name="ProductCode" Style="{x:StaticResource Normalkanit}"  Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1"/>
 
-                            <Label Text="ยี่ห้อ" Style="{x:StaticResource Normalkanit}"   Grid.Column="0" Grid.Row="2" VerticalOptions="Center"/>
-                            <Entry x:Name="ProductBrand" Style="{x:StaticResource Normalkanit}"   Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" />
 
-                            <Label Text="โมเดล" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="3" VerticalOptions="Center"/>
-                            <Entry x:Name="ProductModel" Style="{x:StaticResource Normalkanit}"  Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="3" />
-
-                            <Label Text="ประเภทสินค้า" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="4" VerticalOptions="Center" />
+                            <Label Text="ประเภทสินค้า" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="2" VerticalOptions="Center" />
                             <Picker x:Name="ProductType" Style="{x:StaticResource Normalkanit}" 
                                 Title="select product type"
                                 ItemsSource="{Binding ProductType}"
                                 ItemDisplayBinding="{Binding Name}"
                                 SelectedItem="{Binding Code}"  
                                 Grid.Column="1" Grid.ColumnSpan="3"  
-                                Grid.Row="4" />
+                                Grid.Row="2" />
+                            
+                            <Label Text="ชื่อสินค้า"  Style="{x:StaticResource Normalkanit}"   Grid.Column="0" Grid.Row="3" VerticalOptions="Center" />
+                            <Entry x:Name="ProductName" Style="{x:StaticResource Normalkanit}"  Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3"/>
 
-                            <Label Text="ตำแหน่งวาง" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="6" VerticalOptions="Center" />
+                            <Label Text="ยี่ห้อ" Style="{x:StaticResource Normalkanit}"   Grid.Column="0" Grid.Row="4" VerticalOptions="Center"/>
+                            <Entry x:Name="ProductBrand" Style="{x:StaticResource Normalkanit}"   Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4" />
+
+                            <Label Text="รุ่น" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="5" VerticalOptions="Center"/>
+                            <Entry x:Name="ProductModel" Style="{x:StaticResource Normalkanit}"  Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="5" />
+
+                          
+
+                            <Label Text="ตำแหน่งจัดเก็บ" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="6" VerticalOptions="Center" />
                             <Picker x:Name="ProductLocation" Style="{x:StaticResource Normalkanit}" 
                                 Title="select location"
                                 ItemsSource="{Binding ProductLocation}"
@@ -86,31 +92,31 @@
                                 Grid.Column="1"  Grid.ColumnSpan="3"
                                 Grid.Row="6" />
 
-                            <Label Text="หน่วยนับ" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="5" VerticalOptions="Center" />
+                            <Label Text="หน่วยนับ" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="7" VerticalOptions="Center" />
                             <Picker x:Name="ProductUnit" Style="{x:StaticResource Normalkanit}" 
                                 Title="select product unit"
                                 ItemsSource="{Binding ProductUnit}"
                                 ItemDisplayBinding="{Binding Name}"
                                 SelectedItem="{Binding Code}"  
                                 Grid.Column="1"  Grid.ColumnSpan="3"
-                                Grid.Row="5" />
+                                Grid.Row="7" />
 
-                            <Label Text="จำนวน" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="7" VerticalOptions="Center"/>
-                            <Entry x:Name="Quantity" Style="{x:StaticResource Normalkanit}"   Grid.Column="1"  Grid.Row="7" Keyboard="Numeric"/>
+                            <Label Text="จำนวน" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="8" VerticalOptions="Center"/>
+                            <Entry x:Name="Quantity" Style="{x:StaticResource Normalkanit}"   Grid.Column="1"  Grid.Row="8" Keyboard="Numeric"/>
 
-                            <Label Text="คงเหลือต่ำสุด" Style="{x:StaticResource Normalkanit}"  Grid.Column="2"  Grid.Row="7" VerticalOptions="Center"/>
-                            <Entry x:Name="Productmin" Style="{x:StaticResource Normalkanit}"   Grid.Column="3"  Grid.Row="7"  Keyboard="Numeric"/>
+                            <Label Text="คงเหลือต่ำสุด" Style="{x:StaticResource Normalkanit}"  Grid.Column="2"  Grid.Row="8" VerticalOptions="Center"/>
+                            <Entry x:Name="Productmin" Style="{x:StaticResource Normalkanit}"   Grid.Column="3"  Grid.Row="8"  Keyboard="Numeric"/>
 
 
 
-                            <Label Text="เลขอ้างอิง" Style="{x:StaticResource Normalkanit}"   Grid.Column="0"  Grid.Row="8" VerticalOptions="Center"/>
-                            <Entry x:Name="ReferentNumber" Style="{x:StaticResource Normalkanit}"   Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="8" />
+                            <Label Text="Ref.no" Style="{x:StaticResource Normalkanit}"   Grid.Column="0"  Grid.Row="9" VerticalOptions="Center"/>
+                            <Entry x:Name="ReferentNumber" Style="{x:StaticResource Normalkanit}"   Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="9" />
 
-                            <Label Text="วันหมดอายุ" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="9" VerticalOptions="Center"/>
-                            <DatePicker x:Name="ProductExpireDate" Style="{x:StaticResource Normalkanit}"   Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="9" />
+                            <Label Text="วันหมดอายุ" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="10" VerticalOptions="Center"/>
+                            <DatePicker x:Name="ProductExpireDate" Style="{x:StaticResource Normalkanit}"   Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="10" />
                             
-                            <Label Text="เพิ่มเติม" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="10" VerticalOptions="Center"/>
-                            <Entry x:Name="ProductDescription" Style="{x:StaticResource Normalkanit}"   Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="10" />
+                            <Label Text="Note." Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="11" VerticalOptions="Center"/>
+                            <Entry x:Name="ProductDescription" Style="{x:StaticResource Normalkanit}"   Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="11" />
                         </Grid>
                     </Frame>
                     <StackLayout Padding="0" Margin="70,0">
