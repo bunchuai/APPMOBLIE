@@ -13,8 +13,8 @@
             <Frame  BackgroundColor="White" HeightRequest="500"  HasShadow="True" Padding="0" Margin="0" CornerRadius="5">
                 <StackLayout>
                     <StackLayout Margin="0,30,0,10">
-                        <Image Source="iconinsky"/>
-                        <Label Text="รับสินค้าเข้า" FontSize="20" Style="{x:StaticResource Normalkanit}"  TextColor="Gray" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                        <!--<Image Source="iconinsky"/>-->
+                        <Label Text="รับสินค้า" FontSize="20" Style="{x:StaticResource Normalkanit}"  TextColor="Gray" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
                     </StackLayout>
 
                     <StackLayout Padding="0" Margin="35,10">
@@ -27,10 +27,10 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="120"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Label Text="หมายเลข SKU" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="0" VerticalOptions="Center"/>
+                            <Label Text="เลข Barcode" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="0" VerticalOptions="Center"/>
                             <Entry x:Name="Mycode" Style="{x:StaticResource Normalkanit}"  Grid.Column="1"   Grid.Row="0" Completed="Mycode_Completed"></Entry>
                             <Button BackgroundColor="Transparent" ImageSource="barcode.png" WidthRequest="20" HeightRequest="20" Grid.Column="1" Grid.Row="0" HorizontalOptions="End" Clicked="ScanBarCode"/>
 
@@ -44,12 +44,19 @@
                                 </Entry.Behaviors>
                             </Entry>
 
-                            <Label Text="เลขอ้างอิง" Style="{x:StaticResource Normalkanit}"   Grid.Column="0"  Grid.Row="3" VerticalOptions="Center"/>
+                            <Label Text="Ref.no" Style="{x:StaticResource Normalkanit}"   Grid.Column="0"  Grid.Row="3" VerticalOptions="Center"/>
                             <Entry x:Name="ReferentNumber" Style="{x:StaticResource Normalkanit}"   Grid.Column="1"   Grid.Row="3">
                                 <Entry.Behaviors>
                                     <local:EmptyValidation x:Name="EmptyValidation"/>
                                 </Entry.Behaviors>
                             </Entry>
+
+                            <Label Text="Note." Style="{x:StaticResource Normalkanit}"   Grid.Column="0"  Grid.Row="4" VerticalOptions="Center"/>
+                            <Entry x:Name="NoteIn" Style="{x:StaticResource Normalkanit}"   Grid.Column="1"   Grid.Row="4">
+                               
+                            </Entry>
+
+
                         </Grid>
                     </StackLayout>
                     <StackLayout Padding="10,20,10,10" Margin="60,10">

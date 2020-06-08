@@ -61,7 +61,7 @@
 
                                 <Label x:Name="displayError" Text="" TextColor="Red" HorizontalOptions="Center"/>
                                 <StackLayout Margin="40,10">
-                                    <Button  Text="เข้าสู่ระบบ" Style="{x:StaticResource Normalkanit}"  Clicked="button_SignIn" BackgroundColor="#0095b6" TextColor="White" CornerRadius="30" IsEnabled="{Binding Source={x:Reference EmailValidation,PasswordValidation}, Path=IsValid}"/>
+                                    <Button  Text="เข้าสู่ระบบ" Style="{x:StaticResource Normalkanit}"  Clicked="button_SignIn" BackgroundColor="#0095b6" TextColor="White" CornerRadius="30" IsEnabled="{Binding Source={x:Reference EmailValidation}, Path=IsValid}"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                                     <Label Text="ลืมรหัสผ่าน" Style="{x:StaticResource Normalkanit}"   TextColor="Gray" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" >
