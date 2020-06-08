@@ -26,37 +26,33 @@
                    />
         <ScrollView
                  AbsoluteLayout.LayoutBounds="0,1,1,0.85"
-                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"> 
-            <StackLayout Padding="13" Spacing="13">
-                <StackLayout>
-                    <Frame BackgroundColor="Transparent"   Padding="15" Margin="15,5,15,5" CornerRadius="20">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Button ImageSource="iconsplus" Clicked="BtnStockin"  Text="รับสินค้า" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="0"  FontAttributes="Bold" TextColor="Gray" BackgroundColor="White" BorderColor="LightGray" BorderWidth="1"  CornerRadius="30"  />
-                            <Button ImageSource="iconsminus" Clicked="BtnStockOut" Text="จ่ายสินค้า" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="Gray" BackgroundColor="White" BorderColor="LightGray" BorderWidth="1"  CornerRadius="30" />
-
-                        </Grid>
-                       
-                    </Frame>
+                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
+            <StackLayout Padding="13,13,13,0" Spacing="13">
+                <StackLayout Padding="0,30,0,15">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button ImageSource="iconsplus" Clicked="BtnStockin"  Text=" รับสินค้า " Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="0"  FontAttributes="Bold" TextColor="Gray" BackgroundColor="White" BorderColor="LightGray" BorderWidth="1"  CornerRadius="30"  />
+                        <Button ImageSource="iconsminus" Clicked="BtnStockOut" Text=" จ่ายสินค้า " Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="Gray" BackgroundColor="White" BorderColor="LightGray" BorderWidth="1"  CornerRadius="30" />
+                    </Grid>
                 </StackLayout>
                 <!--<StackLayout>
                     <forms:ChartView  x:Name="Chart1"   HeightRequest="150"/>
                 </StackLayout>-->
-                <StackLayout Orientation="Vertical">
-                    <Button Text="รายการสินค้าเข้าล่าสุด" BackgroundColor="White" BorderWidth="5" BorderColor="#c6e2ff" 
+                <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                    <Button Text="รายการสินค้ารับเข้าล่าสุด" BackgroundColor="White" BorderWidth="5" BorderColor="#c6e2ff" 
                                     CornerRadius="15"
                                     Clicked="Button_ClickedIn"
                             TextColor="#455e5e"
                             Style="{StaticResource Normalkanit}"
                             HeightRequest="80"
                               FontSize="22"
-                            CommandParameter="instock"
+                          Margin="0,0,0,10"
                             />
                     <ListView x:Name="Dashboardin" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450">
                         <ListView.ItemTemplate>
@@ -66,10 +62,12 @@
                                         <Image Source="iconlist" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
                                         <Label Text="{Binding Ref, StringFormat='Ref.No : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
                                         <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding CreateDate, StringFormat='วันที่ - เวลารับเข้า : {0}'}" 
+                                            <Label Text="{Binding CreateDate, StringFormat='วันที่ : {0}'}" 
                                                    Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                             <StackLayout Orientation="Horizontal">
@@ -90,13 +88,14 @@
                         </ListView.ItemTemplate>
                     </ListView>
                     <StackLayout  VerticalOptions="CenterAndExpand">
-                        <Button Text="รายการสินค้าออกล่าสุด" BackgroundColor="White" BorderWidth="5" BorderColor="#c6e2ff" 
+                        <Button Text="รายการสินค้าจ่ายออกล่าสุด" BackgroundColor="White" BorderWidth="5" BorderColor="#c6e2ff" 
                                     CornerRadius="15"
                                     Clicked="Button_ClickedOut"
                             TextColor="#455e5e"
                                 FontSize="22"
                             Style="{StaticResource Normalkanit}"
                                 HeightRequest="80"
+                                 Margin="0,0,0,10"
                             />
                         <ListView x:Name="Dashboardout" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450">
                             <ListView.ItemTemplate>
@@ -106,10 +105,12 @@
                                             <Image Source="iconsout" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
                                             <Label Text="{Binding Ref, StringFormat='Ref.No : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
+                                            <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
                                             <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                             <StackLayout Orientation="Horizontal">
-                                                <Label Text="{Binding CreateDate, StringFormat='วันที่ - เวลารับเข้า : {0}'}" 
+                                                <Label Text="{Binding CreateDate, StringFormat='วันที่ : {0}'}" 
                                                    Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                                 <StackLayout Orientation="Horizontal">
@@ -144,18 +145,17 @@
                                 <DataTemplate>
                                     <ViewCell IsEnabled="False" >
                                         <StackLayout Orientation="Vertical"  Padding="20">
-                                            <Image Source="iconlist" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
-
-                                            <Label Text="{Binding SkuId, StringFormat='หมายเลข SKU : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                            <Image Source="iconin" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
+                                            <Label Text="{Binding SkuId, StringFormat='หมายเลข Barcode: {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
-                                        
-                                                <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" 
+                                            <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                            <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" 
                                                    Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
-                                                <Label Text="{Binding Status, StringFormat='สถานะสินค้า : {0}'}" 
+                                            <Label Text="{Binding Status, StringFormat='สถานะสินค้า : {0}'}" 
                                                    Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
-
                                             <Label Text="{Binding Total, StringFormat='จำนวนคงเหลือ : {0}'}" 
                                                    Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
@@ -166,9 +166,7 @@
                         </ListView>
                     </StackLayout>
                 </StackLayout>
-               
             </StackLayout>
-            
         </ScrollView>
     </AbsoluteLayout>
 </ContentPage>

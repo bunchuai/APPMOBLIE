@@ -10,7 +10,8 @@ namespace APPMOBLIE.Model
         public string ProductName { get; set; }
         public string Status { get; set; }
         public string Total { get; set; }
-        }
+        public string ProductCode { get; set; }
+    }
 
     public class TransactionInOut
     {
@@ -20,5 +21,6 @@ namespace APPMOBLIE.Model
         public string Amount { get; set; }
         public string Locations { get; set; }
         public string Username { get; set; }
+        public string ProductCode { get; set; }
     }
 }
