@@ -38,8 +38,8 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Button ImageSource="iconsplus" Clicked="BtnStockin"  Text="รับสินค้า" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="0"  FontAttributes="Bold" TextColor="Gray" BackgroundColor="White" BorderColor="LightGray" BorderWidth="2"  CornerRadius="30"  />
-                            <Button ImageSource="iconsminus" Clicked="BtnStockOut" Text="จ่ายสินค้า" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="Gray" BackgroundColor="White" BorderColor="LightGray" BorderWidth="2"  CornerRadius="30" />
+                            <Button ImageSource="iconsplus" Clicked="BtnStockin"  Text="รับสินค้า" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="0"  FontAttributes="Bold" TextColor="Gray" BackgroundColor="White" BorderColor="LightGray" BorderWidth="1"  CornerRadius="30"  />
+                            <Button ImageSource="iconsminus" Clicked="BtnStockOut" Text="จ่ายสินค้า" Style="{x:StaticResource Normalkanit}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="Gray" BackgroundColor="White" BorderColor="LightGray" BorderWidth="1"  CornerRadius="30" />
 
                         </Grid>
                        
