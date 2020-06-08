@@ -35,7 +35,7 @@
                     
                              HorizontalOptions="Start" >
                     <Frame  BackgroundColor="White"  HasShadow="True" Padding="15" Margin="15,5,15,5" CornerRadius="20">
-                        <Grid RowSpacing="2" >
+                        <Grid RowSpacing="1.5" >
                             <Grid.RowDefinitions>
                              
                                 <RowDefinition Height="*"/>
@@ -104,7 +104,7 @@
                                 Grid.Column="1"  Grid.ColumnSpan="3"
                                 Grid.Row="6" />
 
-                            <Label Text="หน่วยนับ" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="7" VerticalOptions="Center" />
+                            <Label Text="หน่วย" Style="{x:StaticResource Normalkanit}"  Grid.Column="0"  Grid.Row="7" VerticalOptions="Center" />
                             <Picker x:Name="ProductUnit" Style="{x:StaticResource Normalkanit}" 
                                 ItemsSource="{Binding ProductUnit}"
                                 ItemDisplayBinding="{Binding Name}"
