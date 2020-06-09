@@ -182,4 +182,61 @@
   <ItemGroup>
     <BundleResource Include="Resources\LaunchScreen.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bgsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconinsky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconlist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconoutsky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconsadd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconscanbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconsminus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconsout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconsplus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconsscan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconssett.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconstrans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\kodelogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\userpic.png" />
+  </ItemGroup>
 </Project>
