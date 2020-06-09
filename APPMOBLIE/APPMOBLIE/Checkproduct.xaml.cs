@@ -32,10 +32,12 @@ namespace APPMOBLIE
 
         async private  void Button_Scan(object sender, EventArgs e)
         {
+            Procd.Text = string.Empty;
             Skuinfo.Text = string.Empty;
             Prodn.Text = string.Empty;
             Prodb.Text = string.Empty;
             Prodm.Text = string.Empty;
+            Prolo.Text = string.Empty;
             Proin.Text = string.Empty;
             Proout.Text = string.Empty;
             Available.Text = string.Empty;
@@ -54,7 +56,7 @@ namespace APPMOBLIE
                     using (HttpClient client = new HttpClient())
                     {
                         var CompanyId = Application.Current.Properties["CompanyId"];
-                        string Url = "http://203.151.166.97/api/Products/CheclProduct?Sku=" + result.Text + "&CompanyId=" + CompanyId;
+                        string Url = "http://203.151.166.97/api/Products/CheckProduct?Sku=" + result.Text + "&CompanyId=" + CompanyId;
                         client.BaseAddress = new Uri(Url);
                         client.DefaultRequestHeaders.Clear();
                         client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
@@ -79,10 +81,12 @@ namespace APPMOBLIE
                                 Fram1.IsVisible = true;
                                 Titletrans.Text = "รายการสินค้า เข้า - ออก";
 
-                                Skuinfo.Text = "หมายเลข SKU : " + Result.Sku;
+                                Skuinfo.Text = "หมายเลข Barcode : " + Result.Sku;
+                                Procd.Text = "รหัสสินค้า : " + Result.ProductCode;
                                 Prodn.Text = "ชื่อสินค้า : " + Result.Name;
-                                Prodb.Text = "ยี่ห้อ : " + Result.Brand;
-                                Prodm.Text = "โมเดล  : " + Result.Model;
+                                Prodb.Text = "ยี่ห้อสินค้า : " + Result.Brand;
+                                Prodm.Text = "รุ่นสินค้า : " + Result.Model;
+                                Prolo.Text = "ตำแหน่งที่จัดเก็บ : " + Result.Location;
                                 Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                                 Proin.TextColor = Color.Green;
                                 Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
@@ -110,10 +114,12 @@ namespace APPMOBLIE
             var find = findtext.Text;
             if (find == "" || find == null)
             {
+                Procd.Text = string.Empty;
                 Skuinfo.Text = string.Empty;
                 Prodn.Text = string.Empty;
                 Prodb.Text = string.Empty;
                 Prodm.Text = string.Empty;
+                Prolo.Text = string.Empty;
                 Proin.Text = string.Empty;
                 Proout.Text = string.Empty;
                 Available.Text = string.Empty;
@@ -124,10 +130,12 @@ namespace APPMOBLIE
             }
             else
             {
+                Procd.Text = string.Empty;
                 Skuinfo.Text = string.Empty;
                 Prodn.Text = string.Empty;
                 Prodb.Text = string.Empty;
                 Prodm.Text = string.Empty;
+                Prolo.Text = string.Empty;
                 Proin.Text = string.Empty;
                 Proout.Text = string.Empty;
                 Available.Text = string.Empty;
@@ -140,7 +148,7 @@ namespace APPMOBLIE
             using (HttpClient client = new HttpClient())
             {
                 var CompanyId = Application.Current.Properties["CompanyId"];
-                string Url = "http://203.151.166.97/api/Products/CheclProduct?Sku=" + find + "&CompanyId=" + CompanyId;
+                string Url = "http://203.151.166.97/api/Products/CheckProduct?Sku=" + find + "&CompanyId=" + CompanyId;
                 client.BaseAddress = new Uri(Url);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
@@ -155,7 +163,7 @@ namespace APPMOBLIE
                     HttpResponseMessage ProductMin = await client.GetAsync("http://203.151.166.97/api/Products/CheckProductMin?CompanyId=" + CompanyId + "&Sku=" + Result.Sku);
                     var Min = await ProductMin.Content.ReadAsStringAsync();
                     //Transaction
-                    HttpResponseMessage TransactionFive = await client.GetAsync("http://203.151.166.97/api/Products/TransactionBySku?CompanyId=" + CompanyId + "&Take=" + 5 + "&Sku=" + find);
+                    HttpResponseMessage TransactionFive = await client.GetAsync("http://203.151.166.97/api/Products/TransactionBySku?CompanyId=" + CompanyId + "&Take=" + 10 + "&Sku=" + find);
                     var Five = await TransactionFive.Content.ReadAsStringAsync();
                     var TrnsactionResult = JsonConvert.DeserializeObject<List<TransactionModels>>(Five);
 
@@ -166,10 +174,12 @@ namespace APPMOBLIE
                         Fram1.IsVisible = true;
                         Titletrans.Text = "รายการสินค้า เข้า - ออก";
 
-                        Skuinfo.Text = "หมายเลข SKU : " + Result.Sku;
+                        Procd.Text = "รหัสสินค้า : " + Result.ProductCode;
+                        Skuinfo.Text = "หมายเลข Barcode : " + Result.Sku;
                         Prodn.Text = "ชื่อสินค้า : " + Result.Name;
-                        Prodb.Text = "ยี่ห้อ : " + Result.Brand;
-                        Prodm.Text = "รุ่น  : " + Result.Model;
+                        Prodb.Text = "ยี่ห้อสินค้า : " + Result.Brand;
+                        Prodm.Text = "รุ่นสินค้า : " + Result.Model;
+                        Prolo.Text = "ตำแหน่งที่จัดเก็บ : " + Result.Location;
                         Proin.Text = "จำนวนในคลัง : " + Result.ProductIn.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
                         Proin.TextColor = Color.Green;
                         Proout.Text = "จำนวนการเบิก : " + Result.ProductOut.ToString() + " " + TrnsactionResult.Select(s => s.Unit).FirstOrDefault();
@@ -205,6 +215,8 @@ namespace APPMOBLIE
             public int Amount { get; set; }
             public string Sku { get; set; }
             public string Location { get; set; }
+            public string ProductCode { get; set; }
+
 
         }
 

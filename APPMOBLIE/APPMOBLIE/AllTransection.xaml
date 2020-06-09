@@ -45,7 +45,7 @@
                     <forms:ChartView  x:Name="Chart1"   HeightRequest="150"/>
                 </StackLayout>-->
                 <StackLayout Orientation="Vertical" VerticalOptions="Center">
-                    <Button Text="รายการสินค้ารับเข้าล่าสุด" BackgroundColor="White" BorderWidth="5" BorderColor="#c6e2ff" 
+                    <Button Text="รายการสินค้ารับเข้าล่าสุด" BackgroundColor="White" BorderWidth="3" BorderColor="#c6e2ff" 
                                     CornerRadius="15"
                                     Clicked="Button_ClickedIn"
                             TextColor="#455e5e"
@@ -88,7 +88,7 @@
                         </ListView.ItemTemplate>
                     </ListView>
                     <StackLayout  VerticalOptions="CenterAndExpand">
-                        <Button Text="รายการสินค้าจ่ายออกล่าสุด" BackgroundColor="White" BorderWidth="5" BorderColor="#c6e2ff" 
+                        <Button Text="รายการสินค้าจ่ายออกล่าสุด" BackgroundColor="White" BorderWidth="3" BorderColor="#c6e2ff" 
                                     CornerRadius="15"
                                     Clicked="Button_ClickedOut"
                             TextColor="#455e5e"
@@ -132,7 +132,7 @@
                         </ListView>
                     </StackLayout>
                     <StackLayout  VerticalOptions="CenterAndExpand">
-                        <Button Text="รายการสินค้าถึงกำหนดสั่งซื้อ" BackgroundColor="White" BorderWidth="5" BorderColor="#c6e2ff" 
+                        <Button Text="รายการสินค้าถึงกำหนดสั่งซื้อ" BackgroundColor="White" BorderWidth="3" BorderColor="#c6e2ff" 
                                     CornerRadius="15"
                                     Clicked="Button_ClickedReorder"
                             TextColor="#455e5e"

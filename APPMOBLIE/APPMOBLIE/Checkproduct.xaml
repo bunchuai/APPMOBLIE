@@ -6,7 +6,6 @@
              mc:Ignorable="d"
              x:Class="APPMOBLIE.Checkproduct"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
-
     <ContentPage.Content>
         <AbsoluteLayout>
             <Image Source="background" Aspect="AspectFill"
@@ -24,7 +23,6 @@
                    AbsoluteLayout.LayoutFlags="PositionProportional"
                    FontAttributes="Bold"
                    />
-      
             <StackLayout
                   AbsoluteLayout.LayoutBounds="0,0.10,1,0.3"
                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
@@ -32,14 +30,13 @@
                 HorizontalOptions="Center"
                   Orientation="Vertical"
                 Spacing="5">
-                <Entry Placeholder="     กรอกรหัสสินค้าหรือ       "
+                <Entry Placeholder=" รหัสสินค้า หรือ หมายเลขSKU  "
                            x:Name="findtext"
-                       Keyboard="Numeric"
+                       Keyboard="Default"
                        FontFamily="{x:StaticResource Kanit}"
                        Completed="findtext_Completed"
                        HorizontalTextAlignment="Center"
                            />
-               
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="Center">
                     <Button Clicked="Button_Scan"
@@ -47,7 +44,8 @@
                         ImageSource="barcode.png"
                             HeightRequest="50" WidthRequest="50"
                          HorizontalOptions="Start"
-                        VerticalOptions="Center"/>
+                        VerticalOptions="Center"
+                         />
                     <Label Text="Scan Barcode" VerticalOptions="Center" HorizontalOptions="Start" Style="{x:StaticResource Normalkanit}"/>
                 </StackLayout>
             </StackLayout >
@@ -64,60 +62,46 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Label x:Name="Prodn" Grid.ColumnSpan="2"
-                               Grid.Row="1" Style="{x:StaticResource Normalkanit}" FontSize="16"/>
-
-                        <Label x:Name="Skuinfo"   Grid.Column="0" Grid.ColumnSpan="2"
-                               Grid.Row="0" Style="{x:StaticResource fontstyle}" />
-
-                        <Label x:Name="Prodb" Grid.Column="0" Grid.Row="2"
-                             Style="{x:StaticResource Normalkanit}"/>
-
-                        <Label x:Name="Prodm"  Grid.Column="0" Grid.Row="3" 
-                               Style="{x:StaticResource Normalkanit}"/>
-
-                        <Label x:Name="Proin" Grid.Column="0" Grid.Row="4" 
-                               Style="{x:StaticResource Normalkanit}"/>
-                        <Label x:Name="Proout" Grid.Column="1" Grid.Row="4" 
-                               Style="{x:StaticResource Normalkanit}"/>
-                        <Label x:Name="Available"   Grid.ColumnSpan="2" Grid.Row="5" 
-                                Style="{x:StaticResource Normalkanit}"/>
-                       
-
+                        <Label x:Name="Skuinfo" Grid.Row="0" Grid.ColumnSpan="2" Style="{x:StaticResource Normalkanit}" />
+                        <Label x:Name="Procd" Grid.Row="1" Grid.ColumnSpan="2" Style="{x:StaticResource Normalkanit}"/>
+                        <Label x:Name="Prodn"  Grid.Row="2" Grid.ColumnSpan="2" Style="{x:StaticResource Normalkanit}"/>
+                        <Label x:Name="Prodb" Grid.Row="3" Grid.ColumnSpan="2"   Style="{x:StaticResource Normalkanit}"/>
+                        <Label x:Name="Prodm" Grid.Row="4" Grid.ColumnSpan="2" Style="{x:StaticResource Normalkanit}"/>
+                        <Label x:Name="Prolo" Grid.Row="5" Grid.ColumnSpan="2" Style="{x:StaticResource Normalkanit}"/>
+                        <Label x:Name="Proin" Grid.Row="6" Grid.Column="0"   Style="{x:StaticResource Normalkanit}"/>
+                        <Label x:Name="Proout"  Grid.Row="6" Grid.Column="1" Style="{x:StaticResource Normalkanit}"/>
+                        <Label x:Name="Available" Grid.Row="7" Grid.ColumnSpan="2" Style="{x:StaticResource Normalkanit}"/>
                     </Grid>
                 </Frame>
             </StackLayout>
-            
-            <ScrollView 
-                 AbsoluteLayout.LayoutBounds="0,0.9,1,0.38"
-                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
-                >
-                <StackLayout  Padding="5" 
-                            >
+            <ScrollView  
+                 AbsoluteLayout.LayoutBounds="0,1,1,0.39"
+                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
+                <StackLayout  Padding="5">
+                    <Label x:Name="Alert"  Style="{x:StaticResource Normalkanit}" HorizontalOptions="Center"/>
                     <Label Text="{Binding titletrans}" Style="{x:StaticResource Normalkanit}" x:Name="Titletrans"
                            FontSize="18" HorizontalOptions="Center" />
-                    <Label x:Name="Alert"  Style="{x:StaticResource Normalkanit}" HorizontalOptions="Center"/>
-                    <ListView  x:Name="listview" HasUnevenRows="True"
-                               >
+                    <ListView  x:Name="listview" HasUnevenRows="True">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
                                     <StackLayout Orientation="Vertical"  Padding="20,0,20,5">
                                         <Image Source="iconlist" HorizontalOptions="Start" WidthRequest="22" HeightRequest="22"/>
 
-                                        <Label Text="{Binding reference, StringFormat='  รหัสอ้างอิง : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                        <Label Text="{Binding reference, StringFormat='  Ref.No. : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="{Binding TransactionDate, StringFormat='  วันที่ : {0}'}" 
                                                    Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
-
                                             <StackLayout Orientation="Horizontal" >
                                                 <Label Text="{Binding TransactionType}" Style="{x:StaticResource Normalkanit}"
                                                         x:Name="TypeTrans"
@@ -131,13 +115,8 @@
                                                         TextColor="{Binding Color}"/>
                                             </StackLayout>
                                         </StackLayout>
-                                        <Label Text="{Binding Location, StringFormat='  สถานที่/ตำแหน่งที่จัดเก็บ : {0} '}" Style="{x:StaticResource Normalkanit}"
-                                               HorizontalOptions="StartAndExpand"
-                                               />
                                         <Label Text="{Binding Username , StringFormat='  ผู้บันทึกรายการสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
                                                HorizontalOptions="StartAndExpand"/>
-                                        
-                                       
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>
