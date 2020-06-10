@@ -16,19 +16,19 @@
 
                 </StackLayout>
                 <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
-                    <Frame  BackgroundColor="White" HeightRequest="400" HasShadow="True" Padding="0" Margin="0" CornerRadius="20">
+                    <Frame  BackgroundColor="White" HeightRequest="400"  Padding="0" Margin="0" CornerRadius="20">
                         <StackLayout>
                             <StackLayout Margin="0,30,0,10">
-                                <Label Text="Smart WMS" FontSize="22" Style="{x:StaticResource Normalkanit}"  TextColor="Gray" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                                <Label Text="Smart WMS" Style="{x:StaticResource Normalkanit}" FontSize="22"   TextColor="Gray" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
                             </StackLayout>
                             <StackLayout Padding="0" Margin="35,10">
-                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="20">
                                     <StackLayout Orientation="Horizontal">
-                                        <Frame BackgroundColor="SkyBlue" HeightRequest="35" WidthRequest="35" CornerRadius="30" Padding="0" Margin="5">
+                                        <Frame BackgroundColor="SkyBlue" HeightRequest="35" WidthRequest="35" CornerRadius="10" Padding="0" Margin="5">
                                             <Image Source="https://www.findool.com/images/avatars/avatar.png" Aspect="AspectFill" Margin="0"/>
                                         </Frame>
                                         <Entry x:Name="Email"  Placeholder="อีเมล" 
-                                               Style="{x:StaticResource Normalkanit}"   
+                                               Style="{x:StaticResource Normalkanit}"                                               
                                                TextColor="DarkGray"
                                                FontAttributes="None" 
                                                HorizontalOptions="FillAndExpand" 
@@ -40,9 +40,9 @@
                                     </StackLayout>
                                 </Frame>
 
-                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="20">
                                     <StackLayout Orientation="Horizontal">
-                                        <Frame BackgroundColor="SkyBlue" HeightRequest="35" WidthRequest="35" CornerRadius="30" Padding="0" Margin="5">
+                                        <Frame BackgroundColor="SkyBlue" HeightRequest="35" WidthRequest="35" CornerRadius="10" Padding="0" Margin="5">
                                             <Image Source="https://images.all-free-download.com/images/graphicthumb/lock_icon_6813906.jpg" Aspect="AspectFill" Margin="0"/>
                                         </Frame>
                                         <Entry  x:Name="Password" IsPassword="True" 
@@ -61,7 +61,7 @@
 
                                 <Label x:Name="displayError" Text="" TextColor="Red" HorizontalOptions="Center"/>
                                 <StackLayout Margin="40,10">
-                                    <Button  Text="เข้าสู่ระบบ" Style="{x:StaticResource Normalkanit}"  Clicked="button_SignIn" BackgroundColor="#0095b6" TextColor="White" CornerRadius="30" IsEnabled="{Binding Source={x:Reference EmailValidation}, Path=IsValid}"/>
+                                    <Button  Text="เข้าสู่ระบบ" Style="{x:StaticResource Normalkanit}"  Clicked="button_SignIn" BackgroundColor="#0095b6" TextColor="White" CornerRadius="20" IsEnabled="{Binding Source={x:Reference EmailValidation}, Path=IsValid}"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                                     <Label Text="ลืมรหัสผ่าน" Style="{x:StaticResource Normalkanit}"   TextColor="Gray" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" >
