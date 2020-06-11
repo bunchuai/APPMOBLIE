@@ -14,8 +14,8 @@
                   AbsoluteLayout.LayoutFlags="All"/>
         <ic:CircleImage Source="userpic.png" 
                            Aspect="AspectFill"
-                                HeightRequest="80" WidthRequest="80"
-                           AbsoluteLayout.LayoutBounds="0.05,0.01"
+                                HeightRequest="60" WidthRequest="60"
+                           AbsoluteLayout.LayoutBounds="0.09,0.03"
                            AbsoluteLayout.LayoutFlags="PositionProportional"/>
         <Label x:Name="Username" HorizontalOptions="Center"  
                       FontFamily="{StaticResource Kanit}"
