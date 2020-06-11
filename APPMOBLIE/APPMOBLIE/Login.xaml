@@ -6,7 +6,9 @@
              mc:Ignorable="d"
              x:Class="APPMOBLIE.Login"
              BackgroundImage="background.png"
-             xmlns:local="clr-namespace:APPMOBLIE.Validations" >
+             xmlns:local="clr-namespace:APPMOBLIE.Validations" 
+             
+             >
 
     <ContentPage.Content>
 
@@ -16,21 +18,23 @@
 
                 </StackLayout>
                 <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
-                    <Frame  BackgroundColor="White" HeightRequest="400"  Padding="0" Margin="0" CornerRadius="20">
+                    <Frame  BackgroundColor="White" HasShadow="False" HeightRequest="400"  Padding="0" Margin="0" CornerRadius="20">
                         <StackLayout>
                             <StackLayout Margin="0,30,0,10">
-                                <Label Text="Smart WMS" Style="{x:StaticResource Normalkanit}" FontSize="22"   TextColor="Gray" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                                <Label Text="Smart WMS"  FontFamily="{StaticResource Kanit}" FontSize="22"   TextColor="Gray" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"  />
+                                <!--<Label Text="Smart WMS" FontFamily="{StaticResource Kanit}"  FontSize="22"   TextColor="Gray" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>-->
                             </StackLayout>
                             <StackLayout Padding="0" Margin="35,10">
-                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="20">
+                                <Frame BackgroundColor="Transparent" HasShadow="False" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="20">
                                     <StackLayout Orientation="Horizontal">
-                                        <Frame BackgroundColor="SkyBlue" HeightRequest="35" WidthRequest="35" CornerRadius="10" Padding="0" Margin="5">
+                                        <Frame  HeightRequest="35" HasShadow="False" WidthRequest="35" CornerRadius="10" Padding="0" Margin="5">
                                             <Image Source="https://www.findool.com/images/avatars/avatar.png" Aspect="AspectFill" Margin="0"/>
                                         </Frame>
                                         <Entry x:Name="Email"  Placeholder="อีเมล" 
                                                Style="{x:StaticResource Normalkanit}"                                               
                                                TextColor="DarkGray"
                                                FontAttributes="None" 
+                                              
                                                HorizontalOptions="FillAndExpand" 
                                                Margin="0,0,20,0">
                                             <Entry.Behaviors>
@@ -40,9 +44,9 @@
                                     </StackLayout>
                                 </Frame>
 
-                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="20">
+                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" HasShadow="False" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="20">
                                     <StackLayout Orientation="Horizontal">
-                                        <Frame BackgroundColor="SkyBlue" HeightRequest="35" WidthRequest="35" CornerRadius="10" Padding="0" Margin="5">
+                                        <Frame  HeightRequest="35" HasShadow="False" WidthRequest="35" CornerRadius="10" Padding="0" Margin="5">
                                             <Image Source="https://images.all-free-download.com/images/graphicthumb/lock_icon_6813906.jpg" Aspect="AspectFill" Margin="0"/>
                                         </Frame>
                                         <Entry  x:Name="Password" IsPassword="True" 
@@ -61,14 +65,16 @@
 
                                 <Label x:Name="displayError" Text="" TextColor="Red" HorizontalOptions="Center"/>
                                 <StackLayout Margin="40,10">
-                                    <Button  Text="เข้าสู่ระบบ" Style="{x:StaticResource Normalkanit}"  Clicked="button_SignIn" BackgroundColor="#0095b6" TextColor="White" CornerRadius="20" IsEnabled="{Binding Source={x:Reference EmailValidation}, Path=IsValid}"/>
+                                    <Button  Text="เข้าสู่ระบบ" FontFamily="{StaticResource Kanit}"  Clicked="button_SignIn" BackgroundColor="#0095b6" TextColor="White" CornerRadius="20" IsEnabled="{Binding Source={x:Reference EmailValidation}, Path=IsValid}"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                    <Label Text="ลืมรหัสผ่าน" Style="{x:StaticResource Normalkanit}"   TextColor="Gray" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" >
+                                    <Button  Text="ลืมรหัสผ่าน" FontFamily="{StaticResource Kanit}"  Clicked="button_forgot" BackgroundColor="Transparent" TextColor="Gray" CornerRadius="20" />
+
+                                    <!--<Label Text="ลืมรหัสผ่าน"  FontFamily="{StaticResource Kanit}"   TextColor="Gray" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" >
                                         <Label.GestureRecognizers>
                                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                                         </Label.GestureRecognizers>
-                                    </Label>
+                                    </Label>-->
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>

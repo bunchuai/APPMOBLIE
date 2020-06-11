@@ -249,4 +249,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\iconssett_ba.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconhome.png" />
+  </ItemGroup>
 </Project>

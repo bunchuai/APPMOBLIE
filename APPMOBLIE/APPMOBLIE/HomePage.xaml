@@ -8,15 +8,14 @@
              mc:Ignorable="d"
              BackgroundImageSource="background.png"
              x:Class="APPMOBLIE.HomePage"
-            BarTextColor="Black"
-            
-            BarBackgroundColor="#f7f7f7"
+            BarTextColor="Black"           
+            BarBackgroundColor="#f7f7f7"           
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom" 
-            >
-   
-    <local:AllTransection Icon="iconbox.png" Title="Home"></local:AllTransection>
-      
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+            ios:TabbedPage.TranslucencyMode="Default">
+
+    <local:AllTransection Icon="iconhome.png" Title="Home"></local:AllTransection>
     <local:AddProduct Icon="iconsadd.png"  Title="Add"></local:AddProduct>
     <local:Checkproduct Icon="iconsscan.png"  Title="Find"></local:Checkproduct>
     <local:SettingPage Icon="iconssett"  Title="Setting"></local:SettingPage>

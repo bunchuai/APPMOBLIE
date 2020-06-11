@@ -58,12 +58,12 @@ namespace APPMOBLIE
                     }
                     else
                     {
-                        displayError.Text = "ชื่อผู้ใช่ หรือรหัสผ่านไม่ถูกต้อง";
+                        displayError.Text = "ชื่อผู้ใช้ หรือรหัสผ่านไม่ถูกต้อง";
                     }
                 }
                 else
                 {
-                    displayError.Text = "ชื่อผู้ใช่ หรือรหัสผ่านไม่ถูกต้อง";
+                    displayError.Text = "ชื่อผู้ใช้ หรือรหัสผ่านไม่ถูกต้อง";
                 }
             }
         }
@@ -89,7 +89,7 @@ namespace APPMOBLIE
             public int ComId { get; set; }
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private void button_forgot(object sender, EventArgs e)
         {
             this.Navigation.PushAsync(new Forgotpassword());
         }
