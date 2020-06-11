@@ -42,7 +42,7 @@
                                 FontFamily="{StaticResource Kanit}" Grid.Row="0" Grid.Column="0"   BackgroundColor="White" BorderColor="LightGray" BorderWidth="1"  CornerRadius="20"  />-->
 
                         <Button Text="รับสินค้า" ImageSource="iconsplus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
-                                    CornerRadius="20"
+                                    CornerRadius="20" FontSize="18"
                                     Clicked="BtnStockin"
                             TextColor="Gray"
                             FontFamily="{StaticResource Kanit}"
@@ -50,7 +50,7 @@
                             />
 
                         <Button Text="จ่ายสินค้า" ImageSource="iconsminus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
-                                    CornerRadius="20"
+                                    CornerRadius="20" FontSize="18"
                                     Clicked="BtnStockOut"
                             TextColor="Gray"
                             FontFamily="{StaticResource Kanit}"

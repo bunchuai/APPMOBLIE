@@ -19,7 +19,8 @@ namespace APPMOBLIE
         public HomePage()
         {
             InitializeComponent();
-
+            On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
+            On<iOS>().SetTranslucencyMode(TranslucencyMode.Translucent);
         }
 
         protected override void OnAppearing()
