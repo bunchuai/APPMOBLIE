@@ -5,145 +5,71 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="APPMOBLIE.MainPage"
-             Title="Add New" 
-             IconImageSource="iconsadd"
-                  BackgroundImageSource="background.png"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
-
     <ContentPage.Content>
-        <ScrollView>
-            <RelativeLayout>
-                <!--<Button BorderRadius="35" x:Name="imageCircleBack" 
-                 BackgroundColor="White" HeightRequest="70" WidthRequest="70" 
-                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
-                 Property=Width, Factor=.5, Constant = -35}" 
-                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
-                 Factor=0, Property=Y, Constant=60}" />-->
+        <AbsoluteLayout>
+            <Image Source="background" Aspect="AspectFill"
+                  AbsoluteLayout.LayoutBounds="0,0,1,0.12"
+                   AbsoluteLayout.LayoutFlags="All" />
+            <ic:CircleImage Source="userpic.png" 
+                           Aspect="AspectFill"
+                               HeightRequest="60" WidthRequest="60"
+                           AbsoluteLayout.LayoutBounds="0.09,0.03"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Label x:Name="Username" HorizontalOptions="Center" 
+                      FontFamily="{StaticResource Kanit}"
+                       FontSize="16"
+                        AbsoluteLayout.LayoutBounds="0.5,0.05"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                   FontAttributes="Bold"
+                   />
+            <StackLayout
+                  AbsoluteLayout.LayoutBounds="0,1,1,0.85"
+                  AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
+                  VerticalOptions="Center"
+                HorizontalOptions="Center"
+                  Orientation="Vertical"
+                Spacing="5">
+                <StackLayout Padding="0,30,0,0" Spacing="60">
+                    <StackLayout Orientation="Horizontal">
+                        <SearchBar Placeholder="กรอกรหัสสินค้า,ชื่อสินค้า,ยี่ห้อสินค้า" TextChanged="SearchBar_TextChanged" 
+                       Style="{x:StaticResource Normalkanit}"/>
 
-
-                <RelativeLayout  BackgroundColor="#BED1E5" 
-                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=90}"  
-                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height, Factor=1}" 
-                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" >
-
-                    <ic:CircleImage Source="userpic.png" HeightRequest="80" WidthRequest="80" Aspect="AspectFill"  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
-                 Property=Width, Factor=.5, Constant = -38}" 
-                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, 
-                 Factor=0, Property=Y, Constant=-45}" />
-
-
-                    <Label Text="User Name" x:Name="Username"  FontSize="16"
-                 HorizontalTextAlignment="Center" 
-                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=35}" 
-                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
-
-                    <!--<Button ImageSource="In32.png"  HeightRequest="70" WidthRequest="100" CornerRadius="10" Text="IN" FontSize="18"
-                             BackgroundColor="#00B189"  
-                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=5}" 
-                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0.3, Constant=70}" />-->
-
-                    
-
-                </RelativeLayout>
-
-                <Button  HeightRequest="50" WidthRequest="250" CornerRadius="10" Text="Scan bar code" 
-                             TextColor="White" FontSize="18" BackgroundColor="#0095b6" Clicked="Button_Scan"
-                        
-                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=200}" 
-                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}"  />
-
-            
-
-                    <!--<Button Text="scan barcode" Clicked="Button_Scan"  BackgroundColor="Green" TextColor="White"/>-->
-                    <Label Text="SKU nunber" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=280}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.02, Constant=10}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.25,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-                                        
-                    
-                    <Entry x:Name="Mycode" TextColor="Black"  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=255}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3, Constant=0}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}"  />
-            
-
-            
-                    <Label Text="Product name" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=350}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.02, Constant=10}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.25,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-                    <Entry x:Name="ProductName" TextColor="Black" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=325}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3, Constant=0}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}"  />
-             
-
-               
-
-                    <Label Text="ProductBrand" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=420}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.02, Constant=10}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.25,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-                    <Entry x:Name="ProductBrand" TextColor="Black" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=395}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3, Constant=0}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}"  />
-
-          
-
-             
-
-                    <Label Text="Quality" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=490}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.02, Constant=10}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.25,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-                    <Entry x:Name="Volume" TextColor="Black" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=465}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3, Constant=0}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}"  />
-
-
-         
-
-                    <Label Text="ExpireDate" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=560}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.02, Constant=10}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.25,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}" />
-                    <Entry x:Name="ProductExpireDate" TextColor="Black" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=535}"
-            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3, Constant=0}"
-            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=0}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=50}"  />
-          
-
-         
-
-                    <Button Text="Reset" Clicked="Button_Reset"  BackgroundColor="#948D9B" TextColor="White" 
-                            HeightRequest="40" WidthRequest="120" CornerRadius="10" 
-                             
-                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=650}" 
-                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.1}" 
-                             />
-
-                    <Button Text="Add product" Clicked="Button_Add"  BackgroundColor="#2B976C" TextColor="White" 
-                            HeightRequest="40" WidthRequest="120" CornerRadius="10" 
-                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=1, Constant=650}" 
-                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.63}"   />
-           
-            </RelativeLayout>
-
-
-           
-        </ScrollView>
-    </ContentPage.Content>
-
-
-
-
-
-    <!--<StackLayout Margin="20,0,20,0" VerticalOptions="Center" >
+                        <Button Clicked="Button_Scan"
+                        BackgroundColor="Transparent" 
+                        ImageSource="barcode.png"
+                            HeightRequest="50" WidthRequest="50"
+                         HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                         />
+                    </StackLayout>
+                   
+                    <ListView x:Name="Productlist" HasUnevenRows="True" SeparatorColor="Black"
+                              ItemTapped="Productlist_ItemTapped"
+                              >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Vertical" Padding="20,5,0,15">
+                                        <StackLayout Orientation="Horizontal">
+                                            <ic:CircleImage Source="iconbox.png" 
+                                                        Aspect="AspectFill" HeightRequest="20" WidthRequest="20"/>
+                                            <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"
+                                                   VerticalOptions="StartAndExpand"/>
+                                        </StackLayout>
+                                        <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"/>
+                                        <Label Text="{Binding ProductBrand, StringFormat='ยี่ห้อสินค้า : {0}'}" Style="{x:StaticResource Normalkanit}"/>
+                                    </StackLayout>
+                                  
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout >
+        </AbsoluteLayout>
        
         
-       
-    </StackLayout>-->
+    </ContentPage.Content>
 </ContentPage>
 
