@@ -34,14 +34,15 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
+                            
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="150"/>
                         </Grid.ColumnDefinitions>
                         <!--<Button ImageSource="iconsplus" Clicked="BtnStockin"  Text=" รับสินค้า " 
                                 FontAttributes="Bold" TextColor="Gray" 
                                 FontFamily="{StaticResource Kanit}" Grid.Row="0" Grid.Column="0"   BackgroundColor="White" BorderColor="LightGray" BorderWidth="1"  CornerRadius="20"  />-->
 
-                        <Button Text="รับสินค้า" ImageSource="iconsplus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
+                        <Button Text="รับสินค้า" ImageSource="iconplus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
                                     CornerRadius="20" FontSize="18"
                                     Clicked="BtnStockin"
                             TextColor="Gray"
@@ -49,7 +50,7 @@
                             Grid.Row="0" Grid.Column="0"
                             />
 
-                        <Button Text="จ่ายสินค้า" ImageSource="iconsminus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
+                        <Button Text="จ่ายสินค้า" ImageSource="iconminus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
                                     CornerRadius="20" FontSize="18"
                                     Clicked="BtnStockOut"
                             TextColor="Gray"
