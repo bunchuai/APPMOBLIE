@@ -28,29 +28,44 @@
                  AbsoluteLayout.LayoutBounds="0,1,1,0.85"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
             <StackLayout Padding="13,13,13,0" Spacing="13">
-                <StackLayout Padding="0,30,0,15">
+                <StackLayout Padding="0,30,0,15" HorizontalOptions="Center">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
+                            
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="150"/>
                         </Grid.ColumnDefinitions>
-                        <Button Text="รับสินค้า" ImageSource="iconsplus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
+                        <!--<Button ImageSource="iconsplus" Clicked="BtnStockin"  Text=" รับสินค้า " 
+                                FontAttributes="Bold" TextColor="Gray" 
+                                FontFamily="{StaticResource Kanit}" Grid.Row="0" Grid.Column="0"   BackgroundColor="White" BorderColor="LightGray" BorderWidth="1"  CornerRadius="20"  />-->
+
+                        <Button Text="รับสินค้า" ImageSource="iconplus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
                                     CornerRadius="20" FontSize="18"
                                     Clicked="BtnStockin"
                             TextColor="Gray"
                             FontFamily="{StaticResource Kanit}"
                             Grid.Row="0" Grid.Column="0"
                             />
-                        <Button Text="จ่ายสินค้า" ImageSource="iconsminus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
+
+                        <Button Text="จ่ายสินค้า" ImageSource="iconminus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
                                     CornerRadius="20" FontSize="18"
                                     Clicked="BtnStockOut"
                             TextColor="Gray"
                             FontFamily="{StaticResource Kanit}"
                                 Grid.Row="0" Grid.Column="1"
+                            
                             />
+
+
+
+
+                        <!--<Button Text="จ่ายสินค้า"  ImageSource="iconsminus" Clicked="BtnStockOut"  
+                                FontAttributes="Bold" TextColor="Gray" 
+                                FontFamily="{StaticResource Kanit}" Grid.Row="0" Grid.Column="1"  BackgroundColor="White" BorderColor="LightGray" BorderWidth="1"  CornerRadius="20" />-->
+                    
                     </Grid>
                 </StackLayout>
                 <!--<StackLayout>
