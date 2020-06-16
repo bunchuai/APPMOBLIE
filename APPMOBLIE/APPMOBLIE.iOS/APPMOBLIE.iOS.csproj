@@ -258,4 +258,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\iconminus.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconseditcolumn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconsnext.png" />
+  </ItemGroup>
 </Project>

@@ -173,6 +173,7 @@ namespace APPMOBLIE
                         listview.ItemsSource = TrnsactionResult;
                         Fram1.IsVisible = true;
                         Titletrans.Text = "รายการสินค้า เข้า - ออก";
+                        
 
                         Procd.Text = "รหัสสินค้า : " + Result.ProductCode;
                         Skuinfo.Text = "หมายเลข Barcode : " + Result.Sku;
