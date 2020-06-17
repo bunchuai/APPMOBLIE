@@ -36,6 +36,7 @@
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
+  
 	<key>UIAppFonts</key>
 	<array>
 		<string>Kanit.ttf</string>

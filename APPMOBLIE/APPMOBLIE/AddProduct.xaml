@@ -57,18 +57,18 @@
                                 <ColumnDefinition Width="100"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Label Text="เลข Barcode"  FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Column="0"  Grid.Row="0" VerticalOptions="Center"/>
+                            <Label Text="เลข Barcode *"  FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Column="0"  Grid.Row="0" VerticalOptions="Center"/>
                             <Entry x:Name="Mycode"  FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="0"/>
                             <Button  Clicked="Button_Scan" BackgroundColor="Transparent" FontSize="Body" ImageSource="barcode.png" WidthRequest="20" HeightRequest="20" Grid.Column="3" Grid.Row="0" HorizontalOptions="End"/>
 
-                            <Label Text="รหัสสินค้า"   FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0" Grid.Row="1" VerticalOptions="Center" />
+                            <Label Text="รหัสสินค้า *"   FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0" Grid.Row="1" VerticalOptions="Center" />
                             <Entry x:Name="ProductCode"  FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1">
                                 <Entry.Behaviors>
                                     <local:EmptyValidation x:Name="Empty1"/>
                                 </Entry.Behaviors>
                             </Entry>
 
-                            <Label Text="ประเภทสินค้า"  FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0"  Grid.Row="2" VerticalOptions="Center" />
+                            <Label Text="ประเภทสินค้า *"  FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0"  Grid.Row="2" VerticalOptions="Center" />
                             <Picker x:Name="ProductType"  FontFamily="{StaticResource Kanit}" FontSize="Body"
                                 ItemsSource="{Binding ProductType}"
                                 ItemDisplayBinding="{Binding Name}"
@@ -76,28 +76,28 @@
                                 Grid.Column="1" Grid.ColumnSpan="3"  
                                 Grid.Row="2" />
 
-                            <Label Text="ชื่อสินค้า"   FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0" Grid.Row="3" VerticalOptions="Center" />
+                            <Label Text="ชื่อสินค้า *"   FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0" Grid.Row="3" VerticalOptions="Center" />
                             <Entry x:Name="ProductName"  FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3">
                                 <Entry.Behaviors>
                                     <local:EmptyValidation2 x:Name="Empty2"/>
                                 </Entry.Behaviors>
                             </Entry>
 
-                            <Label Text="ยี่ห้อ"  FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0" Grid.Row="4" VerticalOptions="Center"/>
+                            <Label Text="ยี่ห้อ *"  FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0" Grid.Row="4" VerticalOptions="Center"/>
                             <Entry x:Name="ProductBrand"  FontFamily="{StaticResource Kanit}" FontSize="Body"   Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4" >
                                 <Entry.Behaviors>
                                     <local:EmptyValidation3 x:Name="Empty3"/>
                                 </Entry.Behaviors>
                             </Entry>
 
-                            <Label Text="รุ่น" FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Column="0"  Grid.Row="5" VerticalOptions="Center"/>
+                            <Label Text="รุ่น *" FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Column="0"  Grid.Row="5" VerticalOptions="Center"/>
                             <Entry x:Name="ProductModel"  FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="5">
                                 <Entry.Behaviors>
                                     <local:EmptyValidation4 x:Name="Empty4"/>
                                 </Entry.Behaviors>
                             </Entry>
 
-                            <Label Text="ตำแหน่งจัดเก็บ"  FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0"  Grid.Row="6" VerticalOptions="Center" />
+                            <Label Text="ตำแหน่งจัดเก็บ *"  FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0"  Grid.Row="6" VerticalOptions="Center" />
                             <Picker x:Name="ProductLocation"  FontFamily="{StaticResource Kanit}" FontSize="Body"
                                 ItemsSource="{Binding ProductLocation}"
                                 ItemDisplayBinding="{Binding Name}"
@@ -105,7 +105,7 @@
                                 Grid.Column="1"  Grid.ColumnSpan="3"
                                 Grid.Row="6" />
 
-                            <Label Text="หน่วย"  FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Column="0"  Grid.Row="7" VerticalOptions="Center" />
+                            <Label Text="หน่วย *"  FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Column="0"  Grid.Row="7" VerticalOptions="Center" />
                             <Picker x:Name="ProductUnit"  FontFamily="{StaticResource Kanit}"  FontSize="Body"
                                 ItemsSource="{Binding ProductUnit}"
                                 ItemDisplayBinding="{Binding Name}"
@@ -114,28 +114,28 @@
                                 Grid.Row="7" >
                             </Picker>
 
-                            <Label Text="จำนวน" FontFamily="{StaticResource Kanit}"  FontSize="Body" Grid.Column="0"  Grid.Row="8" VerticalOptions="Center"/>
+                            <Label Text="จำนวน *" FontFamily="{StaticResource Kanit}"  FontSize="Body" Grid.Column="0"  Grid.Row="8" VerticalOptions="Center"/>
                             <Entry x:Name="Quantity" FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="1"  Grid.Row="8" Keyboard="Numeric">
                                 <Entry.Behaviors>
                                     <local:NumberOnlyValidation x:Name="Number1"/>
                                 </Entry.Behaviors>
                             </Entry>
 
-                            <Label Text="คงเหลือต่ำสุด" FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="2"  Grid.Row="8" VerticalOptions="Center"/>
+                            <Label Text="คงเหลือต่ำสุด *" FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="2"  Grid.Row="8" VerticalOptions="Center"/>
                             <Entry x:Name="Productmin" FontFamily="{StaticResource Kanit}" FontSize="Body"   Grid.Column="3"  Grid.Row="8"  Keyboard="Numeric">
                                 <Entry.Behaviors>
                                     <local:NumberOnlyValidation2 x:Name="Number2"/>
                                 </Entry.Behaviors>
                             </Entry>
 
-                            <Label Text="Ref No." FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0"  Grid.Row="9" VerticalOptions="Center"/>
+                            <Label Text="Ref No. *" FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0"  Grid.Row="9" VerticalOptions="Center"/>
                             <Entry x:Name="ReferentNumber" FontFamily="{StaticResource Kanit}" FontSize="Body"   Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="9">
                                 <Entry.Behaviors>
                                     <local:EmptyValidation5 x:Name="Empty5"/>
                                 </Entry.Behaviors>
                             </Entry>
 
-                            <Label Text="วันหมดอายุ" FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0"  Grid.Row="10" VerticalOptions="Center"/>
+                            <Label Text="วันหมดอายุ *" FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0"  Grid.Row="10" VerticalOptions="Center"/>
                             <DatePicker x:Name="ProductExpireDate" FontFamily="{StaticResource Kanit}" FontSize="Body"   Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="10" />
 
                             <Label Text="Note" FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0"  Grid.Row="11" VerticalOptions="Center"/>

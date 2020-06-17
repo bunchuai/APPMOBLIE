@@ -264,4 +264,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\iconsnext.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Fonts\" />
+  </ItemGroup>
 </Project>
