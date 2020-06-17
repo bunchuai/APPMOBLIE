@@ -60,7 +60,7 @@
 
                             <Button ImageSource="iconseditcolumn" Text="ตั้งค่าประเภทสินค้า"  FontFamily="{StaticResource Kanit}" 
                                     FontSize="Body" BackgroundColor="Transparent" Clicked="SetProType" Grid.Row="0" Grid.Column="0"/>
-                            <Button ImageSource="iconseditcolumn" Text="ตั้งค่าตำแหน่งจัดเก็บ"  FontFamily="{StaticResource Kanit}" 
+                            <Button ImageSource="iconseditcolumn" Text="ตั้งค่าตำแหน่งจัดเก็บ" Clicked="Button_Clicked" FontFamily="{StaticResource Kanit}" 
                                     FontSize="Body" BackgroundColor="Transparent"  Grid.Row="1" Grid.Column="0"/>
 
                             <Button ImageSource="iconseditcolumn" Text="ออกจากระบบ" Clicked="Button_Signout"  FontFamily="{StaticResource Kanit}" 
