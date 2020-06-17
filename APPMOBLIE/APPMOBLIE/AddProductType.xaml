@@ -19,7 +19,11 @@
                 </Grid.ColumnDefinitions>
                 <Label Text="ชื่อประเภทสินค้า" VerticalOptions="CenterAndExpand" FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Row="0" Grid.Column="0"/>
                 <Entry x:Name="ProTypeName" FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Row="0" Grid.Column="1" />
-            </Grid>
+                    <Button Text="บันทึก" FontFamily="{StaticResource Kanit}" Grid.Row="1" Grid.Column="0" CornerRadius="10" />
+                    <Button Text="ยกเลิก" FontFamily="{StaticResource Kanit}" Grid.Row="1" Grid.Column="1" CornerRadius="10" />
+
+                </Grid>
+              
             </Frame>
         </StackLayout>
     </ContentPage.Content>
