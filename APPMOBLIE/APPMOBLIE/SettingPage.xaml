@@ -20,8 +20,8 @@
             <StackLayout Padding="20,20,20,20" Margin="90,10,10,0" >
                 <Grid>
                     
-                    <Button  Text="ออกจากระบบ" FontSize="14"   Style="{x:StaticResource Normalkanit}"  
-                             Clicked="Button_Signout" BackgroundColor="#0095b6" TextColor="White" CornerRadius="20" />
+                    <!--<Button  Text="ออกจากระบบ" FontSize="14"   Style="{x:StaticResource Normalkanit}"  
+                             Clicked="Button_Signout" BackgroundColor="#0095b6" TextColor="White" CornerRadius="20" />-->
                 </Grid>
                 
             </StackLayout>
@@ -62,8 +62,8 @@
                                     FontSize="Body" BackgroundColor="Transparent" Clicked="SetProType" Grid.Row="0" Grid.Column="0"/>
                             <Button ImageSource="iconseditcolumn" Text="ตั้งค่าตำแหน่งจัดเก็บ"  FontFamily="{StaticResource Kanit}" 
                                     FontSize="Body" BackgroundColor="Transparent"  Grid.Row="1" Grid.Column="0"/>
-                            
-                            <Button ImageSource="iconseditcolumn" Text="ออกจากระบบ"  FontFamily="{StaticResource Kanit}" 
+
+                            <Button ImageSource="iconseditcolumn" Text="ออกจากระบบ" Clicked="Button_Signout"  FontFamily="{StaticResource Kanit}" 
                                     FontSize="Body" BackgroundColor="Transparent"  Grid.Row="2" Grid.Column="0"/>
 
 
