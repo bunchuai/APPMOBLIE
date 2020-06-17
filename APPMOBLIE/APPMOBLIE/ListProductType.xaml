@@ -22,7 +22,7 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="100"/>
                         </Grid.ColumnDefinitions>
-                        <Button ImageSource="iconplus" Text="เพิ่ม" FontFamily="{StaticResource Kanit}" FontSize="Large" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" BackgroundColor="Transparent" />
+                        <Button ImageSource="iconplus" Text="เพิ่ม" Clicked="Button_Clicked" FontFamily="{StaticResource Kanit}" FontSize="Large" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" BackgroundColor="Transparent" />
                     </Grid>
                     </StackLayout>
                     <ListView x:Name="ListViewType"  HasUnevenRows="True"   >

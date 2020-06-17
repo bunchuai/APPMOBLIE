@@ -56,6 +56,10 @@ namespace APPMOBLIE
             public string DisplayName { get; set; }
         }
 
-       
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            this.Navigation.PushAsync(new AddProductType());
+
+        }
     }
 }
