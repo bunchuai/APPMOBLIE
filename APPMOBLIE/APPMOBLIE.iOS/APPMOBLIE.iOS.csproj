@@ -276,4 +276,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\iconlistpull.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconwarning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconlistcheck.png" />
+  </ItemGroup>
 </Project>
