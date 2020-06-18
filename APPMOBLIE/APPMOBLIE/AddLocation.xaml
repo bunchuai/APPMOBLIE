@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="APPMOBLIE.AddLocation">
+             x:Class="APPMOBLIE.AddLocation"
+             xmlns:local="clr-namespace:APPMOBLIE.Behavior">
     <ContentPage.Content>
         <StackLayout>
             <Frame Margin="10">
@@ -18,12 +19,14 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Text="ชื่อตำแหน่งจัดเก็บ" VerticalOptions="CenterAndExpand" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black" Grid.Row="0" Grid.Column="0"/>
-                    <Entry x:Name="LocationName" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Row="0" Grid.Column="1" />
-                    <Button Text="บันทึก" FontFamily="{StaticResource Kanit}" Grid.Row="1" Grid.Column="0" CornerRadius="10" />
-                    <Button Text="ยกเลิก" FontFamily="{StaticResource Kanit}" Grid.Row="1" Grid.Column="1" CornerRadius="10" />
-
+                    <Entry x:Name="LocationName" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Row="0" Grid.Column="1" >
+                        <Entry.Behaviors>
+                            <local:LocationValidation x:Name="LocationValidation"/>
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Button Text="บันทึก" Clicked="Save_Clicked" FontFamily="{StaticResource Kanit}" Grid.Row="1" Grid.Column="0" CornerRadius="10" IsEnabled="{Binding Source={x:Reference LocationValidation},Path=IsValid}"/>
+                    <Button Text="ยกเลิก" Clicked="Reset_Clicked" FontFamily="{StaticResource Kanit}" Grid.Row="1" Grid.Column="1" CornerRadius="10" />
                 </Grid>
-
             </Frame>
         </StackLayout>
     </ContentPage.Content>

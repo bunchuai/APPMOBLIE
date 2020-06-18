@@ -69,7 +69,7 @@ namespace APPMOBLIE
                     ProductLocation.ItemsSource = LocationItems;
                 }
 
-                HttpResponseMessage responseProductType = await client.GetAsync("http://203.151.166.97/api/ProductsType/GetProductType");
+                HttpResponseMessage responseProductType = await client.GetAsync("http://203.151.166.97/api/ProductsType/GetProductType?CompanyId="+ CompanyId);
                 if (responseProductType.IsSuccessStatusCode)
                 {
                     var ProductTypeData = await responseProductType.Content.ReadAsStringAsync();

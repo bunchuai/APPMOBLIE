@@ -28,21 +28,20 @@
                             <DataTemplate>
                                 <ViewCell>
                                     <ViewCell.ContextActions>
-                                        <MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="True" CommandParameter="{Binding .}"/>
-                                        <MenuItem Text="Edit" Clicked="Edit_Clicked" />
+                                        <MenuItem Text="แก้ไข" Clicked="Edit_Clicked" IsDestructive="True" CommandParameter="{Binding LocationId}"/>
+                                        <MenuItem Text="ลบ" Clicked="Delete_Clicked" IsDestructive="True" CommandParameter="{Binding LocationId}"/>
                                     </ViewCell.ContextActions>
                                     <StackLayout >
                                         <Grid >
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="35"/>
-
+                                                <RowDefinition Height="*"/>
                                             </Grid.RowDefinitions>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="20"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
                                             <Image Source="iconsnext" HeightRequest="10" WidthRequest="10" Grid.Row="0" Grid.Column="0"/>
-                                            <Label  Text="{Binding DisplayName}" FontFamily="{StaticResource Kanit}" FontSize="Medium" TextColor="Black" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
+                                            <Label  Text="{Binding LocationName}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
                                         </Grid>
                                     </StackLayout>
                                 </ViewCell>
