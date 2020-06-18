@@ -14,6 +14,7 @@ namespace APPMOBLIE.Model
         public string Unit { get; set; }
         public string Location { get; set; }
         public string Color { get; set; }
+        public string ProductCode { get; set; }
     }
 
 }

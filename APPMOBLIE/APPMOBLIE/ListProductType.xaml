@@ -30,8 +30,8 @@
                                 <DataTemplate>
                                     <ViewCell>
                                         <ViewCell.ContextActions>
-                                        <MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="True" CommandParameter="{Binding .}"/>
-                                        <MenuItem Text="Edit" Clicked="Edit_Clicked" />
+                                        <MenuItem Text="แก้ไข" Clicked="Edit_Clicked" IsDestructive="True" CommandParameter="{Binding ProductType}"/>
+                                        <MenuItem Text="ลบ" Clicked="Delete_Clicked" IsDestructive="True" CommandParameter="{Binding ProductType}"/>
                                     </ViewCell.ContextActions>
                                     <StackLayout >
                                         <Grid >
@@ -44,7 +44,7 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
                                             <Image Source="iconsnext" HeightRequest="10" WidthRequest="10" Grid.Row="0" Grid.Column="0"/>
-                                        <Label  Text="{Binding DisplayName}" FontFamily="{StaticResource Kanit}" FontSize="Medium" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
+                                            <Label  Text="{Binding TypeName}" FontFamily="{StaticResource Kanit}" FontSize="Medium" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
                                     </Grid>
                                     </StackLayout>
                                 </ViewCell>
