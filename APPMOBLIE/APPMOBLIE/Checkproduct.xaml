@@ -23,32 +23,7 @@
                    AbsoluteLayout.LayoutFlags="PositionProportional"
                    FontAttributes="Bold"
                    />
-            <!--<StackLayout
-                  AbsoluteLayout.LayoutBounds="0,0.10,1,0.3"
-                  AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
-                  VerticalOptions="Center"
-                HorizontalOptions="Center"
-                  Orientation="Vertical"
-                Spacing="5">
-                <Entry Placeholder=" รหัสสินค้า หรือ หมายเลขSKU  "
-                           x:Name="findtext"
-                       Keyboard="Default"
-                      FontFamily="{StaticResource Kanit}"
-                       Completed="findtext_Completed"
-                       HorizontalTextAlignment="Center"
-                           />
-                <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="Center">
-                    <Button Clicked="Button_Scan"
-                        BackgroundColor="Transparent" 
-                        ImageSource="barcode.png"
-                            HeightRequest="50" WidthRequest="50"
-                         HorizontalOptions="Start"
-                        VerticalOptions="Center"
-                         />
-                    <Label Text="Scan Barcode" VerticalOptions="Center" HorizontalOptions="Start" FontFamily="{StaticResource Kanit}"/>
-                </StackLayout>
-            </StackLayout >-->
+          
             <StackLayout 
                           AbsoluteLayout.LayoutBounds="0,0.2,1,0.3"
                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
@@ -93,7 +68,7 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
-                                    <StackLayout Orientation="Vertical"  Padding="20,0,20,5">
+                                    <StackLayout Orientation="Vertical"  Padding="20">
                                         <Image Source="iconbox" HorizontalOptions="Start" WidthRequest="22" HeightRequest="22"/>
 
                                         <Label Text="{Binding reference, StringFormat='  Ref.No. : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"

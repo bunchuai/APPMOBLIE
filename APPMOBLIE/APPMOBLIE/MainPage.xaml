@@ -50,7 +50,7 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <StackLayout Orientation="Vertical" Padding="20,5,0,15">
+                                    <StackLayout Orientation="Vertical" Padding="20">
                                         <StackLayout Orientation="Horizontal">
                                             <ic:CircleImage Source="iconbox.png" 
                                                         Aspect="AspectFill" HeightRequest="20" WidthRequest="20"/>

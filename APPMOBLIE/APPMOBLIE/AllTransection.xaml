@@ -34,14 +34,10 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            
+
                             <ColumnDefinition Width="150"/>
                             <ColumnDefinition Width="150"/>
                         </Grid.ColumnDefinitions>
-                        <!--<Button ImageSource="iconsplus" Clicked="BtnStockin"  Text=" รับสินค้า " 
-                                FontAttributes="Bold" TextColor="Gray" 
-                                FontFamily="{StaticResource Kanit}" Grid.Row="0" Grid.Column="0"   BackgroundColor="White" BorderColor="LightGray" BorderWidth="1"  CornerRadius="20"  />-->
-
                         <Button Text="รับสินค้า" ImageSource="iconplus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
                                     CornerRadius="20" FontSize="Medium"
                                     Clicked="BtnStockin"
@@ -49,7 +45,6 @@
                             FontFamily="{StaticResource Kanit}" 
                             Grid.Row="0" Grid.Column="0"
                             />
-
                         <Button Text="จ่ายสินค้า" ImageSource="iconminus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
                                     CornerRadius="20" FontSize="18"
                                     Clicked="BtnStockOut"
@@ -58,19 +53,8 @@
                                 Grid.Row="0" Grid.Column="1"
                             
                             />
-
-
-
-
-                        <!--<Button Text="จ่ายสินค้า"  ImageSource="iconsminus" Clicked="BtnStockOut"  
-                                FontAttributes="Bold" TextColor="Gray" 
-                                FontFamily="{StaticResource Kanit}" Grid.Row="0" Grid.Column="1"  BackgroundColor="White" BorderColor="LightGray" BorderWidth="1"  CornerRadius="20" />-->
-                    
                     </Grid>
                 </StackLayout>
-                <!--<StackLayout>
-                    <forms:ChartView  x:Name="Chart1"   HeightRequest="150"/>
-                </StackLayout>-->
                 <StackLayout Orientation="Vertical" VerticalOptions="Center">
                     <Button Text="รายการสินค้ารับเข้าล่าสุด" BackgroundColor="White" BorderWidth="3" BorderColor="#c6e2ff" 
                                     CornerRadius="15"
@@ -179,9 +163,6 @@
                                                HorizontalOptions="StartAndExpand"/>
                                             <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" 
                                                    FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                            <Label Text="{Binding Status, StringFormat='สถานะสินค้า : {0}'}"  FontSize="Body" TextColor="Black"
-                                                    FontFamily="{StaticResource Kanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                             <Label Text="{Binding Total, StringFormat='จำนวนคงเหลือ : {0}'}"  FontSize="Body" TextColor="Black"
                                                    FontFamily="{StaticResource Kanit}"
