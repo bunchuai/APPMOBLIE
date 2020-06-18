@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:APPMOBLIE.Behavior"
+             mc:Ignorable="d"
+             x:Class="APPMOBLIE.EditProductType">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="แก้ไขประเภทสินค้า" FontFamily="{StaticResource Kanit}" FontSize="Title" HorizontalOptions="CenterAndExpand"/>
+            <Frame Margin="10">
+                
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="ชื่อประเภทสินค้า" VerticalOptions="CenterAndExpand" FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Row="0" Grid.Column="0"/>
+                    <Entry x:Name="ProTypeName" FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Row="0" Grid.Column="1">
+                        <Entry.Behaviors>
+                            <local:ProductTypeValidation x:Name="ProductTypeValidation"/>
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Button Text="บันทึก" FontFamily="{StaticResource Kanit}" BackgroundColor="#2B976C" Grid.Row="1" Grid.Column="0" CornerRadius="10" Clicked="Save_Clicked"  IsEnabled="{Binding Source={x:Reference ProductTypeValidation},Path=IsValid}"/>
+                    <Button Text="ยกเลิก" FontFamily="{StaticResource Kanit}" BackgroundColor="Gray" Grid.Row="1" Grid.Column="1" CornerRadius="10" Clicked="Cancel_Clicked"/>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

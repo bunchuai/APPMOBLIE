@@ -32,14 +32,11 @@ namespace APPMOBLIE
             list.Remove((ProLocation)model.CommandParameter);
         }
 
-        private void Edit_Clicked(object sender, EventArgs e)
+        private async void Edit_Clicked(object sender, EventArgs e)
         {
-            var menuitem = sender as MenuItem;
-            if (menuitem != null)
-            {
-                var name = menuitem.BindingContext as string;
-                DisplayAlert("Alert", "Edit " + name, "Ok");
-            }
+            var model = ((MenuItem)sender);
+
+            await Navigation.PushAsync(new EditLocation());
         }
 
         public class ProLocation
@@ -52,5 +49,7 @@ namespace APPMOBLIE
             this.Navigation.PushAsync(new AddLocation());
 
         }
+
+       
     }
 }

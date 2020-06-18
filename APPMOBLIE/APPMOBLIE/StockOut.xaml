@@ -17,7 +17,7 @@
                 <StackLayout>
                     <StackLayout Margin="0,30,0,10">
                         <!--<Image Source="iconoutsky"/>-->
-                        <Label Text="จ่ายสินค้า" FontSize="20"  FontFamily="{x:StaticResource Kanit}"  TextColor="Gray" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                        <Label Text="จ่ายสินค้า" FontSize="Title"  FontFamily="{x:StaticResource Kanit}"  TextColor="Gray" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
                     </StackLayout>
                     <StackLayout Padding="0" Margin="35,10">
                         <Grid RowSpacing="5">
@@ -33,30 +33,30 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
-                            <Label Text="เลข Barcode"  FontFamily="{StaticResource Kanit}"  Grid.Column="0"  Grid.Row="0" VerticalOptions="Center"/>
-                            <Entry x:Name="Mycode"  FontFamily="{StaticResource Kanit}"  Grid.Column="1"   Grid.Row="0" Completed="Mycode_Completed"/>
+                            <Label Text="เลข Barcode"  FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0"  Grid.Row="0" VerticalOptions="Center"/>
+                            <Entry x:Name="Mycode"  FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="1"   Grid.Row="0" Completed="Mycode_Completed"/>
                             <Button  BackgroundColor="Transparent" ImageSource="barcode.png" WidthRequest="20" HeightRequest="20" Grid.Column="1" Grid.Row="0" HorizontalOptions="End" Clicked="ScanBarCode"/>
 
-                            <Label Text="ชื่อสินค้า"  FontFamily="{StaticResource Kanit}"  Grid.Column="0"  Grid.Row="1" VerticalOptions="Center"/>
-                            <Entry  x:Name="ProductName"  FontFamily="{StaticResource Kanit}"  Grid.Column="1"   Grid.Row="1"/>
+                            <Label Text="ชื่อสินค้า"  FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0"  Grid.Row="1" VerticalOptions="Center"/>
+                            <Entry  x:Name="ProductName"  FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="1"   Grid.Row="1"/>
 
-                            <Label Text="จำนวน"  FontFamily="{StaticResource Kanit}"  Grid.Column="0"  Grid.Row="2" VerticalOptions="Center" />
-                            <Entry x:Name="Quantity"    FontFamily="{StaticResource Kanit}"  Grid.Column="1"   Grid.Row="2" Keyboard="Numeric">
+                            <Label Text="จำนวน"  FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0"  Grid.Row="2" VerticalOptions="Center" />
+                            <Entry x:Name="Quantity"    FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="1"   Grid.Row="2" Keyboard="Numeric">
                                 <Entry.Behaviors>
                                     <local:NumberOnlyValidation x:Name="NumberOnlyValidation"/>
                                 </Entry.Behaviors>
                             </Entry>
 
-                            <Label Text="Ref.no"  FontFamily="{StaticResource Kanit}"   Grid.Column="0"  Grid.Row="3" VerticalOptions="Center"/>
-                            <Entry x:Name="ReferentNumber"  FontFamily="{StaticResource Kanit}"   Grid.Column="1"  Grid.Row="3">
+                            <Label Text="Ref.no"  FontFamily="{StaticResource Kanit}" FontSize="Body"   Grid.Column="0"  Grid.Row="3" VerticalOptions="Center"/>
+                            <Entry x:Name="ReferentNumber"  FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="1"  Grid.Row="3">
                                 <Entry.Behaviors>
                                     <local:EmptyValidation x:Name="EmptyValidation"/>
                                 </Entry.Behaviors>
                             </Entry>
 
 
-                            <Label Text="Note."  FontFamily="{StaticResource Kanit}"  Grid.Column="0"  Grid.Row="4" VerticalOptions="Center"/>
-                            <Entry x:Name="ProductDescription"  FontFamily="{StaticResource Kanit}"   Grid.Column="1"   Grid.Row="4" />
+                            <Label Text="Note."  FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0"  Grid.Row="4" VerticalOptions="Center"/>
+                            <Entry x:Name="ProductDescription"  FontFamily="{StaticResource Kanit}" FontSize="Body"   Grid.Column="1"   Grid.Row="4" />
 
                         </Grid>
                     </StackLayout>
@@ -69,8 +69,8 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Text="บันทึก"  FontFamily="{StaticResource Kanit}" Grid.Row="0" Grid.Column="0"  BackgroundColor="#2B976C" TextColor="White" CornerRadius="20" Clicked="Save_Click" IsEnabled="{Binding Source={x:Reference NumberOnlyValidation,EmptyValidation},Path=IsValid}"/>
-                            <Button Text="ยกเลิก"  FontFamily="{StaticResource Kanit}" Grid.Row="0" Grid.Column="1"  BackgroundColor="Gray" TextColor="White" CornerRadius="20" Clicked="Cancel_Click"/>
+                            <Button Text="บันทึก"  FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Row="0" Grid.Column="0"  BackgroundColor="#2B976C" TextColor="White" CornerRadius="20" Clicked="Save_Click" IsEnabled="{Binding Source={x:Reference NumberOnlyValidation,EmptyValidation},Path=IsValid}"/>
+                            <Button Text="ยกเลิก"  FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Row="0" Grid.Column="1"  BackgroundColor="Gray" TextColor="White" CornerRadius="20" Clicked="Cancel_Click"/>
                         </Grid>
                     </StackLayout>
                 </StackLayout>
