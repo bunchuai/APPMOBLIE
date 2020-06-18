@@ -82,7 +82,7 @@ namespace APPMOBLIE
         {
             var model = ((MenuItem)sender);
 
-            await Navigation.PushAsync(new EditProductType());
+            await Navigation.PushAsync(new EditProductType(Convert.ToInt32(model.CommandParameter)));
         }
 
         private void Button_Clicked(object sender, EventArgs e)
