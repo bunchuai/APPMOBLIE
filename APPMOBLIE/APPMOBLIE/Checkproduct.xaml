@@ -70,15 +70,15 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Label x:Name="Skuinfo" Grid.Row="0" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}" />
-                        <Label x:Name="Procd" Grid.Row="1" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}"/>
-                        <Label x:Name="Prodn"  Grid.Row="2" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}"/>
-                        <Label x:Name="Prodb" Grid.Row="3" Grid.ColumnSpan="2"  FontSize="16"  FontFamily="{StaticResource Kanit}"/>
-                        <Label x:Name="Prodm" Grid.Row="4" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}"/>
-                        <Label x:Name="Prolo" Grid.Row="5" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}"/>
-                        <Label x:Name="Proin" Grid.Row="6" Grid.Column="0"  FontSize="16" FontFamily="{StaticResource Kanit}"/>
-                        <Label x:Name="Proout"  Grid.Row="6" Grid.Column="1" FontSize="16" FontFamily="{StaticResource Kanit}"/>
-                        <Label x:Name="Available" Grid.Row="7" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}"/>
+                        <Label x:Name="Skuinfo" Grid.Row="0" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black" />
+                        <Label x:Name="Procd" Grid.Row="1" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                        <Label x:Name="Prodn"  Grid.Row="2" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                        <Label x:Name="Prodb" Grid.Row="3" Grid.ColumnSpan="2"  FontSize="16"  FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                        <Label x:Name="Prodm" Grid.Row="4" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                        <Label x:Name="Prolo" Grid.Row="5" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                        <Label x:Name="Proin" Grid.Row="6" Grid.Column="0"  FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                        <Label x:Name="Proout"  Grid.Row="6" Grid.Column="1" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                        <Label x:Name="Available" Grid.Row="7" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
                     </Grid>
                 </Frame>
             </StackLayout>
@@ -86,8 +86,8 @@
                  AbsoluteLayout.LayoutBounds="0,1,1,0.55"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
                 <StackLayout  Padding="5">
-                    <Label x:Name="Alert"  FontFamily="{StaticResource Kanit}" HorizontalOptions="Center"/>
-                    <Label Text="{Binding titletrans}"  FontFamily="{StaticResource Kanit}" x:Name="Titletrans"
+                    <Label x:Name="Alert"  FontFamily="{StaticResource Kanit}" TextColor="Black" HorizontalOptions="Center"/>
+                    <Label Text="{Binding titletrans}"  FontFamily="{StaticResource Kanit}" TextColor="Black" x:Name="Titletrans"
                            FontSize="16" HorizontalOptions="Center" />
                     <ListView  x:Name="listview" HasUnevenRows="True">
                         <ListView.ItemTemplate>
@@ -96,18 +96,18 @@
                                     <StackLayout Orientation="Vertical"  Padding="20,0,20,5">
                                         <Image Source="iconbox" HorizontalOptions="Start" WidthRequest="22" HeightRequest="22"/>
 
-                                        <Label Text="{Binding reference, StringFormat='  Ref.No. : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}"
+                                        <Label Text="{Binding reference, StringFormat='  Ref.No. : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="{Binding TransactionDate, StringFormat='  วันที่ : {0}'}" 
-                                                   FontSize="16" FontFamily="{StaticResource Kanit}"
+                                                   FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
                                             <StackLayout Orientation="Horizontal" >
-                                                <Label Text="{Binding TransactionType}" FontSize="16" FontFamily="{StaticResource Kanit}"
+                                                <Label Text="{Binding TransactionType}" FontSize="16" FontFamily="{StaticResource Kanit}" 
                                                         x:Name="TypeTrans"
                                                         HorizontalOptions="EndAndExpand"
                                                         TextColor="{Binding Color}"/>
-                                                <Label Text="{Binding Quantity}"  FontSize="16" FontFamily="{StaticResource Kanit}"
+                                                <Label Text="{Binding Quantity}"  FontSize="16" FontFamily="{StaticResource Kanit}" 
                                                         HorizontalOptions="End"
                                                         TextColor="{Binding Color}"/>
                                                 <Label Text="{Binding Unit}" FontSize="16" FontFamily="{StaticResource Kanit}"
@@ -115,7 +115,7 @@
                                                         TextColor="{Binding Color}"/>
                                             </StackLayout>
                                         </StackLayout>
-                                        <Label Text="{Binding Username , StringFormat='  ผู้บันทึกรายการสินค้า : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}"
+                                        <Label Text="{Binding Username , StringFormat='  ผู้บันทึกรายการสินค้า : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
                                     </StackLayout>
                                 </ViewCell>

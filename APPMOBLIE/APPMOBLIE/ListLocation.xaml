@@ -42,7 +42,7 @@
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
                                             <Image Source="iconsnext" HeightRequest="10" WidthRequest="10" Grid.Row="0" Grid.Column="0"/>
-                                            <Label  Text="{Binding DisplayName}" FontFamily="{StaticResource Kanit}" FontSize="Medium" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
+                                            <Label  Text="{Binding DisplayName}" FontFamily="{StaticResource Kanit}" FontSize="Medium" TextColor="Black" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
                                         </Grid>
                                     </StackLayout>
                                 </ViewCell>

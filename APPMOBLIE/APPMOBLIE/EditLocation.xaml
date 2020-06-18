@@ -18,8 +18,8 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="ชื่อตำแหน่งจัดเก็บ" VerticalOptions="CenterAndExpand" FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Row="0" Grid.Column="0"/>
-                    <Entry x:Name="LocationName" FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Row="0" Grid.Column="1" />
+                    <Label Text="ชื่อตำแหน่งจัดเก็บ" VerticalOptions="CenterAndExpand" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black" Grid.Row="0" Grid.Column="0"/>
+                    <Entry x:Name="LocationName" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Row="0" Grid.Column="1" />
                     <Button Text="บันทึก" FontFamily="{StaticResource Kanit}" Clicked="Save" Grid.Row="1" Grid.Column="0" CornerRadius="10" />
                     <Button Text="ยกเลิก" FontFamily="{StaticResource Kanit}" Clicked="Cancel" Grid.Row="1" Grid.Column="1" CornerRadius="10" />
 

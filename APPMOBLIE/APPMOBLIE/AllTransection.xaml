@@ -45,15 +45,15 @@
                         <Button Text="รับสินค้า" ImageSource="iconplus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
                                     CornerRadius="20" FontSize="Medium"
                                     Clicked="BtnStockin"
-                            TextColor="Gray"
-                            FontFamily="{StaticResource Kanit}"
+                            TextColor="Black"
+                            FontFamily="{StaticResource Kanit}" 
                             Grid.Row="0" Grid.Column="0"
                             />
 
                         <Button Text="จ่ายสินค้า" ImageSource="iconminus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
                                     CornerRadius="20" FontSize="18"
                                     Clicked="BtnStockOut"
-                            TextColor="Gray"
+                            TextColor="Black"
                             FontFamily="{StaticResource Kanit}"
                                 Grid.Row="0" Grid.Column="1"
                             
@@ -87,27 +87,27 @@
                                 <ViewCell IsEnabled="False">
                                     <StackLayout Orientation="Vertical"  Padding="20">
                                         <Image Source="iconlistin" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
-                                        <Label Text="{Binding Ref, StringFormat='Ref No. : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                        <Label Text="{Binding Ref, StringFormat='Ref No. : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
-                                        <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                        <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
-                                        <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                        <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="{Binding CreateDate, StringFormat='วันที่ : {0}'}" 
-                                                  FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                                  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
                                             <StackLayout Orientation="Horizontal">
-                                                <Label Text="จำนวน :" FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                                <Label Text="จำนวน :" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                        x:Name="TypeTrans"
                                                   HorizontalOptions="EndAndExpand" />
-                                                <Label Text="{Binding Amount}"   FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                                <Label Text="{Binding Amount}"   FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="End"/>
                                             </StackLayout>
                                         </StackLayout>
-                                        <Label Text="{Binding Locations, StringFormat='ตำแหน่งที่จัดเก็บ : {0} '}"  FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                        <Label Text="{Binding Locations, StringFormat='ตำแหน่งที่จัดเก็บ : {0} '}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
-                                        <Label Text="{Binding Username , StringFormat='ผู้บันทึกรับสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                        <Label Text="{Binding Username , StringFormat='ผู้บันทึกรับสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
                                     </StackLayout>
                                 </ViewCell>
@@ -130,27 +130,27 @@
                                     <ViewCell IsEnabled="False" >
                                         <StackLayout Orientation="Vertical"  Padding="20">
                                             <Image Source="iconlistout" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
-                                            <Label Text="{Binding Ref, StringFormat='Ref No. : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                            <Label Text="{Binding Ref, StringFormat='Ref No. : {0}'}"  FontFamily="{StaticResource Kanit}" TextColor="Black" FontSize="Body"
                                                HorizontalOptions="StartAndExpand"/>
-                                            <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                            <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" TextColor="Black" FontSize="Body"
                                                HorizontalOptions="StartAndExpand"/>
-                                            <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                            <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" TextColor="Black" FontSize="Body"
                                                HorizontalOptions="StartAndExpand"/>
                                             <StackLayout Orientation="Horizontal">
-                                                <Label Text="{Binding CreateDate, StringFormat='วันที่ : {0}'}" FontSize="Body"
+                                                <Label Text="{Binding CreateDate, StringFormat='วันที่ : {0}'}" FontSize="Body" TextColor="Black"
                                                    FontFamily="{StaticResource Kanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                                 <StackLayout Orientation="Horizontal">
-                                                    <Label Text="จำนวน :"  FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                                    <Label Text="จำนวน :"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                        x:Name="TypeTrans"
                                                   HorizontalOptions="EndAndExpand" />
-                                                    <Label Text="{Binding Amount}"   FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                                    <Label Text="{Binding Amount}"   FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="End"/>
                                                 </StackLayout>
                                             </StackLayout>
-                                            <Label Text="{Binding Locations, StringFormat='ตำแหน่งที่จัดเก็บ : {0} '}"  FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                            <Label Text="{Binding Locations, StringFormat='ตำแหน่งที่จัดเก็บ : {0} '}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
-                                            <Label Text="{Binding Username , StringFormat='ผู้บันทึกรับสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                            <Label Text="{Binding Username , StringFormat='ผู้บันทึกรับสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
                                         </StackLayout>
                                     </ViewCell>
@@ -173,17 +173,17 @@
                                     <ViewCell IsEnabled="False" >
                                         <StackLayout Orientation="Vertical"  Padding="20">
                                             <Image Source="iconlistpull" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
-                                            <Label Text="{Binding SkuId, StringFormat='หมายเลข Barcode: {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                            <Label Text="{Binding SkuId, StringFormat='หมายเลข Barcode: {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
-                                            <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                            <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
                                             <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" 
-                                                   FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                                   FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
-                                            <Label Text="{Binding Status, StringFormat='สถานะสินค้า : {0}'}"  FontSize="Body"
+                                            <Label Text="{Binding Status, StringFormat='สถานะสินค้า : {0}'}"  FontSize="Body" TextColor="Black"
                                                     FontFamily="{StaticResource Kanit}"
                                                HorizontalOptions="StartAndExpand"/>
-                                            <Label Text="{Binding Total, StringFormat='จำนวนคงเหลือ : {0}'}"  FontSize="Body"
+                                            <Label Text="{Binding Total, StringFormat='จำนวนคงเหลือ : {0}'}"  FontSize="Body" TextColor="Black"
                                                    FontFamily="{StaticResource Kanit}"
                                                HorizontalOptions="StartAndExpand"/>
                                         </StackLayout>
