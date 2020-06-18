@@ -94,7 +94,7 @@
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
                                     <StackLayout Orientation="Vertical"  Padding="20,0,20,5">
-                                        <Image Source="iconbox" HorizontalOptions="Start" WidthRequest="22" HeightRequest="22"/>
+                                        <Image Source="iconlistcheck" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
 
                                         <Label Text="{Binding reference, StringFormat='  Ref.No. : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
