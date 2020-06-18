@@ -52,8 +52,8 @@
                                 <ViewCell>
                                     <StackLayout Orientation="Vertical" Padding="20">
                                         <StackLayout Orientation="Horizontal">
-                                            <ic:CircleImage Source="iconbox.png" 
-                                                        Aspect="AspectFill" HeightRequest="20" WidthRequest="20"/>
+                                            <ic:CircleImage Source="iconlistcheck" 
+                                                        Aspect="AspectFill" HeightRequest="32" WidthRequest="32"/>
                                             <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                    VerticalOptions="StartAndExpand"/>
                                         </StackLayout>
