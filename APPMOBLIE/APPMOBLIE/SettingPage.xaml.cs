@@ -74,5 +74,10 @@ namespace APPMOBLIE
             this.Navigation.PushAsync(new ListProductType());
 
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            this.Navigation.PushAsync(new ListLocation());
+        }
     }
 }
