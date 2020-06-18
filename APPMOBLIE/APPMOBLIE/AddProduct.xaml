@@ -50,6 +50,7 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="120"/>
@@ -140,18 +141,19 @@
 
                             <Label Text="Note" FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="0"  Grid.Row="11" VerticalOptions="Center"/>
                             <Entry x:Name="ProductDescription" FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="11" />
-                        </Grid>
-                    </Frame>
-                    <StackLayout Padding="0" Margin="70,0">
 
-                        <Button Text="บันทึก" FontFamily="{StaticResource Kanit}" FontSize="Body"
+                            <Button Text="บันทึก" FontFamily="{StaticResource Kanit}" FontSize="Body"
                                 Clicked="Button_Save"
                                 BackgroundColor="#2B976C" 
                                 TextColor="White" 
                                 CornerRadius="20" 
-                                IsEnabled="{Binding Source={x:Reference Number1, Number2,Empty1,Empty2,Empty3,Empty4,Empty5},Path=IsValid}"/>
-                       
-                    </StackLayout>
+                                IsEnabled="{Binding Source={x:Reference Number1, Number2,Empty1,Empty2,Empty3,Empty4,Empty5},Path=IsValid}" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                            <Button Text="ยกเลิก"  FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="2"  BackgroundColor="Gray" TextColor="White" CornerRadius="20"/>
+
+                        </Grid>
+                    </Frame>
+                   
                 </StackLayout>
             </ScrollView>
         </AbsoluteLayout>

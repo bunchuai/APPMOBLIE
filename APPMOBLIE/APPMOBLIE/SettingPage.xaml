@@ -63,7 +63,7 @@
                             <Button ImageSource="iconseditcolumn" Text="ตั้งค่าตำแหน่งจัดเก็บ" Clicked="Button_Clicked" FontFamily="{StaticResource Kanit}" 
                                     FontSize="Body" BackgroundColor="Transparent"  Grid.Row="1" Grid.Column="0"/>
 
-                            <Button ImageSource="iconseditcolumn" Text="ออกจากระบบ" Clicked="Button_Signout"  FontFamily="{StaticResource Kanit}" 
+                            <Button ImageSource="iconseditcolumn" HorizontalOptions="StartAndExpand" Text="ออกจากระบบ" Clicked="Button_Signout"  FontFamily="{StaticResource Kanit}" 
                                     FontSize="Body" BackgroundColor="Transparent"  Grid.Row="2" Grid.Column="0"/>
 
 

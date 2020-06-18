@@ -267,4 +267,13 @@
   <ItemGroup>
     <Folder Include="Resources\Fonts\" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconlistin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconlistout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconlistpull.png" />
+  </ItemGroup>
 </Project>
