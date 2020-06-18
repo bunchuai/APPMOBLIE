@@ -276,4 +276,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\iconlistpull.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconwarning.png" />
+  </ItemGroup>
 </Project>
