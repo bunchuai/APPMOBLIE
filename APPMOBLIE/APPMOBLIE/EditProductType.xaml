@@ -20,7 +20,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Text="ชื่อประเภทสินค้า" VerticalOptions="CenterAndExpand" FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Row="0" Grid.Column="0"/>
-                    <Entry x:Name="ProTypeName" FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Row="0" Grid.Column="1">
+                    <Entry x:Name="TypeName" FontFamily="{StaticResource Kanit}" FontSize="Body"  Grid.Row="0" Grid.Column="1">
                         <Entry.Behaviors>
                             <local:ProductTypeValidation x:Name="ProductTypeValidation"/>
                         </Entry.Behaviors>
