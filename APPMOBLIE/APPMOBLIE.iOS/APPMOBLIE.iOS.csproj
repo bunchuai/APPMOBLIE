@@ -282,4 +282,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\iconlistcheck.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icontype.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconlocation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconlogout.png" />
+  </ItemGroup>
 </Project>
