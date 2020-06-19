@@ -196,34 +196,13 @@
     <BundleResource Include="Resources\iconbox.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\iconin.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\iconinsky.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\iconlist.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\iconout.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\iconoutsky.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\iconsadd.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\iconscanbar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\iconsminus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\iconsout.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\iconsplus.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\iconsscan.png" />
@@ -233,9 +212,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\iconstrans.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\kodelogo.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\userpic.png" />
@@ -259,22 +235,10 @@
     <BundleResource Include="Resources\iconminus.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\iconseditcolumn.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\iconsnext.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Fonts\" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\iconlistin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\iconlistout.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\iconlistpull.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\iconwarning.png" />
