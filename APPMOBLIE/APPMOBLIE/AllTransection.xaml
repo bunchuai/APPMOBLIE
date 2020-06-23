@@ -134,7 +134,7 @@
                                             </StackLayout>
                                             <Label Text="{Binding Locations, StringFormat='ตำแหน่งที่จัดเก็บ : {0} '}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
-                                            <Label Text="{Binding Username , StringFormat='ผู้บันทึกรับสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                            <Label Text="{Binding Username , StringFormat='ผู้บันทึกจ่ายสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
                                         </StackLayout>
                                     </ViewCell>
