@@ -65,7 +65,7 @@
                               FontSize="22"
                           Margin="0,0,0,10"
                             />
-                    <ListView x:Name="Dashboardin" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450">
+                    <ListView x:Name="Dashboardin" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450" IsPullToRefreshEnabled="True" Refreshing="Dashboardin_Refreshing">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
@@ -108,7 +108,7 @@
                                 HeightRequest="80"
                                  Margin="0,0,0,10"
                             />
-                        <ListView x:Name="Dashboardout" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450">
+                        <ListView x:Name="Dashboardout" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450" IsPullToRefreshEnabled="True" Refreshing="Dashboardout_Refreshing">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell IsEnabled="False" >
@@ -151,7 +151,7 @@
                             FontFamily="{StaticResource Kanit}"
                                 HeightRequest="80"
                             ></Button>
-                        <ListView x:Name="Dashboardreorder" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450">
+                        <ListView x:Name="Dashboardreorder" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450" IsPullToRefreshEnabled="True" Refreshing="Dashboardreorder_Refreshing">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell IsEnabled="False" >
