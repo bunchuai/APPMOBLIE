@@ -50,6 +50,7 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
+                                    
                                     <StackLayout Orientation="Vertical" Padding="20">
                                         <StackLayout Orientation="Horizontal">
                                             <ic:CircleImage Source="iconlistcheck" 
@@ -59,6 +60,7 @@
                                         </StackLayout>
                                         <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"/>
                                         <Label Text="{Binding ProductBrand, StringFormat='ยี่ห้อสินค้า : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"/>
+                                        <Label Text="{Binding ProductModel, StringFormat='รุ่น : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"/>
                                     </StackLayout>
                                   
                                 </ViewCell>
