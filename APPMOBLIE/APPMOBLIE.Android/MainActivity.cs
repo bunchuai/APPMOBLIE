@@ -1,11 +1,7 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
-using Plugin.Permissions;
+using Android.Runtime;
 using Rg.Plugins.Popup.Services;
 
 namespace APPMOBLIE.Droid
@@ -14,7 +10,7 @@ namespace APPMOBLIE.Droid
     [Activity(Label = "WMS Smart", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-        protected override  void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
@@ -26,18 +22,18 @@ namespace APPMOBLIE.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
 
-            
+
         }
 
         public override void OnBackPressed()
         {
-           if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))
+            if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))
             {
                 PopupNavigation.Instance.PopAsync();
             }
-           else
+            else
             {
-       
+
             }
         }
 

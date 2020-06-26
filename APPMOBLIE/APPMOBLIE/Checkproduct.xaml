@@ -89,7 +89,7 @@
                     <Label x:Name="Alert"  FontFamily="{StaticResource Kanit}" TextColor="Black" HorizontalOptions="Center"/>
                     <Label Text="{Binding titletrans}"  FontFamily="{StaticResource Kanit}" TextColor="Black" x:Name="Titletrans"
                            FontSize="16" HorizontalOptions="Center" />
-                    <ListView  x:Name="listview" HasUnevenRows="True">
+                    <ListView  x:Name="listview" HasUnevenRows="True" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
