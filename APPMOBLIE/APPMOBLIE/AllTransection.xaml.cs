@@ -30,7 +30,7 @@ namespace APPMOBLIE
             {
                 var CompanyId = Application.Current.Properties["CompanyId"];
 
-                string Url = "http://203.151.166.97/api/Products/TransactionInProduct?CompanyId=" + CompanyId + "&Take=" + 5;
+                string Url = "http://203.151.166.97/api/Products/TransactionInProduct?CompanyId=" + CompanyId + "&Take=" + 15;
                 client.BaseAddress = new Uri(Url);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
@@ -51,7 +51,7 @@ namespace APPMOBLIE
             {
                 var CompanyId = Application.Current.Properties["CompanyId"];
 
-                string Url = "http://203.151.166.97/api/Products/TransactionOutProduct?CompanyId=" + CompanyId + "&Take=" + 5;
+                string Url = "http://203.151.166.97/api/Products/TransactionOutProduct?CompanyId=" + CompanyId + "&Take=" + 15;
                 client.BaseAddress = new Uri(Url);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));

@@ -117,6 +117,8 @@
                                         </StackLayout>
                                         <Label Text="{Binding Username , StringFormat='  ผู้บันทึกรายการสินค้า : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding Description , StringFormat='  Note. : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>
