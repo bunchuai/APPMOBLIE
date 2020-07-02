@@ -89,7 +89,7 @@
                     <Label x:Name="Alert"  FontFamily="{StaticResource Kanit}" TextColor="Black" HorizontalOptions="Center"/>
                     <Label Text="{Binding titletrans}"  FontFamily="{StaticResource Kanit}" TextColor="Black" x:Name="Titletrans"
                            FontSize="16" HorizontalOptions="Center" />
-                    <ListView  x:Name="listview" HasUnevenRows="True">
+                    <ListView  x:Name="listview" HasUnevenRows="True" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
@@ -116,6 +116,8 @@
                                             </StackLayout>
                                         </StackLayout>
                                         <Label Text="{Binding Username , StringFormat='  ผู้บันทึกรายการสินค้า : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding Description , StringFormat='  Note. : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
                                     </StackLayout>
                                 </ViewCell>

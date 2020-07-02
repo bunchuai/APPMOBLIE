@@ -70,7 +70,7 @@ namespace APPMOBLIE
                 return (List<ProductDetail>)productdata;
             }
 
-            return productdata.Where(w => w.ProductName.ToUpper().StartsWith(searchtext.ToUpper()) || w.ProductBrand.ToUpper().StartsWith(searchtext.ToUpper()) || w.ProductCode.ToUpper().StartsWith(searchtext.ToUpper()));
+            return productdata.Where(w => w.ProductName.ToUpper().StartsWith(searchtext.ToUpper()) || w.ProductBrand.ToUpper().StartsWith(searchtext.ToUpper()) || w.ProductCode.ToUpper().StartsWith(searchtext.ToUpper()) || w.ProductModel.ToUpper().StartsWith(searchtext.ToUpper()));
         }
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
