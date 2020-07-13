@@ -162,7 +162,7 @@
     <AndroidResource Include="Resources\drawable\iconstrans.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\userpic.png" />
+    <EmbeddedResource Include="Resources\drawable\userpic.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\barcode.png" />

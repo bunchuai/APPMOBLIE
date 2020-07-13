@@ -3,6 +3,7 @@ using Microcharts;
 using Newtonsoft.Json;
 using Rg.Plugins.Popup.Services;
 using SkiaSharp;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace APPMOBLIE
 {
     public partial class AllTransection : ContentPage
     {
+        public SQLiteAsyncConnection connection;
         public bool dashboardIn { get; set; }
         public bool dashboardOut { get; set; }
         public bool dashboardRe { get; set; }
@@ -96,17 +98,26 @@ namespace APPMOBLIE
             Dashboardin.IsVisible = dashboardIn;
             Dashboardout.IsVisible = dashboardOut;
             Dashboardreorder.IsVisible = dashboardRe;
+            connection = DependencyService.Get<InterfaceSQLite>().GetConnection();
+
         }
 
 
         protected override async void OnAppearing()
         {
-            Username.Text = Application.Current.Properties["Username"].ToString();
-            base.OnAppearing();
+            await connection.CreateTableAsync<PersonInfo>();
+            if (await connection.Table<PersonInfo>().CountAsync() == 0)
+            {
+                Username.Text = Application.Current.Properties["Username"].ToString();
+                ImgUser.Source = ImageSource.FromResource("userpic.png");
+            }
 
             Dashboardin.ItemsSource = await GetDataInList();
             Dashboardout.ItemsSource = await GetDataOutList();
             Dashboardreorder.ItemsSource = await GetDataLowList();
+
+            base.OnAppearing();
+
         }
 
         public void Button_ClickedIn(object sender, EventArgs e)

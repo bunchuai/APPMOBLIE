@@ -218,7 +218,7 @@
     <BundleResource Include="Resources\iconstrans.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\userpic.png" />
+    <EmbeddedResource Include="Resources\userpic.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Welcome.png" />
