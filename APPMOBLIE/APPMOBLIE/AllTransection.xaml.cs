@@ -22,7 +22,7 @@ namespace APPMOBLIE
         public bool dashboardRe { get; set; }
         public List<TransactionInOut> InResultData = new List<TransactionInOut>();
         public List<TransactionInOut> OutResultData = new List<TransactionInOut>();
-        public List<TransactionInOut> LowResultData = new List<TransactionInOut>();
+        public List<TransactionLows> LowResultData = new List<TransactionLows>();
 
         async Task<List<TransactionInOut>> GetDataInList()
         {
@@ -66,7 +66,7 @@ namespace APPMOBLIE
             }
             return OutResultData;
         }
-        async Task<List<TransactionInOut>> GetDataLowList()
+        async Task<List<TransactionLows>> GetDataLowList()
         {
             using (HttpClient client = new HttpClient())
             {
@@ -82,7 +82,7 @@ namespace APPMOBLIE
                 {
                     //In List Product//
                     var Datalow = await responsedatalow.Content.ReadAsStringAsync();
-                    LowResultData = JsonConvert.DeserializeObject<List<TransactionInOut>>(Datalow);
+                    LowResultData = JsonConvert.DeserializeObject<List<TransactionLows>>(Datalow);
                 }
             }
             return LowResultData;
@@ -177,6 +177,10 @@ namespace APPMOBLIE
         private void BtnStockOut(object sender, EventArgs e)
         {
             this.Navigation.PushAsync(new StockOut());
+        }
+        private void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new EditUser());
         }
     }
 

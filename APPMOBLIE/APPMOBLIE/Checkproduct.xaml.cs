@@ -92,7 +92,10 @@ namespace APPMOBLIE
                
             }
         }
-
+        private void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new EditUser());
+        }
         //async private  void Button_Scan(object sender, EventArgs e)
         //{
         //    Procd.Text = string.Empty;
@@ -255,7 +258,7 @@ namespace APPMOBLIE
         //            {
         //                Alert.Text = "--- ไม่พบรายการสินค้า เข้า - ออก ---";
         //            }
-                  
+
         //        }
         //        else
         //        {
@@ -263,7 +266,7 @@ namespace APPMOBLIE
         //        }
         //    }
         //}
-       
+
         private class ProductDetail
         {
             public int ProductIn { get; set; }
