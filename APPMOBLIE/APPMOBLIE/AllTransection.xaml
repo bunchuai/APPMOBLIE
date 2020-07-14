@@ -9,21 +9,30 @@
              xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              xmlns:local="clr-namespace:APPMOBLIE">
     <AbsoluteLayout>
-        <Image Source="background" Aspect="AspectFill"
-                  AbsoluteLayout.LayoutBounds="0,0,1,0.12"
-                  AbsoluteLayout.LayoutFlags="All"/>
-        <ic:CircleImage Source="userpic.png" 
+        <Image Source="background.png" Aspect="AspectFill"
+                  AbsoluteLayout.LayoutBounds="0,0,2,0.12"
+                  AbsoluteLayout.LayoutFlags="All"
+               />
+        <StackLayout AbsoluteLayout.LayoutBounds="0.09,0.03"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                         BackgroundColor="Transparent"
+                         Orientation="Horizontal"
+                         VerticalOptions="Center"
+                         Padding="13,0,0,0">
+            <ic:CircleImage 
                            Aspect="AspectFill"
-                                HeightRequest="60" WidthRequest="60"
-                           AbsoluteLayout.LayoutBounds="0.09,0.03"
-                           AbsoluteLayout.LayoutFlags="PositionProportional"/>
-        <Label x:Name="Username" HorizontalOptions="Center"  
+                               HeightRequest="80" WidthRequest="80"
+                         x:Name="ImgUser"/>
+            <Label x:Name="Username" HorizontalOptions="Center" VerticalOptions="Center" 
                       FontFamily="{StaticResource Kanit}"
                        FontSize="16"
-                        AbsoluteLayout.LayoutBounds="0.6,0.05"
-                   AbsoluteLayout.LayoutFlags="PositionProportional"
                    FontAttributes="Bold"
-                   />
+                       Padding="13,0,0,0"/>
+            <ImageButton Source="iconsedit" HeightRequest="20" 
+                                 BackgroundColor="Transparent"
+                                  VerticalOptions="Center" 
+                             Clicked="ImageButton_Clicked"/>
+        </StackLayout>
         <ScrollView
                  AbsoluteLayout.LayoutBounds="0,1,1,0.85"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">

@@ -3,6 +3,7 @@ using Microcharts;
 using Newtonsoft.Json;
 using Rg.Plugins.Popup.Services;
 using SkiaSharp;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,12 +18,13 @@ namespace APPMOBLIE
 {
     public partial class AllTransection : ContentPage
     {
+        public SQLiteAsyncConnection connection;
         public bool dashboardIn { get; set; }
         public bool dashboardOut { get; set; }
         public bool dashboardRe { get; set; }
         public List<TransactionInOut> InResultData = new List<TransactionInOut>();
         public List<TransactionInOut> OutResultData = new List<TransactionInOut>();
-        public List<TransactionInOut> LowResultData = new List<TransactionInOut>();
+        public List<TransactionLows> LowResultData = new List<TransactionLows>();
 
         async Task<List<TransactionInOut>> GetDataInList()
         {
@@ -66,7 +68,7 @@ namespace APPMOBLIE
             }
             return OutResultData;
         }
-        async Task<List<TransactionInOut>> GetDataLowList()
+        async Task<List<TransactionLows>> GetDataLowList()
         {
             using (HttpClient client = new HttpClient())
             {
@@ -82,7 +84,7 @@ namespace APPMOBLIE
                 {
                     //In List Product//
                     var Datalow = await responsedatalow.Content.ReadAsStringAsync();
-                    LowResultData = JsonConvert.DeserializeObject<List<TransactionInOut>>(Datalow);
+                    LowResultData = JsonConvert.DeserializeObject<List<TransactionLows>>(Datalow);
                 }
             }
             return LowResultData;
@@ -96,17 +98,26 @@ namespace APPMOBLIE
             Dashboardin.IsVisible = dashboardIn;
             Dashboardout.IsVisible = dashboardOut;
             Dashboardreorder.IsVisible = dashboardRe;
+            connection = DependencyService.Get<InterfaceSQLite>().GetConnection();
+
         }
 
 
         protected override async void OnAppearing()
         {
-            Username.Text = Application.Current.Properties["Username"].ToString();
-            base.OnAppearing();
+            await connection.CreateTableAsync<PersonInfo>();
+            if (await connection.Table<PersonInfo>().CountAsync() == 0)
+            {
+                Username.Text = Application.Current.Properties["Username"].ToString();
+                ImgUser.Source = ImageSource.FromResource("userpic.png");
+            }
 
             Dashboardin.ItemsSource = await GetDataInList();
             Dashboardout.ItemsSource = await GetDataOutList();
             Dashboardreorder.ItemsSource = await GetDataLowList();
+
+            base.OnAppearing();
+
         }
 
         public void Button_ClickedIn(object sender, EventArgs e)
@@ -177,6 +188,10 @@ namespace APPMOBLIE
         private void BtnStockOut(object sender, EventArgs e)
         {
             this.Navigation.PushAsync(new StockOut());
+        }
+        private void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new EditUser());
         }
     }
 
