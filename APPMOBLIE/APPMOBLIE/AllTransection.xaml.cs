@@ -109,7 +109,8 @@ namespace APPMOBLIE
             if (await connection.Table<PersonInfo>().CountAsync() == 0)
             {
                 Username.Text = Application.Current.Properties["Username"].ToString();
-                ImgUser.Source = ImageSource.FromResource("userpic.png");
+                ImgUser.Source = ImageSource.FromResource("APPMOBLIE.Images.userpic.png");
+                
             }
 
             Dashboardin.ItemsSource = await GetDataInList();

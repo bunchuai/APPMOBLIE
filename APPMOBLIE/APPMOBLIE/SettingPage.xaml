@@ -17,7 +17,7 @@
                          Orientation="Horizontal"
                          VerticalOptions="Center"
                          Padding="13,0,0,0">
-                <ic:CircleImage Source="userpic.png" 
+                <ic:CircleImage x:Name="ImgUser"
                            Aspect="AspectFill"
                                HeightRequest="80" WidthRequest="80"
                          />

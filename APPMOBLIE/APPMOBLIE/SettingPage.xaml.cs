@@ -1,5 +1,7 @@
-﻿using Plugin.Media;
+﻿using APPMOBLIE.Model;
+using Plugin.Media;
 using Plugin.Media.Abstractions;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,16 +16,25 @@ namespace APPMOBLIE
 {
     public partial class SettingPage : ContentPage
     {
-      
+
+        public SQLiteAsyncConnection connection;
 
         public SettingPage()
         {
             InitializeComponent();
-            Username.Text = Application.Current.Properties["Username"].ToString();
+           
+            connection = DependencyService.Get<InterfaceSQLite>().GetConnection();
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
+            await connection.CreateTableAsync<PersonInfo>();
+            if (await connection.Table<PersonInfo>().CountAsync() == 0)
+            {
+                Username.Text = Application.Current.Properties["Username"].ToString();
+                ImgUser.Source = ImageSource.FromResource("APPMOBLIE.Images.userpic.png");
+
+            }
             base.OnAppearing();
           
         }
