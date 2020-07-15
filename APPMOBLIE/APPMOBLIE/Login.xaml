@@ -7,6 +7,7 @@
              x:Class="APPMOBLIE.Login"
              BackgroundImage="background.png"
              xmlns:local="clr-namespace:APPMOBLIE.Validations" 
+
              
              >
 
