@@ -1,4 +1,6 @@
 ﻿using APPMOBLIE.Model;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -18,21 +20,37 @@ namespace APPMOBLIE
         public EditUser()
         {
             InitializeComponent();
-            var name = Application.Current.Properties["Username"].ToString();
-            Username.Text = name;
-            OldUsername.Text = name;
+           
 
             connection = DependencyService.Get<InterfaceSQLite>().GetConnection();
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
+            await connection.CreateTableAsync<PersonInfo>();
+            if (await connection.Table<PersonInfo>().CountAsync() == 0)
+            {
+                var name = Application.Current.Properties["Username"].ToString();
+                Username.Text = name;
+                OldUsername.Text = name;
+                ImgUser.Source = ImageSource.FromResource("APPMOBLIE.Images.userpic.png");
+
+            }
             base.OnAppearing();
         }
 
-        private void ImageButton_Clicked(object sender, EventArgs e)
+        private async void ImageButton_Clicked(object sender, EventArgs e)
         {
-               
+            await CrossMedia.Current.Initialize();
+
+            var mediaOptions = new PickMediaOptions()
+            {
+                PhotoSize = PhotoSize.Medium
+            };
+            var SelectedImageFile = await CrossMedia.Current.PickPhotoAsync(mediaOptions);
+            ImgUser.Source = ImageSource.FromStream(() => SelectedImageFile.GetStream());
+
+
         }
     }
 }

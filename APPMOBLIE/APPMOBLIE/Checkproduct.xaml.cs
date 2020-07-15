@@ -1,5 +1,6 @@
 ﻿using APPMOBLIE.Model;
 using Newtonsoft.Json;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,7 +19,7 @@ namespace APPMOBLIE
     {
         public string CompanyId;
         public string SkuId;
-       
+        public SQLiteAsyncConnection connection;
         public Checkproduct(string Getsku = null)
         {
             SkuId = Getsku;
@@ -26,14 +27,19 @@ namespace APPMOBLIE
             CompanyId = Application.Current.Properties["CompanyId"].ToString();
             Alert.Text = "---ไม่พบข้อมูล ---";
             FindingProduct(SkuId);
-
+            connection = DependencyService.Get<InterfaceSQLite>().GetConnection();
 
         }
 
-        protected override  void OnAppearing()
+        protected override async void OnAppearing()
         {
+            await connection.CreateTableAsync<PersonInfo>();
+            if (await connection.Table<PersonInfo>().CountAsync() == 0)
+            {
+                Username.Text = Application.Current.Properties["Username"].ToString();
+                ImgUser.Source = ImageSource.FromResource("APPMOBLIE.Images.userpic.png");
 
-            Username.Text = Application.Current.Properties["Username"].ToString();
+            }
             base.OnAppearing();
         }
 

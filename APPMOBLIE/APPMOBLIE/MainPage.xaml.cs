@@ -1,5 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using APPMOBLIE.Model;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using SQLite;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +20,7 @@ namespace APPMOBLIE
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-       
+        public SQLiteAsyncConnection connection;
         public ICollection<ProductDetail> TrnsactionResult  { get;set;}
         public class ProductDetail
         {
@@ -34,11 +36,19 @@ namespace APPMOBLIE
         {
             InitializeComponent();
             Username.Text = Application.Current.Properties["Username"].ToString();
+            connection = DependencyService.Get<InterfaceSQLite>().GetConnection();
         }
 
         protected override async void OnAppearing()
         {
-            base.OnAppearing();
+            await connection.CreateTableAsync<PersonInfo>();
+            if (await connection.Table<PersonInfo>().CountAsync() == 0)
+            {
+                Username.Text = Application.Current.Properties["Username"].ToString();
+                ImgUser.Source = ImageSource.FromResource("APPMOBLIE.Images.userpic.png");
+
+            }
+           
 
             using (HttpClient client = new HttpClient())
             {
@@ -60,6 +70,7 @@ namespace APPMOBLIE
 
                 }
             }
+            base.OnAppearing();
         }
 
         IEnumerable<ProductDetail> GetProductDetails(string searchtext = null)
