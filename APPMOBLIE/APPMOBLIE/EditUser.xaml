@@ -51,8 +51,8 @@
                 VerticalOptions="Center"
                  AbsoluteLayout.LayoutBounds="0.5,0.6"
                 AbsoluteLayout.LayoutFlags="PositionProportional">
-                <!--<Button Text="บันทึก" FontFamily="{StaticResource Kanit}" BackgroundColor="#2B976C" CornerRadius="10" Clicked="Save_Clicked"  IsEnabled="{Binding Source={x:Reference ProductTypeValidation},Path=IsValid}"/>
-                <Button Text="ยกเลิก" FontFamily="{StaticResource Kanit}" BackgroundColor="Gray"  CornerRadius="10" Clicked="Cancel_Clicked"/>-->
+                <Button Text="บันทึก" FontFamily="{StaticResource Kanit}" BackgroundColor="#2B976C" CornerRadius="10" Clicked="Save_Clicked" />
+                <Button Text="ยกเลิก" FontFamily="{StaticResource Kanit}" BackgroundColor="Gray"  CornerRadius="10" Clicked="Cancel_Clicked"/>
             </StackLayout>
           
         </AbsoluteLayout>

@@ -50,7 +50,17 @@ namespace APPMOBLIE
             var SelectedImageFile = await CrossMedia.Current.PickPhotoAsync(mediaOptions);
             ImgUser.Source = ImageSource.FromStream(() => SelectedImageFile.GetStream());
 
+        }
 
+        private async void Save_Clicked(object sender, EventArgs e)
+        {
+            string action = await DisplayActionSheet("Select Photo?", "Cancel", "Camera", "Gallery");
+
+        }
+
+        private void Cancel_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
         }
     }
 }
