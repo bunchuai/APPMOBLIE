@@ -6,6 +6,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -20,7 +21,6 @@ namespace APPMOBLIE
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        public SQLiteAsyncConnection connection;
         public ICollection<ProductDetail> TrnsactionResult  { get;set;}
         public class ProductDetail
         {
@@ -35,21 +35,10 @@ namespace APPMOBLIE
         public MainPage()
         {
             InitializeComponent();
-            Username.Text = Application.Current.Properties["Username"].ToString();
-            connection = DependencyService.Get<InterfaceSQLite>().GetConnection();
         }
 
         protected override async void OnAppearing()
         {
-            await connection.CreateTableAsync<PersonInfo>();
-            if (await connection.Table<PersonInfo>().CountAsync() == 0)
-            {
-                Username.Text = Application.Current.Properties["Username"].ToString();
-                ImgUser.Source = ImageSource.FromResource("APPMOBLIE.Images.userpic.png");
-
-            }
-           
-
             using (HttpClient client = new HttpClient())
             {
                 var CompanyId = Application.Current.Properties["CompanyId"];
@@ -68,6 +57,15 @@ namespace APPMOBLIE
                     TrnsactionResult = Trnsaction;
                     Productlist.ItemsSource = Trnsaction;
 
+                }
+                //UserData
+                HttpResponseMessage response = await client.GetAsync("http://203.151.166.97/api/Users/GetUserProfile?UserId=" + Application.Current.Properties["UserId"].ToString());
+                if (response.IsSuccessStatusCode)
+                {
+                    var ResponseData = await response.Content.ReadAsStringAsync();
+                    var Result = JsonConvert.DeserializeObject<PersonInfo>(ResponseData);
+                    Username.Text = Result.Nickname == string.Empty ? Application.Current.Properties["Username"].ToString() : Result.Nickname;
+                    ImgUser.Source = Result.Userimage == null ? ImageSource.FromResource("userpic.png") : ImageSource.FromStream(() => new MemoryStream(Result.Userimage));
                 }
             }
             base.OnAppearing();
@@ -114,5 +112,6 @@ namespace APPMOBLIE
         {
             Navigation.PushAsync(new EditUser());
         }
+       
     }
 }

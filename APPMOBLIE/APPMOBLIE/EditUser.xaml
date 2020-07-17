@@ -41,10 +41,9 @@
                         FontFamily="{StaticResource Kanit}"
                        FontSize="16"
                 VerticalOptions="Center"/>
-                <Entry WidthRequest="250"
+                <Entry WidthRequest="220"
                        x:Name="OldUsername"
                        />
-                               
             </StackLayout>
             <StackLayout 
                 Orientation="Horizontal" HorizontalOptions="Center" 

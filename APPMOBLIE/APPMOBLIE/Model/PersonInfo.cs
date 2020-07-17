@@ -9,7 +9,7 @@ namespace APPMOBLIE.Model
     {
         [PrimaryKey , AutoIncrement]
         public int Id { get; set; }
-        public string Username { get; set; }
+        public string Nickname { get; set; }
         public byte[] Userimage { get; set; }
     }
 }
