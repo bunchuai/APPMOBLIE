@@ -75,6 +75,7 @@
                                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                                         </Label.GestureRecognizers>
                                     </Label>-->
+
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>
