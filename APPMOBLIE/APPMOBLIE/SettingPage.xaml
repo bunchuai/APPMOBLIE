@@ -9,34 +9,38 @@
     <ContentPage.Content>
         <AbsoluteLayout>
         <Image Source="background" Aspect="AspectFill"
-                  AbsoluteLayout.LayoutBounds="0,0,1,0.12"
+                  AbsoluteLayout.LayoutBounds="0,0,2,0.12"
                    AbsoluteLayout.LayoutFlags="All" />
-        <ic:CircleImage Source="userpic.png" 
+            <StackLayout AbsoluteLayout.LayoutBounds="0.09,0.03"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                         BackgroundColor="Transparent"
+                         Orientation="Horizontal"
+                         VerticalOptions="Center"
+                         Padding="13,0,0,0">
+                <ic:CircleImage x:Name="ImgUser"
                            Aspect="AspectFill"
-                                HeightRequest="60" WidthRequest="60"
-                           AbsoluteLayout.LayoutBounds="0.09,0.03"
-                           AbsoluteLayout.LayoutFlags="PositionProportional"/>
-
+                               HeightRequest="80" WidthRequest="80"
+                         />
+                <Label x:Name="Username" HorizontalOptions="Center" VerticalOptions="Center" 
+                      FontFamily="{StaticResource Kanit}"
+                       FontSize="16"
+                   FontAttributes="Bold"
+                       Padding="13,0,0,0"/>
+                <ImageButton Source="iconsedit" HeightRequest="20" 
+                                 BackgroundColor="Transparent"
+                                  VerticalOptions="Center" 
+                             Clicked="ImageButton_Clicked"/>
+            </StackLayout>
             <StackLayout Padding="20,20,20,20" Margin="90,10,10,0" >
                 <Grid>
-                    
+
                     <!--<Button  Text="ออกจากระบบ" FontSize="14"   Style="{x:StaticResource Normalkanit}"  
                              Clicked="Button_Signout" BackgroundColor="#0095b6" TextColor="White" CornerRadius="20" />-->
                 </Grid>
-                
+
             </StackLayout>
-            
-            <Label x:Name="Username" HorizontalOptions="Center" 
-                      FontFamily="{StaticResource Kanit}"
-                       FontSize="16"
-                        AbsoluteLayout.LayoutBounds="0.6,0.05"
-                   AbsoluteLayout.LayoutFlags="PositionProportional"
-                   FontAttributes="Bold"
-                   />
-
-
             <ScrollView 
-                 AbsoluteLayout.LayoutBounds="0,0.65,1,0.8"
+                 AbsoluteLayout.LayoutBounds="0,0.9,1,0.8"
                    AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
                 <StackLayout 
                     

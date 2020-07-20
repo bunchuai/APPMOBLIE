@@ -1,8 +1,10 @@
 ﻿using APPMOBLIE.Model;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using SQLite;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -21,13 +23,11 @@ namespace APPMOBLIE
         {
             InitializeComponent();
             CompanyId = Application.Current.Properties["CompanyId"].ToString();
+            
         }
 
         protected override async void OnAppearing()
         {
-            base.OnAppearing();
-            // set value
-            Username.Text = Application.Current.Properties["Username"].ToString();
             using (HttpClient client = new HttpClient())
             {
                 var CompanyId = Application.Current.Properties["CompanyId"];
@@ -85,7 +85,17 @@ namespace APPMOBLIE
 
                     ProductType.ItemsSource = ProductTypeItems;
                 }
+                //UserData
+                HttpResponseMessage responseUserdata = await client.GetAsync("http://203.151.166.97/api/Users/GetUserProfile?UserId=" + Application.Current.Properties["UserId"].ToString());
+                if (responseUserdata.IsSuccessStatusCode)
+                {
+                    var ResponseData = await responseUserdata.Content.ReadAsStringAsync();
+                    var Result = JsonConvert.DeserializeObject<PersonInfo>(ResponseData);
+                    Username.Text = Result.Nickname == string.Empty ? Application.Current.Properties["Username"].ToString() : Result.Nickname;
+                    ImgUser.Source = Result.Userimage == null ? ImageSource.FromResource("userpic.png") : ImageSource.FromStream(() => new MemoryStream(Result.Userimage));
+                }
             }
+            base.OnAppearing();
         }
 
         private async void Button_Scan(object sender, EventArgs e)
@@ -174,6 +184,12 @@ namespace APPMOBLIE
                 }
             }
         }
+
+        private void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new EditUser());
+        }
+    
 
         private class CheckLogin
         {

@@ -5,24 +5,33 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="APPMOBLIE.MainPage"
-             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:local="clr-namespace:APPMOBLIE">
     <ContentPage.Content>
         <AbsoluteLayout>
             <Image Source="background" Aspect="AspectFill"
-                  AbsoluteLayout.LayoutBounds="0,0,1,0.12"
+                  AbsoluteLayout.LayoutBounds="0,0,2,0.12"
                    AbsoluteLayout.LayoutFlags="All" />
-            <ic:CircleImage Source="userpic.png" 
+            <StackLayout AbsoluteLayout.LayoutBounds="0.09,0.03"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                         BackgroundColor="Transparent"
+                         Orientation="Horizontal"
+                         VerticalOptions="Center"
+                         Padding="13,0,0,0">
+                <ic:CircleImage x:Name="ImgUser"
                            Aspect="AspectFill"
-                               HeightRequest="60" WidthRequest="60"
-                           AbsoluteLayout.LayoutBounds="0.09,0.03"
-                           AbsoluteLayout.LayoutFlags="PositionProportional"/>
-            <Label x:Name="Username" HorizontalOptions="Center" 
+                               HeightRequest="80" WidthRequest="80"
+                         />
+                <Label x:Name="Username" HorizontalOptions="Center" VerticalOptions="Center" 
                       FontFamily="{StaticResource Kanit}"
                        FontSize="16"
-                        AbsoluteLayout.LayoutBounds="0.5,0.05"
-                   AbsoluteLayout.LayoutFlags="PositionProportional"
                    FontAttributes="Bold"
-                   />
+                       Padding="13,0,0,0"/>
+                <ImageButton Source="iconsedit" HeightRequest="20" 
+                                 BackgroundColor="Transparent"
+                                  VerticalOptions="Center" 
+                             Clicked="ImageButton_Clicked"/>
+            </StackLayout>
             <StackLayout
                   AbsoluteLayout.LayoutBounds="0,1,1,0.85"
                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
@@ -30,7 +39,7 @@
                 HorizontalOptions="Center"
                   Orientation="Vertical"
                 Spacing="5">
-                <StackLayout Padding="0,30,0,0" Spacing="60">
+                <StackLayout Padding="0,20,0,0" Spacing="30">
                     <StackLayout Orientation="Horizontal">
                         <SearchBar Placeholder="กรอกรหัสสินค้า,ชื่อสินค้า,ยี่ห้อสินค้า" TextChanged="SearchBar_TextChanged" 
                        Style="{x:StaticResource Normalkanit}"/>
@@ -43,14 +52,13 @@
                         VerticalOptions="Center"
                          />
                     </StackLayout>
-                   
+
                     <ListView x:Name="Productlist" HasUnevenRows="True" SeparatorColor="Black"
-                              ItemTapped="Productlist_ItemTapped"
-                              >
+                              ItemTapped="Productlist_ItemTapped">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    
+
                                     <StackLayout Orientation="Vertical" Padding="20">
                                         <StackLayout Orientation="Horizontal">
                                             <ic:CircleImage Source="iconlistcheck" 
@@ -62,7 +70,7 @@
                                         <Label Text="{Binding ProductBrand, StringFormat='ยี่ห้อสินค้า : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"/>
                                         <Label Text="{Binding ProductModel, StringFormat='รุ่น : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"/>
                                     </StackLayout>
-                                  
+
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -70,8 +78,6 @@
                 </StackLayout>
             </StackLayout >
         </AbsoluteLayout>
-       
-        
     </ContentPage.Content>
 </ContentPage>
 
