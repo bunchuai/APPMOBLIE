@@ -21,7 +21,7 @@ namespace APPMOBLIE
     {
         public SettingPage()
         {
-            GetDataUser()
+            GetDataUser();
             InitializeComponent();
         }
 
