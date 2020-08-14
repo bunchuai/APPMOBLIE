@@ -19,7 +19,7 @@ using ZXing.Net.Mobile.Forms;
 namespace APPMOBLIE
 {
     [DesignTimeVisible(false)]
-    public partial class MainPage : ContentPage
+    public partial class MainPage : ContentPage 
     {
         public ICollection<ProductDetail> TrnsactionResult  { get;set;}
         public class ProductDetail
