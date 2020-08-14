@@ -21,7 +21,7 @@ namespace APPMOBLIE
         public string CompanyId;
         public AddProduct()
         {
-            GetDataUser()
+            GetDataUser();
             InitializeComponent();
             CompanyId = Application.Current.Properties["CompanyId"].ToString();
             
