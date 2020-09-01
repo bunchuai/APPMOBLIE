@@ -22,7 +22,7 @@
                     <Frame  BackgroundColor="White" HasShadow="False" HeightRequest="400"  Padding="0" Margin="0" CornerRadius="20">
                         <StackLayout>
                             <StackLayout Margin="0,30,0,10">
-                                <Label Text="Smart WMS"  FontFamily="{StaticResource Kanit}" FontSize="22"   TextColor="Gray" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"  />
+                                <Label Text="Smart WMS"  FontFamily="{StaticResource Kanit}" FontSize="22"   TextColor="#67686a" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"  />
                                 <!--<Label Text="Smart WMS" FontFamily="{StaticResource Kanit}"  FontSize="22"   TextColor="Gray" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>-->
                             </StackLayout>
                             <StackLayout Padding="0" Margin="35,10">
@@ -82,7 +82,7 @@
                         </StackLayout>
                     </Frame>
                     <StackLayout>
-                        <Label Text="Smart WMS Version 1.0.0" FontSize="12" HorizontalOptions="CenterAndExpand" VerticalOptions="End" TextColor="White" Style="{x:StaticResource Normalkanit}"/>
+                        <Label Text="Smart WMS Version 4.0.0" FontSize="12" HorizontalOptions="CenterAndExpand" VerticalOptions="End" TextColor="White" Style="{x:StaticResource Normalkanit}"/>
                     </StackLayout>
                 </StackLayout>
             </Grid>

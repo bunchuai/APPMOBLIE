@@ -8,7 +8,103 @@
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              xmlns:local="clr-namespace:APPMOBLIE">
     <ContentPage.Content>
-        <AbsoluteLayout>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="180"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+
+
+            </Grid.ColumnDefinitions>
+
+            <BoxView Grid.Row="0" Grid.ColumnSpan="3" BackgroundColor="#344955"/>
+
+
+
+            <ic:CircleImage Source="userpic.png" WidthRequest="80" HeightRequest="110" Grid.Row="0" Grid.Column="0"  
+                            HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"  x:Name="ImgUser" ></ic:CircleImage>
+
+
+            <Label x:Name="Username" FontSize='{OnPlatform iOS="14" ,Default="16"}' Grid.Row="0" Grid.Column="1"
+                   Margin='{OnPlatform iOS="10,70" ,Default="10,50"}'
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="EndAndExpand"                 
+                   TextColor="White"/>
+
+            <ImageButton Source="iconseditprofile" HeightRequest="25" Grid.Row="0" Grid.Column="2" 
+                                 BackgroundColor="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,25,0"
+                                  VerticalOptions="CenterAndExpand" 
+                             Clicked="ImageButton_Clicked"/>
+
+            <StackLayout Padding="15" Grid.Row="1" Grid.ColumnSpan="3">
+
+
+                <Frame  Margin="0,-50,0,0" Padding="5,20,5,0" CornerRadius="10"
+                    BackgroundColor="White" HasShadow="False">
+
+                    <StackLayout
+                  AbsoluteLayout.LayoutBounds="0,1,1,0.85"
+                  AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
+                  VerticalOptions="Center"
+                HorizontalOptions="Center"
+                  Orientation="Vertical"
+                Spacing="5">
+                        <StackLayout Padding="0,20,0,0" Spacing="30">
+                            <StackLayout Orientation="Horizontal">
+                                <SearchBar Placeholder="กรอกรหัสสินค้า,ชื่อสินค้า,ยี่ห้อสินค้า" TextChanged="SearchBar_TextChanged" 
+                       Style="{x:StaticResource Normalkanit}"/>
+
+                                <Button Clicked="Button_Scan"
+                        BackgroundColor="Transparent" 
+                        ImageSource="barcode.png"
+                            HeightRequest="50" WidthRequest="50"
+                         HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                         />
+                            </StackLayout>
+
+                            <ListView x:Name="Productlist" HasUnevenRows="True" SeparatorColor="Black"
+                              ItemTapped="Productlist_ItemTapped">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+
+                                            <StackLayout Orientation="Vertical" Padding="20">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <ic:CircleImage Source="iconlistcheck" 
+                                                        Aspect="AspectFill" HeightRequest="32" WidthRequest="32"/>
+                                                    <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                                   VerticalOptions="StartAndExpand"/>
+                                                </StackLayout>
+                                                <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"/>
+                                                <Label Text="{Binding ProductBrand, StringFormat='ยี่ห้อสินค้า : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"/>
+                                                <Label Text="{Binding ProductModel, StringFormat='รุ่น : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"/>
+                                            </StackLayout>
+
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </StackLayout >
+
+
+                </Frame>
+
+            </StackLayout>
+
+
+        </Grid>
+
+
+
+
+        <!--<AbsoluteLayout>
             <Image Source="background" Aspect="AspectFill"
                   AbsoluteLayout.LayoutBounds="0,0,2,0.12"
                    AbsoluteLayout.LayoutFlags="All" />
@@ -77,7 +173,7 @@
                     </ListView>
                 </StackLayout>
             </StackLayout >
-        </AbsoluteLayout>
+        </AbsoluteLayout>-->
     </ContentPage.Content>
 </ContentPage>
 

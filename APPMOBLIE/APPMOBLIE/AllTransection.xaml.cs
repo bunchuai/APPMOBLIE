@@ -26,6 +26,7 @@ namespace APPMOBLIE
         public List<TransactionInOut> InResultData = new List<TransactionInOut>();
         public List<TransactionInOut> OutResultData = new List<TransactionInOut>();
         public List<TransactionLows> LowResultData = new List<TransactionLows>();
+    
 
         async Task<List<TransactionInOut>> GetDataInList()
         {
@@ -107,6 +108,7 @@ namespace APPMOBLIE
 
         protected override async void OnAppearing()
         {
+            var CompanyId = Application.Current.Properties["CompanyId"];
             using (HttpClient client = new HttpClient())
             {
                 string Url = "http://203.151.166.97/api/Users/GetUserProfile?UserId=" + Application.Current.Properties["UserId"].ToString();
@@ -124,7 +126,18 @@ namespace APPMOBLIE
                     ImgUser.Source = Result.Userimage == null ? ImageSource.FromResource("userpic.png") : ImageSource.FromStream(() => new MemoryStream(Result.Userimage));
                 }
 
+                //Transaction
+                HttpResponseMessage CountTransaction = await client.GetAsync("http://203.151.166.97/api/Products/CountProduct?CompanyId=" + CompanyId);
+                var ReadTransaction = await CountTransaction.Content.ReadAsStringAsync();
+                var TransactionResults = JsonConvert.DeserializeObject<CountTransactions>(ReadTransaction);
+                Total.Text = TransactionResults.All;
+                CountIn.Text = TransactionResults.In;
+                CountOut.Text = TransactionResults.Out;
+
             }
+
+            DateTimeNow.Text = DateTime.Now.ToString("MM/dd/yyyy"); 
+
             Dashboardin.ItemsSource = await GetDataInList();
             Dashboardout.ItemsSource = await GetDataOutList();
             Dashboardreorder.ItemsSource = await GetDataLowList();

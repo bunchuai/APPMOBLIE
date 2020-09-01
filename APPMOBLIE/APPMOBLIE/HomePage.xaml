@@ -8,12 +8,14 @@
              mc:Ignorable="d"
              BackgroundImageSource="background.png"
              x:Class="APPMOBLIE.HomePage"
-            BarTextColor="Black"           
-            BarBackgroundColor="#f7f7f7"  
-           >
-    <local:AllTransection Icon="iconhome.png" Title="Home" ></local:AllTransection>
+            BarTextColor="LightGray"           
+            BarBackgroundColor="#4A6572" 
+            SelectedTabColor="#d6d9ce">
+    
+    <local:AllTransection Icon="iconshome.png" Title="Home" ></local:AllTransection>
     <local:AddProduct Icon="iconsadd.png" Title="Add"  ></local:AddProduct>
-    <local:MainPage Icon="iconsscan.png" Title="Find" ></local:MainPage>
-    <local:SettingPage Icon="iconssett" Title="Setting"  ></local:SettingPage>
+    <local:MainPage Icon="iconssearch.png" Title="Find" ></local:MainPage>
+    <local:Report Icon ="iconsreport.png"  Title="Report"></local:Report>
+    <local:SettingPage Icon="iconsgear.png" Title="Setting"  ></local:SettingPage>
 
 </TabbedPage>

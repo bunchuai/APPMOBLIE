@@ -7,8 +7,277 @@
              BackgroundColor="White"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
-             xmlns:local="clr-namespace:APPMOBLIE">
-    <AbsoluteLayout>
+             xmlns:local="clr-namespace:APPMOBLIE"
+             Visual="Material"
+             >
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="180"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <BoxView Grid.Row="0" Grid.ColumnSpan="3" BackgroundColor="#344955"/>
+
+    
+
+        <ic:CircleImage Source="userpic.png" WidthRequest="80" HeightRequest="110" Grid.Row="0" Grid.Column="0"  
+                            HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"  x:Name="ImgUser" ></ic:CircleImage>
+      
+
+        <Label x:Name="Username" FontSize='{OnPlatform iOS="14" ,Default="16"}' Grid.Row="0" Grid.Column="1"
+                   Margin='{OnPlatform iOS="10,70" ,Default="10,50"}'
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="EndAndExpand"                 
+                   TextColor="White"/>
+
+        <ImageButton Source="iconseditprofile" HeightRequest="25" Grid.Row="0" Grid.Column="2" 
+                                 BackgroundColor="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,25,0"
+                                  VerticalOptions="CenterAndExpand" 
+                             Clicked="ImageButton_Clicked"/>
+
+        
+
+
+        <Frame Grid.Row="1" Grid.ColumnSpan="3" Margin="5,-65,5,0"
+                    BackgroundColor="Transparent" HasShadow="False">
+
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="150"/>
+
+
+
+                    </Grid.RowDefinitions>
+                    <!--<Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>-->
+                    <Frame   HeightRequest="150" BackgroundColor="#eef4f4"  WidthRequest="500"   HorizontalOptions="Center" CornerRadius="10" HasShadow="False"   Grid.Row="1"  >
+
+                        <Grid RowSpacing="8">
+                            <Grid.RowDefinitions > 
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label x:Name="Total" Text="0" Grid.Row="0" Grid.Column="0" FontSize="36" TextColor="#67686a" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+                            <Label Text="Total" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#67686a"/>
+
+                            <Label x:Name="CountIn" Text="0" Grid.Row="0" Grid.Column="1" FontSize="36" TextColor="#67686a" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+                            <Label Text="In" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" TextColor="#67686a" FontAttributes="Bold"/>
+
+                            <Label x:Name="CountOut" Text="0" Grid.Row="0" Grid.Column="2" FontSize="36" TextColor="#67686a" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+                            <Label Text="Out" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" TextColor="#67686a" FontAttributes="Bold"/>
+
+                            <Label x:Name="DateTimeNow" Grid.Row="2" Grid.ColumnSpan="3" TextColor="#67686a" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  VerticalOptions="EndAndExpand"/>
+
+
+                        </Grid>
+                   
+
+
+                    </Frame>
+                 
+
+
+
+                    <!--<Button HeightRequest="200" BackgroundColor="#f7f7ff"   WidthRequest="200"   HorizontalOptions="Center" CornerRadius="10"  Text="Button1" Grid.Row="1"  />-->
+
+
+                </Grid>
+                <StackLayout >
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <Button Text="รับสินค้า" ImageSource="iconplus" BackgroundColor="#eef4f4" ContentLayout="Top,0" BorderWidth="1"  BorderColor="LightGray"
+                                    CornerRadius="15" FontSize="Medium"
+                                    
+                            Clicked="BtnStockin"
+                            FontFamily="{StaticResource Kanit}" 
+                            Grid.Row="0" Grid.Column="0"
+                            />
+                        <Button Text="จ่ายสินค้า"  ImageSource="iconminus" BackgroundColor="#eef4f4" ContentLayout="Top,0"  BorderWidth="1"  BorderColor="LightGray"
+                                    CornerRadius="15" FontSize="Medium"
+                                    
+                            Clicked="BtnStockOut"
+                            FontFamily="{StaticResource Kanit}"
+                                Grid.Row="0" Grid.Column="1"
+                            
+                            />
+
+                    </Grid>
+                </StackLayout>
+           
+                <StackLayout Margin="0,30,0,0">
+                    
+                    <ScrollView>
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center" >
+
+
+                            <Button ImageSource="iconsplus48.png"   Text="รายการสินค้ารับเข้าล่าสุด"   BackgroundColor="#519D90"   TextColor="White" 
+                                    CornerRadius="10"
+                                    Clicked="Button_ClickedIn"
+                           FontSize="Medium"
+                            FontFamily="{StaticResource Kanit}"
+                       
+                         
+                          Margin="0,0,0,10" 
+                            />
+                          
+                            <ListView x:Name="Dashboardin" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardin_Refreshing">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell IsEnabled="False">
+                                            <StackLayout Orientation="Vertical"  Padding="20">
+                                                <Image Source="iconplus" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
+                                                <Label Text="{Binding Ref, StringFormat='Ref No. : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="{Binding CreateDate, StringFormat='วันที่ : {0}'}" 
+                                                  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="จำนวน :" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                                       x:Name="TypeTrans"
+                                                  HorizontalOptions="EndAndExpand" />
+                                                        <Label Text="{Binding Amount}"   FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="End"/>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                                <Label Text="{Binding Locations, StringFormat='ตำแหน่งที่จัดเก็บ : {0} '}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                <Label Text="{Binding Username , StringFormat='ผู้บันทึกรับสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <StackLayout  VerticalOptions="CenterAndExpand">
+
+                                <Button ImageSource="iconsminus48.png" Text="รายการสินค้าจ่ายออกล่าสุด" BackgroundColor="#E55151" 
+                                    CornerRadius="10"
+                                    Clicked="Button_ClickedOut"
+                            TextColor="White"
+                          
+                           FontFamily="{StaticResource Kanit}"
+                        FontSize="Medium"
+                                 Margin="0,0,0,10" 
+                            />
+                               
+                                <ListView x:Name="Dashboardout" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardout_Refreshing">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell IsEnabled="False" >
+                                                <StackLayout Orientation="Vertical"  Padding="20">
+                                                    <Image Source="iconminus" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
+                                                    <Label Text="{Binding Ref, StringFormat='Ref No. : {0}'}"  FontFamily="{StaticResource Kanit}" TextColor="Black" FontSize="Body"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                    <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" TextColor="Black" FontSize="Body"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                    <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" TextColor="Black" FontSize="Body"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="{Binding CreateDate, StringFormat='วันที่ : {0}'}" FontSize="Body" TextColor="Black"
+                                                   FontFamily="{StaticResource Kanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <Label Text="จำนวน :"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                                       x:Name="TypeTrans"
+                                                  HorizontalOptions="EndAndExpand" />
+                                                            <Label Text="{Binding Amount}"   FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="End"/>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                    <Label Text="{Binding Locations, StringFormat='ตำแหน่งที่จัดเก็บ : {0} '}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                    <Label Text="{Binding Username , StringFormat='ผู้บันทึกจ่ายสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                            <StackLayout  VerticalOptions="CenterAndExpand">
+                                <Button ImageSource="iconsbrakewarning48.png" Text="รายการสินค้าถึงกำหนดสั่งซื้อ" BackgroundColor="#E97E2E" 
+                                    CornerRadius="10"
+                                    Clicked="Button_ClickedReorder"
+                            TextColor="White"
+                                        FontSize="Medium"
+                              
+                            FontFamily="{StaticResource Kanit}" 
+                            ></Button>
+
+
+                                <ListView x:Name="Dashboardreorder" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardreorder_Refreshing">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell IsEnabled="False" >
+                                                <StackLayout Orientation="Vertical"  Padding="20">
+                                                    <Image Source="iconwarning" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
+                                                    <Label Text="{Binding SkuId, StringFormat='หมายเลข Barcode: {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                    <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                    <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" 
+                                                   FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                    <Label Text="{Binding Total, StringFormat='จำนวนคงเหลือ : {0}'}"  FontSize="Body" TextColor="Black"
+                                                   FontFamily="{StaticResource Kanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+                    
+
+            </StackLayout>
+
+        </Frame>
+
+
+    </Grid>
+
+
+    <!--<AbsoluteLayout>
         <Image Source="background.png" Aspect="AspectFill"
                   AbsoluteLayout.LayoutBounds="0,0,2,0.12"
                   AbsoluteLayout.LayoutFlags="All"
@@ -185,5 +454,5 @@
                 </StackLayout>
             </StackLayout>
         </ScrollView>
-    </AbsoluteLayout>
+    </AbsoluteLayout>-->
 </ContentPage>

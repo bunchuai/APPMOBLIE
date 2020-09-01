@@ -8,7 +8,180 @@
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              xmlns:local="clr-namespace:APPMOBLIE.Validations">
     <ContentPage.Content>
-        <AbsoluteLayout>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="180"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+
+
+            </Grid.ColumnDefinitions>
+
+            <BoxView Grid.Row="0" Grid.ColumnSpan="3" BackgroundColor="#344955"/>
+
+
+
+            <ic:CircleImage Source="userpic.png" WidthRequest="80" HeightRequest="110" Grid.Row="0" Grid.Column="0"  
+                            HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"  x:Name="ImgUser" ></ic:CircleImage>
+
+
+            <Label x:Name="Username" FontSize='{OnPlatform iOS="14" ,Default="16"}' Grid.Row="0" Grid.Column="1"
+                   Margin='{OnPlatform iOS="10,70" ,Default="10,50"}'
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="EndAndExpand"                 
+                   TextColor="White"/>
+
+            <ImageButton Source="iconseditprofile" HeightRequest="25" Grid.Row="0" Grid.Column="2" 
+                                 BackgroundColor="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,25,0"
+                                  VerticalOptions="CenterAndExpand" 
+                             Clicked="ImageButton_Clicked"/>
+
+            <StackLayout Padding="10" Grid.Row="1" Grid.ColumnSpan="3">
+
+
+            <Frame  Margin="5,-50,5,0" Padding="10,30,10,0" CornerRadius="10"
+                    BackgroundColor="White" HasShadow="False">
+
+                <ScrollView 
+                 AbsoluteLayout.LayoutBounds="0,0.9,1,0.8"
+                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
+                    <StackLayout 
+                             HorizontalOptions="Start" >
+                        <Frame  BackgroundColor="White"  HasShadow="False" Padding="10" Margin="0"  CornerRadius="10">
+                            <Grid RowSpacing="1.8" >
+                                <Grid.RowDefinitions>
+
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="เลข Barcode"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black" Grid.Column="0"  Grid.Row="0" VerticalOptions="Center"/>
+                                <Entry x:Name="Mycode"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black" Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="0"/>
+                                <Button  Clicked="Button_Scan" BackgroundColor="Transparent" FontSize="Body" TextColor="Black" ImageSource="barcode.png" WidthRequest="20" HeightRequest="20" Grid.Column="3" Grid.Row="0" HorizontalOptions="End"/>
+
+                                <Label Text="รหัสสินค้า"   FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="0" Grid.Row="1" VerticalOptions="Center" />
+                                <Entry x:Name="ProductCode"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1">
+                                    <Entry.Behaviors>
+                                        <local:EmptyValidation x:Name="Empty1"/>
+                                    </Entry.Behaviors>
+                                </Entry>
+
+                                <Label Text="ประเภทสินค้า"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="0"  Grid.Row="2" VerticalOptions="Center" />
+                                <Picker x:Name="ProductType"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                ItemsSource="{Binding ProductType}"
+                                ItemDisplayBinding="{Binding Name}"
+                                SelectedItem="{Binding Code}"  
+                                Grid.Column="1" Grid.ColumnSpan="3"  
+                                Grid.Row="2" />
+
+                                <Label Text="ชื่อสินค้า"   FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="0" Grid.Row="3" VerticalOptions="Center" />
+                                <Entry x:Name="ProductName"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3">
+                                    <Entry.Behaviors>
+                                        <local:EmptyValidation2 x:Name="Empty2"/>
+                                    </Entry.Behaviors>
+                                </Entry>
+
+                                <Label Text="ยี่ห้อ"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="0" Grid.Row="4" VerticalOptions="Center"/>
+                                <Entry x:Name="ProductBrand"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"   Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4" >
+                                    <Entry.Behaviors>
+                                        <local:EmptyValidation3 x:Name="Empty3"/>
+                                    </Entry.Behaviors>
+                                </Entry>
+
+                                <Label Text="รุ่น" FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Column="0" TextColor="Black"  Grid.Row="5" VerticalOptions="Center"/>
+                                <Entry x:Name="ProductModel"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"   Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="5">
+                                    <Entry.Behaviors>
+                                        <local:EmptyValidation4 x:Name="Empty4"/>
+                                    </Entry.Behaviors>
+                                </Entry>
+
+                                <Label Text="ตำแหน่งจัดเก็บ"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="0"  Grid.Row="6" VerticalOptions="Center" />
+                                <Picker x:Name="ProductLocation"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                ItemsSource="{Binding ProductLocation}"
+                                ItemDisplayBinding="{Binding Name}"
+                                SelectedItem="{Binding Code}"  
+                                Grid.Column="1"  Grid.ColumnSpan="3"
+                                Grid.Row="6" />
+
+                                <Label Text="หน่วย"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black" Grid.Column="0"  Grid.Row="7" VerticalOptions="Center" />
+                                <Picker x:Name="ProductUnit"  FontFamily="{StaticResource Kanit}"  FontSize="Body" TextColor="Black"
+                                ItemsSource="{Binding ProductUnit}"
+                                ItemDisplayBinding="{Binding Name}"
+                                SelectedItem="{Binding Code}"  
+                                Grid.Column="1"  Grid.ColumnSpan="3"
+                                Grid.Row="7" >
+                                </Picker>
+
+                                <Label Text="จำนวน" FontFamily="{StaticResource Kanit}"  FontSize="Body" TextColor="Black" Grid.Column="0"  Grid.Row="8" VerticalOptions="Center"/>
+                                <Entry x:Name="Quantity" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="1"  Grid.Row="8" Keyboard="Numeric">
+                                    <Entry.Behaviors>
+                                        <local:NumberOnlyValidation x:Name="Number1"/>
+                                    </Entry.Behaviors>
+                                </Entry>
+
+                                <Label Text="คงเหลือต่ำสุด" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="2"  Grid.Row="8" VerticalOptions="Center"/>
+                                <Entry x:Name="Productmin" FontFamily="{StaticResource Kanit}" FontSize="Body"  TextColor="Black"  Grid.Column="3"  Grid.Row="8"  Keyboard="Numeric">
+                                    <Entry.Behaviors>
+                                        <local:NumberOnlyValidation2 x:Name="Number2"/>
+                                    </Entry.Behaviors>
+                                </Entry>
+
+                                <Label Text="Ref No." FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="0"  Grid.Row="9" VerticalOptions="Center"/>
+                                <Entry x:Name="ReferentNumber" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"   Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="9">
+                                    <Entry.Behaviors>
+                                        <local:EmptyValidation5 x:Name="Empty5"/>
+                                    </Entry.Behaviors>
+                                </Entry>
+
+                                <Label Text="วันหมดอายุ" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="0"  Grid.Row="10" VerticalOptions="Center"/>
+                                <DatePicker x:Name="ProductExpireDate" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"   Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="10" />
+
+                                <Label Text="Note" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="0"  Grid.Row="11" VerticalOptions="Center"/>
+                                <Entry x:Name="ProductDescription" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="1" Grid.ColumnSpan="3"  Grid.Row="11" />
+
+                                <Button Text="บันทึก" FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                Clicked="Button_Save"
+                                BackgroundColor="#2B976C" 
+                                TextColor="White" 
+                                CornerRadius="10" 
+                                IsEnabled="{Binding Source={x:Reference Number1, Number2,Empty1,Empty2,Empty3,Empty4,Empty5},Path=IsValid}" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                                <Button Text="ยกเลิก"  FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="2"  BackgroundColor="Gray" TextColor="White" CornerRadius="10"/>
+
+                            </Grid>
+                        </Frame>
+
+                    </StackLayout>
+                </ScrollView>
+            </Frame>
+                
+            </StackLayout>
+
+
+        </Grid>
+
+
+        <!--<AbsoluteLayout>
             <Image Source="background" Aspect="AspectFill"
                   AbsoluteLayout.LayoutBounds="0,0,2,0.12"
                    AbsoluteLayout.LayoutFlags="All" />
@@ -158,6 +331,6 @@
                    
                 </StackLayout>
             </ScrollView>
-        </AbsoluteLayout>
+        </AbsoluteLayout>-->
     </ContentPage.Content>
 </ContentPage>

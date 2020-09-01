@@ -8,7 +8,7 @@
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
     <ContentPage.Content>
         <AbsoluteLayout>
-            <Image Source="background" Aspect="AspectFill"
+            <BoxView BackgroundColor="#344955"
                   AbsoluteLayout.LayoutBounds="0,0,2,0.12"
                    AbsoluteLayout.LayoutFlags="All" />
             <StackLayout AbsoluteLayout.LayoutBounds="0.09,0.03"
@@ -23,10 +23,11 @@
                          />
                 <Label x:Name="Username" HorizontalOptions="Center" VerticalOptions="Center" 
                       FontFamily="{StaticResource Kanit}"
-                       FontSize="16"
+                       FontSize="18"
+                       TextColor="White"
                    FontAttributes="Bold"
                        Padding="13,0,0,0"/>
-                <ImageButton Source="iconsedit" HeightRequest="20" 
+                <ImageButton Source="iconseditprofile" HeightRequest="20" 
                                  BackgroundColor="Transparent"
                                   VerticalOptions="Center" 
                              Clicked="ImageButton_Clicked"/>
