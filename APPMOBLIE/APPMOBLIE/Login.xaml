@@ -82,7 +82,7 @@
                         </StackLayout>
                     </Frame>
                     <StackLayout>
-                        <Label Text="Smart WMS Version 4.0.0" FontSize="12" HorizontalOptions="CenterAndExpand" VerticalOptions="End" TextColor="White" Style="{x:StaticResource Normalkanit}"/>
+                        <Label Text="Smart WMS Version 5.0.0" FontSize="12" HorizontalOptions="CenterAndExpand" VerticalOptions="End" TextColor="White" Style="{x:StaticResource Normalkanit}"/>
                     </StackLayout>
                 </StackLayout>
             </Grid>

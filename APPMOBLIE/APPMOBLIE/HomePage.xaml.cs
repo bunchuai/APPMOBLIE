@@ -15,7 +15,7 @@ namespace APPMOBLIE
 {
     
     public partial class HomePage : Xamarin.Forms.TabbedPage
-    {
+    { 
         public HomePage()
         {
             InitializeComponent();
