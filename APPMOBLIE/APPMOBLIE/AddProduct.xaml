@@ -11,7 +11,7 @@
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="180"/>
+                <RowDefinition Height='{OnPlatform iOS= "200" ,Android="160"}'/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -25,26 +25,25 @@
             <BoxView Grid.Row="0" Grid.ColumnSpan="3" BackgroundColor="#344955"/>
 
 
-
-            <ic:CircleImage Source="userpic.png" WidthRequest="80" HeightRequest="110" Grid.Row="0" Grid.Column="0"  
-                            HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"  x:Name="ImgUser" ></ic:CircleImage>
+            <ic:CircleImage Source="userpic.png" WidthRequest='{OnPlatform iOS="70" ,Android="70"}' HeightRequest='{OnPlatform iOS="70" ,Android="100"}' Grid.Row="0" Grid.Column="0"  
+                            HorizontalOptions="EndAndExpand" VerticalOptions='{OnPlatform iOS="CenterAndExpand" ,Android="StartAndExpand"}'  x:Name="ImgUser" ></ic:CircleImage>
 
 
             <Label x:Name="Username" FontSize='{OnPlatform iOS="14" ,Default="16"}' Grid.Row="0" Grid.Column="1"
-                   Margin='{OnPlatform iOS="10,70" ,Default="10,50"}'
-                   VerticalOptions="CenterAndExpand"
+                   Margin='{OnPlatform iOS="10,70" ,Android="10,40"}'
+                  VerticalOptions='{OnPlatform iOS="CenterAndExpand" ,Android="StartAndExpand"}'
                    HorizontalOptions="EndAndExpand"                 
                    TextColor="White"/>
 
             <ImageButton Source="iconseditprofile" HeightRequest="25" Grid.Row="0" Grid.Column="2" 
-                                 BackgroundColor="Transparent" HorizontalOptions="StartAndExpand" Margin="0,0,25,0"
-                                  VerticalOptions="CenterAndExpand" 
+                                 BackgroundColor="Transparent" HorizontalOptions="StartAndExpand" Margin='{OnPlatform iOS="10,70" ,Android="10,40"}'
+                                  VerticalOptions="StartAndExpand" 
                              Clicked="ImageButton_Clicked"/>
 
-            <StackLayout Padding="10" Grid.Row="1" Grid.ColumnSpan="3">
+            <StackLayout Padding="10" Grid.Row="1" Grid.ColumnSpan="3" >
 
 
-            <Frame  Margin="5,-50,5,0" Padding="10,30,10,0" CornerRadius="10"
+                <Frame  Margin='{OnPlatform iOS="5,-70,5,0" ,Android="5,-90,5,0"}' Padding="10,30,10,0" CornerRadius="10" 
                     BackgroundColor="White" HasShadow="False">
 
                 <ScrollView 

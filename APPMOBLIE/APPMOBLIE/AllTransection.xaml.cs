@@ -1,19 +1,11 @@
 ﻿using APPMOBLIE.Model;
-using Microcharts;
 using Newtonsoft.Json;
-using Rg.Plugins.Popup.Services;
-using SkiaSharp;
-using SQLite;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Entry = Microcharts.Entry;
 
 namespace APPMOBLIE
 {
