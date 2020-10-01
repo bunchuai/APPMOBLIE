@@ -402,4 +402,9 @@
   <ItemGroup>
     <BundleResource Include="Resources\iconsreport.png" />
   </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties XamarinHotReloadUnhandledDeviceExceptionAPPMOBLIEiOSHideInfoBar="True" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
