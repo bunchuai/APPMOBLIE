@@ -15,7 +15,7 @@ namespace APPMOBLIE
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListLocation : ContentPage
     {
-        readonly ObservableCollection<LocationViewModel> list = new ObservableCollection<LocationViewModel>();
+       // readonly ObservableCollection<LocationViewModel> list = new ObservableCollection<LocationViewModel>();
         public ListLocation()
         {
             InitializeComponent();
@@ -61,7 +61,7 @@ namespace APPMOBLIE
                 {
                     var ResponseData = await response.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<RespondMessage>(ResponseData);
-                    if (Result.valid == true)
+                    if (Result.Valid == true)
                     {
                         await DisplayAlert("สำเร็จ", "ดำเนินการเสร็จสิ้น", "ตกลง");
                         await Navigation.PushAsync(new ListLocation());
@@ -96,7 +96,7 @@ namespace APPMOBLIE
 
         private class RespondMessage
         {
-            public bool valid { get; set; }
+            public bool Valid { get; set; }
             public string Message { get; set; }
         }
     }

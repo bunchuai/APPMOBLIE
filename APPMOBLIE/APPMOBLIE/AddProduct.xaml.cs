@@ -45,9 +45,11 @@ namespace APPMOBLIE
                     var Items = new List<PickerProductUnit>();
                     foreach (var Data in Results)
                     {
-                        var Item = new PickerProductUnit();
-                        Item.Name = Data.Name;
-                        Item.Code = Data.ProductUnitCode;
+                        var Item = new PickerProductUnit()
+                        {
+                            Name = Data.Name,
+                            Code = Data.ProductUnitCode
+                        };
                         Items.Add(Item);
                     }
                     ProductUnit.ItemsSource = Items;
@@ -61,9 +63,10 @@ namespace APPMOBLIE
                     var LocationItems = new List<PickerLocation>();
                     foreach (var LocationResult in LocationResults)
                     {
-                        var LocationItem = new PickerLocation();
-                        LocationItem.Name = LocationResult.LocationName;
-                        LocationItem.Code = LocationResult.LocationCode;
+                        var LocationItem = new PickerLocation() {
+                            Name = LocationResult.LocationName,
+                            Code = LocationResult.LocationCode
+                        };
                         LocationItems.Add(LocationItem);
                     }
 
@@ -78,9 +81,10 @@ namespace APPMOBLIE
                     var ProductTypeItems = new List<PickerProductType>();
                     foreach (var ProductTypeResult in ProductTypeResults)
                     {
-                        var ProductTypeItem = new PickerProductType();
-                        ProductTypeItem.Name = ProductTypeResult.TypeName;
-                        ProductTypeItem.Code = ProductTypeResult.TypeCode;
+                        var ProductTypeItem = new PickerProductType() {
+                            Name = ProductTypeResult.TypeName,
+                            Code = ProductTypeResult.TypeCode
+                        };
                         ProductTypeItems.Add(ProductTypeItem);
                     }
 
@@ -166,22 +170,24 @@ namespace APPMOBLIE
                 string LocationSelected = ProductLocation.Items[ProductLocation.SelectedIndex];
                 string ProductTypeSelected = ProductType.Items[ProductType.SelectedIndex];
 
-                JObject oJsonObject = new JObject();
-                oJsonObject.Add("SkuId", this.Mycode.Text);
-                oJsonObject.Add("Name", this.ProductName.Text);
-                oJsonObject.Add("Brand", this.ProductBrand.Text);
-                oJsonObject.Add("Model", this.ProductModel.Text);
-                oJsonObject.Add("LocationCode", LocationSelected);
-                oJsonObject.Add("UnitCode", UnitSelected);
-                oJsonObject.Add("ExpireDate", this.ProductExpireDate.Date);
-                oJsonObject.Add("UserId", Application.Current.Properties["UserId"].ToString());
-                oJsonObject.Add("CompanyId", Application.Current.Properties["CompanyId"].ToString());
-                oJsonObject.Add("Description", this.ProductDescription.Text);
-                oJsonObject.Add("Quantity", this.Quantity.Text);
-                oJsonObject.Add("ReferentNunber", this.ReferentNumber.Text);
-                oJsonObject.Add("Productmin", this.Productmin.Text);
-                oJsonObject.Add("TypeCode", ProductTypeSelected);
-                oJsonObject.Add("ProductCode", this.ProductCode.Text);
+                JObject oJsonObject = new JObject()
+                {
+                    { "SkuId", this.Mycode.Text},
+                    { "Name", this.ProductName.Text},
+                    { "Brand", this.ProductBrand.Text},
+                    {"Model", this.ProductModel.Text },
+                    { "LocationCode", LocationSelected},
+                    {"UnitCode", UnitSelected },
+                    { "ExpireDate", this.ProductExpireDate.Date},
+                    { "UserId", Application.Current.Properties["UserId"].ToString() },
+                    { "CompanyId", Application.Current.Properties["CompanyId"].ToString() },
+                    { "Description", this.ProductDescription.Text },
+                    { "Quantity", this.Quantity.Text },
+                    { "ReferentNunber", this.ReferentNumber.Text },
+                    { "Productmin", this.Productmin.Text },
+                    { "TypeCode", ProductTypeSelected },
+                    { "ProductCode", this.ProductCode.Text }
+                };
 
                 string Url = "http://203.151.166.97/api/Products/AddProduct";
                 client.BaseAddress = new Uri(Url);

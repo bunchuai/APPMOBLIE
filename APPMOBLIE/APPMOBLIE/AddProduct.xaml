@@ -3,12 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
              x:Class="APPMOBLIE.AddProduct"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              xmlns:local="clr-namespace:APPMOBLIE.Validations">
-    <ContentPage.Content>
-
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height='{OnPlatform iOS= "200" ,Android="160"}'/>
@@ -18,16 +15,10 @@
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
-
-
             </Grid.ColumnDefinitions>
-
             <BoxView Grid.Row="0" Grid.ColumnSpan="3" BackgroundColor="#344955"/>
-
-
             <ic:CircleImage Source="userpic.png" WidthRequest='{OnPlatform iOS="70" ,Android="70"}' HeightRequest='{OnPlatform iOS="70" ,Android="100"}' Grid.Row="0" Grid.Column="0"  
                             HorizontalOptions="EndAndExpand" VerticalOptions='{OnPlatform iOS="CenterAndExpand" ,Android="StartAndExpand"}'  x:Name="ImgUser" ></ic:CircleImage>
-
 
             <Label x:Name="Username" FontSize='{OnPlatform iOS="14" ,Default="16"}' Grid.Row="0" Grid.Column="1"
                    Margin='{OnPlatform iOS="10,70" ,Android="10,40"}'
@@ -54,7 +45,6 @@
                         <Frame  BackgroundColor="White"  HasShadow="False" Padding="10" Margin="0"  CornerRadius="10">
                             <Grid RowSpacing="1.8" >
                                 <Grid.RowDefinitions>
-
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
@@ -169,17 +159,11 @@
 
                             </Grid>
                         </Frame>
-
                     </StackLayout>
                 </ScrollView>
             </Frame>
-                
             </StackLayout>
-
-
         </Grid>
-
-
         <!--<AbsoluteLayout>
             <Image Source="background" Aspect="AspectFill"
                   AbsoluteLayout.LayoutBounds="0,0,2,0.12"
@@ -331,5 +315,5 @@
                 </StackLayout>
             </ScrollView>
         </AbsoluteLayout>-->
-    </ContentPage.Content>
+   
 </ContentPage>

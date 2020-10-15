@@ -100,14 +100,15 @@ namespace APPMOBLIE
         {
             using (HttpClient client = new HttpClient())
             {
-                JObject oJsonObject = new JObject();
-                oJsonObject.Add("SkuId", this.Mycode.Text);
-                oJsonObject.Add("CompanyId", Application.Current.Properties["CompanyId"].ToString());
-                oJsonObject.Add("UserId", Application.Current.Properties["UserId"].ToString());
-                oJsonObject.Add("Quantitys", this.Quantity.Text);
-                oJsonObject.Add("ReferentNumber", this.ReferentNumber.Text);
-                oJsonObject.Add("TransectionType", "IN");
-                oJsonObject.Add("ProductDescription", "");
+                JObject oJsonObject = new JObject() {
+                    {"SkuId", this.Mycode.Text },
+                    {"CompanyId", Application.Current.Properties["CompanyId"].ToString() },
+                    {"UserId", Application.Current.Properties["UserId"].ToString() },
+                    {"Quantitys", this.Quantity.Text },
+                    {"ReferentNumber", this.ReferentNumber.Text },
+                    {"TransectionType", "IN" },
+                    {"ProductDescription", "" }
+                };
 
                 string Url = "http://203.151.166.97/api/Products/AddProductTransaction";
                 client.BaseAddress = new Uri(Url);
@@ -145,7 +146,7 @@ namespace APPMOBLIE
 
         private class CheckLogin
         {
-            public bool valid { get; set; }
+            public bool Valid { get; set; }
             public string Username { get; set; }
             public string UserId { get; set; }
         }

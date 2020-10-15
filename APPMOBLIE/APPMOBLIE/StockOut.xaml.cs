@@ -60,7 +60,7 @@ namespace APPMOBLIE
                         }
                         else
                         {
-                            await DisplayAlert("แจ้งเตือน!","กรุณาตรวจสอบการทำรายการอีกครั้ง","ตกลง");
+                            await DisplayAlert("แจ้งเตือน!", "กรุณาตรวจสอบการทำรายการอีกครั้ง", "ตกลง");
                         }
                     }
                 });
@@ -97,14 +97,17 @@ namespace APPMOBLIE
         {
             using (HttpClient client = new HttpClient())
             {
-                JObject oJsonObject = new JObject();
-                oJsonObject.Add("SkuId", this.Mycode.Text);
-                oJsonObject.Add("CompanyId", Application.Current.Properties["CompanyId"].ToString());
-                oJsonObject.Add("UserId", Application.Current.Properties["UserId"].ToString());
-                oJsonObject.Add("Quantitys", this.Quantity.Text);
-                oJsonObject.Add("ReferentNumber", this.ReferentNumber.Text);
-                oJsonObject.Add("TransectionType", "OUT");
-                oJsonObject.Add("ProductDescription", this.ProductDescription.Text);
+                JObject oJsonObject = new JObject
+                {
+                    { "SkuId", this.Mycode.Text },
+                    { "CompanyId", Application.Current.Properties["CompanyId"].ToString() },
+                    { "UserId", Application.Current.Properties["UserId"].ToString() },
+                    { "Quantitys", this.Quantity.Text},
+                    { "ReferentNumber", this.ReferentNumber.Text},
+                    { "TransectionType", "OUT" },
+                    { "ProductDescription", this.ProductDescription.Text }
+                };
+
 
                 string Url = "http://203.151.166.97/api/Products/AddProductTransaction";
                 client.BaseAddress = new Uri(Url);
@@ -116,14 +119,14 @@ namespace APPMOBLIE
                 {
                     var ResponseData = await response.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<RespondeData>(ResponseData);
-                    if (Result.valid == true)
+                    if (Result.Valid == true)
                     {
                         await DisplayAlert("สำเร็จ", "ดำเนินการเสร็จสิ้น", "ตกลง");
                         await Navigation.PushAsync(new HomePage());
                     }
                     else
                     {
-                        await DisplayAlert("แจ้งเตือน", Result.message, "ตกลง");
+                        await DisplayAlert("แจ้งเตือน", Result.Message, "ตกลง");
                     }
                 }
                 else
@@ -151,15 +154,15 @@ namespace APPMOBLIE
 
         private class CheckLogin
         {
-            public bool valid { get; set; }
+            public bool Valid { get; set; }
             public string Username { get; set; }
             public string UserId { get; set; }
         }
 
         private class RespondeData
         {
-            public bool valid { get; set; }
-            public string message { get; set; }
+            public bool Valid { get; set; }
+            public string Message { get; set; }
         }
     }
 }

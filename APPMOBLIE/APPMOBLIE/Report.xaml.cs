@@ -24,7 +24,7 @@ namespace APPMOBLIE
 
         protected override  void OnAppearing()
         {
-            var CompanyId = Application.Current.Properties["CompanyId"];
+            //var CompanyId = Application.Current.Properties["CompanyId"];
             Username.Text = Application.Current.Properties["Username"].ToString();
 
             #region month
@@ -33,10 +33,10 @@ namespace APPMOBLIE
             var _Months = new List<MonthTH>();
             for (int i = 0; i <= 11; i++)
             {
-                var _Month = new MonthTH();
-                _Month.MonthName = Monthes[i];
+                var _Month = new MonthTH() {
+                    MonthName = Monthes[i]
+                };
                 _Months.Add(_Month);
-
             }
 
             months.ItemsSource = _Months;
@@ -48,8 +48,9 @@ namespace APPMOBLIE
             int Start = ThisYear - 1;
             for (int Year = ThisYear; Year >= Start; Year--)
             {
-                var _Year = new YearsTH();
-                _Year.YearDisplay = Year + 543;
+                var _Year = new YearsTH() { 
+                YearDisplay = Year + 543
+                };
                 _Years.Add(_Year);
 
             }

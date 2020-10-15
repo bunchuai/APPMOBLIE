@@ -25,8 +25,9 @@ namespace APPMOBLIE
             using (HttpClient client = new HttpClient())
             {
                 // set param
-                JObject Json = new JObject();
-                Json.Add("Mail", this.Email.Text);
+                JObject Json = new JObject() {
+                    {"Mail", this.Email.Text }
+                };
 
                 string Url = "http://203.151.166.97/api/Account/ForgotPassword";
                 client.BaseAddress = new Uri(Url);

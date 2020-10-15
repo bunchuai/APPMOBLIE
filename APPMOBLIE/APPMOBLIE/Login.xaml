@@ -66,10 +66,10 @@
 
                                 <Label x:Name="displayError" Text="" TextColor="Red" HorizontalOptions="Center"/>
                                 <StackLayout Margin="40,10">
-                                    <Button  Text="เข้าสู่ระบบ" FontFamily="{StaticResource Kanit}"  Clicked="button_SignIn" BackgroundColor="#0095b6" TextColor="White" CornerRadius="20" IsEnabled="{Binding Source={x:Reference EmailValidation}, Path=IsValid}"/>
+                                    <Button  Text="เข้าสู่ระบบ" FontFamily="{StaticResource Kanit}"  Clicked="Button_SignIn" BackgroundColor="#0095b6" TextColor="White" CornerRadius="20" IsEnabled="{Binding Source={x:Reference EmailValidation}, Path=IsValid}"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                    <Button  Text="ลืมรหัสผ่าน" FontFamily="{StaticResource Kanit}"  Clicked="button_forgot" BackgroundColor="Transparent" TextColor="Gray" CornerRadius="20" />
+                                    <Button  Text="ลืมรหัสผ่าน" FontFamily="{StaticResource Kanit}"  Clicked="Button_forgot" BackgroundColor="Transparent" TextColor="Gray" CornerRadius="20" />
 
                                     <!--<Label Text="ลืมรหัสผ่าน"  FontFamily="{StaticResource Kanit}"   TextColor="Gray" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" >
                                         <Label.GestureRecognizers>

@@ -25,10 +25,11 @@ namespace APPMOBLIE
             using (HttpClient client = new HttpClient())
             {
                 // set param
-                JObject Json = new JObject();
-                Json.Add("OTP", this.otpcode.Text);
-                Json.Add("Password", this.newpass.Text);
-                Json.Add("ConfirmPassword", this.cfnewpass.Text);
+                JObject Json = new JObject() {
+                    { "OTP", this.otpcode.Text},
+                    {"Password", this.newpass.Text },
+                    {"ConfirmPassword", this.cfnewpass.Text }
+                };
 
                 string Url = "http://203.151.166.97/api/Account/ResetPassword";
                 client.BaseAddress = new Uri(Url);

@@ -28,14 +28,15 @@ namespace APPMOBLIE
                        
         }
 
-        private async void button_SignIn(object sender, EventArgs e)
+        private async void Button_SignIn(object sender, EventArgs e)
         {
             using (HttpClient client = new HttpClient())
             {
                 string sContentType = "application/json";
-                JObject oJsonObject = new JObject();
-                oJsonObject.Add("UserName", this.Email.Text);
-                oJsonObject.Add("Password", this.Password.Text);
+                JObject oJsonObject = new JObject() {
+                    { "UserName", this.Email.Text},
+                    {"Password", this.Password.Text }
+                };
 
                 string Url = "http://203.151.166.97/api/Account/Login";
                 client.BaseAddress = new Uri(Url);
@@ -47,7 +48,7 @@ namespace APPMOBLIE
                 {
                     var ResponseData = await response.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<CheckLogin>(ResponseData);
-                    if (Result.valid == true)
+                    if (Result.Valid == true)
                     {
                         Application.Current.Properties["Username"] = Result.Username;
                         Application.Current.Properties["UserId"] = Result.UserId;
@@ -85,13 +86,13 @@ namespace APPMOBLIE
 
         private class CheckLogin
         {
-            public bool valid { get; set; }
+            public bool Valid { get; set; }
             public string Username { get; set; }
             public string UserId { get; set; }
             public int ComId { get; set; }
         }
 
-        private void button_forgot(object sender, EventArgs e)
+        private void Button_forgot(object sender, EventArgs e)
         {
             this.Navigation.PushAsync(new Forgotpassword());
         }

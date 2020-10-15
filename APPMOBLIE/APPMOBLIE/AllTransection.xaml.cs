@@ -12,9 +12,9 @@ namespace APPMOBLIE
     public partial class AllTransection : ContentPage
     {
        
-        public bool dashboardIn { get; set; }
-        public bool dashboardOut { get; set; }
-        public bool dashboardRe { get; set; }
+        public bool DashboardIn { get; set; }
+        public bool DashboardOut { get; set; }
+        public bool DashboardRe { get; set; }
         public List<TransactionInOut> InResultData = new List<TransactionInOut>();
         public List<TransactionInOut> OutResultData = new List<TransactionInOut>();
         public List<TransactionLows> LowResultData = new List<TransactionLows>();
@@ -88,12 +88,12 @@ namespace APPMOBLIE
             GetDataUser();
 
             InitializeComponent();
-            dashboardIn = false;
-            dashboardOut = false;
-            dashboardRe = false;
-            Dashboardin.IsVisible = dashboardIn;
-            Dashboardout.IsVisible = dashboardOut;
-            Dashboardreorder.IsVisible = dashboardRe;
+            DashboardIn = false;
+            DashboardOut = false;
+            DashboardRe = false;
+            Dashboardin.IsVisible = DashboardIn;
+            Dashboardout.IsVisible = DashboardOut;
+            Dashboardreorder.IsVisible = DashboardRe;
           
         }
 
@@ -160,45 +160,45 @@ namespace APPMOBLIE
         public void Button_ClickedIn(object sender, EventArgs e)
         {
 
-            if (dashboardIn == false)
+            if (DashboardIn == false)
             {
-                dashboardIn = true;
-                Dashboardin.IsVisible = dashboardIn;
+                DashboardIn = true;
+                Dashboardin.IsVisible = DashboardIn;
             }
             else
             {
-                dashboardIn = false;
-                Dashboardin.IsVisible = dashboardIn;
+                DashboardIn = false;
+                Dashboardin.IsVisible = DashboardIn;
             }
 
         }
         public void Button_ClickedOut(object sender, EventArgs e)
         {
 
-            if (dashboardOut == false)
+            if (DashboardOut == false)
             {
-                dashboardOut = true;
-                Dashboardout.IsVisible = dashboardOut;
+                DashboardOut = true;
+                Dashboardout.IsVisible = DashboardOut;
             }
             else
             {
-                dashboardOut = false;
-                Dashboardout.IsVisible = dashboardOut;
+                DashboardOut = false;
+                Dashboardout.IsVisible = DashboardOut;
             }
 
         }
         public void Button_ClickedReorder(object sender, EventArgs e)
         {
 
-            if (dashboardRe == false)
+            if (DashboardRe == false)
             {
-                dashboardRe = true;
-                Dashboardreorder.IsVisible = dashboardRe;
+                DashboardRe = true;
+                Dashboardreorder.IsVisible = DashboardRe;
             }
             else
             {
-                dashboardRe = false;
-                Dashboardreorder.IsVisible = dashboardRe;
+                DashboardRe = false;
+                Dashboardreorder.IsVisible = DashboardRe;
             }
 
         }

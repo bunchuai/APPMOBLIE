@@ -51,8 +51,11 @@ namespace APPMOBLIE
         {
             using (HttpClient client = new HttpClient())
             {
-              JObject oJsonObject = new JObject();
-                oJsonObject.Add("LocationName", this.LocationName.Text);
+              JObject oJsonObject = new JObject()
+              { 
+                 {"LocationName", this.LocationName.Text}
+              };
+                //oJsonObject.Add("LocationName", this.LocationName.Text);
 
                 string Url = "http://203.151.166.97/api/Location/UpdateLocation?LocationId=" + _LocationId;
                 client.BaseAddress = new Uri(Url);

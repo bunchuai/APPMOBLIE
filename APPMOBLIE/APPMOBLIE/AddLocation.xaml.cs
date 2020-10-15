@@ -24,10 +24,11 @@ namespace APPMOBLIE
         {
             using (HttpClient client = new HttpClient())
             {
-                JObject oJsonObject = new JObject();
-                oJsonObject.Add("LocationName", this.LocationName.Text);
-                oJsonObject.Add("CompanyId", Application.Current.Properties["CompanyId"].ToString());
-                oJsonObject.Add("LocationCode", GenerateLocationCode());
+                JObject oJsonObject = new JObject() {
+                    {"LocationName", this.LocationName.Text },
+                    { "CompanyId", Application.Current.Properties["CompanyId"].ToString()},
+                    {"LocationCode", GenerateLocationCode() }
+                };
 
                 string Url = "http://203.151.166.97/api/Location/AddLocation";
                 client.BaseAddress = new Uri(Url);
@@ -39,7 +40,7 @@ namespace APPMOBLIE
                 {
                     var ResponseData = await response.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<RespondMessage>(ResponseData);
-                    if (Result.valid == true)
+                    if (Result.Valid == true)
                     {
                         await DisplayAlert("สำเร็จ", "ดำเนินการเสร็จสิ้น", "ตกลง");
                         await Navigation.PushAsync(new ListLocation());
@@ -65,7 +66,7 @@ namespace APPMOBLIE
 
         private class RespondMessage
         {
-            public bool valid { get; set; }
+            public bool Valid { get; set; }
             public string Message { get; set; }
         }
     }

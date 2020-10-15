@@ -26,9 +26,10 @@ namespace APPMOBLIE
         {
             using (HttpClient client = new HttpClient())
             {
-                JObject oJsonObject = new JObject();
-                oJsonObject.Add("TypeName", this.ProTypeName.Text);
-                oJsonObject.Add("CompanyId", CompanyId);
+                JObject oJsonObject = new JObject() {
+                    {"TypeName", this.ProTypeName.Text },
+                    {"CompanyId", CompanyId }
+                };
 
                 string Url = "http://203.151.166.97/api/ProductsType/AddProductType";
                 client.BaseAddress = new Uri(Url);
@@ -40,7 +41,7 @@ namespace APPMOBLIE
                 {
                     var ResponseData = await response.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<RespondMessage>(ResponseData);
-                    if (Result.valid == true)
+                    if (Result.Valid == true)
                     {
                         await DisplayAlert("สำเร็จ", "ดำเนินการเสร็จสิ้น", "ตกลง");
                         await Navigation.PushAsync(new ListProductType());
@@ -60,7 +61,7 @@ namespace APPMOBLIE
 
         private class RespondMessage
         {
-            public bool valid { get; set; }
+            public bool Valid { get; set; }
             public string Message { get; set; }
         }
     }

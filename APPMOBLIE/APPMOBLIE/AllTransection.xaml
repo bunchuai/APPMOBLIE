@@ -6,12 +6,8 @@
              x:Class="APPMOBLIE.AllTransection"
              BackgroundColor="White"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
-             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              xmlns:local="clr-namespace:APPMOBLIE"
-    
              >
-
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height='{OnPlatform iOS= "200" ,Android="160"}'/>

@@ -19,7 +19,7 @@ namespace APPMOBLIE
 
     public partial class ListProductType : ContentPage
     {
-        readonly ObservableCollection<ProductTypeViewModel> list = new ObservableCollection<ProductTypeViewModel>();
+        //readonly ObservableCollection<ProductTypeViewModel> list = new ObservableCollection<ProductTypeViewModel>();
 
         public ListProductType()
         {
@@ -65,7 +65,7 @@ namespace APPMOBLIE
                 {
                     var ResponseData = await response.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<RespondMessage>(ResponseData);
-                    if (Result.valid == true)
+                    if (Result.Valid == true)
                     {
                         await DisplayAlert("สำเร็จ", "ดำเนินการเสร็จสิ้น", "ตกลง");
                         await Navigation.PushAsync(new ListProductType());
@@ -93,7 +93,7 @@ namespace APPMOBLIE
 
         private class RespondMessage
         {
-            public bool valid { get; set; }
+            public bool Valid { get; set; }
             public string Message { get; set; }
         }
         public class ProductTypeViewModel

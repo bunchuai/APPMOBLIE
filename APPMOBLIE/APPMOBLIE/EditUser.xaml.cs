@@ -30,7 +30,6 @@ namespace APPMOBLIE
             InitializeComponent();
          
         }
-
         protected override  void OnAppearing()
         {
             base.OnAppearing();
@@ -98,10 +97,11 @@ namespace APPMOBLIE
 
             using (HttpClient client = new HttpClient())
             {
-               JObject  oJsonObject = new JObject();
-               
-                oJsonObject.Add("Nickname", this.OldUsername.Text);
-                oJsonObject.Add("Userimage", ImgBytes);
+                var oJsonObject = new JObject
+                {
+                    { "Nickname", this.OldUsername.Text },
+                    { "Userimage", ImgBytes }
+                };
 
                 string Url = "http://203.151.166.97/api/USers/UpdateUserProfile?UserId="+ Application.Current.Properties["UserId"].ToString();
                 client.BaseAddress = new Uri(Url);
