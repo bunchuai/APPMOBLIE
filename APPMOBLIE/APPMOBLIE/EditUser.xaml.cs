@@ -98,7 +98,8 @@ namespace APPMOBLIE
 
             using (HttpClient client = new HttpClient())
             {
-                JObject oJsonObject = new JObject();
+               JObject  oJsonObject = new JObject();
+               
                 oJsonObject.Add("Nickname", this.OldUsername.Text);
                 oJsonObject.Add("Userimage", ImgBytes);
 
@@ -112,7 +113,7 @@ namespace APPMOBLIE
                 {
                     var ResponseData = await response.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<RespondMessage>(ResponseData);
-                    if (Result.valid == true)
+                    if (Result.Valid == true)
                     {
                         await DisplayAlert("สำเร็จ", "ดำเนินการเสร็จสิ้น", "ตกลง");
                         await Navigation.PopToRootAsync();
@@ -141,7 +142,7 @@ namespace APPMOBLIE
         }
         private class RespondMessage
         {
-            public bool valid { get; set; }
+            public bool Valid { get; set; }
             public string Message { get; set; }
         }
 

@@ -22,7 +22,7 @@ namespace APPMOBLIE
 
         public object ItemYear { get; private set; }
 
-        protected override async void OnAppearing()
+        protected override  void OnAppearing()
         {
             var CompanyId = Application.Current.Properties["CompanyId"];
             Username.Text = Application.Current.Properties["Username"].ToString();
@@ -77,7 +77,7 @@ namespace APPMOBLIE
                 {
                     var ResponseData = await response.Content.ReadAsStringAsync();
                     var Results = JsonConvert.DeserializeObject<Response> (ResponseData);
-                    if (Results.valid == true)
+                    if (Results.Valid == true)
                     {
                         await DisplayAlert("สำเร็จ", "ดำเนินการเสร็จสิ้น , กรุณาตรวจสอบ Email", "ตกลง");
                         await Navigation.PushAsync(new Report());
@@ -93,7 +93,7 @@ namespace APPMOBLIE
         }
         private class Response
         {
-            public bool valid { get; set; }
+            public bool Valid { get; set; }
           
         }
     }
