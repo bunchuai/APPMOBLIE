@@ -6,18 +6,12 @@
              mc:Ignorable="d"
              x:Class="APPMOBLIE.App"
              >  
-
     <Application.Resources>
         <ResourceDictionary>
             <OnPlatform x:TypeArguments="x:String" x:Key="Kanit">
                 <On Platform="Android" Value="Kanit.ttf#Kanit"/>
                 <On Platform="iOS" Value="Kanit"/>
             </OnPlatform>
-
-
-                
-       
-            
             <Style x:Key="Normalkanit" TargetType="Label">
                 <Setter Property="FontFamily" Value="{x:StaticResource Kanit}"/>
                 <Setter Property="FontSize" Value="16"/>
