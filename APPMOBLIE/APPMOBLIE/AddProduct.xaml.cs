@@ -193,7 +193,7 @@ namespace APPMOBLIE
                 {
                     var ResponseData = await response.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<CheckLogin>(ResponseData);
-                    if (Result.valid == true)
+                    if (Result.Valid == true)
                     {
                         await DisplayAlert("สำเร็จ", "ดำเนินการเสร็จสิ้น", "ตกลง");
                         await Navigation.PushAsync(new HomePage());
@@ -214,7 +214,7 @@ namespace APPMOBLIE
 
         private class CheckLogin
         {
-            public bool valid { get; set; }
+            public bool Valid { get; set; }
             public string Username { get; set; }
             public string UserId { get; set; }
         }

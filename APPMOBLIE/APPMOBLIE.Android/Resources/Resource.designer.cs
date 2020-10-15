@@ -25,7 +25,6 @@ namespace APPMOBLIE.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Microcharts.Droid.Resource.String.library_name = global::APPMOBLIE.Droid.Resource.String.library_name;
 			global::Plugin.Media.Resource.Attribute.alpha = global::APPMOBLIE.Droid.Resource.Attribute.alpha;
 			global::Plugin.Media.Resource.Attribute.coordinatorLayoutStyle = global::APPMOBLIE.Droid.Resource.Attribute.coordinatorLayoutStyle;
 			global::Plugin.Media.Resource.Attribute.font = global::APPMOBLIE.Droid.Resource.Attribute.font;
