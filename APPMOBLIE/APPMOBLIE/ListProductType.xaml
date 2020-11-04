@@ -4,58 +4,49 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"              
              mc:Ignorable="d"
-             x:Class="APPMOBLIE.ListProductType"
-              >
-  
+             x:Class="APPMOBLIE.ListProductType">
     <ContentPage.Content>
-        <AbsoluteLayout>
-
-            <StackLayout                     
-                             HorizontalOptions="Start" >
-                <StackLayout Padding="20">
-                    <StackLayout HorizontalOptions="Center">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                      
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"/>
-                        </Grid.ColumnDefinitions>
-                        <Button ImageSource="iconplus" Text="เพิ่ม" Clicked="Button_Clicked" FontFamily="{StaticResource Kanit}" FontSize="Large" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" BackgroundColor="Transparent" />
-                    </Grid>
-                    </StackLayout>
-                    <ListView x:Name="ListViewType"  HasUnevenRows="True"   >
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <ViewCell.ContextActions>
-                                        <MenuItem Text="แก้ไข" Clicked="Edit_Clicked" IsDestructive="True" CommandParameter="{Binding ProductType}"/>
-                                        <MenuItem Text="ลบ" Clicked="Delete_Clicked" IsDestructive="True" CommandParameter="{Binding ProductType}"/>
+        <StackLayout Margin="0,60,0,0">
+            <Frame  BackgroundColor="#eef4f4"  
+               WidthRequest="{OnIdiom Phone='500' , Tablet='700'}" 
+                    HeightRequest="{OnIdiom Phone='700' , Tablet='500'}"
+               HorizontalOptions="Center" 
+               CornerRadius="10"
+               Margin="12,0,12,0"
+               HasShadow="True">
+                <StackLayout>
+                    <Button ImageSource="iconplus" Text="เพิ่ม" 
+                            HorizontalOptions="Center"
+                                Clicked="Button_Clicked" FontFamily="{StaticResource Kanit}" 
+                                FontSize="Large"
+                            BackgroundColor="Transparent"
+                             Margin="{OnIdiom Phone='40,10,40,10' ,Tablet='200,0,200,0'}" />
+                    <ListView x:Name="ListViewType"  HasUnevenRows="True"
+                              RowHeight="80"
+                              Margin="0,30,0,30">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.ContextActions>
+                                        <MenuItem Text="แก้ไข" Clicked="Edit_Clicked" 
+                                                  IsDestructive="False" CommandParameter="{Binding ProductType}"/>
+                                        <MenuItem Text="ลบ" Clicked="Delete_Clicked" 
+                                                  IsDestructive="True" CommandParameter="{Binding ProductType}"/>
                                     </ViewCell.ContextActions>
-                                    <StackLayout >
-                                        <Grid >
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="35"/>
-                                            
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="20"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-                                            <Image Source="iconsnext" HeightRequest="10" WidthRequest="10" Grid.Row="0" Grid.Column="0"/>
-                                            <Label  Text="{Binding TypeName}" FontFamily="{StaticResource Kanit}" FontSize="Medium" TextColor="Black" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
-                                    </Grid>
+                                    <StackLayout Orientation="Horizontal" Spacing="30" 
+                                                 Margin="30,0,30,0"
+                                                 VerticalOptions="Center">
+                                        <Image Source="iconsnext" HeightRequest="30" WidthRequest="30" VerticalOptions="Center"/>
+                                        <Label  Text="{Binding TypeName}" FontFamily="{StaticResource Kanit}"
+                                                    VerticalOptions="Center"
+                                                    FontSize="20" TextColor="Black" />
                                     </StackLayout>
                                 </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-
-                    </StackLayout>
-
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackLayout>
-        
-        </AbsoluteLayout>
+            </Frame>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

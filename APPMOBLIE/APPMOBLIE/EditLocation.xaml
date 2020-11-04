@@ -7,26 +7,52 @@
              x:Class="APPMOBLIE.EditLocation"
              xmlns:local="clr-namespace:APPMOBLIE.Behavior">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="แก้ไขตำแหน่งจัดเก็บ" FontFamily="{StaticResource Kanit}" FontSize="Title" HorizontalOptions="CenterAndExpand" />
-            <Frame Margin="10">
-                <Grid>
+        <StackLayout Margin="0,60,0,0">
+            <Frame  BackgroundColor="#eef4f4"  
+               WidthRequest="{OnIdiom Phone='500' , Tablet='700'}" 
+               HorizontalOptions="Center" 
+               CornerRadius="10"
+               Margin="12,0,12,0"
+               HasShadow="True">
+                <Grid RowSpacing="30">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="ชื่อตำแหน่งจัดเก็บ" VerticalOptions="CenterAndExpand" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black" Grid.Row="0" Grid.Column="0"/>
-                    <Entry x:Name="LocationName" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Row="0" Grid.Column="1">
+                    <Label Text="แก้ไขตำแหน่งจัดเก็บ" FontFamily="{StaticResource Kanit}" 
+                            Grid.Row="0" Grid.ColumnSpan="2"
+                           FontSize="Title" HorizontalOptions="Center"/>
+                    <Label Text="ชื่อตำแหน่งจัดเก็บ"
+                           FontFamily="{StaticResource Kanit}" 
+                               VerticalOptions="Center"
+                               Grid.Row="1" Grid.Column="0"
+                               FontSize="Body" TextColor="Black"/>
+                    <Entry x:Name="LocationName" FontFamily="{StaticResource Kanit}" 
+                               Grid.Row="1" Grid.Column="1"
+                               FontSize="Body" TextColor="Black">
                         <Entry.Behaviors>
-                            <local:LocationValidation x:Name="LocationValidation"/>
+                           <local:LocationValidation x:Name="LocationValidation"/>
                         </Entry.Behaviors>
                     </Entry>
-                    <Button Text="บันทึก" FontFamily="{StaticResource Kanit}" Clicked="Save" Grid.Row="1" Grid.Column="0" CornerRadius="10" IsEnabled="{Binding Source={x:Reference LocationValidation},Path=IsValid}"/>
-                    <Button Text="ยกเลิก" FontFamily="{StaticResource Kanit}" Clicked="Cancel" Grid.Row="1" Grid.Column="1" CornerRadius="10" />
+                    <StackLayout Grid.Row="2" Grid.ColumnSpan="2" Spacing="20"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="Center"
+                                 Orientation="Horizontal">
+                        <Button Text="บันทึก" Clicked="Save" FontFamily="{StaticResource Kanit}"
+                                BackgroundColor="#2B976C"
+                                TextColor="White" 
+                                WidthRequest="{OnIdiom Phone='140' ,Tablet='180'}"
+                              CornerRadius="10" IsEnabled="{Binding Source={x:Reference LocationValidation},Path=IsValid}"/>
+                        <Button Text="ยกเลิก" Clicked="Cancel" FontFamily="{StaticResource Kanit}"
+                                 BackgroundColor="Gray" TextColor="White" 
+                                WidthRequest="{OnIdiom Phone='140' ,Tablet='180'}"
+                                CornerRadius="10" />
+                    </StackLayout>
                 </Grid>
             </Frame>
         </StackLayout>

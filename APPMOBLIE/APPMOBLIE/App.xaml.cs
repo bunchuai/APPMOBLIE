@@ -11,7 +11,6 @@ namespace APPMOBLIE
             InitializeComponent();
 
             var Page = new Login();
-            //var Page = new Checkproduct();
             MainPage = new NavigationPage(Page);
             NavigationPage.SetHasNavigationBar(Page, false);
         }

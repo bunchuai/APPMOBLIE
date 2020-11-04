@@ -164,7 +164,7 @@
     <PackageReference Include="Xam.Plugin.Media">
       <Version>5.0.1</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1534" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1560" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="ZXing.Net.Mobile">
       <Version>2.4.1</Version>
@@ -199,43 +199,43 @@
     <BundleResource Include="Resources\LaunchScreen.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\background.png">
+    <BundleResource Include="Resources\background.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\barcode.png">
+    <BundleResource Include="Resources\barcode.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\bgsplash.jpg">
+    <BundleResource Include="Resources\bgsplash.jpg">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconbox.png">
+    <BundleResource Include="Resources\iconbox.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\iconinsky.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconsadd.png">
+    <BundleResource Include="Resources\iconsadd.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconscanbar.png">
+    <BundleResource Include="Resources\iconscanbar.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\iconsscan.png" />
@@ -244,10 +244,10 @@
     <BundleResource Include="Resources\iconssett.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconstrans.png">
+    <BundleResource Include="Resources\iconstrans.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\userpic.png" />
@@ -265,140 +265,149 @@
     <BundleResource Include="Resources\iconhome.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconplus.png">
+    <BundleResource Include="Resources\iconplus.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconminus.png">
+    <BundleResource Include="Resources\iconminus.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconsnext.png">
+    <BundleResource Include="Resources\iconsnext.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Fonts\" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconwarning.png">
+    <BundleResource Include="Resources\iconwarning.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconlistcheck.png">
+    <BundleResource Include="Resources\iconlistcheck.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\icontype.png">
+    <BundleResource Include="Resources\icontype.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconlocation.png">
+    <BundleResource Include="Resources\iconlocation.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconlogout.png">
+    <BundleResource Include="Resources\iconlogout.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconsedit.png">
+    <BundleResource Include="Resources\iconsedit.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconhome__.png">
+    <BundleResource Include="Resources\iconhome__.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconsadd__.png">
+    <BundleResource Include="Resources\iconsadd__.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconsbrakewarning48.png">
+    <BundleResource Include="Resources\iconsbrakewarning48.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconscamera48.png">
+    <BundleResource Include="Resources\iconscamera48.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconseditprofile.png">
+    <BundleResource Include="Resources\iconseditprofile.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconsgear.png">
+    <BundleResource Include="Resources\iconsgear.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconshome.png">
+    <BundleResource Include="Resources\iconshome.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconsminus48.png">
+    <BundleResource Include="Resources\iconsminus48.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconsplus48.png">
+    <BundleResource Include="Resources\iconsplus48.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconsscan__.png">
+    <BundleResource Include="Resources\iconsscan__.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconssearch.png">
+    <BundleResource Include="Resources\iconssearch.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\iconssett__.png">
+    <BundleResource Include="Resources\iconssett__.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
-    </AndroidResource>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\iconsreport.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconlogin2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconlogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconlogin3.png" />
+  </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadUnhandledDeviceExceptionAPPMOBLIEiOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionAPPMOBLIEiOSHideInfoBar="True" XamarinHotReloadUnhandledDeviceExceptionAPPMOBLIEiOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

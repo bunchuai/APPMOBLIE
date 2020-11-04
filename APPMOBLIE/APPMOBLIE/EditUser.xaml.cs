@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 
 namespace APPMOBLIE
@@ -23,6 +24,7 @@ namespace APPMOBLIE
     {
         public SQLiteAsyncConnection connection;
         public byte[] ImgBytes;
+       public string ActionChoice;
         public EditUser()
         {
             GetDataUser();
@@ -59,29 +61,29 @@ namespace APPMOBLIE
         }
         private async void ImageButton_Clicked(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("Select Photo From ?", "Cancel", "", "Camera", "Gallery");
+             
+            ActionChoice = await DisplayActionSheet("Select Photo From ?", "Cancel", null, "Camera", "Gallery");
             await CrossMedia.Current.Initialize();
 
-            if (action == "Camera")
+            if (ActionChoice == "Camera")
             {
                 var mediaOption = new StoreCameraMediaOptions()
                 {
                     SaveToAlbum = true,
-                    PhotoSize = PhotoSize.Small,
+                    Directory ="Recents",
+                    PhotoSize = PhotoSize.Medium,
                 };
                 var TakeImageFile = await CrossMedia.Current.TakePhotoAsync(mediaOption);
                 if (TakeImageFile != null)
                 {
                     ImgUser.Source = ImageSource.FromStream(() => TakeImageFile.GetStream());
                 }
-              
-
             }
-            else if(action == "Gallery")
+            else if(ActionChoice == "Gallery")
             {
                 var mediaOptions = new PickMediaOptions()
                 {
-                    PhotoSize = PhotoSize.Small
+                    PhotoSize = PhotoSize.Medium
                 };
                 var SelectedImageFile = await CrossMedia.Current.PickPhotoAsync(mediaOptions);
                 if (SelectedImageFile != null)

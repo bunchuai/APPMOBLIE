@@ -8,342 +8,111 @@
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              xmlns:local="clr-namespace:APPMOBLIE"
              >
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height='{OnPlatform iOS= "200" ,Android="160"}'/>
-            <RowDefinition Height="*"/>  
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
-
-        </Grid.ColumnDefinitions>
-
-        <BoxView Grid.Row="0" Grid.ColumnSpan="3" BackgroundColor="#344955"/>
-
-
-
-        <ic:CircleImage Source="userpic.png" WidthRequest='{OnPlatform iOS="70" ,Android="70"}' HeightRequest='{OnPlatform iOS="70" ,Android="100"}' Grid.Row="0" Grid.Column="0"  
-                            HorizontalOptions="EndAndExpand" VerticalOptions='{OnPlatform iOS="CenterAndExpand" ,Android="StartAndExpand"}'  x:Name="ImgUser" ></ic:CircleImage>
-      
-
-        <Label x:Name="Username" FontSize='{OnPlatform iOS="14" ,Default="16"}' Grid.Row="0" Grid.Column="1"
-                   Margin='{OnPlatform iOS="10,70" ,Android="10,40"}'
-                  VerticalOptions='{OnPlatform iOS="CenterAndExpand" ,Android="StartAndExpand"}'
-                   HorizontalOptions="EndAndExpand"                 
+    <StackLayout>
+        <BoxView BackgroundColor="#344955"
+                 HeightRequest="{OnIdiom Phone= '180' ,Tablet='200'}"/>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     Margin="0,-150,0,0">
+            <ic:CircleImage Source="userpic.png"
+                        WidthRequest="{OnIdiom Phone='70', Tablet='80'}" 
+                        HeightRequest="{OnIdiom Phone='70', Tablet='80'}"
+                        Aspect="AspectFill"
+                        VerticalOptions="Center"
+                        x:Name="ImgUser" ></ic:CircleImage>
+            <Label x:Name="Username"
+                   Text="UserName"
+               Style="{x:StaticResource Normalkanit}"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" 
                    TextColor="White"/>
-
-        <ImageButton Source="iconseditprofile" HeightRequest="25" Grid.Row="0" Grid.Column="2" 
-                                 BackgroundColor="Transparent" HorizontalOptions="StartAndExpand" Margin='{OnPlatform iOS="10,70" ,Android="10,40"}'
-                                  VerticalOptions="StartAndExpand" 
-                             Clicked="ImageButton_Clicked"/>
-
-
-
-
-        <Frame Grid.Row="1" Grid.ColumnSpan="3" Margin='{OnPlatform iOS="5,-70,5,0" ,Android="5,-90,5,0"}'
-                    BackgroundColor="Transparent" HasShadow="False">
-
-            <StackLayout>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="130"/>
-
-
-
-                    </Grid.RowDefinitions>
-                    <!--<Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>-->
-                    <Frame   HeightRequest="130" BackgroundColor="#eef4f4"  WidthRequest="500"   HorizontalOptions="Center" CornerRadius="10" HasShadow="False"   Grid.Row="1"  >
-
-                        <Grid RowSpacing="6">
-                            <Grid.RowDefinitions > 
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Label x:Name="Total" Text="0" Grid.Row="0" Grid.Column="0" FontSize="28" TextColor="#67686a" FontAttributes="Bold" HorizontalOptions="Center"/>
-
-                            <Label Text="Total" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" FontAttributes="Bold" TextColor="#67686a"/>
-
-                            <Label x:Name="CountIn" Text="0" Grid.Row="0" Grid.Column="1" FontSize="28" TextColor="#67686a" FontAttributes="Bold" HorizontalOptions="Center"/>
-
-                            <Label Text="In" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" TextColor="#67686a" FontAttributes="Bold"/>
-
-                            <Label x:Name="CountOut" Text="0" Grid.Row="0" Grid.Column="2" FontSize="28" TextColor="#67686a" FontAttributes="Bold" HorizontalOptions="Center"/>
-
-                            <Label Text="Out" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" TextColor="#67686a" FontAttributes="Bold"/>
-
-                            <Label x:Name="DateTimeNow" Grid.Row="2" Grid.ColumnSpan="3" TextColor="#67686a" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  VerticalOptions="EndAndExpand"/>
-
-
-                        </Grid>
-                   
-
-
-                    </Frame>
-                 
-
-
-
-                    <!--<Button HeightRequest="200" BackgroundColor="#f7f7ff"   WidthRequest="200"   HorizontalOptions="Center" CornerRadius="10"  Text="Button1" Grid.Row="1"  />-->
-
-
-                </Grid>
-                <StackLayout >
-                    <Grid Margin="10">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-
-                        <Button Text="รับสินค้า" ImageSource="iconplus" BackgroundColor="#eef4f4" ContentLayout="Top,0" BorderWidth="1"  BorderColor="LightGray"
-                                    CornerRadius="15" FontSize="Medium"
-                                    
-                            Clicked="BtnStockin"
-                            FontFamily="{StaticResource Kanit}" 
-                            Grid.Row="0" Grid.Column="0"
-                            />
-                        <Button Text="จ่ายสินค้า"  ImageSource="iconminus" BackgroundColor="#eef4f4" ContentLayout="Top,0"  BorderWidth="1"  BorderColor="LightGray"
-                                    CornerRadius="15" FontSize="Medium"
-                                    
-                            Clicked="BtnStockOut"
-                            FontFamily="{StaticResource Kanit}"
-                                Grid.Row="0" Grid.Column="1"
-                            
-                            />
-
-                    </Grid>
-                </StackLayout>
-           
-                <StackLayout Margin="0,0,0,0">
-                    
-                    <ScrollView>
-                        <StackLayout Orientation="Vertical" VerticalOptions="Start" >
-
-
-                            <Button ImageSource="iconsplus48.png"   Text="รายการสินค้ารับเข้าล่าสุด"   BackgroundColor="#519D90"   TextColor="White" 
-                                    CornerRadius="10"
-                                    Clicked="Button_ClickedIn"
-                           FontSize="Medium"
-                            FontFamily="{StaticResource Kanit}"
-                       
-                         
-                          Margin="0,0,0,10" 
-                            />
-                          
-                            <ListView x:Name="Dashboardin" HasUnevenRows="True" BackgroundColor="White" VerticalOptions="Start" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardin_Refreshing">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell IsEnabled="False">
-                                            <StackLayout Orientation="Vertical" Margin="5" >
-                                                <Image Source="iconplus" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
-                                                <Label Text="{Binding Ref, StringFormat='Ref No. : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                <StackLayout Orientation="Horizontal">
-                                                    <Label Text="{Binding CreateDate, StringFormat='วันที่ : {0}'}" 
-                                                  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                    <StackLayout Orientation="Horizontal">
-                                                        <Label Text="จำนวน :" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                                       x:Name="TypeTrans"
-                                                  HorizontalOptions="EndAndExpand" />
-                                                        <Label Text="{Binding Amount}"   FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                               HorizontalOptions="End"/>
-                                                    </StackLayout>
-                                                </StackLayout>
-                                                <Label Text="{Binding Locations, StringFormat='ตำแหน่งที่จัดเก็บ : {0} '}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                <Label Text="{Binding Username , StringFormat='ผู้บันทึกรับสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                            </StackLayout>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                            <StackLayout  VerticalOptions="CenterAndExpand">
-
-                                <Button ImageSource="iconsminus48.png" Text="รายการสินค้าจ่ายออกล่าสุด" BackgroundColor="#E55151" 
-                                    CornerRadius="10"
-                                    Clicked="Button_ClickedOut"
-                            TextColor="White"
-                          
-                           FontFamily="{StaticResource Kanit}"
-                        FontSize="Medium"
-                                 Margin="0,0,0,10" 
-                            />
-                               
-                                <ListView x:Name="Dashboardout" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardout_Refreshing">
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                            <ViewCell IsEnabled="False" >
-                                                <StackLayout Orientation="Vertical"  Margin="5">
-                                                    <Image Source="iconminus" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
-                                                    <Label Text="{Binding Ref, StringFormat='Ref No. : {0}'}"  FontFamily="{StaticResource Kanit}" TextColor="Black" FontSize="Body"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                    <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" TextColor="Black" FontSize="Body"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                    <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" TextColor="Black" FontSize="Body"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                    <StackLayout Orientation="Horizontal">
-                                                        <Label Text="{Binding CreateDate, StringFormat='วันที่ : {0}'}" FontSize="Body" TextColor="Black"
-                                                   FontFamily="{StaticResource Kanit}"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                        <StackLayout Orientation="Horizontal">
-                                                            <Label Text="จำนวน :"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                                       x:Name="TypeTrans"
-                                                  HorizontalOptions="EndAndExpand" />
-                                                            <Label Text="{Binding Amount}"   FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                               HorizontalOptions="End"/>
-                                                        </StackLayout>
-                                                    </StackLayout>
-                                                    <Label Text="{Binding Locations, StringFormat='ตำแหน่งที่จัดเก็บ : {0} '}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                    <Label Text="{Binding Username , StringFormat='ผู้บันทึกจ่ายสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                </StackLayout>
-                                            </ViewCell>
-                                        </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
-                            </StackLayout>
-                            <StackLayout  VerticalOptions="CenterAndExpand">
-                                <Button ImageSource="iconsbrakewarning48.png" Text="รายการสินค้าถึงกำหนดสั่งซื้อ" BackgroundColor="#E97E2E" 
-                                    CornerRadius="10"
-                                    Clicked="Button_ClickedReorder"
-                            TextColor="White"
-                                        FontSize="Medium"
-                              
-                            FontFamily="{StaticResource Kanit}" 
-                            ></Button>
-
-
-                                <ListView x:Name="Dashboardreorder" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardreorder_Refreshing">
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                            <ViewCell IsEnabled="False" >
-                                                <StackLayout Orientation="Vertical"  Margin="5">
-                                                    <Image Source="iconwarning" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
-                                                    <Label Text="{Binding SkuId, StringFormat='หมายเลข Barcode: {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                    <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                    <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" 
-                                                   FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                    <Label Text="{Binding Total, StringFormat='จำนวนคงเหลือ : {0}'}"  FontSize="Body" TextColor="Black"
-                                                   FontFamily="{StaticResource Kanit}"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                </StackLayout>
-                                            </ViewCell>
-                                        </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
-                            </StackLayout>
-                        </StackLayout>
-                    </ScrollView>
-                </StackLayout>
-                    
-
-            </StackLayout>
-
-        </Frame>
-
-
-    </Grid>
-
-
-    <!--<AbsoluteLayout>
-        <Image Source="background.png" Aspect="AspectFill"
-                  AbsoluteLayout.LayoutBounds="0,0,2,0.12"
-                  AbsoluteLayout.LayoutFlags="All"
-               />
-        <StackLayout AbsoluteLayout.LayoutBounds="0.09,0.03"
-                        AbsoluteLayout.LayoutFlags="PositionProportional"
-                         BackgroundColor="Transparent"
-                         Orientation="Horizontal"
-                         VerticalOptions="Center"
-                         Padding="13,0,0,0">
-            <ic:CircleImage 
-                           Aspect="AspectFill"
-                               HeightRequest="80" WidthRequest="80"
-                         x:Name="ImgUser"/>
-            <Label x:Name="Username" HorizontalOptions="Center" VerticalOptions="Center" 
-                      FontFamily="{StaticResource Kanit}"
-                       FontSize="16"
-                   FontAttributes="Bold"
-                       Padding="13,0,0,0"/>
-            <ImageButton Source="iconsedit" HeightRequest="20" 
-                                 BackgroundColor="Transparent"
-                                  VerticalOptions="Center" 
-                             Clicked="ImageButton_Clicked"/>
+            <ImageButton Source="iconseditprofile" 
+                     HeightRequest="20"
+                     BackgroundColor="Transparent" 
+                     HorizontalOptions="Start" 
+                     VerticalOptions="Center" 
+                     Clicked="ImageButton_Clicked"/>
         </StackLayout>
-        <ScrollView
-                 AbsoluteLayout.LayoutBounds="0,1,1,0.85"
-                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
-            <StackLayout Padding="13,13,13,0" Spacing="13">
-                <StackLayout Padding="0,30,0,15" HorizontalOptions="Center">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="150"/>
-                        </Grid.ColumnDefinitions>
-                        <Button Text="รับสินค้า" ImageSource="iconplus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
-                                    CornerRadius="20" FontSize="Medium"
-                                    Clicked="BtnStockin"
-                            TextColor="Black"
-                            FontFamily="{StaticResource Kanit}" 
-                            Grid.Row="0" Grid.Column="0"
-                            />
-                        <Button Text="จ่ายสินค้า" ImageSource="iconminus" BackgroundColor="White" BorderWidth="1"  BorderColor="LightGray"
-                                    CornerRadius="20" FontSize="18"
-                                    Clicked="BtnStockOut"
-                            TextColor="Black"
-                            FontFamily="{StaticResource Kanit}"
-                                Grid.Row="0" Grid.Column="1"
-                            
-                            />
-                    </Grid>
-                </StackLayout>
-                <StackLayout Orientation="Vertical" VerticalOptions="Center">
-                    <Button Text="รายการสินค้ารับเข้าล่าสุด" BackgroundColor="White" BorderWidth="3" BorderColor="#c6e2ff" 
-                                    CornerRadius="15"
+        <Frame BackgroundColor="#eef4f4"  
+               WidthRequest="{OnIdiom Phone='500' , Tablet='800'}" 
+               HorizontalOptions="Center" 
+               CornerRadius="10"
+               Margin="12,0,12,0"
+               HasShadow="False">
+            <StackLayout>
+                <Grid RowSpacing="6">
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="Total" Text="0" 
+                                   Grid.Row="0" Grid.Column="0" 
+                                   FontSize="28" TextColor="#67686a" 
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center"/>
+                    <Label Text="Total" Grid.Row="1" Grid.Column="0" 
+                                   HorizontalOptions="Center" FontAttributes="Bold" 
+                                   TextColor="#67686a"/>
+                    <Label x:Name="CountIn" Text="0" Grid.Row="0"
+                                   Grid.Column="1" FontSize="28" TextColor="#67686a" 
+                                   FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label Text="In" Grid.Row="1" Grid.Column="1" 
+                                   HorizontalOptions="Center" TextColor="#67686a" 
+                                   FontAttributes="Bold"/>
+                    <Label x:Name="CountOut" Text="0" Grid.Row="0" Grid.Column="2" 
+                                   FontSize="28" TextColor="#67686a" FontAttributes="Bold" 
+                                   HorizontalOptions="Center"/>
+                    <Label Text="Out" Grid.Row="1" Grid.Column="2" 
+                                   HorizontalOptions="Center" TextColor="#67686a" 
+                                   FontAttributes="Bold"/>
+                    <Label x:Name="DateTimeNow" Grid.Row="2" Grid.ColumnSpan="3" 
+                                   TextColor="#67686a" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" 
+                                   VerticalOptions="EndAndExpand"/>
+                </Grid>
+            </StackLayout>
+        </Frame>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" 
+                     VerticalOptions="Center"
+                     Margin="12,10,12,10">
+            <Button Text="รับสินค้า" ImageSource="iconplus" BackgroundColor="#eef4f4" 
+                            ContentLayout="Top,0" BorderWidth="1"  BorderColor="LightGray"
+                            CornerRadius="15" FontSize="Medium"
+                            WidthRequest="{OnIdiom Phone='160' ,Tablet='410'}"
+                            Clicked="BtnStockin"
+                            FontFamily="{StaticResource Kanit}"/>
+            <Button Text="จ่ายสินค้า"  ImageSource="iconminus" BackgroundColor="#eef4f4" 
+                            ContentLayout="Top,0"  BorderWidth="1"  BorderColor="LightGray"
+                            CornerRadius="15" FontSize="Medium"
+                            Clicked="BtnStockOut"
+                             WidthRequest="{OnIdiom Phone='160' ,Tablet='410'}"
+                            FontFamily="{StaticResource Kanit}"/>
+        </StackLayout>
+        <StackLayout Margin="{OnIdiom Phone='12,0,12,0' , Tablet='100,0,100,0'}">
+            <ScrollView>
+                <StackLayout Orientation="Vertical" >
+                    <Button ImageSource="iconsplus48.png"   
+                                    Text="รายการสินค้ารับเข้าล่าสุด"   
+                                    BackgroundColor="#519D90"   
+                                    TextColor="White" 
+                                    VerticalOptions="Center"
+                                    CornerRadius="10"
                                     Clicked="Button_ClickedIn"
-                            TextColor="#455e5e"
-                            FontFamily="{StaticResource Kanit}"
-                            HeightRequest="80"
-                              FontSize="22"
-                          Margin="0,0,0,10"
-                            />
-                    <ListView x:Name="Dashboardin" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450" IsPullToRefreshEnabled="True" Refreshing="Dashboardin_Refreshing">
+                                    FontSize="Medium"
+                                    FontFamily="{StaticResource Kanit}"
+                                    Margin="0,0,0,10"/>
+                    <ListView x:Name="Dashboardin" HasUnevenRows="True" BackgroundColor="White" 
+                                      VerticalOptions="Start" HeightRequest="400" IsPullToRefreshEnabled="True"
+                                      Refreshing="Dashboardin_Refreshing">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell IsEnabled="False">
-                                    <StackLayout Orientation="Vertical"  Padding="20">
+                                    <StackLayout Orientation="Vertical" Margin="5" >
                                         <Image Source="iconplus" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
                                         <Label Text="{Binding Ref, StringFormat='Ref No. : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
@@ -373,20 +142,20 @@
                         </ListView.ItemTemplate>
                     </ListView>
                     <StackLayout  VerticalOptions="CenterAndExpand">
-                        <Button Text="รายการสินค้าจ่ายออกล่าสุด" BackgroundColor="White" BorderWidth="3" BorderColor="#c6e2ff" 
-                                    CornerRadius="15"
-                                    Clicked="Button_ClickedOut"
-                            TextColor="#455e5e"
-                                FontSize="22"
-                           FontFamily="{StaticResource Kanit}"
-                                HeightRequest="80"
-                                 Margin="0,0,0,10"
-                            />
-                        <ListView x:Name="Dashboardout" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450" IsPullToRefreshEnabled="True" Refreshing="Dashboardout_Refreshing">
+                        <Button ImageSource="iconsminus48.png" 
+                                Text="รายการสินค้าจ่ายออกล่าสุด" 
+                                BackgroundColor="#E55151" 
+                                CornerRadius="10"
+                                Clicked="Button_ClickedOut"
+                                TextColor="White"
+                                FontFamily="{StaticResource Kanit}"
+                                FontSize="Medium"
+                                Margin="0,0,0,10"/>
+                        <ListView x:Name="Dashboardout" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardout_Refreshing">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell IsEnabled="False" >
-                                        <StackLayout Orientation="Vertical"  Padding="20">
+                                        <StackLayout Orientation="Vertical"  Margin="5">
                                             <Image Source="iconminus" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
                                             <Label Text="{Binding Ref, StringFormat='Ref No. : {0}'}"  FontFamily="{StaticResource Kanit}" TextColor="Black" FontSize="Body"
                                                HorizontalOptions="StartAndExpand"/>
@@ -417,19 +186,19 @@
                         </ListView>
                     </StackLayout>
                     <StackLayout  VerticalOptions="CenterAndExpand">
-                        <Button Text="รายการสินค้าถึงกำหนดสั่งซื้อ" BackgroundColor="White" BorderWidth="3" BorderColor="#c6e2ff" 
-                                    CornerRadius="15"
+                        <Button ImageSource="iconsbrakewarning48.png" Text="รายการสินค้าถึงกำหนดสั่งซื้อ"
+                                BackgroundColor="#E97E2E" 
+                                    CornerRadius="10"
                                     Clicked="Button_ClickedReorder"
-                            TextColor="#455e5e"
-                                FontSize="22"
-                            FontFamily="{StaticResource Kanit}"
-                                HeightRequest="80"
+                            TextColor="White"
+                                        FontSize="Medium"
+                            FontFamily="{StaticResource Kanit}" 
                             ></Button>
-                        <ListView x:Name="Dashboardreorder" HasUnevenRows="True" BackgroundColor="White" HeightRequest="450" IsPullToRefreshEnabled="True" Refreshing="Dashboardreorder_Refreshing">
+                        <ListView x:Name="Dashboardreorder" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardreorder_Refreshing">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell IsEnabled="False" >
-                                        <StackLayout Orientation="Vertical"  Padding="20">
+                                        <StackLayout Orientation="Vertical"  Margin="5">
                                             <Image Source="iconwarning" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
                                             <Label Text="{Binding SkuId, StringFormat='หมายเลข Barcode: {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
@@ -448,7 +217,7 @@
                         </ListView>
                     </StackLayout>
                 </StackLayout>
-            </StackLayout>
-        </ScrollView>
-    </AbsoluteLayout>-->
+            </ScrollView>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

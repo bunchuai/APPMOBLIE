@@ -72,7 +72,7 @@ namespace APPMOBLIE
                     }
                     else
                     {
-                        await DisplayAlert("แจ้งเตือน", "กรุณาทำรรายการใหม่อีกครั้ง", "ตกลง");
+                        await DisplayAlert("แจ้งเตือน", "กรุณาทำรายการใหม่อีกครั้ง", "ตกลง");
                     }
                 }
             }
@@ -81,7 +81,6 @@ namespace APPMOBLIE
         private async void Edit_Clicked(object sender, EventArgs e)
         {
             var model = ((MenuItem)sender);
-
             await Navigation.PushAsync(new EditProductType(Convert.ToInt32(model.CommandParameter)));
         }
 

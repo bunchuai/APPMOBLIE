@@ -7,108 +7,115 @@
              x:Class="APPMOBLIE.Checkproduct"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
     <ContentPage.Content>
-        <AbsoluteLayout>
+        <StackLayout>
             <BoxView BackgroundColor="#344955"
-                  AbsoluteLayout.LayoutBounds="0,0,2,0.12"
-                   AbsoluteLayout.LayoutFlags="All" />
-            <StackLayout AbsoluteLayout.LayoutBounds="0.09,0.03"
-                        AbsoluteLayout.LayoutFlags="PositionProportional"
-                         BackgroundColor="Transparent"
-                         Orientation="Horizontal"
-                         VerticalOptions="Center"
-                         Padding="13,0,0,0">
-                <ic:CircleImage x:Name="ImgUser"
-                           Aspect="AspectFill"
-                               HeightRequest="80" WidthRequest="80"
-                         />
-                <Label x:Name="Username" HorizontalOptions="Center" VerticalOptions="Center" 
-                      FontFamily="{StaticResource Kanit}"
-                       FontSize="18"
-                       TextColor="White"
-                   FontAttributes="Bold"
-                       Padding="13,0,0,0"/>
-                <ImageButton Source="iconseditprofile" HeightRequest="20" 
-                                 BackgroundColor="Transparent"
-                                  VerticalOptions="Center" 
-                             Clicked="ImageButton_Clicked"/>
+                 HeightRequest="{OnIdiom Phone= '180' ,Tablet='200'}"/>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     Margin="0,-150,0,0">
+                <ic:CircleImage Source="userpic.png"
+                        WidthRequest="{OnIdiom Phone='70', Tablet='80'}" 
+                        HeightRequest="{OnIdiom Phone='70', Tablet='80'}"
+                        Aspect="AspectFill"
+                        VerticalOptions="Center"
+                        x:Name="ImgUser" ></ic:CircleImage>
+                <Label x:Name="Username"
+                   Text="UserName"
+               Style="{x:StaticResource Normalkanit}"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" 
+                   TextColor="White"/>
+                <ImageButton Source="iconseditprofile" 
+                     HeightRequest="20"
+                     BackgroundColor="Transparent" 
+                     HorizontalOptions="Start" 
+                     VerticalOptions="Center" 
+                     Clicked="ImageButton_Clicked"/>
             </StackLayout>
-            <StackLayout 
-                          AbsoluteLayout.LayoutBounds="0,0.25,1,0.3"
-                  AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional"
-                         >
-                <Frame x:Name="Fram1" BackgroundColor="White" HasShadow="False" BorderColor="LightGray"   Padding="10" Margin="15,0,10,5" CornerRadius="5" IsVisible="False">
-                    <Grid RowSpacing="2" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Label x:Name="Skuinfo" Grid.Row="0" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black" />
-                        <Label x:Name="Procd" Grid.Row="1" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
-                        <Label x:Name="Prodn"  Grid.Row="2" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
-                        <Label x:Name="Prodb" Grid.Row="3" Grid.ColumnSpan="2"  FontSize="16"  FontFamily="{StaticResource Kanit}" TextColor="Black"/>
-                        <Label x:Name="Prodm" Grid.Row="4" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
-                        <Label x:Name="Prolo" Grid.Row="5" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
-                        <Label x:Name="Proin" Grid.Row="6" Grid.Column="0"  FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
-                        <Label x:Name="Proout"  Grid.Row="6" Grid.Column="1" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
-                        <Label x:Name="Available" Grid.Row="7" Grid.ColumnSpan="2" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
-                    </Grid>
-                </Frame>
-            </StackLayout>
-            <StackLayout 
-                 AbsoluteLayout.LayoutBounds="0,1.05,1,0.55"
-                   AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
-                <StackLayout  Padding="5">
-                    <Label x:Name="Alert"  FontFamily="{StaticResource Kanit}" TextColor="Black" HorizontalOptions="Center"/>
-                    <Label Text="{Binding titletrans}"  FontFamily="{StaticResource Kanit}" TextColor="Black" x:Name="Titletrans"
+            <Frame x:Name="Fram1" BackgroundColor="#eef4f4"  
+               WidthRequest="{OnIdiom Phone='500' , Tablet='800'}" 
+               HorizontalOptions="Center" 
+               CornerRadius="10"
+               Margin="12,0,12,0"
+               HasShadow="False">
+                <ScrollView>
+                    <StackLayout>
+                        <Grid RowSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="Skuinfo" Grid.Row="0" Grid.ColumnSpan="2" FontSize="16" 
+                                   FontFamily="{StaticResource Kanit}" TextColor="Black" />
+                            <Label x:Name="Procd" Grid.Row="1" Grid.ColumnSpan="2" FontSize="16" 
+                                   FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                            <Label x:Name="Prodn"  Grid.Row="2" Grid.ColumnSpan="2" FontSize="16" 
+                                   FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                            <Label x:Name="Prodb" Grid.Row="3" Grid.ColumnSpan="2"  FontSize="16"  
+                                   FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                            <Label x:Name="Prodm" Grid.Row="4" Grid.ColumnSpan="2" FontSize="16" 
+                                   FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                            <Label x:Name="Prolo" Grid.Row="5" Grid.ColumnSpan="2" FontSize="16" 
+                                   FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                            <Label x:Name="Proin" Grid.Row="6" Grid.Column="0"  FontSize="16" 
+                                   FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                            <Label x:Name="Proout"  Grid.Row="6" Grid.Column="1" FontSize="16" 
+                                   FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                            <Label x:Name="Available" Grid.Row="7" Grid.ColumnSpan="2" FontSize="16" 
+                                   FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                        </Grid>
+                        <StackLayout>
+                            <Label x:Name="Alert"  FontFamily="{StaticResource Kanit}" TextColor="Black" HorizontalOptions="Center"/>
+                            <Label Text="{Binding titletrans}"  FontFamily="{StaticResource Kanit}" TextColor="Black" x:Name="Titletrans"
                            FontSize="16" HorizontalOptions="Center" />
-                    <ListView  x:Name="listview" HasUnevenRows="True" >
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell IsEnabled="False">
-                                    <StackLayout Orientation="Vertical"  Padding="20,0,20,5">
-                                        <Image Source="iconlistcheck" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
-
-                                        <Label Text="{Binding reference, StringFormat='  Ref.No. : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding TransactionDate, StringFormat='  วันที่ : {0}'}" 
-                                                   FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                            <StackLayout Orientation="Horizontal" >
-                                                <Label Text="{Binding TransactionType}" FontSize="16" FontFamily="{StaticResource Kanit}" 
+                            <ListView  x:Name="listview" HasUnevenRows="True" >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell IsEnabled="False">
+                                            <StackLayout Orientation="Vertical"  Padding="12,0,12,5">
+                                                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                                    <Image Source="iconlistcheck" HorizontalOptions="Start" WidthRequest="30" HeightRequest="30"/>
+                                                    <Label Text="{Binding TransactionType}" FontSize="16" FontFamily="{StaticResource Kanit}" 
                                                         x:Name="TypeTrans"
-                                                        HorizontalOptions="EndAndExpand"
+                                                           VerticalOptions="Center"
                                                         TextColor="{Binding Color}"/>
-                                                <Label Text="{Binding Quantity}"  FontSize="16" FontFamily="{StaticResource Kanit}" 
-                                                        HorizontalOptions="End"
+                                                    <Label Text="{Binding Quantity}"  FontSize="16" FontFamily="{StaticResource Kanit}" 
+                                                           VerticalOptions="Center"
                                                         TextColor="{Binding Color}"/>
-                                                <Label Text="{Binding Unit}" FontSize="16" FontFamily="{StaticResource Kanit}"
-                                                        HorizontalOptions="StartAndExpand"
+                                                    <Label Text="{Binding Unit}" FontSize="16" FontFamily="{StaticResource Kanit}"
+                                                           VerticalOptions="Center"
                                                         TextColor="{Binding Color}"/>
+                                                </StackLayout>
+                                                <Label Text="{Binding reference, StringFormat='  Ref.No. : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                <StackLayout >
+                                                    <Label Text="{Binding TransactionDate, StringFormat='  วันที่ : {0}'}" 
+                                                   FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
+                                                </StackLayout>
+                                                <Label Text="{Binding Username , StringFormat='  ผู้บันทึกสินค้า : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                                <Label Text="{Binding Description , StringFormat='  Note. : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
                                             </StackLayout>
-                                        </StackLayout>
-                                        <Label Text="{Binding Username , StringFormat='  ผู้บันทึกรายการสินค้า : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                        <Label Text="{Binding Description , StringFormat='  Note. : {0}'}" FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
-                                               HorizontalOptions="StartAndExpand"/>
-                                    </StackLayout>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </Frame>
+          
             </StackLayout>
-        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

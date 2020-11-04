@@ -93,7 +93,7 @@ namespace APPMOBLIE
             }
         }
         IEnumerable<ProductDetail> GetProductDetails(string searchtext = null)
-        {
+         {
             var productdata = TrnsactionResult;
             if (String.IsNullOrWhiteSpace(searchtext))
             {

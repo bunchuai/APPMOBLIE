@@ -59,18 +59,13 @@ namespace APPMOBLIE
                 }
             }
         }
-
-
-
         #region helper
-
         private class ResponseMessage
         {
             public bool Valid { get; set; }
 
             public string Message { get; set; }
         }
-
         #endregion
     }
 }

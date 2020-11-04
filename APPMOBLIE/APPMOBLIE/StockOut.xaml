@@ -7,74 +7,81 @@
              mc:Ignorable="d"
              xmlns:local="clr-namespace:APPMOBLIE.Validations"
              x:Class="APPMOBLIE.StockOut">
+    <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
+        <Frame  HasShadow="True" 
+                      Margin="{OnIdiom Phone='0' ,Tablet='120,0,120,0'}"
+                         BackgroundColor="#eef4f4"
+                        Style="{x:StaticResource ForFrame}">
 
-    <StackLayout >
-        <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" Margin="20"
+                             HorizontalOptions="Center">
+                <Grid RowSpacing="13" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="{OnIdiom Phone='*' , Tablet='400'}"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="จ่ายสินค้า" FontSize="Title"  FontFamily="{StaticResource Kanit}" 
+                                   Grid.Row="0" Grid.ColumnSpan="2"
+                                     TextColor="Black"
+                                   HorizontalOptions="Center"/>
+                    <Label Text="เลข Barcode"  FontFamily="{StaticResource Kanit}"
+                                Grid.Column="0" Grid.Row="1"
+                                   TextColor="Black" FontSize="Body" 
+                               VerticalOptions="Center"/>
+                    <Entry x:Name="Mycode"  FontFamily="{StaticResource Kanit}" 
+                                   TextColor="Black"  Grid.Column="1"   Grid.Row="1" 
+                                   VerticalOptions="Center" FontSize="Body" 
+                                   Completed="Mycode_Completed"></Entry>
+                    <Button BackgroundColor="Transparent" ImageSource="barcode.png" 
+                                    WidthRequest="20" HeightRequest="20" Grid.Column="1" Grid.Row="1"
+                                    HorizontalOptions="End" Clicked="ScanBarCode"/>
+                    <Label Text="ชื่อสินค้า"  FontFamily="{StaticResource Kanit}" 
+                                 TextColor="Black" FontSize="Body" 
+                                Grid.Column="0"  Grid.Row="2" VerticalOptions="Center"/>
+                    <Entry  x:Name="ProductName" Style="{x:StaticResource Normalkanit}"  FontSize="Body" 
+                                TextColor="Black"  Grid.Column="1"   Grid.Row="2"/>
+                    <Label Text="จำนวน"  FontFamily="{StaticResource Kanit}" FontSize="Body" 
+                           Grid.Column="0" TextColor="Black"  Grid.Row="3" VerticalOptions="Center" />
+                    <Entry x:Name="Quantity"   FontFamily="{StaticResource Kanit}" FontSize="Body" 
+                               TextColor="Black"  Grid.Column="1" Keyboard="Numeric"  Grid.Row="3">
+                        <Entry.Behaviors>
+                            <local:NumberOnlyValidation x:Name="NumberOnlyValidation"/>
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label Text="Ref No."  FontFamily="{StaticResource Kanit}"  FontSize="Body" 
+                               TextColor="Black"  Grid.Column="0"  Grid.Row="4" VerticalOptions="Center"/>
+                    <Entry x:Name="ReferentNumber"  FontFamily="{StaticResource Kanit}" FontSize="Body" 
+                               TextColor="Black"  Grid.Column="1"   Grid.Row="4">
+                        <Entry.Behaviors>
+                            <local:EmptyValidation x:Name="EmptyValidation"/>
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label Text="Note"  FontFamily="{StaticResource Kanit}" FontSize="Body" 
+                               TextColor="Black"   Grid.Column="0"  Grid.Row="5" VerticalOptions="Center"/>
+                    <Entry x:Name="ProductDescription"  FontFamily="{StaticResource Kanit}" 
+                               TextColor="Black" FontSize="Body"   Grid.Column="1"   Grid.Row="5" />
 
-        </StackLayout>
-        <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
-            <Frame  BackgroundColor="White" HeightRequest="500"  HasShadow="True" Padding="0" Margin="0" CornerRadius="5">
-                <StackLayout>
-                    <StackLayout Margin="0,30,0,10">
-                        <!--<Image Source="iconoutsky"/>-->
-                        <Label Text="จ่ายสินค้า" FontSize="Title"  FontFamily="{x:StaticResource Kanit}"  TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
-                    </StackLayout>
-                    <StackLayout Padding="0" Margin="35,10">
-                        <Grid RowSpacing="5">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="120"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Label Text="เลข Barcode"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="0"  Grid.Row="0" VerticalOptions="Center"/>
-                            <Entry x:Name="Mycode"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="1"   Grid.Row="0" Completed="Mycode_Completed"/>
-                            <Button  BackgroundColor="Transparent" ImageSource="barcode.png" WidthRequest="20" HeightRequest="20" Grid.Column="1" Grid.Row="0" HorizontalOptions="End" Clicked="ScanBarCode"/>
-
-                            <Label Text="ชื่อสินค้า"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="0"  Grid.Row="1" VerticalOptions="Center"/>
-                            <Entry  x:Name="ProductName"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="1"   Grid.Row="1"/>
-
-                            <Label Text="จำนวน"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="0"  Grid.Row="2" VerticalOptions="Center" />
-                            <Entry x:Name="Quantity"    FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="1"   Grid.Row="2" Keyboard="Numeric">
-                                <Entry.Behaviors>
-                                    <local:NumberOnlyValidation x:Name="NumberOnlyValidation"/>
-                                </Entry.Behaviors>
-                            </Entry>
-
-                            <Label Text="Ref No."  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"   Grid.Column="0"  Grid.Row="3" VerticalOptions="Center"/>
-                            <Entry x:Name="ReferentNumber"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="1"  Grid.Row="3">
-                                <Entry.Behaviors>
-                                    <local:EmptyValidation x:Name="EmptyValidation"/>
-                                </Entry.Behaviors>
-                            </Entry>
-
-
-                            <Label Text="Note"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"  Grid.Column="0"  Grid.Row="4" VerticalOptions="Center"/>
-                            <Entry x:Name="ProductDescription"  FontFamily="{StaticResource Kanit}" TextColor="Black" FontSize="Body"   Grid.Column="1"   Grid.Row="4" />
-
-                        </Grid>
-                    </StackLayout>
-                    <StackLayout Padding="10,20,10,10" Margin="60,10">
-                        <Grid ColumnSpacing="3">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Button Text="บันทึก"  FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Row="0" Grid.Column="0"  BackgroundColor="#2B976C" TextColor="White" CornerRadius="20" Clicked="Save_Click" IsEnabled="{Binding Source={x:Reference NumberOnlyValidation,EmptyValidation},Path=IsValid}"/>
-                            <Button Text="ยกเลิก"  FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Row="0" Grid.Column="1"  BackgroundColor="Gray" TextColor="White" CornerRadius="20" Clicked="Cancel_Click"/>
-                        </Grid>
-                    </StackLayout>
+                </Grid>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" 
+                                 Padding="0,30,0,0"
+                     VerticalOptions="Center"
+                     Margin="12,0,12,10">
+                    <Button Text="บันทึก"  FontFamily="{StaticResource Kanit}" FontSize="Body" 
+                                BackgroundColor="#2B976C" TextColor="White" CornerRadius="10" 
+                                Clicked="Save_Click" WidthRequest="{OnIdiom Phone='140' ,Tablet='180'}"
+                                    IsEnabled="{Binding Source={x:Reference NumberOnlyValidation,EmptyValidation },Path=IsValid}"/>
+                    <Button Text="ยกเลิก"  FontFamily="{StaticResource Kanit}" FontSize="Body"
+                                     WidthRequest="{OnIdiom Phone='140' ,Tablet='180'}"
+                                    BackgroundColor="Gray" TextColor="White" CornerRadius="10" Clicked="Cancel_Click"/>
                 </StackLayout>
-            </Frame>
-        </StackLayout>
+            </StackLayout>
+        </Frame>
     </StackLayout>
 </ContentPage>

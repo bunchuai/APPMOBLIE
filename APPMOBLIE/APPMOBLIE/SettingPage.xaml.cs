@@ -69,35 +69,7 @@ namespace APPMOBLIE
 
             }
         }
-
-        //private async void TakePhoto_Clicked(object sender, EventArgs e)
-        //{
-        //    await CrossMedia.Current.Initialize();
-
-        //    if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
-        //    {
-        //        await DisplayAlert("No Camera", ":( No camera avaialble.", "OK");
-        //        return;
-        //    }
-
-        //    var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-        //    {
-        //        Directory = "Sample",
-        //        Name = "test.jpg",
-        //        PhotoSize = PhotoSize.Medium,
-        //        SaveToAlbum = true,
-        //        AllowCropping = true
-        //    });
-        //    if (file == null)
-        //        return;
-        //    await DisplayAlert("File Location", file.Path, "OK");
-        //    image.Source = ImageSource.FromStream(() =>
-        //    {
-        //        var stream = file.GetStream();
-        //        file.Dispose();
-        //        return stream;
-        //    });
-        //}
+       
         private void ImageButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new EditUser());

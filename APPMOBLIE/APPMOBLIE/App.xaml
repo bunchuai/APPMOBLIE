@@ -23,11 +23,11 @@
                 <Setter Property="FontSize" Value="20"/>
             </Style>
             <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="FontFamily" Value="{x:StaticResource Kanit}"/>
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="BackgroundColor" Value="Gray"/>
                 <Setter Property="CornerRadius" Value="20"/>
-                <!--<Setter Property="FontAttributes" Value="Bold"/>-->
             </Style>
             <Style x:Key="fontstyle" TargetType="Label">
                 <Setter Property="FontFamily" Value="{x:StaticResource Kanit}"/>
@@ -35,6 +35,13 @@
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="16"/>
             </Style>
+            <Style x:Key="ForFrame" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="20"/>
+            </Style>
+            
            
             
         </ResourceDictionary>

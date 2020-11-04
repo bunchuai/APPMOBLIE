@@ -1,75 +1,82 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="APPMOBLIE.Report">
     <ContentPage.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="180"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="120"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
-
-            </Grid.ColumnDefinitions>
-
-            <BoxView Grid.Row="0" Grid.ColumnSpan="3" BackgroundColor="#344955"/>
-
-
-            <Label Text="Email : " FontAttributes="Bold" Grid.Row="0" Grid.Column="0" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
-
-
-            <Label x:Name="Username" FontSize='{OnPlatform iOS="14" ,Default="16"}' Grid.Row="0" Grid.Column="1"
-                   Margin='{OnPlatform iOS="10,70" ,Default="10,50"}'
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="EndAndExpand"                 
+        <StackLayout>
+            <BoxView BackgroundColor="#344955"
+                 HeightRequest="{OnIdiom Phone= '180' ,Tablet='200'}"/>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     Margin="0,-150,0,0">
+                <ic:CircleImage Source="userpic.png"
+                        WidthRequest="{OnIdiom Phone='70', Tablet='80'}" 
+                        HeightRequest="{OnIdiom Phone='70', Tablet='80'}"
+                        Aspect="AspectFill"
+                        VerticalOptions="Center"
+                        x:Name="ImgUser" ></ic:CircleImage>
+                <Label x:Name="Username"
+                   Text="UserName"
+               Style="{x:StaticResource Normalkanit}"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" 
                    TextColor="White"/>
-
-
-            <Frame Grid.Row="1" Grid.ColumnSpan="3" Margin="10,0,10,0" 
-                    BackgroundColor="White" HasShadow="False" VerticalOptions="Start">
-
-                <Grid ColumnSpacing="20">
-
-                    <Grid.RowDefinitions>
-                        
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Label Text="ปี" FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="End"/>
-                    <Picker x:Name="years"
-                             ItemsSource="{Binding years}"
-                             ItemDisplayBinding="{Binding YearDisplay}"
-                                
-                             
-                            Grid.Row="1" Grid.Column="1"></Picker>
-                    
-                    
-                    <Label Text="เดือน" FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Row="1" Grid.Column="2" VerticalTextAlignment="Center" HorizontalTextAlignment="End"/>
-                    <Picker x:Name="months" 
+                <ImageButton Source="iconseditprofile" 
+                     HeightRequest="20"
+                     BackgroundColor="Transparent" 
+                     HorizontalOptions="Start" 
+                     VerticalOptions="Center" 
+                     Clicked="ImageButton_Clicked"/>
+            </StackLayout>
+            <Frame x:Name="Fram1" BackgroundColor="#eef4f4"  
+               WidthRequest="{OnIdiom Phone='500' , Tablet='800'}" 
+               HorizontalOptions="Center" 
+               CornerRadius="10"
+               Margin="12,0,12,0"
+               HasShadow="False">
+                <StackLayout>
+                    <Grid RowSpacing="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="EmailName"
+                           Grid.Row="0" Grid.ColumnSpan="2"
+                       FontSize="16" FontFamily="{StaticResource Kanit}" TextColor="Black"
+                   VerticalOptions="Center"/>
+                        <Label Text="เลือกเดือน" FontFamily="{StaticResource Kanit}" FontSize="Body"
+                               VerticalOptions="Center"
+                           Grid.Row="1" Grid.Column="0"/>
+                        <Picker x:Name="months" 
                             ItemsSource="{Binding months}"
+                                 VerticalOptions="Center"
+                                FontSize="Body" 
                                 ItemDisplayBinding="{Binding MonthName}"
-                                
-                            
-                            Grid.Row="1" Grid.Column="3"></Picker>
-
-                    <Button Text="ส่งคำขอ" Clicked="SendReport"  Grid.Row="2" Grid.ColumnSpan="4" BackgroundColor="#2B976C" CornerRadius="10" FontFamily="{StaticResource Kanit}" FontSize="Body" ></Button>
-
-                </Grid>
-             
-           
+                            Grid.Row="1" Grid.Column="1"></Picker>
+                        <Label Text="เลือกปี" FontFamily="{StaticResource Kanit}" FontSize="Body" 
+                               VerticalOptions="Center"
+                           Grid.Row="2" Grid.Column="0"/>
+                        <Picker x:Name="years"
+                             ItemsSource="{Binding years}"
+                                VerticalOptions="Center"
+                                FontSize="Body" 
+                            Grid.Row="2" Grid.Column="1"
+                             ItemDisplayBinding="{Binding YearDisplay}"></Picker>
+                        <Button Text="ส่งคำขอ" Clicked="SendReport"  Grid.Row="3" Grid.ColumnSpan="2"
+                                BackgroundColor="#2B976C" FontSize="16" 
+                                 Margin="{OnIdiom Phone='40,0,40,0' ,Tablet='200,0,200,0'}"
+                                TextColor="White"
+                                CornerRadius="10" FontFamily="{StaticResource Kanit}" />
+                    </Grid>
+                </StackLayout>
             </Frame>
- 
-
-        </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

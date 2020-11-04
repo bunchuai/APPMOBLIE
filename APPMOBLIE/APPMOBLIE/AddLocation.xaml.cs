@@ -47,7 +47,7 @@ namespace APPMOBLIE
                     }
                     else
                     {
-                        await DisplayAlert("แจ้งเตือน", "กรุณาทำรรายการใหม่อีกครั้ง", "ตกลง");
+                        await DisplayAlert("แจ้งเตือน", "กรุณาทำรายการใหม่อีกครั้ง", "ตกลง");
                     }
                 }
             }
