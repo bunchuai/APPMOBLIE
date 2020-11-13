@@ -405,9 +405,15 @@
   <ItemGroup>
     <BundleResource Include="Resources\iconlogin3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconpassword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconusername.png" />
+  </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionAPPMOBLIEiOSHideInfoBar="True" XamarinHotReloadUnhandledDeviceExceptionAPPMOBLIEiOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadUnhandledDeviceExceptionAPPMOBLIEiOSHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionAPPMOBLIEiOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

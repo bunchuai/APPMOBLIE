@@ -9,7 +9,7 @@
              BackgroundImageSource="background.png"
              x:Class="APPMOBLIE.HomePage"
             BarTextColor="LightGray"           
-            BarBackgroundColor="#4A6572" 
+            BarBackgroundColor="#4A6572"  
             SelectedTabColor="#d6d9ce">
     <local:AllTransection Icon="iconshome.png" Title="Home"></local:AllTransection>
     <local:AddProduct Icon="iconsadd.png" Title="Add"></local:AddProduct>

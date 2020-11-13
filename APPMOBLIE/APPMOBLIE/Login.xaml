@@ -31,10 +31,10 @@
                            Margin="{OnIdiom Phone='0' ,Tablet='100,0,100,0'}">
                         <StackLayout Orientation="Horizontal"
                                      Padding="5,0,10,0">
-                            <Image Source="iconlogin3.png" 
-                                   Aspect="AspectFill"
-                                    WidthRequest="42"
-                                   HeightRequest="42"
+                            <Image Source="iconusername.png" 
+                                 
+                                    WidthRequest="32"
+                                   HeightRequest="32"
                                    HorizontalOptions="Start"/>
                             <Entry x:Name="Email"  Placeholder="อีเมล" 
                                                Style="{x:StaticResource Normalkanit}"                                               
@@ -54,10 +54,10 @@
                                BorderColor="DarkGray">
                         <StackLayout Orientation="Horizontal"
                                      Padding="5,0,10,0">
-                            <Image Source="{OnPlatform Android=iconlogin.png , iOS=iconlogin.png}" 
-                                   Aspect="AspectFill"
-                                   WidthRequest="42"
-                                   HeightRequest="42"
+                            <Image Source="{OnPlatform Android=iconpassword.png , iOS=iconpassword.png}" 
+                                   
+                                   WidthRequest="32"
+                                   HeightRequest="32"
                                    HorizontalOptions="Start"/>
                             <Entry  x:Name="Password" IsPassword="True" 
                                                 MaxLength="8" Placeholder="รหัสผ่าน" 
@@ -90,7 +90,7 @@
                 </StackLayout>
             </Frame>
             <StackLayout>
-                <Label Text="Smart WMS Version 5.0.0" 
+                <Label Text="Smart WMS Version 8.0" 
                                FontSize="12" 
                                HorizontalOptions="CenterAndExpand"
                                TextColor="White" 
