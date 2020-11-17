@@ -90,7 +90,7 @@
                 </StackLayout>
             </Frame>
             <StackLayout>
-                <Label Text="Smart WMS Version 8.0" 
+                <Label Text="{OnPlatform Android='Smart WMS 7.0' ,iOS='Smart WMS 3.0'}"
                                FontSize="12" 
                                HorizontalOptions="CenterAndExpand"
                                TextColor="White" 
