@@ -29,7 +29,7 @@
                                Style="{x:StaticResource ForFrame}"
                                BorderColor="DarkGray"
                            Margin="{OnIdiom Phone='0' ,Tablet='100,0,100,0'}">
-                        <StackLayout Orientation="Horizontal"
+                        <StackLayout Orientation="Horizontal" 
                                      Padding="5,0,10,0">
                             <Image Source="iconusername.png" 
                                  
