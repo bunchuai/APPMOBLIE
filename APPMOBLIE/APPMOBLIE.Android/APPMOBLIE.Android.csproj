@@ -41,7 +41,7 @@
     <AndroidPackageFormat>apk</AndroidPackageFormat>
     <AndroidKeyStore>false</AndroidKeyStore>
     <AndroidSigningKeyStore>D:\User\Desktop\KeyStore\Wms\Wms.keystore</AndroidSigningKeyStore>
-    <AndroidLinkMode>Full</AndroidLinkMode>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
@@ -59,9 +59,9 @@
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidKeyStore>false</AndroidKeyStore>
-    <AndroidLinkMode>Full</AndroidLinkMode>
+    <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-    <AndroidPackageFormat>apk</AndroidPackageFormat>
+    <AndroidPackageFormat>aab</AndroidPackageFormat>
     <AndroidEnableSGenConcurrent>false</AndroidEnableSGenConcurrent>
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
@@ -69,6 +69,7 @@
     <BundleAssemblies>false</BundleAssemblies>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <AndroidEnableMultiDex>false</AndroidEnableMultiDex>
+    <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -335,7 +336,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadUnhandledDeviceExceptionAPPMOBLIEAndroidHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionAPPMOBLIEAndroidHideInfoBar="True" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionAPPMOBLIEAndroidHideInfoBar="True" XamarinHotReloadUnhandledDeviceExceptionAPPMOBLIEAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
