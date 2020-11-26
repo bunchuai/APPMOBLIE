@@ -17,4 +17,4 @@ namespace APPMOBLIE.iOS
             UIApplication.Main(args, null, "AppDelegate");
         }
     }
-}
+} 
