@@ -57,8 +57,9 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>iOS-ondevice</CodesignProvision>
-    <MtouchLink>SdkOnly</MtouchLink>
+    <CodesignProvision>
+    </CodesignProvision>
+    <MtouchLink>None</MtouchLink>
     <MtouchFastDev>true</MtouchFastDev>
     <OptimizePNGs>true</OptimizePNGs>
   </PropertyGroup>
@@ -1268,7 +1269,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionAPPMOBLIEiOSHideInfoBar="True" XamarinHotReloadUnhandledDeviceExceptionAPPMOBLIEiOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadUnhandledDeviceExceptionAPPMOBLIEiOSHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionAPPMOBLIEiOSHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

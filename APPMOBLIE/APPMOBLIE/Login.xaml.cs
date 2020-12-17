@@ -68,6 +68,7 @@ namespace APPMOBLIE
                         await Application.Current.SavePropertiesAsync();
 
                         this.IsBusy = true;
+                   
               
                         var Page = new HomePage();                     
                         await Navigation.PushAsync(Page);             
