@@ -9,10 +9,13 @@
              xmlns:local="clr-namespace:APPMOBLIE.Validations" 
              >
     <ContentPage.Content>
+        
         <StackLayout Padding="0" 
                      WidthRequest="300"
-                     Margin="10,100,10,0" 
+                     Margin="10,50,10,0" 
                      HorizontalOptions="FillAndExpand">
+           
+
             <Frame  BackgroundColor="White"
                     Style="{x:StaticResource ForFrame}"
                     Margin="{OnIdiom Phone='0,30' ,Tablet='100,0,100,30'}">
@@ -22,19 +25,21 @@
                         <Label Text="Smart WMS"  
                                Style="{x:StaticResource Normalkanit}" 
                                FontSize="{OnPlatform Android=28, iOS=22}"
-                               Padding="0,0,0,20"
+                               Padding="0,0,0,0"
                                TextColor="#67686a"
                                HorizontalOptions="Center"/>
+                    
+                     <ActivityIndicator x:Name="activityIndicator1" IsRunning="{Binding IsBusy}" Color="Red" />
                     <Frame HorizontalOptions="FillAndExpand"
                                Style="{x:StaticResource ForFrame}"
                                BorderColor="DarkGray"
                            Margin="{OnIdiom Phone='0' ,Tablet='100,0,100,0'}">
-                        <StackLayout Orientation="Horizontal"
+                        <StackLayout Orientation="Horizontal" 
                                      Padding="5,0,10,0">
-                            <Image Source="iconlogin3.png" 
-                                   Aspect="AspectFill"
-                                    WidthRequest="42"
-                                   HeightRequest="42"
+                            <Image Source="iconusername.png" 
+                                 
+                                    WidthRequest="32"
+                                   HeightRequest="32"
                                    HorizontalOptions="Start"/>
                             <Entry x:Name="Email"  Placeholder="อีเมล" 
                                                Style="{x:StaticResource Normalkanit}"                                               
@@ -54,10 +59,10 @@
                                BorderColor="DarkGray">
                         <StackLayout Orientation="Horizontal"
                                      Padding="5,0,10,0">
-                            <Image Source="{OnPlatform Android=iconlogin.png , iOS=iconlogin.png}" 
-                                   Aspect="AspectFill"
-                                   WidthRequest="42"
-                                   HeightRequest="42"
+                            <Image Source="{OnPlatform Android=iconpassword.png , iOS=iconpassword.png}" 
+                                   
+                                   WidthRequest="32"
+                                   HeightRequest="32"
                                    HorizontalOptions="Start"/>
                             <Entry  x:Name="Password" IsPassword="True" 
                                                 MaxLength="8" Placeholder="รหัสผ่าน" 
@@ -72,9 +77,11 @@
                                 </Entry>
                             </StackLayout>
                         </Frame>
+                  
                         <Label x:Name="displayError" Text="" TextColor="Red" HorizontalOptions="Center"/>
                     <Button  Text="เข้าสู่ระบบ" 
                              Style="{x:StaticResource ButtonStyle}"
+                             x:Name="BtnLogin"
                              Clicked="Button_SignIn" 
                              BackgroundColor="#0095b6" 
                              Margin="{OnIdiom Phone='40,10,40,10' ,Tablet='200,0,200,0'}"
@@ -90,12 +97,16 @@
                 </StackLayout>
             </Frame>
             <StackLayout>
-                <Label Text="Smart WMS Version 5.0.0" 
+                <Label Text="{OnPlatform Android='Smart WMS 8.0' ,iOS='Smart WMS 3.0'}"
                                FontSize="12" 
                                HorizontalOptions="CenterAndExpand"
                                TextColor="White" 
                                Style="{x:StaticResource Normalkanit}"/>
             </StackLayout>
-        </StackLayout>
+           
+                
+           
+            </StackLayout>
+      
     </ContentPage.Content>
 </ContentPage>
