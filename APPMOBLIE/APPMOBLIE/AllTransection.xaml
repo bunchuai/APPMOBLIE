@@ -109,7 +109,7 @@
                            
                             
                             FontFamily="{StaticResource Kanit}"/>
-            <Button Text="รายการจ่ายออก"  ImageSource="iconsminus48" BackgroundColor="#E55151" TextColor="White"
+            <Button Text="รายการจ่ายออก"  ImageSource="iconsminus48" BackgroundColor="#E55151" TextColor="White" Clicked="Button_ClickedOut"
                             ContentLayout="Top,0"  BorderWidth="1"  BorderColor="LightGray"
                             CornerRadius="15" FontSize="Body"
                           

@@ -178,7 +178,7 @@ namespace APPMOBLIE
         }
         public void Button_ClickedOut(object sender, EventArgs e)
         {
-            this.Navigation.PushAsync(new TransectionIn());
+            this.Navigation.PushAsync(new TransectionOut());
 
             //if (DashboardOut == false)
             //{
