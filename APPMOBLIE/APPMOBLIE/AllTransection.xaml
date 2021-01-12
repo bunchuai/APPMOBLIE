@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
              x:Class="APPMOBLIE.AllTransection"
              BackgroundColor="White"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
@@ -33,15 +34,16 @@
                      VerticalOptions="Center" 
                      Clicked="ImageButton_Clicked"/>
         </StackLayout>
-        <Frame BackgroundColor="#eef4f4"  
+        <Frame BackgroundColor="#eef4f4"     
                WidthRequest="{OnIdiom Phone='500' , Tablet='800'}" 
                HorizontalOptions="Center" 
                CornerRadius="10"
                Margin="12,0,12,0"
                HasShadow="False">
             <StackLayout>
-                <Grid RowSpacing="6">
+                <Grid RowSpacing="5">
                     <Grid.RowDefinitions >
+                        <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
@@ -51,27 +53,28 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
+                    <Label Text="รายการประจำเดือน" FontFamily="{StaticResource Kanit}" FontSize="Body" Grid.Row="0" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand"/>
                     <Label x:Name="Total" Text="0" 
-                                   Grid.Row="0" Grid.Column="0" 
-                                   FontSize="28" TextColor="#67686a" 
+                                   Grid.Row="1" Grid.Column="0" 
+                                   FontSize="24" TextColor="#67686a" 
                                    FontAttributes="Bold"
                                    HorizontalOptions="Center"/>
-                    <Label Text="Total" Grid.Row="1" Grid.Column="0" 
+                    <Label Text="ทั้งหมด" Grid.Row="2" Grid.Column="0" FontFamily="{StaticResource Kanit}"
                                    HorizontalOptions="Center" FontAttributes="Bold" 
                                    TextColor="#67686a"/>
-                    <Label x:Name="CountIn" Text="0" Grid.Row="0"
-                                   Grid.Column="1" FontSize="28" TextColor="#67686a" 
+                    <Label x:Name="CountIn" Text="0" Grid.Row="1"
+                                   Grid.Column="1" FontSize="24" TextColor="#67686a" 
                                    FontAttributes="Bold" HorizontalOptions="Center"/>
-                    <Label Text="In" Grid.Row="1" Grid.Column="1" 
+                    <Label Text="เข้า" Grid.Row="2" Grid.Column="1" FontFamily="{StaticResource Kanit}"
                                    HorizontalOptions="Center" TextColor="#67686a" 
                                    FontAttributes="Bold"/>
-                    <Label x:Name="CountOut" Text="0" Grid.Row="0" Grid.Column="2" 
-                                   FontSize="28" TextColor="#67686a" FontAttributes="Bold" 
+                    <Label x:Name="CountOut" Text="0" Grid.Row="1" Grid.Column="2" 
+                                   FontSize="24" TextColor="#67686a" FontAttributes="Bold" 
                                    HorizontalOptions="Center"/>
-                    <Label Text="Out" Grid.Row="1" Grid.Column="2" 
+                    <Label Text="ออก" Grid.Row="2" Grid.Column="2" FontFamily="{StaticResource Kanit}"
                                    HorizontalOptions="Center" TextColor="#67686a" 
                                    FontAttributes="Bold"/>
-                    <Label x:Name="DateTimeNow" Grid.Row="2" Grid.ColumnSpan="3" 
+                    <Label x:Name="DateTimeNow"  Grid.Row="3" Grid.ColumnSpan="3" 
                                    TextColor="#67686a" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" 
                                    VerticalOptions="EndAndExpand"/>
                 </Grid>
@@ -93,11 +96,38 @@
                              WidthRequest="{OnIdiom Phone='160' ,Tablet='410'}"
                             FontFamily="{StaticResource Kanit}"/>
         </StackLayout>
-        <StackLayout Margin="{OnIdiom Phone='12,0,12,0' , Tablet='100,0,100,0'}">
+        <!--<StackLayout>
+            <Button Text="รายการเข้า" Clicked="btnTranIn"/>
+        </StackLayout>-->
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="0" 
+                     VerticalOptions="Center"
+                     Margin="12,10,12,10">
+            <Button Text="รายการรับเข้า" ImageSource="iconsplus48" BackgroundColor="#519D90" TextColor="White"   Clicked="Button_ClickedIn"
+                            ContentLayout="Top,0" BorderWidth="1"  BorderColor="LightGray"
+                            CornerRadius="15" FontSize="Body"
+                           
+                            
+                            FontFamily="{StaticResource Kanit}"/>
+            <Button Text="รายการจ่ายออก"  ImageSource="iconsminus48" BackgroundColor="#E55151" TextColor="White"
+                            ContentLayout="Top,0"  BorderWidth="1"  BorderColor="LightGray"
+                            CornerRadius="15" FontSize="Body"
+                          
+                            
+                            FontFamily="{StaticResource Kanit}"/>
+            <Button Text="สินค้าถึงกำหนดสั่งซื้อ"  ImageSource="iconsbrakewarning48" BackgroundColor="#E97E2E" TextColor="White"
+                            ContentLayout="Top,0"  BorderWidth="1"  BorderColor="LightGray"
+                            CornerRadius="15" FontSize="Body"
+                          
+                            
+                            FontFamily="{StaticResource Kanit}"/>
+        </StackLayout>
+
+        <!--<StackLayout Margin="{OnIdiom Phone='12,0,12,0' , Tablet='100,0,100,0'}">
             <ScrollView>
                 <StackLayout Orientation="Vertical" >
                     <Button ImageSource="iconsplus48.png"   
-                                    Text="รายการสินค้ารับเข้าล่าสุด"   
+                                    Text="รายการสินค้ารับเข้า"   
                                     BackgroundColor="#519D90"   
                                     TextColor="White" 
                                     VerticalOptions="Center"
@@ -106,7 +136,7 @@
                                     FontSize="Medium"
                                     FontFamily="{StaticResource Kanit}"
                                     Margin="0,0,0,10"/>
-                    <ListView x:Name="Dashboardin" HasUnevenRows="True" BackgroundColor="White" 
+                    --><!--<ListView x:Name="Dashboardin" HasUnevenRows="True" BackgroundColor="White" 
                                       VerticalOptions="Start" HeightRequest="400" IsPullToRefreshEnabled="True"
                                       Refreshing="Dashboardin_Refreshing">
                         <ListView.ItemTemplate>
@@ -140,10 +170,10 @@
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
-                    </ListView>
+                    </ListView>--><!--
                     <StackLayout  VerticalOptions="CenterAndExpand">
                         <Button ImageSource="iconsminus48.png" 
-                                Text="รายการสินค้าจ่ายออกล่าสุด" 
+                                Text="รายการสินค้าจ่ายออก" 
                                 BackgroundColor="#E55151" 
                                 CornerRadius="10"
                                 Clicked="Button_ClickedOut"
@@ -151,7 +181,7 @@
                                 FontFamily="{StaticResource Kanit}"
                                 FontSize="Medium"
                                 Margin="0,0,0,10"/>
-                        <ListView x:Name="Dashboardout" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardout_Refreshing">
+                        --><!--<ListView x:Name="Dashboardout" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardout_Refreshing">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell IsEnabled="False" >
@@ -183,7 +213,7 @@
                                     </ViewCell>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
-                        </ListView>
+                        </ListView>--><!--
                     </StackLayout>
                     <StackLayout  VerticalOptions="CenterAndExpand">
                         <Button ImageSource="iconsbrakewarning48.png" Text="รายการสินค้าถึงกำหนดสั่งซื้อ"
@@ -194,7 +224,7 @@
                                         FontSize="Medium"
                             FontFamily="{StaticResource Kanit}" 
                             ></Button>
-                        <ListView x:Name="Dashboardreorder" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardreorder_Refreshing">
+                        --><!--<ListView x:Name="Dashboardreorder" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardreorder_Refreshing">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell IsEnabled="False" >
@@ -214,10 +244,10 @@
                                     </ViewCell>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
-                        </ListView>
+                        </ListView>--><!--
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
-        </StackLayout>
+        </StackLayout>-->
     </StackLayout>
 </ContentPage>

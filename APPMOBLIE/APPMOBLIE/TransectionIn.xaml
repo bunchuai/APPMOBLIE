@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APPMOBLIE.TransectionIn">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="iconsplus48"  Clicked="BtnStockin" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+        <StackLayout Padding="10">
+            
+            <!--<BoxView Color="Green" HeightRequest="1" WidthRequest="50" HorizontalOptions="Fill"/>-->
+            <Button    
+                                    Text="รายการสินค้ารับเข้าล่าสุด"   
+                                    BackgroundColor="#519D90"   
+                                    TextColor="White" 
+                                    VerticalOptions="Center"
+                                    CornerRadius="10"
+                                
+                                    FontSize="Medium"
+                                    FontFamily="{StaticResource Kanit}"
+                                    Margin="0,0,0,10"/>
+            <StackLayout Margin="50,0">
+                
+                <SearchBar Placeholder="ค้นหา" FontSize="Small" FontFamily="{StaticResource Kanit}" HorizontalOptions="CenterAndExpand"></SearchBar>
+            </StackLayout>
+        <ListView x:Name="ListTranIn" HasUnevenRows="True" BackgroundColor="White" 
+                                      VerticalOptions="Start"  
+                                      >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                            <Frame BorderColor="LightGray" HasShadow="False"  CornerRadius="10" Margin="0,5">
+                        <StackLayout Orientation="Vertical" Margin="0" >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="calendar32" HorizontalOptions="Start" WidthRequest="20" HeightRequest="20" Grid.Column="0"/>
+                                        <Label Text="{Binding CreateDate, StringFormat='วันที่ : {0}'}" 
+                                                  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand" Grid.Column="1"/>
+                                    </Grid>
+                                    
+                                    <BoxView Color="LightGray" HeightRequest="2" HorizontalOptions="Fill"/>
+
+                                   
+                                   
+                                    <Label Text="{Binding Ref, StringFormat='Ref No. : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Body" FontAttributes="Bold" TextColor="Green"
+                                               HorizontalOptions="StartAndExpand"/>
+                            <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Small" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                            <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" FontFamily="{StaticResource Kanit}" FontSize="Small" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                            <StackLayout Orientation="Horizontal">
+                                
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="จำนวน :" FontFamily="{StaticResource Kanit}" FontSize="Small" TextColor="Black"
+                                                       x:Name="TypeTrans"
+                                                  HorizontalOptions="EndAndExpand" />
+                                    <Label Text="{Binding Amount}"   FontFamily="{StaticResource Kanit}" FontSize="Small" TextColor="Black"
+                                               HorizontalOptions="End"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <Label Text="{Binding Locations, StringFormat='ตำแหน่งที่จัดเก็บ : {0} '}"  FontFamily="{StaticResource Kanit}" FontSize="Small" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                            <Label Text="{Binding Username , StringFormat='ผู้บันทึกรับสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Small" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                             
+                            </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>  

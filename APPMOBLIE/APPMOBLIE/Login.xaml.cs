@@ -35,10 +35,8 @@ namespace APPMOBLIE
         }
 
         private async void Button_SignIn(object sender, EventArgs e)
-   
         {
-         
-         
+            this.IsBusy = true;
             using (HttpClient client = new HttpClient())
             {
                 string sContentType = "application/json";
@@ -57,23 +55,18 @@ namespace APPMOBLIE
                 {
                     var ResponseData = await response.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<CheckLogin>(ResponseData);
-                 
-
                     if (Result.Valid == true)
                     {
+                        
                         Application.Current.Properties["Username"] = Result.Username;
                         Application.Current.Properties["UserId"] = Result.UserId;
                         Application.Current.Properties["CompanyId"] = Result.ComId;
                       
                         await Application.Current.SavePropertiesAsync();
-
-                        this.IsBusy = true;
-                   
-              
+                        this.IsBusy = false;
                         var Page = new HomePage();                     
                         await Navigation.PushAsync(Page);             
                         NavigationPage.SetHasNavigationBar(Page, false);
-
                     }
                     else
                     {
