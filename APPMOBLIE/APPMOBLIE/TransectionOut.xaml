@@ -15,15 +15,14 @@
                                     BackgroundColor="#E55151"   
                                     TextColor="White" 
                                     VerticalOptions="Center"
-                                    CornerRadius="10"
-                                
+                                    CornerRadius="10"                               
                                     FontSize="Medium"
                                     FontFamily="{StaticResource Kanit}"
                                     Margin="0,0,0,10"/>
             <StackLayout Margin="50,0">
 
                 <SearchBar Placeholder="ค้นหา" FontSize="Small" FontFamily="{StaticResource Kanit}" HorizontalOptions="CenterAndExpand"></SearchBar>
-            </StackLayout>
+            </StackLayout>  
             <ListView x:Name="ListTranOut" HasUnevenRows="True" BackgroundColor="White" 
                                       VerticalOptions="Start"  
                                       >

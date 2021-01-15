@@ -21,6 +21,9 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Kanit.ttf</string>
+		<string>FontAwesome5Brands.otf</string>
+		<string>FontAwesomeFreeRegular.otf</string>
+		<string>FontAwesomeFreeSolid.otf</string>
 	</array>
 	<key>UIDeviceFamily</key>
 	<array>

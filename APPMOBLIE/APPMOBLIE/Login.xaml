@@ -30,6 +30,8 @@
                                HorizontalOptions="Center"/>
                     
                      <ActivityIndicator x:Name="activityIndicator1" IsRunning="{Binding IsBusy}" Color="Red" />
+
+                 
                     <Frame HorizontalOptions="FillAndExpand"
                                Style="{x:StaticResource ForFrame}"
                                BorderColor="DarkGray"

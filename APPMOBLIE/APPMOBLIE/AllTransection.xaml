@@ -103,12 +103,12 @@
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="0" 
                      VerticalOptions="Center"
                      Margin="12,10,12,10">
-            <Button Text="รายการรับเข้า" ImageSource="iconsplus48" BackgroundColor="#519D90" TextColor="White"   Clicked="Button_ClickedIn"
+            <Button Text="&#xf49e; รับเข้า"   FontFamily="{StaticResource FontAwesomeSolid}" BackgroundColor="#519D90" TextColor="White"   Clicked="Button_ClickedIn"
                             ContentLayout="Top,0" BorderWidth="1"  BorderColor="LightGray"
-                            CornerRadius="15" FontSize="Body"
+                            CornerRadius="15" FontSize="Large"
                            
                             
-                            FontFamily="{StaticResource Kanit}"/>
+                           />
             <Button Text="รายการจ่ายออก"  ImageSource="iconsminus48" BackgroundColor="#E55151" TextColor="White" Clicked="Button_ClickedOut"
                             ContentLayout="Top,0"  BorderWidth="1"  BorderColor="LightGray"
                             CornerRadius="15" FontSize="Body"
@@ -122,6 +122,7 @@
                             
                             FontFamily="{StaticResource Kanit}"/>
         </StackLayout>
+        
 
         <!--<StackLayout Margin="{OnIdiom Phone='12,0,12,0' , Tablet='100,0,100,0'}">
             <ScrollView>
