@@ -80,36 +80,82 @@
                 </Grid>
             </StackLayout>
         </Frame>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" 
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15" 
                      VerticalOptions="Center"
-                     Margin="12,10,12,10">
-            <Button Text="รับสินค้า" ImageSource="iconplus" BackgroundColor="#eef4f4" 
-                            ContentLayout="Top,0" BorderWidth="1"  BorderColor="LightGray"
-                            CornerRadius="15" FontSize="Medium"
-                            WidthRequest="{OnIdiom Phone='160' ,Tablet='410'}"
-                            Clicked="BtnStockin"
-                            FontFamily="{StaticResource Kanit}"/>
-            <Button Text="จ่ายสินค้า"  ImageSource="iconminus" BackgroundColor="#eef4f4" 
-                            ContentLayout="Top,0"  BorderWidth="1"  BorderColor="LightGray"
-                            CornerRadius="15" FontSize="Medium"
-                            Clicked="BtnStockOut"
-                             WidthRequest="{OnIdiom Phone='160' ,Tablet='410'}"
-                            FontFamily="{StaticResource Kanit}"/>
-        </StackLayout>
-        <!--<StackLayout>
-            <Button Text="รายการเข้า" Clicked="btnTranIn"/>
-        </StackLayout>-->
+                     Margin="0">
 
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="0" 
+
+            <StackLayout  >
+
+
+                <Button Text="&#xf49e;+"   FontFamily="{StaticResource FontAwesomeSolid}" 
+                    TextColor="White"   Clicked="Button_ClickedIn"
+                            BorderWidth="1"  BackgroundColor="#344955"
+                            CornerRadius="15" FontSize="20"/>
+                <StackLayout>
+                    <Label Text="รายการรับสินค้าเข้า" FontFamily="{StaticResource Kanit}"></Label>
+
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="CenterAndExpand"  >
+
+
+                <Button Text="&#xf49e;-"   FontFamily="{StaticResource FontAwesomeSolid}" 
+                    TextColor="White"   Clicked="Button_ClickedOut"
+                            BorderWidth="1"  BackgroundColor="#344955"
+                            CornerRadius="15" FontSize="20"/>
+                <StackLayout>
+                    <Label Text="รายการจ่ายสินค้าออก" FontFamily="{StaticResource Kanit}"></Label>
+
+                </StackLayout>
+            </StackLayout>
+            <StackLayout  >
+
+
+                <Button Text="&#xf49e;!"   FontFamily="{StaticResource FontAwesomeSolid}" 
+                    TextColor="White" 
+                            BorderWidth="1"  BackgroundColor="#344955"
+                            CornerRadius="15" FontSize="20"/>
+                <StackLayout>
+                    <Label Text="สินค้าถึงกำหนดสั่งซื้อ" FontFamily="{StaticResource Kanit}"></Label>
+
+                </StackLayout>
+
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15" 
                      VerticalOptions="Center"
-                     Margin="12,10,12,10">
-            <Button Text="&#xf49e; รับเข้า"   FontFamily="{StaticResource FontAwesomeSolid}" BackgroundColor="#519D90" TextColor="White"   Clicked="Button_ClickedIn"
-                            ContentLayout="Top,0" BorderWidth="1"  BorderColor="LightGray"
-                            CornerRadius="15" FontSize="Large"
-                           
-                            
-                           />
-            <Button Text="รายการจ่ายออก"  ImageSource="iconsminus48" BackgroundColor="#E55151" TextColor="White" Clicked="Button_ClickedOut"
+                     Margin="0">
+                <StackLayout HorizontalOptions="Center"  >
+
+
+                <Button Text="&#xf055;"   FontFamily="{StaticResource FontAwesomeSolid}" 
+                    TextColor="White" 
+                            BorderWidth="1"  BackgroundColor="#344955"  Clicked="BtnStockin"
+                            CornerRadius="15" FontSize="20"/>
+                    <StackLayout HorizontalOptions="Center">
+                        <Label Text="รับสินค้า" FontFamily="{StaticResource Kanit}"></Label>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+            <StackLayout HorizontalOptions="Center"  >
+
+
+                <Button Text="&#xf056;"   FontFamily="{StaticResource FontAwesomeSolid}" 
+                    TextColor="White" 
+                            BorderWidth="1"  BackgroundColor="#344955" Clicked="BtnStockOut"
+                            CornerRadius="15" FontSize="20"/>
+                <StackLayout HorizontalOptions="Center">
+                    <Label Text="จ่ายสินค้า" FontFamily="{StaticResource Kanit}"></Label>
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <!--<Button Text="รายการจ่ายออก"  ImageSource="iconsminus48" BackgroundColor="#E55151" TextColor="White" Clicked="Button_ClickedOut"
                             ContentLayout="Top,0"  BorderWidth="1"  BorderColor="LightGray"
                             CornerRadius="15" FontSize="Body"
                           
@@ -120,11 +166,46 @@
                             CornerRadius="15" FontSize="Body"
                           
                             
-                            FontFamily="{StaticResource Kanit}"/>
-        </StackLayout>
-        
+                            FontFamily="{StaticResource Kanit}"/>-->
+            </StackLayout>
+        <StackLayout Margin="10,0">
 
-        <!--<StackLayout Margin="{OnIdiom Phone='12,0,12,0' , Tablet='100,0,100,0'}">
+            <Label Text="รายการวันนี้" FontAttributes="Bold" FontFamily="{StaticResource Kanit}"/>
+            <Frame>
+                
+                <Label Text="Ref.No"  FontFamily="{StaticResource Kanit}"></Label>
+                <Label Text="ชื่อสินค้า"  FontFamily="{StaticResource Kanit}"></Label>
+                <Label Text="จำนวน"  FontFamily="{StaticResource Kanit}"></Label>
+                <Label Text="ผู้บันทึก"  FontFamily="{StaticResource Kanit}"></Label>
+
+            </Frame>
+        </StackLayout>
+
+
+
+            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" 
+                     VerticalOptions="Center"
+                     Margin="12,10,12,10">
+                <Button Text="รับสินค้า" ImageSource="iconplus" BackgroundColor="#eef4f4" 
+                            ContentLayout="Top,0" BorderWidth="1"  BorderColor="LightGray"
+                            CornerRadius="15" FontSize="Medium"
+                            WidthRequest="{OnIdiom Phone='160' ,Tablet='410'}"
+                            Clicked="BtnStockin"
+                            FontFamily="{StaticResource Kanit}"/>
+                <Button Text="จ่ายสินค้า"  ImageSource="iconminus" BackgroundColor="#eef4f4" 
+                            ContentLayout="Top,0"  BorderWidth="1"  BorderColor="LightGray"
+                            CornerRadius="15" FontSize="Medium"
+                            Clicked="BtnStockOut"
+                             WidthRequest="{OnIdiom Phone='160' ,Tablet='410'}"
+                            FontFamily="{StaticResource Kanit}"/>
+            </StackLayout>-->
+            <!--<StackLayout>
+            <Button Text="รายการเข้า" Clicked="btnTranIn"/>
+        </StackLayout>-->
+
+
+
+            <!--<StackLayout Margin="{OnIdiom Phone='12,0,12,0' , Tablet='100,0,100,0'}">
             <ScrollView>
                 <StackLayout Orientation="Vertical" >
                     <Button ImageSource="iconsplus48.png"   
@@ -137,7 +218,8 @@
                                     FontSize="Medium"
                                     FontFamily="{StaticResource Kanit}"
                                     Margin="0,0,0,10"/>
-                    --><!--<ListView x:Name="Dashboardin" HasUnevenRows="True" BackgroundColor="White" 
+                    -->
+            <!--<ListView x:Name="Dashboardin" HasUnevenRows="True" BackgroundColor="White" 
                                       VerticalOptions="Start" HeightRequest="400" IsPullToRefreshEnabled="True"
                                       Refreshing="Dashboardin_Refreshing">
                         <ListView.ItemTemplate>
@@ -171,7 +253,8 @@
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
-                    </ListView>--><!--
+                    </ListView>-->
+            <!--
                     <StackLayout  VerticalOptions="CenterAndExpand">
                         <Button ImageSource="iconsminus48.png" 
                                 Text="รายการสินค้าจ่ายออก" 
@@ -182,7 +265,8 @@
                                 FontFamily="{StaticResource Kanit}"
                                 FontSize="Medium"
                                 Margin="0,0,0,10"/>
-                        --><!--<ListView x:Name="Dashboardout" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardout_Refreshing">
+                        -->
+            <!--<ListView x:Name="Dashboardout" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardout_Refreshing">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell IsEnabled="False" >
@@ -214,7 +298,8 @@
                                     </ViewCell>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
-                        </ListView>--><!--
+                        </ListView>-->
+            <!--
                     </StackLayout>
                     <StackLayout  VerticalOptions="CenterAndExpand">
                         <Button ImageSource="iconsbrakewarning48.png" Text="รายการสินค้าถึงกำหนดสั่งซื้อ"
@@ -225,7 +310,8 @@
                                         FontSize="Medium"
                             FontFamily="{StaticResource Kanit}" 
                             ></Button>
-                        --><!--<ListView x:Name="Dashboardreorder" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardreorder_Refreshing">
+                        -->
+            <!--<ListView x:Name="Dashboardreorder" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" IsPullToRefreshEnabled="True" Refreshing="Dashboardreorder_Refreshing">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell IsEnabled="False" >
@@ -245,10 +331,12 @@
                                     </ViewCell>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
-                        </ListView>--><!--
+                        </ListView>-->
+            <!--
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
         </StackLayout>-->
-    </StackLayout>
+        </StackLayout>
+    
 </ContentPage>
