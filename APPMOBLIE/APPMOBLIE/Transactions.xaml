@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:APPMOBLIE"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundImageSource="background.png"
+             x:Class="APPMOBLIE.Transactions"
+            BarTextColor="LightGray" 
+             
+         
+            BarBackgroundColor="#4A6572"  
+            SelectedTabColor="#d6d9ce">
+    
+    <local:TransectionIn Icon="iconsadd.png" Title="รายการรับสินค้าเข้า"></local:TransectionIn>
+    <local:TransectionOut Icon="iconsadd.png" Title="รายการจ่ายสินค้าออก"></local:TransectionOut>
+   
+</TabbedPage>
