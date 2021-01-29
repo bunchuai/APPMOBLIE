@@ -7,20 +7,21 @@ using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using static APPMOBLIE.TransactionDetail;
 
 namespace APPMOBLIE
 {
-    public partial class AllTransection : ContentPage 
+    public partial class AllTransection : ContentPage
     {
 
-       
+
         //public bool DashboardIn { get; set; }
         //public bool DashboardOut { get; set; }
         //public bool DashboardRe { get; set; }
         //public List<TransactionInOut> InResultData = new List<TransactionInOut>();
         //public List<TransactionInOut> OutResultData = new List<TransactionInOut>();
         //public List<TransactionLows> LowResultData = new List<TransactionLows>();
-    
+
 
         //async Task<List<TransactionInOut>> GetDataInList()
         //{
@@ -85,7 +86,7 @@ namespace APPMOBLIE
         //    }
         //    return LowResultData;
         //}
-       
+
         public AllTransection()
         {
             GetDataUser();
@@ -98,7 +99,7 @@ namespace APPMOBLIE
             //Dashboardout.IsVisible = DashboardOut;
             //Dashboardreorder.IsVisible = DashboardRe;
 
-          
+
         }
 
 
@@ -136,9 +137,9 @@ namespace APPMOBLIE
 
             using (HttpClient client = new HttpClient())
             {
-               
 
-                string Url = "http://203.151.166.97/api/Products/TransactionInProduct?CompanyId=" + CompanyId + "&Take=" + 15;
+
+                string Url = "http://203.151.166.97/api/Products/AllTramsections?CompanyId=" + CompanyId ;
                 client.BaseAddress = new Uri(Url);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
@@ -147,13 +148,13 @@ namespace APPMOBLIE
                 if (responsedatain.IsSuccessStatusCode)
                 {
                     var ReponseData = await responsedatain.Content.ReadAsStringAsync();
-                    var Result = JsonConvert.DeserializeObject<List<TransactionInOut>>(ReponseData);
+                    var Result = JsonConvert.DeserializeObject<List<TransactionModels>>(ReponseData);
                     ListTranIn.ItemsSource = Result;
                 }
             }
+             
 
-
-            DateTimeNow.Text = DateTime.Now.ToString("dd/MM/yyyy"); 
+            DateTimeNow.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
             //Dashboardin.ItemsSource = await GetDataInList();
             //Dashboardout.ItemsSource = await GetDataOutList();
@@ -259,7 +260,7 @@ namespace APPMOBLIE
         }
         private void ImageButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new EditUser()); 
+            Navigation.PushAsync(new EditUser());
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -267,11 +268,10 @@ namespace APPMOBLIE
             this.Navigation.PushAsync(new Transactions());
         }
 
-        //private void btnTranIn(object sender, EventArgs e)
-        //{
-        //    this.Navigation.PushAsync(new TransectionIn());
-
-        //}
+        private void ListTranIn_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            
+        }
     }
 
 

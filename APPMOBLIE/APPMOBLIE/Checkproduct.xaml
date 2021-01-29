@@ -14,7 +14,7 @@
                      HorizontalOptions="Center"
                      Margin="0,-150,0,0">
                 <ic:CircleImage Source="userpic.png"
-                        WidthRequest="{OnIdiom Phone='70', Tablet='80'}" 
+                        WidthRequest="{OnIdiom Phone='70', Tablet='80'}"  
                         HeightRequest="{OnIdiom Phone='70', Tablet='80'}"
                         Aspect="AspectFill"
                         VerticalOptions="Center"

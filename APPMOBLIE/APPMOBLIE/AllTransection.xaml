@@ -36,7 +36,7 @@
         </StackLayout>
         <Frame BackgroundColor="#eef4f4"     
                WidthRequest="{OnIdiom Phone='400' , Tablet='700'}" 
-               HorizontalOptions="Center" 
+               HorizontalOptions="Center"  
                CornerRadius="10"
                Margin="10,5,10,10"
                HasShadow="False">
@@ -77,9 +77,10 @@
                                    HorizontalOptions="Center"/>
                     <Label Text="ออก" Grid.Row="2" Grid.Column="2" FontFamily="{StaticResource Kanit}"
                                    HorizontalOptions="Center" TextColor="#67686a" 
-                                   FontAttributes="Bold"/>
+                                   FontAttributes="Bold"/> 
                 </Grid>
             </StackLayout>
+            
         </Frame>
         <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15" 
                      VerticalOptions="Center"
@@ -222,8 +223,8 @@
             <BoxView Color="#f5f4f4" WidthRequest="1" HeightRequest="1" Margin="10,0"  />
 
             <ListView x:Name="ListTranIn" HasUnevenRows="True" BackgroundColor="White" 
-                                      VerticalOptions="Start"  
-                                      >
+                                      VerticalOptions="Start"  ItemTapped="ListTranIn_ItemTapped"
+                      >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell >

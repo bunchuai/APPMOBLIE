@@ -13,7 +13,7 @@
             BarBackgroundColor="#4A6572"  
             SelectedTabColor="#d6d9ce">
     
-    <local:TransectionIn Icon="iconsadd.png" Title="รายการรับสินค้าเข้า"></local:TransectionIn>
-    <local:TransectionOut Icon="iconsadd.png" Title="รายการจ่ายสินค้าออก"></local:TransectionOut>
+    <local:TransectionIn  Title="รายการรับสินค้าเข้า"></local:TransectionIn>
+    <local:TransectionOut  Title="รายการจ่ายสินค้าออก"></local:TransectionOut>
    
 </TabbedPage>

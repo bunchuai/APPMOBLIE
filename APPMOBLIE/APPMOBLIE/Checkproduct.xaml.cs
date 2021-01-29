@@ -26,7 +26,7 @@ namespace APPMOBLIE
             SkuId = Getsku;
             InitializeComponent();
             CompanyId = Application.Current.Properties["CompanyId"].ToString();
-            Alert.Text = "---ไม่พบข้อมูล ---";
+            Alert.Text = "---ไม่พบข้อมูล ---"; 
             FindingProduct(SkuId);
 
         }

@@ -22,5 +22,7 @@ namespace APPMOBLIE.Model
         public string Locations { get; set; }
         public string Username { get; set; }
         public string ProductCode { get; set; }
+        public string ProductDescription { get; set; }
+
     }
 }
