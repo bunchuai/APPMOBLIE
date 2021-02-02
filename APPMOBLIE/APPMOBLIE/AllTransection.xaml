@@ -221,9 +221,11 @@
 
             </StackLayout>
             <BoxView Color="#f5f4f4" WidthRequest="1" HeightRequest="1" Margin="10,0"  />
+            
+            
 
             <ListView x:Name="ListTranIn" HasUnevenRows="True" BackgroundColor="White" 
-                                      VerticalOptions="Start"  ItemTapped="ListTranIn_ItemTapped"
+                                      VerticalOptions="Start"  ItemSelected="ListTranIn_ItemSelected"
                       >
                 <ListView.ItemTemplate>
                     <DataTemplate>

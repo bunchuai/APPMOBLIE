@@ -75,7 +75,7 @@ namespace APPMOBLIE
         }
         public async void FindingProduct(string find)
         {
-            using (HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient()) 
             {
                 var CompanyId = Application.Current.Properties["CompanyId"];
                 string Url = "http://203.151.166.97/api/Products/CheckProduct?Sku=" + find + "&CompanyId=" + CompanyId;
