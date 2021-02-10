@@ -11,9 +11,9 @@
              
          
             BarBackgroundColor="#4A6572"  
-            SelectedTabColor="#d6d9ce">
-    
-    <local:TransectionIn  Title="รายการรับสินค้าเข้า"></local:TransectionIn>
-    <local:TransectionOut  Title="รายการจ่ายสินค้าออก"></local:TransectionOut>
+            >
+
+    <local:TransectionIn  IconImageSource="iconsplus48" Title="รายการรับเข้า"  ></local:TransectionIn>
+    <local:TransectionOut  IconImageSource="iconsminus48" Title="รายการจ่ายออก"></local:TransectionOut>
    
 </TabbedPage>

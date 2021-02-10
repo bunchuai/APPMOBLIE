@@ -15,6 +15,8 @@ namespace APPMOBLIE
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TransectionOut : ContentPage
     {
+
+        public ICollection<TransactionInOut> TransactionOutResult { get; set; }
         public TransectionOut()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace APPMOBLIE
                     //In List Product//
                     var Dataout = await responsedataout.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<List<TransactionInOut>>(Dataout);
+                    TransactionOutResult = Result;
                     ListTranOut.ItemsSource = Result;
                 }
             }
@@ -44,6 +47,23 @@ namespace APPMOBLIE
         private void BtnStockOut(object sender, EventArgs e)
         {
             this.Navigation.PushAsync(new StockOut());
+        }
+
+        IEnumerable<TransactionInOut> GetTransactionOut(string searchtext = null)
+        {
+            var transactiondata = TransactionOutResult;
+            if (String.IsNullOrWhiteSpace(searchtext))
+            {
+                return (List<TransactionInOut>)transactiondata;
+            }
+
+            return transactiondata.Where(w => w.ProductName.ToUpper().StartsWith(searchtext.ToUpper()) || w.ProductCode.ToUpper().StartsWith(searchtext.ToUpper()) || w.Ref.ToUpper().StartsWith(searchtext.ToUpper()));
+        }
+
+
+        private void SearchBar_TranOut(object sender, TextChangedEventArgs e)
+        {
+            ListTranOut.ItemsSource = GetTransactionOut(e.NewTextValue.ToUpper());
         }
     }
 }

@@ -15,12 +15,17 @@ namespace APPMOBLIE
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TransectionIn : ContentPage
     {
+
+       public ICollection<TransactionInOut> TransactionInResult { get; set; }
         public TransectionIn()
         {
             InitializeComponent();
+           
         }
 
-       protected override async void OnAppearing()
+        
+
+        protected override async void OnAppearing()
         {
             using (HttpClient client = new HttpClient())
             {
@@ -36,6 +41,7 @@ namespace APPMOBLIE
                 {
                     var ReponseData = await responsedatain.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<List<TransactionInOut>>(ReponseData);
+                    TransactionInResult = Result;
                     ListTranIn.ItemsSource = Result;
                 }
             }
@@ -45,6 +51,25 @@ namespace APPMOBLIE
         private void BtnStockin(object sender, EventArgs e)
         {
             this.Navigation.PushAsync(new StockIn());
+        }
+
+
+        IEnumerable<TransactionInOut> GetTransactionIn(string searchtext = null)
+        {
+            var transactiondata = TransactionInResult;
+            if (String.IsNullOrWhiteSpace(searchtext))
+            {
+                return (List<TransactionInOut>)transactiondata;
+            }
+
+            return transactiondata.Where(w => w.ProductName.ToUpper().StartsWith(searchtext.ToUpper()) || w.ProductCode.ToUpper().StartsWith(searchtext.ToUpper()) || w.Ref.ToUpper().StartsWith(searchtext.ToUpper()));
+        }
+
+
+
+        private void SearchIn_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ListTranIn.ItemsSource = GetTransactionIn(e.NewTextValue.ToUpper());
         }
     }
 }

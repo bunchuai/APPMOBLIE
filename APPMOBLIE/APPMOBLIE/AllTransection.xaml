@@ -16,8 +16,8 @@
                      HorizontalOptions="Center"
                      Margin="0,-150,0,0">
             <ic:CircleImage Source="userpic.png"
-                        WidthRequest="{OnIdiom Phone='70', Tablet='80'}" 
-                        HeightRequest="{OnIdiom Phone='70', Tablet='80'}"
+                        WidthRequest="{OnIdiom Phone='60', Tablet='70'}" 
+                        HeightRequest="{OnIdiom Phone='60', Tablet='70'}"
                         Aspect="AspectFill"
                         VerticalOptions="Center"
                         x:Name="ImgUser" ></ic:CircleImage>
@@ -38,7 +38,7 @@
                WidthRequest="{OnIdiom Phone='400' , Tablet='700'}" 
                HorizontalOptions="Center"  
                CornerRadius="10"
-               Margin="10,5,10,10"
+               Margin="10,5,10,5"
                HasShadow="False">
             <StackLayout>
                 <Grid RowSpacing="2">
@@ -49,12 +49,14 @@
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/> 
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="รายการประจำเดือน ณ วันที่" FontFamily="{StaticResource Kanit}" FontSize="14" Grid.Row="0" Grid.ColumnSpan="2"  HorizontalOptions="End"/>
-                    <Label x:Name="DateTimeNow"  Grid.Row="0"  FontSize="14" Grid.Column="2" 
+                    <Label Text="รายการประจำเดือน ณ วันที่" FontFamily="{StaticResource Kanit}" FontSize="14" 
+                           Grid.Row="0" Grid.ColumnSpan="2" TextColor="Black"  HorizontalOptions="Center"/>
+                    
+                    <Label x:Name="DateTimeNow"  Grid.Row="0"  FontSize="13" Grid.Column="2" 
                                    TextColor="#67686a" FontAttributes="Bold" HorizontalOptions="Start" 
                                    />
             
@@ -63,19 +65,19 @@
                                    FontSize="18" TextColor="#67686a" 
                                    FontAttributes="Bold"
                                    HorizontalOptions="Center"/>
-                    <Label Text="ทั้งหมด" Grid.Row="2" Grid.Column="0" FontFamily="{StaticResource Kanit}"  
+                    <Label Text="ทั้งหมด" Grid.Row="2" Grid.Column="0" FontFamily="{StaticResource Kanit}"  FontSize="13" 
                                    HorizontalOptions="Center" FontAttributes="Bold" 
                                    TextColor="#67686a"/>
                     <Label x:Name="CountIn" Text="0" Grid.Row="1"
                                    Grid.Column="1" FontSize="18" TextColor="#67686a" 
                                    FontAttributes="Bold" HorizontalOptions="Center"/>
-                    <Label Text="เข้า" Grid.Row="2" Grid.Column="1" FontFamily="{StaticResource Kanit}"
+                    <Label Text="เข้า" Grid.Row="2" Grid.Column="1" FontFamily="{StaticResource Kanit}" FontSize="13"
                                    HorizontalOptions="Center" TextColor="#67686a" 
                                    FontAttributes="Bold"/>
                     <Label x:Name="CountOut" Text="0" Grid.Row="1" Grid.Column="2" 
                                    FontSize="18" TextColor="#67686a" FontAttributes="Bold" 
                                    HorizontalOptions="Center"/>
-                    <Label Text="ออก" Grid.Row="2" Grid.Column="2" FontFamily="{StaticResource Kanit}"
+                    <Label Text="ออก" Grid.Row="2" Grid.Column="2" FontFamily="{StaticResource Kanit}" FontSize="13"
                                    HorizontalOptions="Center" TextColor="#67686a" 
                                    FontAttributes="Bold"/> 
                 </Grid>
@@ -153,7 +155,7 @@
                             BorderWidth="1"  BackgroundColor="#344955" Clicked="BtnStockOut"
                             CornerRadius="15" FontSize="20"/>
                 <StackLayout HorizontalOptions="Center">
-                    <Label Text="จ่ายสินค้า" FontFamily="{StaticResource Kanit}" TextColor="Black"></Label>
+                    <Label Text="จ่ายสินค้า" FontFamily="{StaticResource Kanit}"  TextColor="Black"></Label>
 
                 </StackLayout>
 
@@ -162,9 +164,10 @@
             
                 
             </StackLayout>
-        <Frame Margin="5,0" BorderColor="#f5f4f4" HasShadow="False" CornerRadius="5">
-       
-            <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" Spacing="8" Margin="0 ">
+
+        <BoxView Color="LightGray" WidthRequest="1" HeightRequest="1" Margin="50,5" />
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" Spacing="8" Margin="50,0,50,5 ">
         
             <StackLayout Margin="5,0" >
                 <!--<Button Text="รายการเข้าออก" Clicked="Button_Clicked"/>-->
@@ -203,8 +206,17 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Text="&#xf49e;" FontSize="22"  FontFamily="{StaticResource FontAwesomeSolid}" TextColor="#344955" Grid.Row="0" Grid.Column="0" ></Label>
-                        <Label Text="รายการสินค้าถึงกำหนดสั่งซื้อ" TextColor="Black" FontSize="Body" FontFamily="{StaticResource Kanit}" Grid.Column="1" Grid.Row="0"></Label>
-                    <Label Text="&#xf105;" FontSize="Medium"  FontFamily="{StaticResource FontAwesomeSolid}" TextColor="#344955" HorizontalOptions="End" Grid.Column="2" Grid.Row="0" ></Label>
+                        <Label Text="รายการสินค้าถึงกำหนดสั่งซื้อ" TextColor="Black" FontSize="Body" 
+                               FontFamily="{StaticResource Kanit}" Grid.Column="1" Grid.Row="0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="button_ProductLow"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+
+                    </Label>
+                    
+                    <Label Text="&#xf105;" FontSize="Medium"  
+                           FontFamily="{StaticResource FontAwesomeSolid}" TextColor="#344955" 
+                           HorizontalOptions="End" Grid.Column="2" Grid.Row="0" ></Label>
                 </Grid>
 
                 <!--<BoxView Color="LightGray" WidthRequest="1" HeightRequest="1" />-->
@@ -212,61 +224,86 @@
 
          
         </StackLayout>
-        </Frame>
-        
+
+        <BoxView Color="LightGray" WidthRequest="1" HeightRequest="1" Margin="50,0" />
         <StackLayout>
-            <StackLayout Orientation="Horizontal" Margin="20,10,0,0" >
-                <Label Text="&#xf105;" FontSize="Medium"  FontFamily="{StaticResource FontAwesomeSolid}" TextColor="#344955"/>
-                <Label Text="รายการวันนี้" FontFamily="{StaticResource Kanit}"/>
+            <StackLayout Orientation="Horizontal" Margin="20,5,0,0" >
+                <Label Text="&#xf105;" FontSize="Medium"  FontFamily="{StaticResource FontAwesomeSolid}" TextColor="Black"/>
+                <Label Text="รายการวันนี้" FontFamily="{StaticResource Kanit}" TextColor="Black"/>
 
             </StackLayout>
             <BoxView Color="#f5f4f4" WidthRequest="1" HeightRequest="1" Margin="10,0"  />
             
             
 
-            <ListView x:Name="ListTranIn" HasUnevenRows="True" BackgroundColor="White" 
-                                      VerticalOptions="Start"  ItemSelected="ListTranIn_ItemSelected"
+            <ListView x:Name="ListTranToday" HasUnevenRows="True" BackgroundColor="White" 
+                                      VerticalOptions="Start"  ItemTapped="ListTranToday_ItemTapped"
                       >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell >
-                            <Frame  HasShadow="False"   Margin="0">
-                                <StackLayout Orientation="Vertical" Margin="0" >
+                         
 
-                                    <Grid>
+
+                            <StackLayout  Padding="20,0">
+                                <StackLayout Orientation="Vertical" Margin="0,15,0,0" >
+                                    <Grid RowSpacing="2" >
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="*"/>
 
                                         </Grid.RowDefinitions>
-                                        <!--<Image Source="iconplus" HorizontalOptions="Start" WidthRequest="20" HeightRequest="20" Grid.Column="0" Grid.Row="0"/>-->
-                                        <Label Text="&#xf055;" FontSize="Default" TextColor="#344955" FontFamily="{StaticResource FontAwesomeSolid}" Grid.Column="0" Grid.Row="0"/>
-                                        <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  
-                                   FontFamily="{StaticResource Kanit}" FontSize="Default" TextColor="Black"
+                                        <Label Text="{Binding TransactionType}" FontSize="24" TextColor="Black" FontAttributes="Bold"  VerticalOptions="CenterAndExpand"
+                                               FontFamily="{StaticResource FontAwesomeSolid}" Grid.Column="0" Grid.Row="0"/>
+
+                                        <Label Text="{Binding CreateDate, StringFormat='{0}'}" 
+                                                  FontFamily="{StaticResource Kanit}" FontSize="Small" TextColor="Black"
                                                HorizontalOptions="StartAndExpand" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0"/>
 
 
 
                                         <StackLayout Orientation="Horizontal" Grid.Column="2">
                                             <Label Text="จำนวน :" FontFamily="{StaticResource Kanit}" 
-                                           FontSize="Default" FontAttributes="Bold" TextColor="Black"
+                                           FontSize="Small" FontAttributes="Bold" TextColor="Black"
                                                        x:Name="TypeTrans"
                                                   HorizontalOptions="EndAndExpand" />
                                             <Label Text="{Binding Amount}"   FontFamily="{StaticResource Kanit}" 
-                                           FontSize="Default" TextColor="Black" FontAttributes="Bold"
+                                           FontSize="Small" TextColor="Black" FontAttributes="Bold"
                                                HorizontalOptions="End"/>
                                         </StackLayout>
 
                                     </Grid>
 
-                                   
+                                    <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="Fill"/>
+
+
+                                    <Label Text="{Binding Ref, StringFormat='Ref No. : {0}'}" 
+                                           FontFamily="{StaticResource Kanit}" FontSize="Small" 
+                                           FontAttributes="Bold" TextColor="Black"
+                                           HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  
+                                   FontFamily="{StaticResource Kanit}" FontSize="Small" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" 
+                                   FontFamily="{StaticResource Kanit}" FontSize="Small" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+
+
+                                    <!--<Label Text="{Binding Locations, StringFormat='ตำแหน่งที่จัดเก็บ : {0} '}"  
+                                   FontFamily="{StaticResource Kanit}" FontSize="Small" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>-->
+                                    <Label Text="{Binding Username , StringFormat='ผู้บันทึก : {0}'}"  
+                                   FontFamily="{StaticResource Kanit}" FontSize="Small" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
 
                                 </StackLayout>
-                            </Frame>
+                            </StackLayout>
+
+
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

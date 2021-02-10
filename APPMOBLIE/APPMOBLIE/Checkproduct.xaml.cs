@@ -104,7 +104,6 @@ namespace APPMOBLIE
                         Fram1.IsVisible = true;
                         Titletrans.Text = "รายการสินค้า เข้า - ออก";
                         
-
                         Procd.Text = "รหัสสินค้า : " + Result.ProductCode;
                         Skuinfo.Text = "หมายเลข Barcode : " + Result.Sku;
                         Prodn.Text = "ชื่อสินค้า : " + Result.Name;

@@ -1,5 +1,6 @@
 ﻿using APPMOBLIE.Model;
 using Newtonsoft.Json;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,12 +8,13 @@ using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using static APPMOBLIE.TransactionDetail;
+
 
 namespace APPMOBLIE
 {
     public partial class AllTransection : ContentPage
     {
+       
 
 
         //public bool DashboardIn { get; set; }
@@ -138,7 +140,7 @@ namespace APPMOBLIE
             {
 
 
-                string Url = "http://203.151.166.97/api/Products/TransactionInProduct?CompanyId=" + CompanyId;
+                string Url = "http://203.151.166.97/api/Products/AllTrasactionsCurrentDate?CompanyId=1";  
                 client.BaseAddress = new Uri(Url);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
@@ -147,9 +149,30 @@ namespace APPMOBLIE
                 if (responsedatain.IsSuccessStatusCode)
                 {
                     var ReponseData = await responsedatain.Content.ReadAsStringAsync();
-                    var Result = JsonConvert.DeserializeObject<List<TransactionInOut>>(ReponseData);
-                    ListTranIn.ItemsSource = Result;
+                    var Result = JsonConvert.DeserializeObject<List<AllTransactions>>(ReponseData);
 
+                    var ViewModels = new List<AllTransactions>();
+                    foreach (var Item in Result)
+                    {
+                        var ViewModel = new AllTransactions();
+                        ViewModel.TransactionType = (Item.TransactionType == "IN" ? "plus-circle"  : "minus-circle" ) ;
+                  
+                        ViewModel.Ref = Item.Ref;
+                        ViewModel.ProductName = Item.ProductName;
+                        ViewModel.ProductCode = Item.ProductCode;
+                        ViewModel.Locations = Item.Locations;
+                        ViewModel.Username = Item.Username;
+                        ViewModel.Amount = Item.Amount;
+                        ViewModel.CreateDate = Item.CreateDate;
+                        ViewModel.Description = Item.Description;
+
+                        ViewModels.Add(ViewModel);
+                    }
+                    
+
+                    ListTranToday.ItemsSource = ViewModels;
+
+                    
                 }
             }
 
@@ -184,8 +207,6 @@ namespace APPMOBLIE
             //Dashboardreorder.ItemsSource = await GetDataLowList();
 
             base.OnAppearing();
-
-
 
         }
         public async void GetDataUser()
@@ -292,13 +313,16 @@ namespace APPMOBLIE
         }
 
        
-        async void ListTranIn_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+       
+
+        private void ListTranToday_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            if (ListTranIn.SelectedItem != null)
-            {
-                var transactiondetial = new TransactionDetail();
-                await Navigation.PushModalAsync(transactiondetial);
-            }
+            
+        }
+
+        private void button_ProductLow(object sender, EventArgs e)
+        {
+            this.Navigation.PushAsync(new ProductOut());
         }
     }
 

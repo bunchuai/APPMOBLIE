@@ -16,8 +16,9 @@ namespace APPMOBLIE.Droid
             ToolbarResource = Resource.Layout.Toolbar;
              
             base.OnCreate(savedInstanceState);
-            
 
+
+           
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
           
@@ -31,7 +32,7 @@ namespace APPMOBLIE.Droid
         {
             if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))
             {
-                PopupNavigation.Instance.PopAsync();
+               
             }
             else
             {

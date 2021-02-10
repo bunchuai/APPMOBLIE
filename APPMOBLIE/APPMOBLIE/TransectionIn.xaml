@@ -3,28 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APPMOBLIE.TransectionIn">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="iconsplus48"  Clicked="BtnStockin" />
+        <ToolbarItem Text="+รับสินค้าเข้า"  Clicked="BtnStockin" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
 
         <StackLayout Padding="10">
+            <StackLayout   BackgroundColor="#519D90"    >
 
-            <!--<BoxView Color="Green" HeightRequest="1" WidthRequest="50" HorizontalOptions="Fill"/>-->
-            <Button    
+                <Label    
                                     Text="รายการสินค้ารับเข้า"   
-                                    BackgroundColor="#519D90"   
+                                  
                                     TextColor="White" 
                                     VerticalOptions="Center"
-                                    CornerRadius="10"
-                                
+                                    
+                                 HorizontalOptions="CenterAndExpand"
                                     FontSize="Medium"
                                     FontFamily="{StaticResource Kanit}"
-                                    Margin="0,0,0,10"/>
+                                     Padding="10,5"/>
+            </StackLayout>
+
+            <!--<BoxView Color="Green" HeightRequest="1" WidthRequest="50" HorizontalOptions="Fill"/>-->
+          
             <StackLayout Margin="50,0">
 
-                <SearchBar Placeholder="ค้นหา" FontSize="Small" FontFamily="{StaticResource Kanit}" HorizontalOptions="CenterAndExpand"></SearchBar>
+                <SearchBar x:Name="SearchIn" Placeholder="ค้นหา" FontSize="Small" TextChanged="SearchIn_TextChanged"
+                           FontFamily="{StaticResource Kanit}" 
+                           HorizontalOptions="CenterAndExpand"  ></SearchBar>
             </StackLayout>
-            <ListView x:Name="ListTranIn" HasUnevenRows="True" BackgroundColor="White" 
+            <ListView x:Name="ListTranIn"  HasUnevenRows="True" BackgroundColor="White" 
                                       VerticalOptions="Start"  
                                       >
                 <ListView.ItemTemplate>
@@ -48,12 +54,10 @@
                                                   FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
                                                HorizontalOptions="StartAndExpand" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0"/>
 
-                                 
-
                                             <StackLayout Orientation="Horizontal" Grid.Column="2">
                                             <Label Text="จำนวน :" FontFamily="{StaticResource Kanit}" 
                                            FontSize="Body" FontAttributes="Bold" TextColor="Black"
-                                                       x:Name="TypeTrans"
+                                                   x:Name="TypeTrans"
                                                   HorizontalOptions="EndAndExpand" />
                                             <Label Text="{Binding Amount}"   FontFamily="{StaticResource Kanit}" 
                                            FontSize="Body" TextColor="Black" FontAttributes="Bold"
@@ -79,6 +83,9 @@
                                   
                                     <Label Text="{Binding Locations, StringFormat='ตำแหน่งที่จัดเก็บ : {0} '}"  
                                    FontFamily="{StaticResource Kanit}" FontSize="Small" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding ProductDescription, StringFormat='Note : {0}'}"  
+                                           FontFamily="{StaticResource Kanit}" FontSize="Small" TextColor="Black"
                                                HorizontalOptions="StartAndExpand"/>
                                     <Label Text="{Binding Username , StringFormat='ผู้บันทึกรับสินค้า : {0}'}"  
                                    FontFamily="{StaticResource Kanit}" FontSize="Small" TextColor="Black"

@@ -3,25 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APPMOBLIE.TransectionOut">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="iconsplus48"  Clicked="BtnStockOut" />
+        <ToolbarItem Text="-จ่ายสินค้าออก"  Clicked="BtnStockOut" />
     </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
 
         <StackLayout Padding="10">
 
             <!--<BoxView Color="Green" HeightRequest="1" WidthRequest="50" HorizontalOptions="Fill"/>-->
-            <Button    
+            
+            <StackLayout   BackgroundColor="#E55151"    >
+
+                <Label    
                                     Text="รายการสินค้าจ่ายออก"   
-                                    BackgroundColor="#E55151"   
+                                  
                                     TextColor="White" 
                                     VerticalOptions="Center"
-                                    CornerRadius="10"                               
+                                    
+                                 HorizontalOptions="CenterAndExpand"
                                     FontSize="Medium"
                                     FontFamily="{StaticResource Kanit}"
-                                    Margin="0,0,0,10"/>
+                                     Padding="10,5"/>
+            </StackLayout>
+
             <StackLayout Margin="50,0">
 
-                <SearchBar Placeholder="ค้นหา" FontSize="Small" FontFamily="{StaticResource Kanit}" HorizontalOptions="CenterAndExpand"></SearchBar>
+                <SearchBar Placeholder="ค้นหา" FontSize="Small" FontFamily="{StaticResource Kanit}" HorizontalOptions="CenterAndExpand"
+                           TextChanged="SearchBar_TranOut"></SearchBar>
             </StackLayout>  
             <ListView x:Name="ListTranOut" HasUnevenRows="True" BackgroundColor="White" 
                                       VerticalOptions="Start"  

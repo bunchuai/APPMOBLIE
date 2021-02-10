@@ -3,10 +3,82 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APPMOBLIE.ProductOut">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <StackLayout Padding="10">
+            <!--<ListView x:Name="ListProductLow" HasUnevenRows="True" BackgroundColor="White" HeightRequest="400" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell IsEnabled="False" >
+                                        <StackLayout Orientation="Vertical"  Margin="5">
+                                            <Image Source="iconwarning" HorizontalOptions="Start" WidthRequest="32" HeightRequest="32"/>
+                                            <Label Text="{Binding SkuId, StringFormat='หมายเลข Barcode: {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                            <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                            <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" 
+                                                   FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                            <Label Text="{Binding Total, StringFormat='จำนวนคงเหลือ : {0}'}"  FontSize="Body" TextColor="Black"
+                                                   FontFamily="{StaticResource Kanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>-->
+
+            <Button    
+                                    Text="รายการสินค้าถึงกำหนดสั่งซื้อ"   
+                                    BackgroundColor="DarkOrange"   
+                                    TextColor="White" 
+                                    VerticalOptions="Center"
+                                    CornerRadius="10"
+                                 
+                                    FontSize="Medium"
+                                    FontFamily="{StaticResource Kanit}"
+                                    Margin="0,0,0,10"/>
+            <StackLayout Margin="10,0">
+                
+                <ListView x:Name="ListProductLow" HasUnevenRows="True" BackgroundColor="White" 
+                                      VerticalOptions="Start"  
+                                      >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell IsEnabled="False" >
+                                <Frame BorderColor="LightGray" HasShadow="False"  CornerRadius="10" Margin="0,5">
+                                    <StackLayout Orientation="Vertical" Margin="0" >
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+
+                                            </Grid.RowDefinitions>
+                                            <Image Source="iconwarning" HorizontalOptions="Start" WidthRequest="20" HeightRequest="20" Grid.Column="0" Grid.Row="0"/>
+
+                                            <Label Text="{Binding SkuId, StringFormat='หมายเลข Barcode: {0}'}"  
+                                             FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0"/>
+                                        </Grid>
+                                        <Label Text="{Binding ProductCode, StringFormat='รหัสสินค้า : {0}'}"  FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding ProductName, StringFormat='ชื่อสินค้า : {0}'}" 
+                                                   FontFamily="{StaticResource Kanit}" FontSize="Body" TextColor="Black"
+                                               HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding Total, StringFormat='จำนวนคงเหลือ : {0}'}"  FontSize="Body" TextColor="Black"
+                                                   FontFamily="{StaticResource Kanit}"
+                                               HorizontalOptions="StartAndExpand"/>
+                                           
+                                </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+              
+            </StackLayout>
+        </StackLayout> 
     </ContentPage.Content>
 </ContentPage>
