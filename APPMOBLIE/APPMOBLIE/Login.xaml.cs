@@ -18,6 +18,8 @@ namespace APPMOBLIE
 {
     public partial class Login : ContentPage
     {
+        
+
         public Login()
         {
             InitializeComponent();
@@ -67,7 +69,7 @@ namespace APPMOBLIE
                         var Page = new HomePage();                     
                         await Navigation.PushAsync(Page);             
                         NavigationPage.SetHasNavigationBar(Page, false);
-                    }
+                    } 
                     else
                     {
                         displayError.Text = "ชื่อผู้ใช้ หรือรหัสผ่านไม่ถูกต้อง";
@@ -77,6 +79,8 @@ namespace APPMOBLIE
                 {
                     displayError.Text = "ชื่อผู้ใช้ หรือรหัสผ่านไม่ถูกต้อง";
                 }
+
+                
             }
         }
 

@@ -155,7 +155,7 @@ namespace APPMOBLIE
                     foreach (var Item in Result)
                     {
                         var ViewModel = new AllTransactions();
-                        ViewModel.TransactionType = (Item.TransactionType == "IN" ? "plus-circle"  : "minus-circle" ) ;
+                        ViewModel.TransactionType = (Item.TransactionType == "IN" ? "plus-circle IN"  : "minus-circle Out" ) ;
                   
                         ViewModel.Ref = Item.Ref;
                         ViewModel.ProductName = Item.ProductName;

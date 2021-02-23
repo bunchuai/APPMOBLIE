@@ -1253,7 +1253,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionAPPMOBLIEiOSHideInfoBar="True" XamarinHotReloadUnhandledDeviceExceptionAPPMOBLIEiOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadUnhandledDeviceExceptionAPPMOBLIEiOSHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionAPPMOBLIEiOSHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
