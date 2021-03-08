@@ -31,7 +31,7 @@
                 <SearchBar Placeholder="ค้นหารหัสสินค้า" FontSize="Small" FontFamily="{StaticResource Kanit}" HorizontalOptions="CenterAndExpand"
                            TextChanged="SearchBar_TranOut"></SearchBar>
             </StackLayout>
-            <ListView x:Name="ListTranIn"  HasUnevenRows="True" BackgroundColor="White" 
+            <ListView x:Name="ListTranOut"  HasUnevenRows="True" BackgroundColor="White" 
                                       VerticalOptions="Start"  
                                       >
                 <ListView.ItemTemplate>
