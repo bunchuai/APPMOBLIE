@@ -19,14 +19,14 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/> 
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="{OnIdiom Phone='*' , Tablet='400'}"/>
-                    </Grid.ColumnDefinitions>
+                    </Grid.ColumnDefinitions> 
                     <Label Text="จ่ายสินค้า" FontSize="Title"  FontFamily="{StaticResource Kanit}" 
                                    Grid.Row="0" Grid.ColumnSpan="2"
                                      TextColor="Black"

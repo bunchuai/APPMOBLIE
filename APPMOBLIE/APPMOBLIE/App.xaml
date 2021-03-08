@@ -16,7 +16,7 @@
             <OnPlatform x:TypeArguments="x:String" 
                 x:Key="FontAwesomeBrands">
                 <On Platform="Android" Value="FontAwesome5Brands.otf#Regular" />
-                <On Platform="iOS" Value="FontAwesome5Brands-Regular" />
+                <On Platform="iOS" Value="FontAwesome5Brands" />
              
             </OnPlatform>
 
@@ -29,7 +29,7 @@
             <OnPlatform x:TypeArguments="x:String" 
                 x:Key="FontAwesomeRegular">
                 <On Platform="Android" Value="FontAwesome5Regular.otf#Regular" />
-                <On Platform="iOS" Value="FontAwesome5Free-Regular" />
+                <On Platform="iOS" Value="FontAwesome5Regular" />
                 
             </OnPlatform>
 
@@ -39,6 +39,9 @@
                 <Setter Property="FontSize" Value="16"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style x:Key="Fontlabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="{x:StaticResource Kanit}"/>
             </Style>
             <Style x:Key="Normal" TargetType="Label">
                 <Setter Property="TextColor" Value="Black"/>
