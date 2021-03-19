@@ -52,11 +52,11 @@
 
 
                     <Label Text="ยี่ห้อสินค้า" FontFamily="{StaticResource Kanit}" TextColor="Black" Grid.Row="3" Grid.Column="0" FontSize="Body" VerticalOptions="Center"/>
-                    <Label x:Name="ProductBrand" Style="{x:StaticResource Kanit}" TextColor="Black" Grid.Row="3" Grid.Column="1" FontSize="Body" VerticalOptions="Center"/>
+                    <Label x:Name="ProductBrand" FontFamily="{StaticResource Kanit}" TextColor="Black" Grid.Row="3" Grid.Column="1" FontSize="Body" VerticalOptions="Center"/>
 
 
                     <Label Text="รุ่นสินค้า" FontFamily="{StaticResource Kanit}" TextColor="Black" Grid.Row="4" Grid.Column="0" FontSize="Body" VerticalOptions="Center"/>
-                    <Label x:Name="ProductModel" Style="{x:StaticResource Kanit}" TextColor="Black" Grid.Row="4" Grid.Column="1" FontSize="Body" VerticalOptions="Center"/>
+                    <Label x:Name="ProductModel" FontFamily="{StaticResource Kanit}" TextColor="Black" Grid.Row="4" Grid.Column="1" FontSize="Body" VerticalOptions="Center"/>
                     
                     
                     <Label Text="จำนวน"  FontFamily="{StaticResource Kanit}" FontSize="Body" 
