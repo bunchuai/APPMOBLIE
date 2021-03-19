@@ -86,6 +86,8 @@ namespace APPMOBLIE
 
                     Mycode.Text = Mycode.Text;
                     ProductName.Text = Result.Name;
+                    ProductModel.Text = Result.Model;
+                    ProductBrand.Text = Result.Brand;
                 }
                 else
                 {
