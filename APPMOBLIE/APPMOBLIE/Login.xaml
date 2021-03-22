@@ -99,7 +99,7 @@
                 </StackLayout>
             </Frame>
             <StackLayout>
-                <Label Text="{OnPlatform Android='Smart WMS 8.0' ,iOS='Smart WMS 3.0'}"
+                <Label Text="{OnPlatform Android='Smart WMS 10.1' ,iOS='Smart WMS 3.0'}"
                                FontSize="12" 
                                HorizontalOptions="CenterAndExpand"
                                TextColor="White" 

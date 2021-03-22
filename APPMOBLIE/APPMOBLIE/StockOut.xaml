@@ -42,7 +42,7 @@
                                    VerticalOptions="Center" FontSize="Body" 
                                    Completed="Mycode_Completed"></Entry>
                     <Button BackgroundColor="Transparent" ImageSource="barcode.png" 
-                                    WidthRequest="20" HeightRequest="20" Grid.Column="1" Grid.Row="1"
+                                    WidthRequest="60" HeightRequest="60" Grid.Column="1" Grid.Row="1"
                                     HorizontalOptions="End" Clicked="ScanBarCode"/>
                     <Label Text="ชื่อสินค้า"  FontFamily="{StaticResource Kanit}" 
                                  TextColor="Black" FontSize="Body" 

@@ -343,10 +343,13 @@
   <ItemGroup>
     <Folder Include="Resources\font\" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\barcode_.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadUnhandledDeviceExceptionAPPMOBLIEAndroidHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionAPPMOBLIEAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionAPPMOBLIEAndroidHideInfoBar="True" XamarinHotReloadUnhandledDeviceExceptionAPPMOBLIEAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

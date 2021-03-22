@@ -57,7 +57,9 @@ namespace APPMOBLIE
 
                             Mycode.Text = result.Text;
                             ProductName.Text = Result.Name;
-                            
+                            ProBrand.Text = Result.Brand;
+                            ProModel.Text = Result.Model;
+
 
                         }
                         else
