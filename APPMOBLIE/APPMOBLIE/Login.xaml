@@ -103,7 +103,7 @@
                                FontSize="12" 
                                HorizontalOptions="CenterAndExpand"
                                TextColor="White" 
-                               Style="{x:StaticResource Normalkanit}"/>
+                               Style="{x:StaticResource Normalkanit}"/> 
             </StackLayout>
            
                 
