@@ -18,7 +18,7 @@
 
             <Frame  BackgroundColor="White"
                     Style="{x:StaticResource ForFrame}"
-                    Margin="{OnIdiom Phone='0,30' ,Tablet='100,0,100,30'}">
+                    Margin="{OnIdiom Phone='0,30,0,30' ,Tablet='100,0,100,30'}">
                 <StackLayout Padding="0,30,0,0" 
                                  Margin="14"
                              Spacing="20">
@@ -99,7 +99,7 @@
                 </StackLayout>
             </Frame>
             <StackLayout>
-                <Label Text="{OnPlatform Android='Smart WMS 10.1' ,iOS='Smart WMS 3.0'}"
+                <Label Text="{OnPlatform Android='Smart WMS 11.0' ,iOS='Smart WMS 3.0'}"
                                FontSize="12" 
                                HorizontalOptions="CenterAndExpand"
                                TextColor="White" 
